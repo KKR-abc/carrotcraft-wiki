@@ -1,0 +1,352 @@
+---
+title: VIP / MVP / MVP+ Ranks
+description: CarrotCraft's three donation tiers, plus free balance via YouTube Shorts promotion
+icon: crown
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Crown, Star, Sparkles, Gift, Coins, ShoppingBag, Gem, Zap, Heart, Wallet, AlertTriangle, BadgeCheck, Video, MessageCircleHeart, Box, HeartHandshake, ShieldAlert } from 'lucide-react';
+
+<Callout type="warn" title="🥕 Important — About Donations" icon={<HeartHandshake />}>
+  **All donations (VIP / MVP / MVP+ rank purchases) on CarrotCraft go directly toward keeping the server running.**
+
+  - Used for server hosting, domains, and operational costs — never staff profit
+  - **Please only donate within your means.** Daily life and studies come first
+  - **If you're under 18, get parental consent before donating**
+  - Don't impulse-donate large amounts. Take your time
+</Callout>
+
+<Callout type="error" title="⚠️ Refund / Dispute Policy" icon={<ShieldAlert />}>
+  By donating you agree to the following. Disputes after donation are not accepted.
+
+  - **PayPay transfers are non-refundable** (the platform itself does not allow reversal)
+  - **No refunds for accidental over-sending** — use up the balance until you stop playing
+  - **No compensation** for rank expiry, server shutdown, or plugin behavior changes
+  - **No compensation** for gacha outcomes (which item / rarity you get)
+  - Donations made under someone else's name may be delayed or refused
+
+  If you cannot accept the above, please do not donate.
+</Callout>
+
+<Callout type="info" title="How to read this page">
+  CarrotCraft has **3 donation tiers** (VIP / MVP / MVP+), each with rich cosmetic perks via UltraCosmetics. **Ranks sync across all servers.**
+  You can also **earn balance for free** by promoting CarrotCraft on YouTube Shorts (¥1 per 30 views).
+</Callout>
+
+---
+
+## 🎖 Rank Overview
+
+<Cards>
+  <Card
+    icon={<Star />}
+    title="VIP (¥500/month)"
+    description="Standard. 5 particles + gacha (particles/death)."
+  />
+  <Card
+    icon={<Sparkles />}
+    title="MVP (¥1,000/month)"
+    description="Higher tier. Priority queue + full initial pack + all gacha categories."
+  />
+  <Card
+    icon={<Crown />}
+    title="MVP+ (¥3,000/month)"
+    description="Top tier. All cosmetics unlocked + pink gradient prefix + priority queue."
+  />
+</Cards>
+
+---
+
+## 🎁 Rank Benefits
+
+<Tabs items={['VIP', 'MVP', 'MVP+']}>
+
+<Tab value="VIP">
+The standard paid rank.
+
+| Item | Value | Description |
+|---|---|---|
+| Price | ¥500 | 30 days |
+| Initial particles | 5 |  |
+| Gacha pool | PARTICLE + DEATH |  |
+| Join messages | Selectable | Some presets |
+| Prefix | VIP |  |
+</Tab>
+
+<Tab value="MVP">
+Inherits all VIP perks + higher-tier features.
+
+| Item | Value | Description |
+|---|---|---|
+| Price | ¥1,000 | 30 days |
+| Priority queue | Yes | Skip the queue when busy |
+| Initial pack | 20 PARTICLE / 12 PETS / 25 HATS / 12 PROJECTILE / 4 EMOTES |  |
+| Gacha pool | ALL categories | Pets, hats, join messages too |
+| Prefix | MVP (special color) |  |
+</Tab>
+
+<Tab value="MVP+">
+Top-tier rank. All cosmetics unlocked without needing to gacha.
+
+| Item | Value | Description |
+|---|---|---|
+| Price | ¥3,000 | 30 days |
+| Cosmetics | Everything unlocked | No gacha needed |
+| Gacha | Available for permanent ownership | Insurance for after expiry |
+| Priority queue | Yes |  |
+| Prefix | MVP+ (pink gradient) |  |
+</Tab>
+
+</Tabs>
+
+---
+
+## 💰 Top-up & In-game Currency
+
+<Callout type="info" icon={<Wallet />}>
+  Two-step flow: **PayPay → CarrotPremium balance → Rank / Gacha keys**. Top up your balance once, then spend it on ranks or keys whenever you want in-game.
+</Callout>
+
+```mermaid
+flowchart LR
+    A[PayPay top-up<br/>real money] -->|ticket| B[CarrotPremium balance<br/>'円相当']
+    B --> C[Buy rank<br/>VIP/MVP/MVP+]
+    B --> D[Buy gacha keys<br/>¥50 each (4-pack ¥200~)]
+```
+
+- **PayPay only once** — open a ticket, send a lump sum
+- After that, spend from your in-game **balance** to buy ranks or keys
+- Check your balance/expiry with `/cpremium rank` anytime
+
+---
+
+## 🎰 Gacha System
+
+<Cards>
+  <Card icon={<Box />} title="Key price" description="¥50 each (4-pack ¥200~ / 10-pack ¥500 bundles available)" />
+  <Card icon={<Gift />} title="Per key" description="1 cosmetic per key" />
+  <Card icon={<BadgeCheck />} title="Permanent ownership" description="Wins are recorded across servers and survive rank expiry" />
+  <Card icon={<Sparkles />} title="GUI" description="Purchase and open via /uc menu" />
+</Cards>
+
+In the menu, each item shows a `Rank Benefit` / `Personally Owned (gacha)` tag.
+
+<Callout type="warn" title="⚠️ Important Gacha Notes" icon={<AlertTriangle />}>
+  **You need at least VIP to use gacha at all.**
+
+  - With just the default rank, **buying keys yields nothing** — there's no draw pool
+  - Won cosmetics are **permanently owned and permanently usable**. Even if your paid rank expires back to default, every effect you've drawn stays usable forever
+
+  **"Just do gacha without subscribing"** is not a valid path. Get at least VIP first, then buy keys.
+</Callout>
+
+---
+
+## 🛒 How to Get a Rank
+
+<Tabs items={['💴 Donate (PayPay)', '🎬 YouTube Shorts (free balance)']}>
+
+<Tab value="💴 Donate (PayPay)">
+
+<Steps>
+
+<Step>
+### Contact the Support Center on Discord
+Open a ticket at the **Support Center** on [CarrotCraft Discord](https://discord.gg/EKUPDxXaqb). **No need to decide a rank yet** — just tell us how much you want to deposit.
+</Step>
+
+<Step>
+### Generate a PayPay "Receive Link" and paste it in the ticket
+**Easiest method:** create a fixed-amount receive link in your PayPay app, then paste the URL into the ticket. The yen amount becomes your in-game balance 1:1.
+
+**Step-by-step (PayPay app)**:
+1. Open PayPay → tap "**送る (Send)**" on the home screen
+2. Tap "**受け取りリンクを作成する (Create receive link)**"
+3. Enter the amount you want to send (e.g. ¥500)
+4. Tap "**○○円を送る**" → a receive link (URL) is generated
+5. Copy the URL and paste it into the Discord ticket
+
+**Examples**:
+- ¥500 → balance of ¥500 (1 month of VIP)
+- ¥3,000 → balance of ¥3,000 (1 month of MVP+ or 6 months of VIP)
+- Any amount works (e.g. ¥200 buys 4 gacha keys)
+
+> 💡 **The receive link is valid for 4 days (96 hours).** If staff doesn't claim it in time, the amount is **automatically returned to your balance** — no risk of losing the money.
+</Step>
+
+<Step>
+### Staff manually credits your balance
+Usually within 24 hours. You'll get a notice in the ticket. **At this point no rank is granted yet** — only the balance is topped up.
+</Step>
+
+<Step>
+### Pick a rank anytime in-game
+`/cpremium buy <vip|mvp|mvpplus>` or click the rank icon in `/uc menu` → confirmation dialog. **The monthly fee is then deducted from your balance and the rank is granted.**
+
+> 💡 Once you have balance, you're free to decide: upgrade to MVP later, extend VIP next month, save for a big spend — your choice.
+</Step>
+
+</Steps>
+
+<Callout type="info" icon={<ShoppingBag />}>
+  **Differential upgrades**: VIP (¥500) → MVP (¥1,000) only charges the **¥500 difference**.
+</Callout>
+
+<Callout type="warn">
+  Automated top-up is planned. **For now, top-ups go through a Discord ticket.**
+</Callout>
+
+</Tab>
+
+<Tab value="🎬 YouTube Shorts (free balance)">
+
+Get **balance credited for free** by promoting CarrotCraft on YouTube Shorts.
+No payment required — just make videos.
+
+<Callout type="info" icon={<Coins />} title="Reward rate">
+  **30 views = ¥1 of balance**
+
+  - 3,000 views → ¥100
+  - 6,000 views → ¥200 (4 gacha keys)
+  - 15,000 views → ¥500 (VIP for 1 month)
+  - 30,000 views → ¥1,000 (MVP for 1 month)
+  - 90,000 views → ¥3,000 (MVP+ for 1 month)
+</Callout>
+
+<Callout type="info" icon={<Coins />} title="🥕 Or take it as Carrot Coins (CC)">
+  Instead of ranks and gacha keys, you can take the reward as **Carrot Coins (CC)**, the in-game currency.
+
+  **views ÷ 2 = CC**
+
+  - 3,000 views → 1,500 CC
+  - 10,000 views → 5,000 CC
+  - 30,000 views → 15,000 CC
+  - 100,000 views → 50,000 CC (**talk to us first from here**)
+
+  Tell us **which one you want — balance or CC** when you apply.
+  One video pays out one way only (no splitting, no changing your mind later).
+</Callout>
+
+<Steps>
+
+<Step>
+### Make a YouTube Short promoting CarrotCraft
+Gameplay, intros, highlights — anything that showcases the server.
+</Step>
+
+<Step>
+### Include server info in the video
+- Show the server address **`play.carrotcraft.net`** in the description, a pinned comment, or in-video text
+- Include the word **"CarrotCraft"** in the title or description
+</Step>
+
+<Step>
+### Apply via the Discord Support Center
+Send the video link **plus a YouTube Studio screenshot showing the view count**.
+</Step>
+
+<Step>
+### Staff reviews and credits your balance
+Usually 24–72 hours. **`views ÷ 30`** in yen is added to your balance.
+</Step>
+
+</Steps>
+
+<Callout type="info" icon={<Video />} title="Application rules">
+- **One submission per video** (you can't re-apply after views grow)
+- The video must clearly promote CarrotCraft
+- Bot / purchased views are **invalid** and result in rejection
+- **State how you want to be paid (balance or CC)** when you apply
+- For **videos above 100,000 views** we don't apply the rate as-is — please talk to us first
+</Callout>
+
+<Callout type="info" icon={<Video />} title="📹 Long-form videos welcome too">
+  **Long-form videos (vs. Shorts) take more effort, so they can earn more per view.**
+  The exact rate depends on length, content, channel size, etc., so please **reach out via the Discord Support Center** first with your video idea or finished video. We'll discuss the rate case-by-case.
+</Callout>
+
+<Callout type="warn" icon={<AlertTriangle />}>
+  - Misleading titles or other YouTube policy violations disqualify the video
+  - Rewards (both balance and CC) are **discretionary** — there is no guaranteed payout,
+    and we may decline a video depending on its content
+  - Videos using uncleared copyrighted material (music etc.) are disqualified
+</Callout>
+
+<Callout type="warn">
+  **This is intentionally not easy.** Build a track record across multiple videos or grow an engaged audience to qualify.
+</Callout>
+
+</Tab>
+
+</Tabs>
+
+---
+
+## ❓ FAQ
+
+<Accordions>
+
+<Accordion title="What happens when my rank expires?">
+  - Donation ranks (VIP/MVP/MVP+) **auto-expire after 30 days**
+  - After expiry: drops back to default rank
+  - Gacha wins are kept as **owned** and instantly become usable again when you re-subscribe
+</Accordion>
+
+<Accordion title="Can I downgrade from MVP+ to VIP?">
+  **Downgrade purchases are blocked.** Wait until your rank expires, then re-subscribe at the desired tier.
+</Accordion>
+
+<Accordion title="How is differential upgrade calculated?">
+  We charge the **difference** between the current and target rank.
+  Example: VIP (¥500) → MVP (¥1,000) costs **¥500**.
+
+  The new rank gets a fresh 30 days, and at expiry you'll fall back to your previous VIP (stored as the "underlying" rank).
+</Accordion>
+
+<Accordion title="Can I apply the YouTube reward multiple times for the same video?">
+  No — **one submission per video**. You can't re-apply after view count grows.
+  Instead, **make new videos** — there's no limit on the number of submissions.
+</Accordion>
+
+<Accordion title="Will fake view inflation be caught?">
+  Yes. Obvious bought views or bot traffic are not counted. We'll **reject the application** on detection.
+  Repeat offenders may be banned from future submissions.
+</Accordion>
+
+</Accordions>
+
+---
+
+## 📋 Notes
+
+<Callout type="warn" icon={<AlertTriangle />}>
+- YouTube reward applications may be rejected if artificial view inflation is detected
+- Donation ranks **auto-expire after 30 days**
+- **Gacha requires at least VIP** — default rank cannot draw
+- Gacha wins **persist after rank expiry** (re-subscribe to use them again)
+- Downgrade purchases (e.g. MVP → VIP) are blocked as unnecessary
+- PayPay payments are **non-refundable**
+</Callout>
+
+---
+
+## 💬 Purchase / Support
+
+<Cards>
+  <Card
+    icon={<MessageCircleHeart />}
+    title="Open a Discord ticket"
+    description="All payments, applications, and trouble reports go through Discord"
+    href="https://discord.gg/EKUPDxXaqb"
+  />
+  <Card
+    icon={<Gem />}
+    title="See other cosmetic features"
+    description="Full UltraCosmetics usage guide"
+    href="/docs/cosmetics"
+  />
+</Cards>

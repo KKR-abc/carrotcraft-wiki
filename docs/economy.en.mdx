@@ -1,0 +1,192 @@
+---
+title: Economy System
+description: Guide to CarrotCraft's economy system
+icon: coins
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Coins, Store, Sparkles, ShieldAlert, TrendingUp, Wallet } from 'lucide-react';
+
+<Callout type="info" title="Carrot Coins (CC)">
+CarrotCraft uses an in-game currency called **Carrot Coins (CC)**. The entire server economy revolves around CarrotMarket and QuickShop.
+</Callout>
+
+## 💰 How to Earn Money
+
+<Cards>
+  <Card icon={<Store />} href="#-carrotmarket-server-shop" title="Sell at CarrotMarket" description="Sell materials and items at the server's dynamic-pricing shop" />
+  <Card icon={<Coins />} href="/docs/quickshop" title="Player Shops" description="Sell crafted goods and rare items via QuickShop" />
+  <Card icon={<Wallet />} href="/docs/kaitori" title="Sell at the Buyback Shop" description="Turn spare items into CC at the admin-run buyback shop" />
+</Cards>
+
+### Economy Commands
+
+| Command | Description |
+|---------|-------------|
+| `/bal` | Check your balance |
+| `/pay <player> <amount>` | Send money |
+| `/baltop` | Richest players ranking |
+
+## 🏪 CarrotMarket (Server Shop)
+
+CarrotMarket is the server-managed shop with dynamic pricing. Access it with `/market`.
+
+### How Pricing Works
+
+```
+Price = Vault ÷ Stock
+```
+
+- **Selling** → Vault decreases, stock increases → **price drops**
+- **Buying** → Vault increases, stock decreases → **price rises**
+- **Daily** → Vault slowly recovers (money enters the economy)
+
+Items that are heavily sold become cheaper, while items in demand become more expensive. Read the market and trade wisely.
+
+<Callout type="info" title="Check Price History">
+You can view item price trends on [CarrotMarket Web](https://market.carrotcraft.net/). Check the market before making trades.
+</Callout>
+
+### Handy Features
+
+- 📊 **Price graphs** — stats panel with low / current / high / trend, and prices shown directly on the bars
+- 📦 **Stack mode** — trade in stacks (64–4,096 items). Toggle with the button at the top center; the screen turns light blue while active
+- 🔃 **Sorting** — the item list can be sorted
+
+## ✨ Majin Points
+
+You earn **Majin Points** from every CarrotMarket transaction. Majin Points can be converted into **Majin Ingots** and are required to **use MajinCraft custom items**.
+
+### How to Earn Points
+
+Points are automatically awarded whenever you **buy or sell** at CarrotMarket.
+
+| Trade quantity | Points awarded | Notes |
+|----------------|----------------|-------|
+| 1–10 items | 1 pt | Per transaction |
+| 11–20 items | 2 pt | Per transaction |
+| 64 items | 7 pt | Per transaction |
+
+<Callout type="info">
+You earn 10% of the trade quantity (rounded up, minimum 1 pt).
+</Callout>
+
+### Checking Your Points
+
+- **`/market` GUI** — Check your points via the icon at the bottom-right
+- **`/majin`** — Check points via command
+
+### Converting to Majin Ingots
+
+| Command | Description |
+|---------|-------------|
+| `/majin` | Check points |
+| `/majin convert [amount]` | Convert points to Majin Ingots |
+
+- **100 pt = 1 Majin Ingot**
+- Majin Ingots are used in [custom recipes](/docs/custom-recipes)
+
+### MajinCraft Item Usage Cost
+
+<Callout type="warn">
+MajinCraft custom items **consume Majin Points each time you use them**. If you don't have enough points, the item won't activate.
+</Callout>
+
+| Item | Cost per use |
+|------|--------------|
+| Vein Pickaxe | 25 pt/use |
+| Timber Axe | 25 pt/use |
+| Gravity Rod | 40 pt/use |
+| Decoy Totem | 75 pt/use |
+| Blast Arrow | 15 pt/use |
+| Chicken Bomb | 15 pt/use |
+| Warp Trident | 50 pt/use |
+| Rainbow Shears | 60 pt/use |
+| Gravity Lifter | 75 pt/use |
+| Growth Potion | 100 pt/use |
+| Shrink Potion | 100 pt/use |
+
+## 🥕 Auctions
+
+An **English-style auction house** for selling items between players. Rare and high-value items fit auctions better than fixed-price shops.
+
+### Listing an Item
+
+<Steps>
+<Step>
+### Open the Auction House
+
+Run `/auction` to open the auction GUI.
+</Step>
+<Step>
+### Configure Your Listing
+
+Use "**Sell an item**" at the bottom left to set the item, starting price, and duration.
+</Step>
+</Steps>
+
+| Item | Detail |
+|---|---|
+| Starting price | 5,000 cc and up |
+| Concurrent listings | up to 3 |
+| Cooldown | 30 min per listing |
+| Fee | **5%** of the winning bid |
+
+### Bidding
+
+- Click an item in the list to view details, then bid via the **GUI** or `b <amount>`
+- If someone outbids you, your bid is **refunded in full instantly**
+
+### Collecting
+
+| Command | Description |
+|---------|-------------|
+| `/auction` | Open the auction list |
+| `/auction box` | Collect winnings & refunds (**held for 7 days**) |
+| `/auction notify off` | Mute notifications |
+
+## 🛒 QuickShop (Player Shops)
+
+Use QuickShop-Hikari to open your own shop. **There are no trading fees.**
+
+<Callout type="warn" title="Shops are limited to town shop areas">
+Shops can only be created on town plots set as shop areas via `/plot set shop`. See the [QuickShop guide](/docs/quickshop) for details.
+</Callout>
+
+<Steps>
+<Step>
+### Place a Chest
+
+Place a chest at the spot you want to use as a shop.
+</Step>
+<Step>
+### Create the Shop
+
+Left-click the chest and run `/qs create <price>`.
+</Step>
+<Step>
+### Done
+
+Your shop is created and automated buying/selling begins.
+</Step>
+</Steps>
+
+Items not available at CarrotMarket can be traded through QuickShop. See the [QuickShop Guide](/docs/quickshop) for details.
+
+### QuickShop Commands
+
+| Command | Description |
+|---------|-------------|
+| `/qs create <price>` | Create a shop |
+| `/qs find <item>` | Search for shops selling an item |
+
+## ⚠️ Important Notes
+
+<Callout type="error" title="Cheating is strictly prohibited">
+- Earning money through exploits (bugs, etc.) is prohibited
+- Scamming is strictly punished
+</Callout>

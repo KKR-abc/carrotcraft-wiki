@@ -1,0 +1,516 @@
+---
+title: Farmer's Delight（料理）
+description: 料理MOD「Farmer's Delight」＋アドオン4本のプラグイン移植版 — 調理器具・新作物・170種類以上の料理と全レシピ
+icon: cooking-pot
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { CookingPot, Utensils, Flame, Sprout, Archive, Soup, Croissant, Beef, CalendarDays, GlassWater } from 'lucide-react';
+
+<Callout type="info" title="Farmer's Delight とは">
+人気料理MOD「**Farmer's Delight**」と、そのアドオン4本（**Ocean's Delight／Corn Delight／Delightful／Cultural Delights**）をプラグインとして移植したものです。**MODの導入や特別な設定は不要**で、Java版・統合版どちらのプレイヤーもそのまま遊べます。合計 **170種類以上** の料理・食材が追加されています。
+</Callout>
+
+## 🍳 何ができる？
+
+<Cards>
+  <Card icon={<CookingPot />} title="クッキングポット" description="火の上の鍋でスープ・シチューを煮込む" />
+  <Card icon={<Utensils />} title="まな板 + 包丁" description="食材を切り分けて下ごしらえ（包丁は5段階）" />
+  <Card icon={<Flame />} title="コンロ・スキレット" description="焼く・炒めるの直火調理" />
+  <Card icon={<Croissant />} title="竹マット" description="寿司・おにぎり・巻き物を巻く（火いらず）" />
+  <Card icon={<Soup />} title="大皿料理" description="ローストチキンなどをみんなで取り分け" />
+  <Card icon={<Sprout />} title="新作物" description="トマト・稲からトウモロコシ・アボカドまで栽培" />
+  <Card icon={<Archive />} title="収納" description="キャビネット・クレートで食材を整理" />
+  <Card icon={<CalendarDays />} title="毎日レシピ解放" description="毎日18時に新レシピが2つ解放" />
+</Cards>
+
+## 📅 毎日あたらしいレシピが解放！
+
+<Callout type="info">
+アドオンの料理レシピ（寿司・トウモロコシ料理・砂漠のスイーツなど）は、**毎日 18:00 に2つずつ**自動で解放されていきます。解放の瞬間は **Discord に告知**が流れます。
+
+- **解放前のレシピは作れません**（材料を先に集めて備えるのはアリ！）
+- コアのFarmer's Delight料理と作業台クラフトは**最初から全部使えます**
+</Callout>
+
+## 🔪 調理器具の使い方
+
+<Steps>
+<Step>
+### クッキングポット 🍲
+
+**火の上**（焚き火・コンロなど）に鍋を置き、食材を右クリックで投入。レシピが揃うと自動で煮込みが始まり、完成したら**ボウルなどの器**を持って右クリックで取り分けます。
+</Step>
+<Step>
+### まな板 + 包丁 🔪
+
+まな板に食材を置き、**包丁（や斧・シャベル）で右クリック**して切り分けます。メインに道具・オフハンドに食材を持って右クリックでも一発で切れます。
+</Step>
+<Step>
+### コンロ・スキレット 🔥
+
+**コンロ**は上面に食材を置いて焼く調理台。鍋の熱源にもなります。**スキレット**はフライパンで、焚き火の上などで素早く焼けます。
+</Step>
+<Step>
+### 竹マット 🎋
+
+寿司・おにぎり用の調理台（**火は不要**）。マットに材料を右クリックで投入すると巻き上がり、完成品は**素手で右クリック**して受け取ります。作り方: 糸×2 ＋ 竹×4。
+</Step>
+<Step>
+### かまど・燻製器・焚き火 ♨️
+
+下ごしらえした切り身などは、バニラの**かまど・燻製器・焚き火**でそのまま焼けます（燻製器は2倍速、焚き火はゆっくり）。
+</Step>
+</Steps>
+
+## 📖 レシピ一覧
+
+<Callout type="info">
+材料の「**A／B**」は **どちらでもOK** の意味です（例: 生牛肉／ひき肉）。本家MOD同様、複数の食材を受け付けます。
+</Callout>
+
+<Tabs items={['🍲 クッキングポット', '🎋 竹マット', '🔪 まな板', '♨️ かまど・燻製・焚き火', '🛠️ クラフト']}>
+
+<Tab value="🍲 クッキングポット">
+
+火の上の鍋に材料を投げ入れて煮込みます。「取り分け」の器を持って右クリックで受け取ります。
+
+<Accordions>
+<Accordion title="スープ・シチュー">
+
+| 料理 | 材料 | 時間 | 取り分け |
+|---|---|---|---|
+| <Item img="/items/cc/beef_stew.png" name="ビーフシチュー" /> | <Item name="生の牛肉" />／<Item img="/items/cc/minced_beef.png" name="牛ひき肉" /> ＋ <Item img="/items/carrot.png" name="ニンジン" /> ＋ <Item name="ジャガイモ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/chicken_soup.png" name="チキンスープ" /> | <Item name="生の鶏肉" />／<Item img="/items/cc/chicken_cuts.png" name="鶏肉の切り身" /> ＋ <Item img="/items/carrot.png" name="ニンジン" /> ＋ <Item img="/items/cc/cabbage.png" name="キャベツ" />／<Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" />／<Item img="/items/cc/tomato.png" name="トマト" />／<Item img="/items/carrot.png" name="ニンジン" />／<Item name="ジャガイモ" />／<Item name="ビートルート" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/vegetable_soup.png" name="野菜スープ" /> | <Item img="/items/carrot.png" name="ニンジン" /> ＋ <Item name="ジャガイモ" /> ＋ <Item name="ビートルート" /> ＋ <Item img="/items/cc/cabbage.png" name="キャベツ" />／<Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/fish_stew.png" name="お魚シチュー" /> | <Item name="生鱈" />／<Item name="生鮭" />／<Item img="/items/cc/cod_slice.png" name="タラの切り身" />／<Item img="/items/cc/salmon_slice.png" name="サーモンの切り身" /> ＋ <Item img="/items/cc/tomato_sauce.png" name="トマトソース" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/pumpkin_soup.png" name="かぼちゃスープ" /> | <Item img="/items/cc/pumpkin_slice.png" name="カボチャの切り身" /> ＋ <Item img="/items/cc/cabbage.png" name="キャベツ" />／<Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item name="生の豚肉" />／<Item img="/items/cc/bacon.png" name="ベーコン（生）" /> ＋ <Item name="牛乳" />／<Item img="/items/cc/milk_bottle.png" name="ミルク瓶" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/baked_cod_stew.png" name="タラの煮込み" /> | <Item name="生鱈" />／<Item img="/items/cc/cod_slice.png" name="タラの切り身" /> ＋ <Item name="ジャガイモ" /> ＋ <Item img="/items/egg.png" name="卵" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/noodle_soup.png" name="ラーメン" /> | <Item img="/items/cc/raw_pasta.png" name="生パスタ" /> ＋ <Item img="/items/egg.png" name="卵" /> ＋ <Item name="乾燥した昆布" /> ＋ <Item name="生の豚肉" />／<Item img="/items/cc/bacon.png" name="ベーコン（生）" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/onion_soup.png" name="オニオンスープ" /> | <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item name="パン" /> ＋ <Item name="牛乳" />／<Item img="/items/cc/milk_bottle.png" name="ミルク瓶" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/bone_broth.png" name="骨スープ" /> | <Item name="骨" /> ＋ <Item name="グロウベリー" />／<Item name="茶キノコ" />／<Item name="赤キノコ" />／<Item name="垂れ根" />／<Item name="ヒカリゴケ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item name="ビートルートスープ" /> | <Item name="ビートルート" /> ＋ <Item name="ビートルート" /> ＋ <Item name="ビートルート" /> | 10秒 | <Item name="ボウル" /> |
+| <Item name="キノコシチュー" /> | <Item name="茶キノコ" /> ＋ <Item name="赤キノコ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item name="ウサギシチュー" /> | <Item name="ジャガイモ" /> ＋ <Item name="生の兎肉" /> ＋ <Item img="/items/carrot.png" name="ニンジン" /> ＋ <Item name="茶キノコ" />／<Item name="赤キノコ" /> | 10秒 | <Item name="ボウル" /> |
+
+</Accordion>
+<Accordion title="ごはん・パスタ">
+
+| 料理 | 材料 | 時間 | 取り分け |
+|---|---|---|---|
+| <Item img="/items/cc/cooked_rice.png" name="ごはん" /> | <Item img="/items/cc/rice.png" name="米" /> | 5秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/fried_rice.png" name="チャーハン" /> | <Item img="/items/cc/rice.png" name="米" /> ＋ <Item img="/items/egg.png" name="卵" /> ＋ <Item img="/items/carrot.png" name="ニンジン" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/mushroom_rice.png" name="キノコリゾット" /> | <Item name="茶キノコ" /> ＋ <Item name="赤キノコ" /> ＋ <Item img="/items/cc/rice.png" name="米" /> ＋ <Item img="/items/carrot.png" name="ニンジン" />／<Item name="ジャガイモ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/pasta_with_meatballs.png" name="ミートボールパスタ" /> | <Item img="/items/cc/minced_beef.png" name="牛ひき肉" /> ＋ <Item img="/items/cc/raw_pasta.png" name="生パスタ" /> ＋ <Item img="/items/cc/tomato_sauce.png" name="トマトソース" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/pasta_with_mutton_chop.png" name="パスタ＆マトンチョップ" /> | <Item name="生の羊肉" />／<Item img="/items/cc/mutton_chops.png" name="マトンチョップ（生）" /> ＋ <Item img="/items/cc/raw_pasta.png" name="生パスタ" /> ＋ <Item img="/items/cc/tomato_sauce.png" name="トマトソース" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/squid_ink_pasta.png" name="イカ墨パスタ" /> | <Item name="生鱈" />／<Item name="生鮭" />／<Item img="/items/cc/cod_slice.png" name="タラの切り身" />／<Item img="/items/cc/salmon_slice.png" name="サーモンの切り身" /> ＋ <Item img="/items/cc/raw_pasta.png" name="生パスタ" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item name="イカスミ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/vegetable_noodles.png" name="野菜ヌードル" /> | <Item img="/items/carrot.png" name="ニンジン" /> ＋ <Item name="茶キノコ" />／<Item name="赤キノコ" /> ＋ <Item img="/items/cc/raw_pasta.png" name="生パスタ" /> ＋ <Item img="/items/cc/cabbage.png" name="キャベツ" />／<Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" />／<Item img="/items/cc/tomato.png" name="トマト" />／<Item img="/items/carrot.png" name="ニンジン" />／<Item name="ジャガイモ" />／<Item name="ビートルート" /> | 10秒 | <Item name="ボウル" /> |
+
+</Accordion>
+<Accordion title="惣菜・ソース">
+
+| 料理 | 材料 | 時間 | 取り分け |
+|---|---|---|---|
+| <Item img="/items/cc/dumplings.png" name="餃子" />×2 | <Item img="/items/cc/wheat_dough.png" name="小麦生地" /> ＋ <Item img="/items/cc/cabbage.png" name="キャベツ" />／<Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item name="生の鶏肉" />／<Item img="/items/cc/chicken_cuts.png" name="鶏肉の切り身" />／<Item name="生の豚肉" />／<Item img="/items/cc/bacon.png" name="ベーコン（生）" />／<Item name="生の牛肉" />／<Item img="/items/cc/minced_beef.png" name="牛ひき肉" /> …ほか1種 | 10秒 | 素手 |
+| <Item img="/items/cc/cabbage_rolls.png" name="ロールキャベツ" /> | <Item img="/items/cc/cabbage.png" name="キャベツ" />／<Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item name="生の牛肉" />／<Item img="/items/cc/minced_beef.png" name="牛ひき肉" />／<Item name="生の鶏肉" />／<Item img="/items/cc/chicken_cuts.png" name="鶏肉の切り身" />／<Item name="生の豚肉" />／<Item img="/items/cc/bacon.png" name="ベーコン（生）" /> …ほか13種 | 5秒 | 素手 |
+| <Item img="/items/cc/ratatouille.png" name="ラタトゥイユ" /> | <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item name="ビートルート" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" />／<Item img="/items/cc/tomato.png" name="トマト" />／<Item img="/items/carrot.png" name="ニンジン" />／<Item name="ジャガイモ" />／<Item name="ビートルート" /> | 10秒 | <Item name="ボウル" /> |
+| <Item name="パンプキンの詰め物（大皿）" /> | <Item img="/items/cc/rice.png" name="米" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item name="茶キノコ" /> ＋ <Item name="ジャガイモ" /> ＋ <Item name="スイートベリー" />／<Item name="グロウベリー" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" />／<Item img="/items/cc/tomato.png" name="トマト" />／<Item img="/items/carrot.png" name="ニンジン" />／<Item name="ジャガイモ" />／<Item name="ビートルート" /> | 20秒 | <Item name="カボチャ" /> |
+| <Item img="/items/cc/tomato_sauce.png" name="トマトソース" /> | <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> | 5秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/dog_food.png" name="犬の餌" /> | <Item name="腐った肉" /> ＋ <Item name="骨粉" /> ＋ <Item name="生の牛肉" />／<Item img="/items/cc/minced_beef.png" name="牛ひき肉" />／<Item name="生の鶏肉" />／<Item img="/items/cc/chicken_cuts.png" name="鶏肉の切り身" />／<Item name="生の豚肉" />／<Item img="/items/cc/bacon.png" name="ベーコン（生）" /> …ほか2種 ＋ <Item img="/items/cc/rice.png" name="米" /> | 10秒 | 素手 |
+
+</Accordion>
+<Accordion title="ドリンク・デザート">
+
+| 料理 | 材料 | 時間 | 取り分け |
+|---|---|---|---|
+| <Item img="/items/cc/hot_cocoa.png" name="ホットココア" /> | <Item name="牛乳" />／<Item img="/items/cc/milk_bottle.png" name="ミルク瓶" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> ＋ <Item name="カカオ豆" /> ＋ <Item name="カカオ豆" /> | 10秒 | <Item name="ガラス瓶" /> |
+| <Item img="/items/cc/glow_berry_custard.png" name="グロウベリーカスタード" /> | <Item name="グロウベリー" /> ＋ <Item name="牛乳" />／<Item img="/items/cc/milk_bottle.png" name="ミルク瓶" /> ＋ <Item img="/items/egg.png" name="卵" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> | 10秒 | 素手 |
+| <Item img="/items/cc/apple_cider.png" name="アップルサイダー" /> | <Item name="リンゴ" /> ＋ <Item name="リンゴ" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> | 10秒 | <Item name="ガラス瓶" /> |
+
+</Accordion>
+<Accordion title="海の幸（Ocean's Delight）">
+
+| 料理 | 材料 | 時間 | 取り分け |
+|---|---|---|---|
+| <Item img="/items/cc/squid_rings.png" name="イカリング" /> | <Item img="/items/cc/cut_tentacles.png" name="切った触手" /> ＋ <Item img="/items/cc/wheat_dough.png" name="小麦生地" /> | 10秒 | <Item name="ボウル" /> |
+| <Item name="ガーディアンスープ（大皿）" /> | <Item img="/items/cc/guardian.png" name="ガーディアンの身" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item img="/items/egg.png" name="卵" /> ＋ <Item img="/items/egg.png" name="卵" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> | 10秒 | 素手 |
+| <Item img="/items/cc/braised_sea_pickle.png" name="シーピクルスの煮込み" /> | <Item name="シーピクルス" /> ＋ <Item name="茶キノコ" /> ＋ <Item name="茶キノコ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/honey_fried_kelp.png" name="昆布のはちみつ揚げ" /> | <Item name="乾燥した昆布" /> ＋ <Item img="/items/honey_bottle.png" name="ハチミツ入りの瓶" /> | 10秒 | 素手 |
+
+</Accordion>
+<Accordion title="トウモロコシ料理（Corn Delight）">
+
+| 料理 | 材料 | 時間 | 取り分け |
+|---|---|---|---|
+| <Item img="/items/cc/caramel_popcorn.png" name="キャラメルポップコーン" /> | <Item img="/items/cc/corn_seeds.png" name="トウモロコシの粒" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> | 10秒 | 素手 |
+| <Item img="/items/cc/classic_corn_dog.png" name="クラシックコーンドッグ" /> | <Item img="/items/cc/cornbread_batter.png" name="コーンブレッド生地" /> ＋ <Item name="焼き鳥" />／<Item img="/items/cc/cooked_chicken_cuts.png" name="焼き鳥の切り身" />／<Item name="焼き豚" />／<Item name="ステーキ" />／<Item name="焼いた羊肉" />／<Item img="/items/cc/cooked_mutton_chops.png" name="焼きマトンチョップ" /> …ほか1種 ＋ <Item img="/items/cc/tomato_sauce.png" name="トマトソース" /> | 10秒 | <Item name="棒" /> |
+| <Item img="/items/cc/creamed_corn.png" name="クリームコーン" /> | <Item img="/items/cc/corn_seeds.png" name="トウモロコシの粒" /> ＋ <Item img="/items/cc/corn_seeds.png" name="トウモロコシの粒" /> ＋ <Item name="牛乳" />／<Item img="/items/cc/milk_bottle.png" name="ミルク瓶" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/corn_soup.png" name="コーンスープ" /> | <Item img="/items/cc/corn.png" name="トウモロコシ" /> ＋ <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" />／<Item img="/items/cc/tomato.png" name="トマト" />／<Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item name="生の鶏肉" />／<Item img="/items/cc/chicken_cuts.png" name="鶏肉の切り身" />／<Item name="生の豚肉" />／<Item img="/items/cc/bacon.png" name="ベーコン（生）" />／<Item name="生の牛肉" />／<Item img="/items/cc/minced_beef.png" name="牛ひき肉" /> …ほか1種 ＋ <Item name="牛乳" />／<Item img="/items/cc/milk_bottle.png" name="ミルク瓶" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/corn_dog.png" name="コーンドッグ" /> | <Item img="/items/cc/cornbread_batter.png" name="コーンブレッド生地" /> ＋ <Item name="焼き鳥" />／<Item img="/items/cc/cooked_chicken_cuts.png" name="焼き鳥の切り身" />／<Item name="焼き豚" />／<Item name="ステーキ" />／<Item name="焼いた羊肉" />／<Item img="/items/cc/cooked_mutton_chops.png" name="焼きマトンチョップ" /> …ほか1種 | 5秒 | <Item name="棒" /> |
+| <Item img="/items/cc/creamy_corn_drink.png" name="コーンドリンク" /> | <Item img="/items/cc/corn.png" name="トウモロコシ" /> ＋ <Item name="牛乳" />／<Item img="/items/cc/milk_bottle.png" name="ミルク瓶" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> | 10秒 | <Item name="ガラス瓶" /> |
+| <Item img="/items/cc/cornbread_stuffing.png" name="コーンブレッドの詰め物" /> | <Item img="/items/cc/cornbread.png" name="コーンブレッド" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" />／<Item img="/items/cc/tomato.png" name="トマト" />／<Item img="/items/carrot.png" name="ニンジン" />／<Item name="ジャガイモ" />／<Item name="ビートルート" />／<Item img="/items/cc/cabbage.png" name="キャベツ" /> ＋ <Item name="ベイクドポテト" /> ＋ <Item name="スイートベリー" /> | 10秒 | <Item name="ボウル" /> |
+| <Item name="ナチョス（大皿）" /> | <Item img="/items/cc/tortilla_chip.png" name="トルティーヤチップス" /> ＋ <Item img="/items/cc/tortilla_chip.png" name="トルティーヤチップス" /> ＋ <Item name="焼き鳥" />／<Item img="/items/cc/cooked_chicken_cuts.png" name="焼き鳥の切り身" />／<Item name="焼き豚" />／<Item name="ステーキ" />／<Item name="焼いた羊肉" />／<Item img="/items/cc/cooked_mutton_chops.png" name="焼きマトンチョップ" /> …ほか1種 ＋ <Item name="牛乳" />／<Item img="/items/cc/milk_bottle.png" name="ミルク瓶" /> ＋ <Item img="/items/cc/tomato_sauce.png" name="トマトソース" /> | 10秒 | 素手 |
+| <Item img="/items/cc/boiled_corn.png" name="茹でトウモロコシ" /> | <Item img="/items/cc/corn.png" name="トウモロコシ" /> | 5秒 | 素手 |
+
+</Accordion>
+<Accordion title="砂漠とスイーツ（Delightful）">
+
+| 料理 | 材料 | 時間 | 取り分け |
+|---|---|---|---|
+| <Item img="/items/cc/stuffed_cantaloupe.png" name="カンタロープの詰め物" /> | <Item img="/items/cc/rice.png" name="米" /> ＋ <Item name="焼いた羊肉" />／<Item img="/items/cc/cooked_mutton_chops.png" name="焼きマトンチョップ" />／<Item name="ステーキ" />／<Item name="焼き鳥" />／<Item img="/items/cc/cooked_chicken_cuts.png" name="焼き鳥の切り身" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item name="スイートベリー" /> ＋ <Item img="/items/cc/cantaloupe_slice.png" name="カンタロープの薄切り" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/cantaloupe_gummy.png" name="カンタロープグミ" /> | <Item img="/items/cc/cantaloupe_slice.png" name="カンタロープの薄切り" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> ＋ <Item img="/items/honey_bottle.png" name="ハチミツ入りの瓶" /> ＋ <Item name="昆布" /> | 10秒 | 素手 |
+| <Item img="/items/cc/cactus_soup.png" name="サボテンスープ" /> | <Item name="サボテン" /> ＋ <Item img="/items/cc/rice.png" name="米" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/cactus_chili.png" name="サボテンチリ" /> | <Item name="生の豚肉" />／<Item img="/items/cc/bacon.png" name="ベーコン（生）" /> ＋ <Item name="サボテン" /> ＋ <Item img="/items/cc/tomato_sauce.png" name="トマトソース" /> ＋ <Item img="/items/blaze_powder.png" name="ブレイズパウダー" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" />／<Item img="/items/cc/tomato.png" name="トマト" />／<Item img="/items/carrot.png" name="ニンジン" />／<Item name="ジャガイモ" />／<Item name="ビートルート" />／<Item img="/items/cc/cabbage.png" name="キャベツ" /> | 10秒 | <Item name="ボウル" /> |
+| <Item img="/items/cc/salmonberry_gummy.png" name="サーモンベリーグミ" /> | <Item img="/items/cc/salmonberries.png" name="サーモンベリー" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> ＋ <Item img="/items/honey_bottle.png" name="ハチミツ入りの瓶" /> ＋ <Item name="昆布" /> | 10秒 | 素手 |
+| <Item img="/items/cc/marshmallow_stick.png" name="マシュマロの串" />×2 | <Item img="/items/cc/animal_fat.png" name="獣脂" />／<Item img="/items/slime_ball.png" name="スライムボール" />／<Item img="/items/egg.png" name="卵" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> | 10秒 | <Item name="棒" /> |
+| <Item img="/items/cc/matcha_gummy.png" name="抹茶グミ" /> | <Item img="/items/cc/matcha.png" name="抹茶" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> ＋ <Item img="/items/honey_bottle.png" name="ハチミツ入りの瓶" /> ＋ <Item name="昆布" /> | 10秒 | 素手 |
+| <Item img="/items/cc/matcha_latte.png" name="抹茶ラテ" /> | <Item name="牛乳" />／<Item img="/items/cc/milk_bottle.png" name="ミルク瓶" /> ＋ <Item img="/items/honey_bottle.png" name="ハチミツ入りの瓶" /> ＋ <Item img="/items/cc/matcha.png" name="抹茶" /> | 5秒 | <Item name="ガラス瓶" /> |
+| <Item img="/items/cc/animal_oil_bottle.png" name="獣脂オイル瓶" /> | <Item img="/items/cc/animal_fat.png" name="獣脂" /> ＋ <Item img="/items/cc/animal_fat.png" name="獣脂" /> ＋ <Item img="/items/cc/animal_fat.png" name="獣脂" /> | 10秒 | 素手 |
+
+</Accordion>
+<Accordion title="野菜料理ほか（Cultural Delights）">
+
+| 料理 | 材料 | 時間 | 取り分け |
+|---|---|---|---|
+| <Item img="/items/cc/fried_eggplant_pasta.png" name="揚げナスのパスタ" /> | <Item img="/items/cc/eggplant.png" name="ナス" />／<Item img="/items/cc/cut_eggplant.png" name="切ったナス" /> ＋ <Item img="/items/cc/raw_pasta.png" name="生パスタ" /> ＋ <Item img="/items/cc/tomato_sauce.png" name="トマトソース" /> | 10秒 | 素手 |
+
+</Accordion>
+</Accordions>
+
+</Tab>
+
+<Tab value="🎋 竹マット">
+
+火のいらない調理台。材料を右クリックで投入し、完成品は**素手で右クリック**して受け取ります。
+
+| 完成品 | 材料 |
+|---|---|
+| <Item img="/items/cc/onigiri.png" name="おにぎり" />×4 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item name="スイートベリー" /> ＋ <Item name="生鮭" /> |
+| <Item img="/items/cc/avocado_toast.png" name="アボカドトースト" />×4 | <Item name="パン" /> ＋ <Item img="/items/cc/avocado.png" name="アボカド" />／<Item img="/items/cc/cut_avocado.png" name="切ったアボカド" /> ＋ <Item img="/items/cc/avocado.png" name="アボカド" />／<Item img="/items/cc/cut_avocado.png" name="切ったアボカド" /> ＋ <Item img="/items/cc/avocado.png" name="アボカド" />／<Item img="/items/cc/cut_avocado.png" name="切ったアボカド" /> ＋ <Item img="/items/cc/avocado.png" name="アボカド" />／<Item img="/items/cc/cut_avocado.png" name="切ったアボカド" /> |
+| <Item img="/items/cc/pike_maki.png" name="カワカマス巻き" />×4 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item name="焼き鱈" /> ＋ <Item name="焼き鱈" /> ＋ <Item name="焼き鱈" /> |
+| <Item img="/items/cc/salmon_nigiri.png" name="サーモンの握り" />×4 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item name="生鮭" /> ＋ <Item name="生鮭" /> ＋ <Item name="生鮭" /> |
+| <Item img="/items/cc/cod_maki.png" name="タラ巻き" />×3 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item img="/items/cc/cucumber.png" name="キュウリ" />／<Item img="/items/cc/cut_cucumber.png" name="切ったキュウリ" /> ＋ <Item img="/items/carrot.png" name="ニンジン" /> ＋ <Item name="生鱈" /> |
+| <Item img="/items/cc/chicken_maki.png" name="チキン巻き" /> | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item img="/items/cc/avocado.png" name="アボカド" />／<Item img="/items/cc/cut_avocado.png" name="切ったアボカド" /> ＋ <Item name="ビートルート" /> ＋ <Item name="焼き鳥" /> |
+| <Item img="/items/cc/eggplant_burger.png" name="ナスバーガー" />×2 | <Item name="パン" /> ＋ <Item img="/items/cc/smoked_eggplant.png" name="燻製ナス" />／<Item img="/items/cc/smoked_cut_eggplant.png" name="燻製切りナス" /> ＋ <Item img="/items/cc/smoked_eggplant.png" name="燻製ナス" />／<Item img="/items/cc/smoked_cut_eggplant.png" name="燻製切りナス" /> ＋ <Item img="/items/cc/cabbage.png" name="キャベツ" />／<Item img="/items/cc/tomato.png" name="トマト" />／<Item img="/items/cc/onion.png" name="玉ねぎ" />／<Item name="ビートルート" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> |
+| <Item img="/items/cc/perch_nigiri.png" name="パーチの握り" />×4 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item name="生鱈" /> ＋ <Item name="生鱈" /> ＋ <Item name="生鱈" /> |
+| <Item img="/items/cc/beef_burrito.png" name="ビーフブリトー" />×2 | <Item img="/items/cc/tortilla.png" name="トルティーヤ" /> ＋ <Item name="ステーキ" /> ＋ <Item name="ステーキ" /> ＋ <Item img="/items/cc/avocado.png" name="アボカド" />／<Item img="/items/cc/cut_avocado.png" name="切ったアボカド" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> |
+| <Item img="/items/cc/pufferfish_nigiri.png" name="フグの握り" />×4 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item name="フグ" /> ＋ <Item name="フグ" /> ＋ <Item name="フグ" /> |
+| <Item img="/items/cc/lionfish_maki.png" name="ミノカサゴ巻き" />×3 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item name="フグ" /> ＋ <Item name="フグ" /> ＋ <Item img="/items/cc/avocado.png" name="アボカド" />／<Item img="/items/cc/cut_avocado.png" name="切ったアボカド" /> |
+| <Item img="/items/cc/tamago.png" name="卵焼き" />×3 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item img="/items/cc/fried_egg.png" name="目玉焼き" /> ＋ <Item img="/items/cc/fried_egg.png" name="目玉焼き" /> ＋ <Item img="/items/cc/fried_egg.png" name="目玉焼き" /> |
+| <Item img="/items/cc/tropical_nigiri.png" name="熱帯魚の握り" />×6 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item name="熱帯魚" /> ＋ <Item name="熱帯魚" /> ＋ <Item name="熱帯魚" /> |
+| <Item img="/items/cc/vegetable_maki.png" name="野菜巻き" />×3 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item img="/items/cc/avocado.png" name="アボカド" />／<Item img="/items/cc/cut_avocado.png" name="切ったアボカド" /> ＋ <Item img="/items/cc/cucumber.png" name="キュウリ" />／<Item img="/items/cc/cut_cucumber.png" name="切ったキュウリ" /> ＋ <Item img="/items/carrot.png" name="ニンジン" /> |
+| <Item img="/items/cc/koi_nigiri.png" name="鯉の握り" />×4 | <Item name="乾燥した昆布" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item name="焼き鮭" /> ＋ <Item name="焼き鮭" /> ＋ <Item name="焼き鮭" /> |
+
+</Tab>
+
+<Tab value="🔪 まな板">
+
+まな板に食材を置き、道具で右クリックして加工します。一部は確率でボーナス産物が出ます。
+
+<Accordions>
+<Accordion title="食材の下ごしらえ">
+
+| 入力 | 道具 | 産物 |
+|---|---|---|
+| <Item img="/items/cc/apple_pie.png" name="アップルパイ" /> | 包丁 | <Item img="/items/cc/apple_pie_slice.png" name="アップルパイ一切れ" />×4 |
+| <Item img="/items/cc/avocado.png" name="アボカド" /> | 包丁 | <Item img="/items/cc/cut_avocado.png" name="切ったアボカド" />×2 |
+| <Item img="/items/cc/tentacles.png" name="イカの触手（生）" /> | 包丁 | <Item img="/items/cc/cut_tentacles.png" name="切った触手" />×3 |
+| <Item img="/items/cc/elder_guardian_slab.png" name="エルダーガーディアンの塊" /> | 包丁 | <Item img="/items/cc/elder_guardian_slice.png" name="エルダーガーディアンの薄切り（生）" />×9、<Item name="骨粉" /> |
+| <Item name="カボチャ" /> | 包丁 | <Item img="/items/cc/pumpkin_slice.png" name="カボチャの切り身" />×4 |
+| <Item name="カボチャパイ" /> | 包丁 | <Item img="/items/cc/pumpkin_pie_slice.png" name="パンプキンパイ一切れ" />×4 |
+| <Item img="/items/cc/guardian.png" name="ガーディアンの身" /> | 包丁 | <Item img="/items/cc/guardian_tail.png" name="ガーディアンの尾（生）" />、<Item name="骨粉" /> |
+| <Item img="/items/cc/cabbage.png" name="キャベツ" /> | 包丁 | <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" />×2 |
+| <Item img="/items/cc/cucumber.png" name="キュウリ" /> | 包丁 | <Item img="/items/cc/cut_cucumber.png" name="切ったキュウリ" />×2 |
+| <Item name="ケーキ" /> | 包丁 | <Item img="/items/cc/cake_slice.png" name="ケーキ一切れ" />×7 |
+| <Item name="サボテン" /> | 包丁 | <Item img="/items/cc/cactus_flesh.png" name="サボテンの果肉" />×2 |
+| <Item img="/items/cc/salmonberry_pie.png" name="サーモンベリーパイ" /> | 包丁 | <Item img="/items/cc/salmonberry_pie_slice.png" name="サーモンベリーパイ（一切れ）" />×4 |
+| <Item name="スイカ" /> | 包丁 | <Item name="スイカの薄切り" />×9 |
+| <Item img="/items/cc/smoked_ham.png" name="スモークハム" /> | 包丁 | <Item name="焼き豚" />×2、<Item name="骨" /> |
+| <Item img="/items/cc/chocolate_pie.png" name="チョコパイ" /> | 包丁 | <Item img="/items/cc/chocolate_pie_slice.png" name="チョコパイ一切れ" />×4 |
+| <Item img="/items/cc/corn.png" name="トウモロコシ" /> | 包丁 | <Item img="/items/cc/corn_seeds.png" name="トウモロコシの粒" />×2、<Item img="/items/cc/corncob.png" name="トウモロコシの芯" /> |
+| <Item img="/items/cc/tortilla.png" name="トルティーヤ" /> | 包丁 | <Item img="/items/cc/tortilla_chip.png" name="トルティーヤチップス" />×3、<Item img="/items/cc/tortilla_chip.png" name="トルティーヤチップス" />（50%） |
+| <Item img="/items/cc/eggplant.png" name="ナス" /> | 包丁 | <Item img="/items/cc/cut_eggplant.png" name="切ったナス" />×2 |
+| <Item img="/items/cc/pickle.png" name="ピクルス" /> | 包丁 | <Item img="/items/cc/cut_pickle.png" name="切ったピクルス" />×2 |
+| <Item name="フグ" /> | 包丁 | <Item img="/items/cc/fugu_slice.png" name="フグの薄切り" />×6、<Item name="骨粉" /> |
+| <Item img="/items/cc/sweet_berry_cheesecake.png" name="ベリーチーズケーキ" /> | 包丁 | <Item img="/items/cc/sweet_berry_cheesecake_slice.png" name="ベリーチーズケーキ一切れ" />×4 |
+| <Item img="/items/cc/wheat_dough.png" name="小麦生地" /> | 包丁 | <Item img="/items/cc/raw_pasta.png" name="生パスタ" /> |
+| <Item img="/items/cc/kelp_roll.png" name="昆布巻き寿司" /> | 包丁 | <Item img="/items/cc/kelp_roll_slice.png" name="昆布巻きの切れ端" />×3 |
+| <Item name="焼いた羊肉" /> | 包丁 | <Item img="/items/cc/cooked_mutton_chops.png" name="焼きマトンチョップ" />×2 |
+| <Item name="焼き鮭" /> | 包丁 | <Item img="/items/cc/cooked_salmon_slice.png" name="焼きサーモン" />×2、<Item name="骨粉" /> |
+| <Item name="焼き鱈" /> | 包丁 | <Item img="/items/cc/cooked_cod_slice.png" name="焼きタラの切り身" />×2、<Item name="骨粉" /> |
+| <Item name="焼き鳥" /> | 包丁 | <Item img="/items/cc/cooked_chicken_cuts.png" name="焼き鳥の切り身" />×2、<Item name="骨粉" /> |
+| <Item name="生の牛肉" /> | 包丁 | <Item img="/items/cc/minced_beef.png" name="牛ひき肉" />×2 |
+| <Item name="生の羊肉" /> | 包丁 | <Item img="/items/cc/mutton_chops.png" name="マトンチョップ（生）" />×2 |
+| <Item name="生の豚肉" /> | 包丁 | <Item img="/items/cc/bacon.png" name="ベーコン（生）" />×2 |
+| <Item name="生の鶏肉" /> | 包丁 | <Item img="/items/cc/chicken_cuts.png" name="鶏肉の切り身" />×2、<Item name="骨粉" /> |
+| <Item name="生鮭" /> | 包丁 | <Item img="/items/cc/salmon_slice.png" name="サーモンの切り身" />×2、<Item name="骨粉" /> |
+| <Item name="生鱈" /> | 包丁 | <Item img="/items/cc/cod_slice.png" name="タラの切り身" />×2、<Item name="骨粉" /> |
+| <Item img="/items/cc/rice_panicle.png" name="稲穂" /> | 包丁 | <Item img="/items/cc/rice.png" name="米" />、<Item img="/items/cc/straw.png" name="わら" /> |
+| <Item img="/items/cc/ham.png" name="骨付き肉" /> | 包丁 | <Item name="生の豚肉" />×2、<Item name="骨" /> |
+
+</Accordion>
+<Accordion title="木材を剥いで樹皮">
+
+| 入力 | 道具 | 産物 |
+|---|---|---|
+| <Item name="アカシアの原木" /> | 斧 | <Item name="樹皮を剥いだアカシアの原木" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="アカシアの木材" /> | 斧 | <Item name="樹皮を剥いだアカシアの木材" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="オークの原木" /> | 斧 | <Item name="樹皮を剥いだオークの原木" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="オークの木材" /> | 斧 | <Item name="樹皮を剥いだオークの木材" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="サクラの原木" /> | 斧 | <Item name="樹皮を剥いだサクラの原木" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="サクラの木材" /> | 斧 | <Item name="樹皮を剥いだサクラの木材" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="シラカバの原木" /> | 斧 | <Item name="樹皮を剥いだシラカバの原木" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="シラカバの木材" /> | 斧 | <Item name="樹皮を剥いだシラカバの木材" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="ジャングルの原木" /> | 斧 | <Item name="樹皮を剥いだジャングルの原木" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="ジャングルの木材" /> | 斧 | <Item name="樹皮を剥いだジャングルの木材" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="ダークオークの原木" /> | 斧 | <Item name="樹皮を剥いだダークオークの原木" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="ダークオークの木材" /> | 斧 | <Item name="樹皮を剥いだダークオークの木材" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="トウヒの原木" /> | 斧 | <Item name="樹皮を剥いだトウヒの原木" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="トウヒの木材" /> | 斧 | <Item name="樹皮を剥いだトウヒの木材" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="マングローブの原木" /> | 斧 | <Item name="樹皮を剥いだマングローブの原木" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="マングローブの木材" /> | 斧 | <Item name="樹皮を剥いだマングローブの木材" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="歪んだ幹" /> | 斧 | <Item name="樹皮を剥いだ歪んだ幹" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="歪んだ菌糸" /> | 斧 | <Item name="樹皮を剥いだ歪んだ菌糸" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="真紅の幹" /> | 斧 | <Item name="樹皮を剥いだ真紅の幹" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="真紅の菌糸" /> | 斧 | <Item name="樹皮を剥いだ真紅の菌糸" />、<Item img="/items/cc/tree_bark.png" name="樹皮" /> |
+| <Item name="竹ブロック" /> | 斧 | <Item name="表皮を剥いだ竹ブロック" />、<Item img="/items/cc/straw.png" name="わら" /> |
+
+</Accordion>
+<Accordion title="花・スミ → 染料">
+
+| 入力 | 道具 | 産物 |
+|---|---|---|
+| <Item name="アリウム" /> | 包丁 | <Item img="/items/magenta_dye.png" name="赤紫色の染料" />×2 |
+| <Item name="イカスミ" /> | 包丁 | <Item name="黒色の染料" />×2 |
+| <Item name="ウィザーローズ" /> | 包丁 | <Item name="黒色の染料" />×2 |
+| <Item name="スズラン" /> | 包丁 | <Item img="/items/white_dye.png" name="白色の染料" />×2 |
+| <Item name="タンポポ" /> | 包丁 | <Item img="/items/yellow_dye.png" name="黄色の染料" />×2 |
+| <Item name="トーチフラワー" /> | 包丁 | <Item name="橙色の染料" />×2 |
+| <Item name="ニワゼキショウ" /> | 包丁 | <Item name="薄灰色の染料" />×2 |
+| <Item name="ヒスイラン" /> | 包丁 | <Item name="空色の染料" />×2 |
+| <Item name="フランスギク" /> | 包丁 | <Item name="薄灰色の染料" />×2 |
+| <Item name="ポピー" /> | 包丁 | <Item img="/items/red_dye.png" name="赤色の染料" />×2 |
+| <Item name="ヤグルマギク" /> | 包丁 | <Item img="/items/blue_dye.png" name="青色の染料" />×2 |
+| <Item name="桃色のチューリップ" /> | 包丁 | <Item name="桃色の染料" />×2 |
+| <Item name="橙色のチューリップ" /> | 包丁 | <Item name="橙色の染料" />×2 |
+| <Item name="白色のチューリップ" /> | 包丁 | <Item name="薄灰色の染料" />×2 |
+| <Item name="赤色のチューリップ" /> | 包丁 | <Item img="/items/red_dye.png" name="赤色の染料" />×2 |
+
+</Accordion>
+<Accordion title="その他（シャベル）">
+
+| 入力 | 道具 | 産物 |
+|---|---|---|
+| <Item name="砂利" /> | シャベル | <Item name="砂利" />、<Item name="火打石" />（10%） |
+| <Item name="粘土" /> | シャベル | <Item name="粘土玉" />×4 |
+| <Item img="/items/cc/green_tea_leaf.png" name="緑茶葉" /> | シャベル | <Item img="/items/green_dye.png" name="緑色の染料" />、<Item img="/items/cc/matcha.png" name="抹茶" />（50%） |
+
+</Accordion>
+</Accordions>
+
+</Tab>
+
+<Tab value="♨️ かまど・燻製・焚き火">
+
+切り身や生地は、普通の**かまど・燻製器・焚き火**で焼けます（同じ食材でも複数の調理法に対応）。
+
+| 食材 | 完成品 | 調理法 |
+|---|---|---|
+| <Item img="/items/cc/bacon.png" name="ベーコン（生）" /> | <Item img="/items/cc/cooked_bacon.png" name="カリカリベーコン" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/cornbread_batter.png" name="コーンブレッド生地" /> | <Item img="/items/cc/cornbread.png" name="コーンブレッド" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/cactus_flesh.png" name="サボテンの果肉" /> | <Item img="/items/cc/cactus_steak.png" name="サボテンステーキ" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/ham.png" name="骨付き肉" /> | <Item img="/items/cc/smoked_ham.png" name="スモークハム" /> | 燻製器 |
+| <Item img="/items/cc/stuffed_cod.png" name="タラの詰め物（生）" /> | <Item img="/items/cc/cooked_stuffed_cod.png" name="タラの詰め物焼き" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/tortilla_raw.png" name="生トルティーヤ" /> | <Item img="/items/cc/tortilla.png" name="トルティーヤ" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/wheat_dough.png" name="小麦生地" /> | <Item name="パン" /> | かまど・燻製器 |
+| <Item img="/items/cc/minced_beef.png" name="牛ひき肉" /> | <Item img="/items/cc/beef_patty.png" name="ビーフパティ" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/corn_seeds.png" name="トウモロコシの粒" /> | <Item img="/items/cc/popcorn.png" name="ポップコーン" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/acorn.png" name="どんぐり" /> | <Item img="/items/cc/roasted_acorn.png" name="炒りどんぐり" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/elder_guardian_slice.png" name="エルダーガーディアンの薄切り（生）" /> | <Item img="/items/cc/cooked_elder_guardian_slice.png" name="焼いたエルダーガーディアン薄切り" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/guardian_tail.png" name="ガーディアンの尾（生）" /> | <Item img="/items/cc/cooked_guardian_tail.png" name="焼いたガーディアンの尾" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/salmon_slice.png" name="サーモンの切り身" /> | <Item img="/items/cc/cooked_salmon_slice.png" name="焼きサーモン" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/cod_slice.png" name="タラの切り身" /> | <Item img="/items/cc/cooked_cod_slice.png" name="焼きタラの切り身" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/corn.png" name="トウモロコシ" /> | <Item img="/items/cc/grilled_corn.png" name="焼きトウモロコシ" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/marshmallow_stick.png" name="マシュマロの串" /> | <Item img="/items/cc/cooked_marshmallow_stick.png" name="焼きマシュマロの串" /> | 焚き火 |
+| <Item img="/items/cc/mutton_chops.png" name="マトンチョップ（生）" /> | <Item img="/items/cc/cooked_mutton_chops.png" name="焼きマトンチョップ" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/chicken_cuts.png" name="鶏肉の切り身" /> | <Item img="/items/cc/cooked_chicken_cuts.png" name="焼き鳥の切り身" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/tomato.png" name="トマト" /> | <Item img="/items/cc/smoked_tomato.png" name="燻製トマト" /> | 燻製器 |
+| <Item img="/items/cc/eggplant.png" name="ナス" /> | <Item img="/items/cc/smoked_eggplant.png" name="燻製ナス" /> | 燻製器 |
+| <Item img="/items/cc/cut_eggplant.png" name="切ったナス" /> | <Item img="/items/cc/smoked_cut_eggplant.png" name="燻製切りナス" /> | 燻製器 |
+| <Item img="/items/cc/white_eggplant.png" name="白ナス" /> | <Item img="/items/cc/smoked_white_eggplant.png" name="燻製白ナス" /> | 燻製器 |
+| <Item img="/items/egg.png" name="卵" /> | <Item img="/items/cc/fried_egg.png" name="目玉焼き" /> | かまど・燻製器・焚き火 |
+| <Item img="/items/cc/tentacle_on_a_stick.png" name="触手の串焼き（生）" /> | <Item img="/items/cc/baked_tentacle_on_a_stick.png" name="触手の串焼き" /> | かまど・燻製器・焚き火 |
+
+</Tab>
+
+<Tab value="🛠️ クラフト">
+
+調理器具と一部のアイテムは作業台でクラフトします。
+
+| 完成品 | 主な材料 |
+|---|---|
+| クッキングポット | レンガ ＋ 鉄インゴット×3 ＋ 木のシャベル ＋ 水入りバケツ |
+| まな板 | 木材×6 ＋ 棒×2 |
+| スキレット | 鉄インゴット×5 |
+| コンロ | 鉄インゴット×3 ＋ レンガ×4 ＋ 焚き火 |
+| 竹マット | 糸×2 ＋ 竹×4 |
+| 包丁（火打石／鉄／金／ダイヤ） | 各素材 ＋ 棒（ネザライトは鍛冶台） |
+| 藁ブロック | 藁×9（藁は稲穂・小麦・草から） |
+
+<Accordions>
+<Accordion title="料理・食材の作業台レシピ（全部）">
+
+| 完成品 | 材料（作業台） |
+|---|---|
+| <Item img="/items/cc/glass_of_water.png" name="お冷" />×4 | <Item name="水入りバケツ" /> ＋ <Item name="ガラス瓶" />×4 |
+| <Item name="きらめきサラダ（大皿）" /> | <Item name="グロウベリー" />×2 ＋ <Item img="/items/honey_bottle.png" name="ハチミツ入りの瓶" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item name="金のニンジン" /> ＋ <Item name="ビートルート" /> ＋ <Item img="/items/cc/cabbage.png" name="キャベツ" />×2 ＋ <Item name="ボウル" /> |
+| <Item img="/items/cc/straw.png" name="わら" />×9 | <Item name="わらブロック" /> |
+| <Item img="/items/cc/apple_pie.png" name="アップルパイ" /> | <Item img="/items/cc/apple_pie_slice.png" name="アップルパイ一切れ" />×4 |
+| <Item img="/items/cc/avocado_pit.png" name="アボカドの種" /> | <Item img="/items/cc/avocado.png" name="アボカド" /> |
+| <Item img="/items/cc/egg_sandwich.png" name="エッグサンド" /> | <Item name="パン" /> ＋ <Item img="/items/cc/fried_egg.png" name="目玉焼き" />×2 |
+| <Item img="/items/cc/elder_guardian_roll.png" name="エルダーガーディアンの巻物" /> | <Item img="/items/cc/elder_guardian_slice.png" name="エルダーガーディアンの薄切り（生）" />×2 ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> |
+| <Item name="カボチャ" /> | <Item img="/items/cc/pumpkin_slice.png" name="カボチャの切り身" />×4 |
+| <Item name="カボチャパイ" /> | <Item img="/items/cc/pumpkin_pie_slice.png" name="パンプキンパイ一切れ" />×4 |
+| <Item img="/items/cc/cantaloupe_popsicle.png" name="カンタロープアイスキャンディ" /> | <Item img="/items/cc/cantaloupe_slice.png" name="カンタロープの薄切り" />×2 ＋ <Item name="氷" /> ＋ <Item name="棒" /> |
+| <Item img="/items/cc/cantaloupe_bread.png" name="カンタロープパン" /> | <Item img="/items/cc/wheat_dough.png" name="小麦生地" /> ＋ <Item img="/items/cc/cantaloupe_slice.png" name="カンタロープの薄切り" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> |
+| <Item img="/items/cc/cabbage.png" name="キャベツ" /> | <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" />×2 |
+| <Item img="/items/cc/cabbage_seeds.png" name="キャベツの種" />×2 | <Item img="/items/cc/cabbage.png" name="キャベツ" /> |
+| <Item img="/items/cc/cabbage_wrapped_elder_guardian.png" name="キャベツ巻きエルダーガーディアン" /> | <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item img="/items/cc/cooked_elder_guardian_slice.png" name="焼いたエルダーガーディアン薄切り" /> |
+| <Item img="/items/cc/caramel_popcorn.png" name="キャラメルポップコーン" /> | <Item img="/items/cc/popcorn.png" name="ポップコーン" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> |
+| <Item img="/items/cc/classic_corn_dog.png" name="クラシックコーンドッグ" /> | <Item img="/items/cc/corn_dog.png" name="コーンドッグ" /> ＋ <Item img="/items/cc/tomato_sauce.png" name="トマトソース" /> |
+| <Item name="ケーキ" /> | <Item img="/items/cc/cake_slice.png" name="ケーキ一切れ" />×7 |
+| <Item img="/items/cc/corn_popsicle.png" name="コーンアイス" /> | <Item img="/items/cc/corn.png" name="トウモロコシ" />×2 ＋ <Item name="氷" />×2 ＋ <Item name="棒" /> |
+| <Item img="/items/cc/cornbread_batter.png" name="コーンブレッド生地" />×3 | <Item img="/items/cc/corn.png" name="トウモロコシ" />×2 ＋ <Item name="牛乳" /> ＋ <Item img="/items/egg.png" name="卵" /> |
+| <Item img="/items/cc/grilled_salmon.png" name="サーモンのグリル" /> | <Item img="/items/cc/cooked_salmon_slice.png" name="焼きサーモン" /> ＋ <Item name="スイートベリー" /> ＋ <Item name="ボウル" /> ＋ <Item img="/items/cc/cabbage.png" name="キャベツ" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> |
+| <Item img="/items/cc/salmonberry_ice_cream.png" name="サーモンベリーアイス" /> | <Item name="ボウル" /> ＋ <Item img="/items/cc/salmonberries.png" name="サーモンベリー" /> ＋ <Item name="牛乳" /> ＋ <Item name="氷" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> |
+| <Item img="/items/cc/salmonberry_milkshake.png" name="サーモンベリーシェイク" />×3 | <Item name="ガラス瓶" />×3 ＋ <Item img="/items/cc/salmonberry_ice_cream.png" name="サーモンベリーアイス" /> ＋ <Item name="牛乳" /> |
+| <Item img="/items/cc/salmonberry_pie.png" name="サーモンベリーパイ" /> | <Item name="小麦" />×3 ＋ <Item img="/items/cc/salmonberries.png" name="サーモンベリー" />×3 ＋ <Item img="/items/sugar.png" name="砂糖" />×2 ＋ <Item img="/items/cc/pie_crust.png" name="パイ生地" /> |
+| <Item img="/items/cc/salmon_roll.png" name="サーモンロール" />×2 | <Item img="/items/cc/salmon_slice.png" name="サーモンの切り身" />×2 ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> |
+| <Item name="シェパーズパイ（大皿）" /> | <Item name="ベイクドポテト" />×2 ＋ <Item name="牛乳" /> ＋ <Item name="焼いた羊肉" />×3 ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" />×2 ＋ <Item name="ボウル" /> |
+| <Item name="ジャガイモ" />×9 | <Item name="ジャガイモのクレート" /> |
+| <Item img="/items/cc/steak_and_potatoes.png" name="ステーキ＆ポテト" /> | <Item name="ベイクドポテト" /> ＋ <Item name="ステーキ" /> ＋ <Item name="ボウル" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> |
+| <Item img="/items/cc/smore.png" name="スモア" /> | <Item img="/items/cc/honey_cookie.png" name="ハニークッキー" />×2 ＋ <Item name="カカオ豆" /> ＋ <Item name="牛乳" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> ＋ <Item img="/items/cc/cooked_marshmallow_stick.png" name="焼きマシュマロの串" /> |
+| <Item img="/items/cc/taco.png" name="タコス" /> | <Item img="/items/cc/tortilla.png" name="トルティーヤ" /> ＋ <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item name="ステーキ" /> |
+| <Item img="/items/cc/stuffed_cod.png" name="タラの詰め物（生）" /> | <Item name="昆布" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item name="茶キノコ" /> ＋ <Item name="生鱈" /> ＋ <Item name="糸" /> |
+| <Item img="/items/cc/cod_roll.png" name="タラロール" />×2 | <Item img="/items/cc/cod_slice.png" name="タラの切り身" />×2 ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> |
+| <Item img="/items/cc/chicken_sandwich.png" name="チキンサンド" /> | <Item name="パン" /> ＋ <Item img="/items/cc/cooked_chicken_cuts.png" name="焼き鳥の切り身" /> ＋ <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/carrot.png" name="ニンジン" /> |
+| <Item img="/items/cc/chocolate_pie.png" name="チョコパイ" /> | <Item img="/items/cc/chocolate_pie_slice.png" name="チョコパイ一切れ" />×4 |
+| <Item img="/items/cc/corn_seeds.png" name="トウモロコシの粒" /> | <Item img="/items/cc/corn.png" name="トウモロコシ" /> |
+| <Item img="/items/cc/tomato.png" name="トマト" />×9 | <Item name="トマトのクレート" /> |
+| <Item img="/items/cc/tomato_seeds.png" name="トマトの種" />×2 | <Item img="/items/cc/tomato.png" name="トマト" /> |
+| <Item img="/items/carrot.png" name="ニンジン" />×9 | <Item name="ニンジンのクレート" /> |
+| <Item img="/items/cc/nether_salad.png" name="ネザーサラダ" /> | <Item name="真紅のキノコ" /> ＋ <Item name="歪んだキノコ" /> ＋ <Item name="ボウル" /> |
+| <Item img="/items/cc/honey_cookie.png" name="ハニークッキー" />×8 | <Item name="小麦" />×2 ＋ <Item img="/items/honey_bottle.png" name="ハチミツ入りの瓶" /> |
+| <Item name="ハニーグレーズドハム（大皿）" /> | <Item name="スイートベリー" />×4 ＋ <Item img="/items/honey_bottle.png" name="ハチミツ入りの瓶" /> ＋ <Item img="/items/cc/smoked_ham.png" name="スモークハム" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" />×2 ＋ <Item name="ボウル" /> |
+| <Item img="/items/cc/hamburger.png" name="ハンバーガー" /> | <Item name="パン" /> ＋ <Item img="/items/cc/beef_patty.png" name="ビーフパティ" /> ＋ <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> |
+| <Item img="/items/cc/hearty_salad.png" name="ハーティサラダ" /> | <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item img="/items/cc/avocado.png" name="アボカド" /> ＋ <Item img="/items/cc/corn.png" name="トウモロコシ" /> ＋ <Item img="/items/cc/cucumber.png" name="キュウリ" /> ＋ <Item name="ボウル" /> |
+| <Item img="/items/cc/barbecue_stick.png" name="バーベキュー串" /> | <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item name="ステーキ" /> ＋ <Item name="棒" /> |
+| <Item img="/items/cc/pie_crust.png" name="パイ生地" /> | <Item name="小麦" />×3 ＋ <Item name="牛乳" /> |
+| <Item name="ビートルート" />×9 | <Item name="ビートルートのクレート" /> |
+| <Item img="/items/cc/pickle.png" name="ピクルス" /> | <Item img="/items/cc/cucumber.png" name="キュウリ" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> |
+| <Item img="/items/cc/fugu_roll.png" name="フグの巻物" /> | <Item img="/items/cc/fugu_slice.png" name="フグの薄切り" />×2 ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> |
+| <Item img="/items/cc/fruit_salad.png" name="フルーツサラダ" /> | <Item name="リンゴ" /> ＋ <Item name="スイカの薄切り" />×2 ＋ <Item name="スイートベリー" />×2 ＋ <Item img="/items/cc/pumpkin_slice.png" name="カボチャの切り身" /> ＋ <Item name="ボウル" /> |
+| <Item img="/items/cc/sweet_berry_cookie.png" name="ベリークッキー" />×8 | <Item name="小麦" />×2 ＋ <Item name="スイートベリー" /> |
+| <Item img="/items/cc/sweet_berry_cheesecake.png" name="ベリーチーズケーキ" /> | <Item img="/items/cc/sweet_berry_cheesecake_slice.png" name="ベリーチーズケーキ一切れ" />×4 |
+| <Item img="/items/cc/bacon_and_eggs.png" name="ベーコンエッグ" /> | <Item img="/items/cc/cooked_bacon.png" name="カリカリベーコン" />×2 ＋ <Item img="/items/cc/fried_egg.png" name="目玉焼き" />×2 ＋ <Item name="ボウル" /> |
+| <Item img="/items/cc/bacon_sandwich.png" name="ベーコンサンド" /> | <Item name="パン" /> ＋ <Item img="/items/cc/cooked_bacon.png" name="カリカリベーコン" /> ＋ <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> |
+| <Item img="/items/cc/wrapped_cantaloupe.png" name="ベーコン巻きカンタロープ" /> | <Item img="/items/cc/cantaloupe_slice.png" name="カンタロープの薄切り" /> ＋ <Item img="/items/cc/cooked_bacon.png" name="カリカリベーコン" /> |
+| <Item name="ポップコーンの箱" /> | <Item img="/items/cc/caramel_popcorn.png" name="キャラメルポップコーン" />×4 ＋ <Item name="紙" /> |
+| <Item img="/items/cc/roasted_mutton_chops.png" name="マトンチョップのロースト" /> | <Item img="/items/cc/cooked_mutton_chops.png" name="焼きマトンチョップ" /> ＋ <Item name="ビートルート" /> ＋ <Item name="ボウル" /> ＋ <Item img="/items/cc/cooked_rice.png" name="ごはん" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> |
+| <Item img="/items/cc/mutton_wrap.png" name="マトンラップ" /> | <Item name="パン" /> ＋ <Item name="焼いた羊肉" /> ＋ <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/cc/onion.png" name="玉ねぎ" /> |
+| <Item img="/items/cc/mixed_salad.png" name="ミックスサラダ" /> | <Item img="/items/cc/cabbage_leaf.png" name="キャベツの葉" /> ＋ <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item name="ビートルート" /> ＋ <Item name="ボウル" /> |
+| <Item img="/items/cc/milk_bottle.png" name="ミルク瓶" />×4 | <Item name="牛乳" /> ＋ <Item name="ガラス瓶" />×4 |
+| <Item img="/items/cc/melon_popsicle.png" name="メロンアイスキャンディー" /> | <Item name="スイカの薄切り" />×4 ＋ <Item name="氷" />×2 ＋ <Item name="棒" /> |
+| <Item img="/items/cc/melon_juice.png" name="メロンジュース" /> | <Item name="スイカの薄切り" />×4 ＋ <Item img="/items/sugar.png" name="砂糖" /> ＋ <Item name="ガラス瓶" /> |
+| <Item name="ライスロール盛り合わせ" /> | <Item img="/items/cc/kelp_roll_slice.png" name="昆布巻きの切れ端" />×3 ＋ <Item img="/items/cc/salmon_roll.png" name="サーモンロール" />×3 ＋ <Item img="/items/cc/cod_roll.png" name="タラロール" />×2 ＋ <Item name="ボウル" /> |
+| <Item name="ローストチキン（大皿）" /> | <Item img="/items/cc/onion.png" name="玉ねぎ" /> ＋ <Item img="/items/egg.png" name="卵" /> ＋ <Item name="パン" /> ＋ <Item img="/items/carrot.png" name="ニンジン" />×2 ＋ <Item name="焼き鳥" /> ＋ <Item name="ベイクドポテト" />×2 ＋ <Item name="ボウル" /> |
+| <Item img="/items/cc/wheat_dough.png" name="小麦生地" />×3 | <Item name="小麦" />×3 ＋ <Item img="/items/egg.png" name="卵" /> |
+| <Item img="/items/cc/matcha_ice_cream.png" name="抹茶アイス" /> | <Item name="ボウル" /> ＋ <Item img="/items/cc/matcha.png" name="抹茶" /> ＋ <Item name="牛乳" /> ＋ <Item name="氷" /> ＋ <Item img="/items/sugar.png" name="砂糖" /> |
+| <Item img="/items/cc/matcha_milkshake.png" name="抹茶シェイク" />×3 | <Item name="ガラス瓶" />×3 ＋ <Item img="/items/cc/matcha_ice_cream.png" name="抹茶アイス" /> ＋ <Item name="牛乳" /> |
+| <Item img="/items/cc/kelp_roll.png" name="昆布巻き寿司" /> | <Item img="/items/cc/cooked_rice.png" name="ごはん" />×2 ＋ <Item img="/items/cc/cabbage.png" name="キャベツ" /> ＋ <Item name="乾燥した昆布" />×3 |
+| <Item img="/items/cc/seagrass_salad.png" name="海草サラダ" /> | <Item name="海草" /> ＋ <Item name="ボウル" /> |
+| <Item img="/items/cc/onion.png" name="玉ねぎ" />×9 | <Item name="玉ねぎのクレート" /> |
+| <Item img="/items/cc/tortilla_raw.png" name="生トルティーヤ" />×3 | <Item img="/items/cc/corn.png" name="トウモロコシ" />×3 ＋ <Item name="水入りバケツ" /> |
+| <Item img="/items/cc/rice_panicle.png" name="稲穂" />×9 | <Item name="稲穂の俵" /> |
+| <Item img="/items/cc/rice.png" name="米" />×9 | <Item name="米袋" /> |
+| <Item name="米袋" /> | <Item img="/items/cc/rice.png" name="米" />×9 |
+| <Item name="紙" /> | <Item img="/items/cc/corncob.png" name="トウモロコシの芯" />×3 |
+| <Item img="/items/cc/rotten_tomato.png" name="腐ったトマト" /> | <Item img="/items/cc/tomato.png" name="トマト" /> ＋ <Item name="腐った肉" /> |
+| <Item img="/items/cc/tentacle_on_a_stick.png" name="触手の串焼き（生）" /> | <Item name="棒" /> ＋ <Item img="/items/cc/tentacles.png" name="イカの触手（生）" /> |
+| <Item img="/items/cc/stuffed_potato.png" name="詰め物ポテト" /> | <Item name="ベイクドポテト" /> ＋ <Item name="ステーキ" /> ＋ <Item name="牛乳" /> |
+| <Item img="/items/cc/horse_feed.png" name="馬の餌" /> | <Item name="干草の俵" /> ＋ <Item name="リンゴ" />×2 ＋ <Item name="金のニンジン" /> |
+| <Item img="/items/cc/ham.png" name="骨付き肉" /> | <Item name="生の豚肉" />×2 ＋ <Item name="骨" /> |
+
+</Accordion>
+</Accordions>
+
+</Tab>
+
+</Tabs>
+
+## 🌱 新作物
+
+| 作物 | 育て方 | 種の入手 |
+|---|---|---|
+| トマト 🍅 | 畑に植える（4段階） | クラフト等 |
+| 玉ねぎ 🧅 | 畑に植える | 行商人・クラフト等 |
+| キャベツ 🥬 | 畑に植える。葉に切り分け可能 | クラフト等 |
+| 稲 🌾 | **浅い水に植える水田**。収穫で稲穂＋米 | 稲穂をまな板で |
+| トウモロコシ 🌽 | 畑に植える（実は高く伸びる） | ナイフで草を刈る（4%）／トウモロコシから |
+| キュウリ 🥒／ナス 🍆／白ナス | 畑に植える | ナイフで草を刈る（4%） |
+| アボカド 🥑 | 畑に**種（タネ）**を植える | ジャングルの葉をナイフで（5%） |
+| サーモンベリー 🫐 | 畑に植える（茂み） | スイートベリーの茂みをナイフで（15%） |
+| カンタロープ 🍈 | **砂**に植える | 枯れ木をナイフで（15%） |
+
+## 🧤 特殊な入手方法（ナイフ採集・Mobドロップ）
+
+一部の食材はレシピではなく、**ナイフを使った採集・討伐**で手に入ります。
+
+### 🌿 ナイフで採集
+
+| 入手物 | 方法 | 確率 |
+|---|---|---|
+| <Item img="/items/cc/straw.png" name="藁" /> | ナイフを持って草・背の高い草を壊す | 20%（成熟した小麦なら100%） |
+| <Item img="/items/cc/green_tea_leaf.png" name="緑茶葉" /> | ナイフで木の葉を壊す | 80% |
+| <Item img="/items/cc/acorn.png" name="どんぐり" /> | ナイフでオーク／ダークオークの葉を壊す | 5% |
+| <Item img="/items/cc/avocado.png" name="アボカド" />・<Item img="/items/cc/avocado_pit.png" name="アボカドの種" /> | ナイフでジャングルの葉を壊す | 各5% |
+| <Item img="/items/cc/cucumber_seeds.png" name="キュウリの種" />／<Item img="/items/cc/eggplant_seeds.png" name="ナスの種" />／<Item img="/items/cc/white_eggplant_seeds.png" name="白ナスの種" /> | ナイフで草・シダを壊す | 4%（3種からランダム） |
+| <Item img="/items/cc/corn_seeds.png" name="トウモロコシの粒" /> | ナイフで草・シダを壊す | 4% |
+| <Item img="/items/cc/salmonberry_pips.png" name="サーモンベリーの種" /> | ナイフでスイートベリーの茂みを壊す | 15% |
+| <Item img="/items/cc/cantaloupe_seeds.png" name="カンタロープの種" /> | ナイフで枯れ木（枯れ草）を壊す | 15% |
+
+### ⚔️ Mobドロップ
+
+| 入手物 | 対象Mob | 条件 | 確率 |
+|---|---|---|---|
+| <Item img="/items/cc/tentacles.png" name="触手" /> | イカ | ナイフでトドメ | 100% |
+| <Item img="/items/cc/guardian.png" name="ガーディアン（食材）" /> | ガーディアン | なし | 100% |
+| <Item img="/items/cc/elder_guardian_slab.png" name="エルダーガーディアンの板" /> | エルダーガーディアン | ナイフでトドメ | 100% |
+| <Item img="/items/cc/animal_fat.png" name="動物性脂肪" /> | 牛・豚・羊など陸海の「脂の乗った」動物 | ナイフでトドメ | 70%で1〜3個（ドロップ増加で増える） |
+
+## 💧 お冷 — 満腹をリセット
+
+「ごちそうを食べたら満腹＆満腹維持で、次の料理が食べられない…」というときのための**食べ歩きのお供**です。
+
+| | |
+|---|---|
+| 作り方 | <Item name="水入りバケツ" /> ＋ <Item name="ガラス瓶" />×4 → <Item img="/items/cc/glass_of_water.png" name="お冷" />×4 |
+| 飲むと | **満腹度 −3🍗** ＋ **満腹維持効果を解除**（瓶は返ってくる） |
+| おまけ | バニラの**水入り瓶**を飲んでも軽く効く（満腹度 −1🍗＋満腹維持解除） |
+
+## 💡 ちょっとした仕様
+
+<Callout type="info">
+- スープやシチューには**満腹を持続させる効果**（満腹維持）が付くものがあります。お腹を空かせたいときは**お冷**をどうぞ。
+- **大皿・ポップコーンの箱**は右クリックで1人前ずつ取り分け。**食べかけを壊すと「残り◯人前」のアイテム**として戻ってくるので、置き直せば続きから食べられます（複製はできません）。
+- ケーキやパイは設置して**包丁で1切れずつ**切り出せます。
+- 一部の料理は本家MODの効果（再生・耐性・移動速度など）を再現しています。
+</Callout>
+
+<Callout type="warn">
+プラグイン移植版のため、ごく一部の見た目・挙動が本家MODと異なる場合があります。不具合や要望は [Discord](https://discord.gg/EKUPDxXaqb) で報告してください。
+</Callout>

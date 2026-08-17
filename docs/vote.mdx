@@ -1,0 +1,132 @@
+---
+title: 投票（Vote）
+description: 投票サイトでサーバーに投票して報酬を受け取る方法
+icon: vote
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide-react';
+
+<Callout type="info" title="投票でガチャキーがもらえる">
+  投票サイトからCarrotCraftに投票すると、**投票ガチャのキー** が1個もらえます。
+  キーはルーレット演出で開封でき、CC（キャロットコイン）や装飾用鍛冶型などが当たります。
+</Callout>
+
+## 🎥 動画で見る
+
+投票のやり方を動画で解説しています。
+
+<div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', margin: '1rem 0' }}>
+  <iframe
+    src="https://www.youtube.com/embed/n5Gx8mogSIU"
+    title="CarrotCraft 投票のやり方"
+    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />
+</div>
+
+## 🌐 投票サイト
+
+下記のサイトから投票できます。**各サイト24時間に1回ずつ** 投票できます。
+
+<Cards>
+  <Card
+    href="https://mineportal.jp/servers/cmg1z9s6s0000vqxlmbpa85vr"
+    icon={<ExternalLink />}
+    title="MinePortal"
+    description="mineportal.jp の投票ページへ"
+  />
+  <Card
+    href="https://minecraft.jp/servers/play.carrotcraft.net"
+    icon={<ExternalLink />}
+    title="minecraft.jp"
+    description="minecraft.jp の投票ページへ"
+  />
+</Cards>
+
+<Callout type="warn">
+  投票時は **正確なMinecraft ID** を入力してください。間違えるとキーがもらえません。
+</Callout>
+
+## 🎁 投票ガチャの開け方
+
+<Steps>
+  <Step>
+    **投票してキーを受け取る**
+
+    投票するとインベントリに **投票キー（エコーシャード）** が届きます。
+  </Step>
+  <Step>
+    **`/cc` でガチャを開く**
+
+    ```
+    /cc
+    ```
+  </Step>
+  <Step>
+    **ルーレットで抽選**
+
+    ガチャは **ルーレット** で結果が決まります。
+  </Step>
+  <Step>
+    **報酬を受け取る**
+
+    当選アイテムは自動的にインベントリ／所持金に反映されます。
+  </Step>
+</Steps>
+
+<Callout type="warn">
+  インベントリが満杯だとアイテム報酬を受け取れない場合があります。開封前に空きを作っておきましょう。
+</Callout>
+
+## 💰 ガチャの中身
+
+### CC（キャロットコイン）
+
+| 額 | レアリティ |
+|------|----------|
+| 5,000 CC | ★★★★ レア |
+| 3,000 CC | ★★★ アンコモン |
+| 1,000 CC | ★★ コモン |
+| 800 CC | ★★ コモン |
+| 500 CC | ★ ノーマル |
+| 250 CC | ハズレ |
+| 150 CC | ハズレ |
+| 100 CC | ハズレ |
+| 50 CC | ハズレ |
+
+### ✨ 装飾用鍛冶型（全18種）
+
+ネザライト装備のトリム装飾に使える鍛冶型がランダムで当たります。
+
+略奪者風／砂丘風／海洋風／大自然風／監獄風／エンダーアイ風／ヴェックス風／潮流風／ブタの鼻風／あばら模様／尖塔風／先駆者風／職人風／静寂／牧者風／主人風／旋風／ネジ止め風
+
+<Callout type="info">
+  **確率（排出率）は非公開** です。レア当選時はサーバー全体にお知らせが流れます！
+</Callout>
+
+## ⌨️ コマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/vote` | 投票サイト一覧を表示 |
+| `/cc` | 所持しているガチャキーを開封 |
+| `/cc preview VoteCrate` | ガチャの中身一覧を見る（プレビュー） |
+
+## ❓ よくある質問
+
+<Accordions>
+  <Accordion title="投票したのにキーがもらえない">
+    Minecraft ID が間違っている可能性があります。また反映まで数分かかる場合があるので、少し待ってから再度サーバーに参加してみてください。
+  </Accordion>
+  <Accordion title="キーを使い忘れたら？">
+    ガチャキーは消滅しません。次回ログイン時にも使えます。
+  </Accordion>
+  <Accordion title="同じサイトに連続投票できる？">
+    同じサイトでの投票は **24時間に1回まで** です。
+  </Accordion>
+</Accordions>

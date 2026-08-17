@@ -1,0 +1,118 @@
+---
+title: CarrotCraft Wiki
+description: Complete guide to the CarrotCraft server
+icon: book-open
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import {
+  Rocket, Scale, LayoutGrid, Coins, Store, Castle, Box,
+  ArrowUpDown, House, Shuffle, Lock,
+  Vote, Dices, Sparkles,
+  Rabbit, Pickaxe,
+  Gamepad2,
+  Crown, UserPlus, PartyPopper,
+  Terminal, CookingPot, FlaskConical, Shield, Search, WandSparkles,
+  Trophy,
+} from 'lucide-react';
+
+<Callout type="info" title="Welcome to the CarrotCraft Wiki">
+  This is the complete guide to how the server works. **New players** should start with [Getting Started](/docs/getting-started) and the [Server Rules](/docs/rules).
+</Callout>
+
+## 🚀 Start Here
+
+<Cards>
+  <Card icon={<Rocket />}     href="/docs/getting-started"
+    title="Getting Started" description="How to join, first steps, and basic commands" />
+  <Card icon={<Scale />}      href="/docs/rules"
+    title="Server Rules" description="Terms of service, prohibited acts, and penalties" />
+  <Card icon={<LayoutGrid />} href="/docs/features"
+    title="Server Features" description="Voice chat, elevators, voting, cosmetics, and more" />
+</Cards>
+
+## 💰 Economy & Towns
+
+<Cards>
+  <Card icon={<Coins />}  href="/docs/economy"
+    title="Economy" description="CarrotMarket, Majin Points, and how to earn money" />
+  <Card icon={<Store />}  href="/docs/quickshop"
+    title="QuickShop" description="Create and manage player shops" />
+  <Card icon={<Castle />} href="/docs/towny"
+    title="Towny" description="Create towns, manage residents, and form nations" />
+  <Card icon={<Trophy />} href="/docs/town-ranking"
+    title="Town Ranking" description="Weekly ranking based on new-player engagement" />
+  <Card icon={<Box />}    href="/docs/quarters"
+    title="Quarters" description="Subdivide and trade town land" />
+</Cards>
+
+## ⚙️ Utilities
+
+<Cards>
+  <Card icon={<ArrowUpDown />} href="/docs/elevator"
+    title="Elevators" description="Jump/sneak between floors using iron blocks" />
+  <Card icon={<House />}       href="/docs/home"
+    title="Home & Tutorial" description="/home GUI, TPA, and the first-time tutorial" />
+  <Card icon={<Shuffle />}     href="/docs/rtp"
+    title="Random Teleport" description="Use /rtp to reach unexplored land" />
+  <Card icon={<Lock />}        href="/docs/bolt"
+    title="Chest Protection" description="Lock chests, doors, and other containers" />
+</Cards>
+
+## 🎁 Entertainment & Rewards
+
+<Cards>
+  <Card icon={<Vote />}     href="/docs/vote"
+    title="Voting" description="Vote to earn gacha keys" />
+  <Card icon={<Dices />}    href="/docs/casino"
+    title="Casino" description="Slot machines and other minigames" />
+  <Card icon={<Sparkles />} href="/docs/cosmetics"
+    title="Cosmetics" description="Particles, pets, morphs (VIP perks)" />
+</Cards>
+
+## 🐎 Raising & Gathering
+
+<Cards>
+  <Card icon={<Rabbit />}  href="/docs/horses"
+    title="Horse Breeding" description="Train, breed, and craft the strongest horse" />
+  <Card icon={<Pickaxe />} href="/docs/spawners"
+    title="Spawner Collection" description="Mine spawners with Silk Touch" />
+</Cards>
+
+## 🌍 Other Servers
+
+<Cards>
+  <Card icon={<Pickaxe />}  href="/docs/shigen"
+    title="Resource Server" description="Mining-only world via /shigen" />
+  <Card icon={<Gamepad2 />} href="/docs/minigames"
+    title="Minigames" description="MagicalSheep, ChickenBomber" />
+</Cards>
+
+## 👑 Ranks & Guides
+
+<Cards>
+  <Card icon={<Crown />}       href="/docs/vip"
+    title="VIP / MVP / MVP+" description="Three paid ranks, Media rank, and the gacha system" />
+  <Card icon={<UserPlus />}    href="/docs/recruit"
+    title="Staff Recruitment" description="Builders, staff, artists, and modelers wanted" />
+  <Card icon={<PartyPopper />} href="/docs/collab-events"
+    title="Collab Events" description="Staff & community building events together" />
+</Cards>
+
+## 📚 Reference
+
+<Cards>
+  <Card icon={<Terminal />}     href="/docs/commands"
+    title="Command List" description="Quick reference for every command" />
+  <Card icon={<CookingPot />}   href="/docs/custom-recipes"
+    title="Custom Recipes" description="Server-exclusive crafting recipes" />
+  <Card icon={<FlaskConical />} href="/docs/brewery"
+    title="Brewery" description="Brewing guide and all recipes" />
+  <Card icon={<Shield />}       href="/docs/chunk-limits"
+    title="Chunk Limits" description="Per-chunk entity and mob caps" />
+  <Card icon={<Search />}       href="/docs/coreprotect"
+    title="CoreProtect" description="Investigate block changes with /co i" />
+  <Card icon={<WandSparkles />} href="/docs/xpmanager"
+    title="XPManager" description="Bottle and trade experience" />
+</Cards>

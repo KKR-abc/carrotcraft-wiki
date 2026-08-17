@@ -1,0 +1,350 @@
+---
+title: Custom Recipes
+description: Server-exclusive crafting recipes not found in vanilla Minecraft
+icon: cooking-pot
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Sparkles, Sword, Shield, Bomb, FlaskConical, Wand2, Wrench, Hammer, AlertTriangle } from 'lucide-react';
+
+<Callout type="info" title="MajinCraft Recipes">
+  CarrotCraft features unique crafting recipes that are not available in vanilla Minecraft. Use the `/recipes` command in-game to view the full list.
+</Callout>
+
+<Callout type="warn" title="Majin Points required">
+  MajinCraft special items **consume Majin Points (MP) on each use**. They're obtained through crafting, and items with a use count can be repaired with a **Majin Ingot**.
+</Callout>
+
+## 🗂 Browse by Category
+
+<Tabs items={['⛏ Mining / Logging', '⚔ Combat', '🧪 Potions', '🌀 Movement', '🎲 Fun / Misc']}>
+
+<Tab value="⛏ Mining / Logging">
+
+### Vein Pickaxe
+Break 3×3 blocks on the mined face. **64 uses / 25pt per use**
+
+Durability is never consumed. Use counts can be fully restored with a Majin Ingot.
+
+<CraftingGrid
+  grid={['PPP','PPP','PPP']}
+  legend={{ P: 'Diamond Pickaxe' }}
+  result="Vein Pickaxe"
+  resultCount={1}
+/>
+
+### Timber Axe
+Chop connected logs at once. **64 uses / 25pt per use**
+
+Durability is never consumed. Use counts can be fully restored with a Majin Ingot.
+
+<CraftingGrid
+  grid={['AAA','AAA','AAA']}
+  legend={{ A: 'Diamond Axe' }}
+  result="Timber Axe"
+  resultCount={1}
+/>
+
+### Leaf Shears
+Break a leaf block and connected leaves are clipped outward from the origin in concentric waves. **64 uses / 15pt per use**
+
+26-direction BFS so diagonal leaves chain too. Covers every leaf block including leaf litter (1.21.5+) and pale oak leaves. No vanilla durability cost. Use counts can be fully restored with a Majin Ingot.
+
+<CraftingGrid
+  grid={['LSL','OSO','LSL']}
+  legend={{ S: 'Shears', L: 'Oak Leaves', O: 'Slime Ball' }}
+  result="Leaf Shears"
+  resultCount={1}
+/>
+
+</Tab>
+
+<Tab value="⚔ Combat">
+
+### Blast Arrow
+Explodes on impact (no block damage). **Consumable / 15pt per use**
+
+<CraftingGrid
+  grid={[' T ',' A ','   ']}
+  legend={{ T: 'TNT', A: 'Arrow' }}
+  result="Blast Arrow"
+  resultCount={8}
+/>
+
+### Gravity Rod
+Right-click to fire a gravity projectile that slams enemies down. **64 uses / 40pt per use**
+
+Use counts can be fully restored with a Majin Ingot.
+
+<CraftingGrid
+  grid={['PBP','PBP','PBP']}
+  legend={{ B: 'Blaze Rod', P: 'Blaze Powder' }}
+  result="Gravity Rod"
+  resultCount={1}
+/>
+
+### Chicken Bomb
+1/8 chance a chicken spawns and explodes. **Consumable / 15pt per use**
+
+<CraftingGrid
+  grid={['   ',' T ',' E ']}
+  legend={{ T: 'TNT', E: 'Egg' }}
+  result="Chicken Bomb"
+  resultCount={4}
+/>
+
+### Molotov
+A splash bottle that sets a 3m radius on fire where it lands. Burns out in about 8 seconds. **Consumable / 20pt per use**
+
+<CraftingGrid
+  grid={[' B ','BPB',' F ']}
+  legend={{ B: 'Blaze Powder', P: 'Splash Potion', F: 'Flint and Steel' }}
+  result="Molotov"
+  resultCount={4}
+/>
+
+### Ender Breath
+Fires an enhanced Ender Dragon breath forward, creating a lingering poison cloud at impact. **16 uses / 50pt per use**
+
+Use counts can be fully restored with a Majin Ingot.
+
+<CraftingGrid
+  grid={['MPM','PDP','MPM']}
+  legend={{ M: 'Phantom Membrane', P: 'Ender Pearl', D: 'Dragon Head' }}
+  result="Ender Breath"
+  resultCount={1}
+/>
+
+### Storm Charge
+Fires a Wind Charge that triggers an enhanced wind burst on impact (wide area, strong knockback). Aim at your feet to launch yourself; no fall damage while launched. **Consumable / 15pt per use**
+
+<CraftingGrid
+  grid={['WWW','WWW','WWW']}
+  legend={{ W: 'Wind Charge' }}
+  result="Storm Charge"
+  resultCount={1}
+/>
+
+</Tab>
+
+<Tab value="🧪 Potions">
+
+<Callout type="info" title="How to Obtain Essences">
+  Potions require special "Essence" materials that cannot be crafted — they can only be obtained through gameplay.
+
+  **Growth Essence** (glowing Glowstone Dust)
+  - **5% drop chance when you breed animals**
+  - Works with any breedable animal: cows, pigs, sheep, chickens, etc.
+  - Breed with wheat/seeds → chance triggers when the baby spawns
+
+  **Shrink Essence** (glowing Prismarine Shard)
+  - **10% drop chance from killing large Slimes or Magma Cubes**
+  - Only size 3+ (the largest size) counts
+  - Smaller split slimes do NOT drop essences
+
+  Drops as a glowing item with a chime notification.
+</Callout>
+
+### Growth Potion
+Enlarge target to 1.5× size (15 sec, reverts). **Consumable / 100pt per use**
+
+<CraftingGrid
+  grid={['   ',' E ',' P ']}
+  legend={{ E: 'Growth Essence', P: 'Potion' }}
+  result="Growth Potion"
+  resultCount={1}
+/>
+
+### Shrink Potion
+Shrink target to 0.75× size (15 sec, reverts). **Consumable / 100pt per use**
+
+<CraftingGrid
+  grid={['   ',' E ',' P ']}
+  legend={{ E: 'Shrink Essence', P: 'Potion' }}
+  result="Shrink Potion"
+  resultCount={1}
+/>
+
+### Gravity Lifter
+Reduce gravity for animals within 8m (2 min). **Consumable / 75pt per use**
+
+<CraftingGrid
+  grid={[' F ','FFF',' F ']}
+  legend={{ F: 'Feather' }}
+  result="Gravity Lifter"
+  resultCount={1}
+/>
+
+</Tab>
+
+<Tab value="🌀 Movement">
+
+### Warp Trident
+Teleport to where it lands. **64 uses / 50pt per use**
+
+Use counts can be fully restored with a Majin Ingot.
+
+<CraftingGrid
+  grid={['EEE','ETE','EEE']}
+  legend={{ E: 'Ender Pearl', T: 'Trident' }}
+  result="Warp Trident"
+  resultCount={1}
+/>
+
+### Portal
+Records your location, then after 5 seconds opens a gate connecting it to your current position. For 15 seconds, walking into either end teleports you to the other (max 100m, same world). The gate faces the placer's direction, and A↔B are linked by a stream of light. **Consumable / 80pt per use**
+
+<CraftingGrid
+  grid={['GPG','PEP','GPG']}
+  legend={{ G: 'Glass', P: 'Ender Pearl', E: 'Ender Eye' }}
+  result="Portal"
+  resultCount={1}
+/>
+
+### Red Bull
+Right-click to launch high into the air. Light wings appear on your back, with reduced fall damage. **Consumable / 15pt per use**
+
+<CraftingGrid
+  grid={['FSF','FHF','FGF']}
+  legend={{ F: 'Feather', S: 'Sugar', H: 'Honey Bottle', G: 'Gunpowder' }}
+  result="Red Bull"
+  resultCount={1}
+/>
+
+### Chicken Race
+Right-click to dash 10–40m in a random straight distance. View is locked, you cannot stop midway, and crashing into a wall deals damage. **16 uses / 20pt per use**
+
+Use counts can be fully restored with a Majin Ingot.
+
+<CraftingGrid
+  grid={['ERE','RFR','ERE']}
+  legend={{ E: 'Egg', R: "Rabbit's Foot", F: 'Feather' }}
+  result="Chicken Race"
+  resultCount={1}
+/>
+
+</Tab>
+
+<Tab value="🎲 Fun / Misc">
+
+### Decoy Totem
+Summons a player-lookalike NPC decoy (2 min). **Consumable / 75pt per use**
+
+<CraftingGrid
+  grid={['TTT','TTT','TTT']}
+  legend={{ T: 'Totem of Undying' }}
+  result="Decoy Totem"
+  resultCount={1}
+/>
+
+### Rainbow Shears
+Randomize sheep colors within 10m. **16 uses / 60pt per use**
+
+Use counts can be fully restored with a Majin Ingot.
+
+<CraftingGrid
+  grid={['RYG','BSB','CMW']}
+  legend={{ S: 'Shears', R: 'Red Dye', Y: 'Yellow Dye', G: 'Green Dye', B: 'Blue Dye', C: 'Cyan Dye', M: 'Magenta Dye', W: 'White Dye' }}
+  result="Rainbow Shears"
+  resultCount={1}
+/>
+
+### Majin Magnet
+Right-click to pull all dropped items and XP orbs within 8m radius for 15 seconds. **No durability cost / 30pt per use**
+
+Excludes other players' drops younger than 5 seconds to prevent theft. Pairs great with Leaf Shears and Timber Axe.
+
+<CraftingGrid
+  grid={['ILI','LCL','ILI']}
+  legend={{ I: 'Iron Ingot', L: 'Lodestone', C: 'Nether Star' }}
+  result="Majin Magnet"
+  resultCount={1}
+/>
+
+### Majin Sponge
+Right-click to **soak up every water block within a 12-block radius at once**. **32 uses / 25pt per use**
+
+A vanilla sponge only reaches distance 7 and clears at most 65 blocks, so building an underwater base means placing them over and over. This clears **about 110x that (up to ~7,200 blocks)** in a single use.
+
+It removes flowing water and source blocks, and also **drains waterlogged blocks** — the stairs or slabs themselves stay, only the water inside is removed.
+
+<Callout type="warn">
+  - **It cannot be placed.** It is a right-click tool (placing it would make it behave as a vanilla sponge)
+  - **It will not touch water on other players' land.** Only areas where you can build are affected
+  - There is a **3 second cooldown** between uses
+</Callout>
+
+<CraftingGrid
+  grid={['SSS','SSS','SSS']}
+  legend={{ S: 'Sponge' }}
+  result="Majin Sponge"
+  resultCount={1}
+/>
+
+</Tab>
+
+</Tabs>
+
+## 🔧 Item Repair
+
+Items with a use count can be repaired with a **Majin Ingot**.
+
+<Steps>
+  <Step>Open an **anvil**</Step>
+  <Step>Place the item to repair in the left slot</Step>
+  <Step>Place a **Majin Ingot** in the right slot</Step>
+  <Step>Take the repaired item from the result slot (costs 1 XP level)</Step>
+</Steps>
+
+<Callout type="info">
+  One Majin Ingot restores **16 uses**. Only the needed amount is consumed; extras are returned.
+</Callout>
+
+| Target Item | Restored Uses |
+|-------------|---------------|
+| Vein Pickaxe | 64 |
+| Timber Axe | 64 |
+| Gravity Rod | 64 |
+| Warp Trident | 64 |
+| Rainbow Shears | 16 |
+| Ender Breath | 16 |
+| Chicken Race | 16 |
+| Leaf Shears | 64 |
+
+## 💰 Cost Table
+
+| Item | Type | MP per use |
+|------|------|-----------|
+| Vein Pickaxe | 64 uses | 25 pt |
+| Timber Axe | 64 uses | 25 pt |
+| Gravity Rod | 64 uses | 40 pt |
+| Decoy Totem | Consumable | 75 pt |
+| Blast Arrow | Consumable | 15 pt |
+| Chicken Bomb | Consumable | 15 pt |
+| Warp Trident | 64 uses | 50 pt |
+| Rainbow Shears | 16 uses | 60 pt |
+| Gravity Lifter | Consumable | 75 pt |
+| Growth Potion | Consumable | 100 pt |
+| Shrink Potion | Consumable | 100 pt |
+| Portal | Consumable | 80 pt |
+| Red Bull | Consumable | 15 pt |
+| Molotov | Consumable | 20 pt |
+| Ender Breath | 16 uses | 50 pt |
+| Storm Charge | Consumable | 15 pt |
+| Chicken Race | 16 uses | 20 pt |
+| Leaf Shears | 64 uses | 15 pt |
+| Majin Magnet | No durability | 30 pt |
+| Majin Sponge | 32 uses | 25 pt |
+
+## ⚠️ Important Notes
+
+<Callout type="warn">
+  - MajinCraft items **cannot be used** in furnaces, enchanting tables, grindstones, or smithing tables
+  - The anvil only accepts the "repairable item + Majin Ingot" combination
+  - Items will not activate in areas where you lack Towny permissions
+  - Items will not activate if you don't have enough Majin Points
+</Callout>

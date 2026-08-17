@@ -1,0 +1,58 @@
+---
+title: カジノ
+description: カジノでスロットを楽しむ
+icon: dices
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Dices, Coins, Crown, Gem, Pickaxe, Cookie } from 'lucide-react';
+
+<Callout type="info" title="🎰 カジノ">
+  サーバー内通貨 **CC（キャロットコイン）** を使ってスロットマシンを楽しめます。
+</Callout>
+
+## 🎮 スロットマシンのティア
+
+ベット額に応じて、4種類のスロット演出が用意されています。
+
+<Cards>
+  <Card icon={<Cookie />} title="🍪 駄菓子スロット" description="〜50 CC｜金リンゴ・クッキー・ケーキ・パン・小麦" />
+  <Card icon={<Pickaxe />} title="⛏ 鉱石スロット" description="51〜500 CC｜ダイヤ・金・エメラルド・鉄・石炭" />
+  <Card icon={<Gem />} title="💎 宝石ブロックスロット" description="501〜5,000 CC｜各鉱石ブロック" />
+  <Card icon={<Crown />} title="👑 VIPスロット" description="5,001 CC〜｜ドラゴン卵・ネザースター・発光体・エリトラ・ネザライト" />
+</Cards>
+
+## 💰 ペイテーブル（配当倍率）
+
+| 役 | 配当 |
+|----|------|
+| **ジャックポット**（最高シンボル×3） | ベット額の **100倍** |
+| **金トリプル** | 40倍 |
+| **エメラルドトリプル** | 12倍 |
+| **鉄トリプル** | 5倍 |
+| **石炭トリプル** | 2.5倍 |
+| **2つ揃い** | 1.0倍（ベット額が戻る） |
+
+## 🎲 遊び方
+
+<Steps>
+  <Step>**カジノエリアに行く**</Step>
+  <Step>**スロットマシンを右クリック** → ベット額を入力</Step>
+  <Step>**リールが回転** → 3つのシンボルが揃うと配当獲得</Step>
+</Steps>
+
+<Callout type="warn">
+  カジノはあくまで **遊び** です。CCの使いすぎにご注意ください。
+</Callout>
+
+<Callout type="info" title="📱 重い場合は軽量版カジノへ">
+  カジノエリアがラグくてまともに遊べない場合（特に統合版）は、**軽量版カジノ** をご利用ください。`/t spawn casino_paper` でアクセスできます。
+</Callout>
+
+## ⌨️ コマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/casino` | カジノメニューを開く |

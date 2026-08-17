@@ -1,0 +1,349 @@
+---
+title: カスタムレシピ
+description: バニラにはないサーバー固有のクラフトレシピ一覧
+icon: cooking-pot
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Sparkles, Sword, Shield, Bomb, FlaskConical, Wand2, Wrench, Hammer, AlertTriangle } from 'lucide-react';
+
+<Callout type="info" title="MajinCraft レシピ集">
+  CarrotCraftには、バニラにはない **サーバー独自のクラフトレシピ** が追加されています。ゲーム内で `/recipes` を実行すると、すべてのカスタムレシピを確認できます。
+</Callout>
+
+<Callout type="warn" title="マジンポイントが必要">
+  MajinCraftの特殊アイテムは **使用時にマジンポイント（MP）を消費** します。クラフトで作成可能、使用回数があるアイテムは **魔神インゴット** で修復できます。
+</Callout>
+
+## 🗂 カテゴリで探す
+
+<Tabs items={['⛏ 採掘・伐採', '⚔ 攻撃系', '🧪 ポーション系', '🌀 移動系', '🎲 ネタ・その他']}>
+
+<Tab value="⛏ 採掘・伐採">
+
+### ヴェインピッケル
+採掘した面の3×3ブロックを一括破壊。**64回使用可 / 25pt消費**
+
+耐久値消費なし。魔神インゴットで使用回数を全回復できます。
+
+<CraftingGrid
+  grid={['PPP','PPP','PPP']}
+  legend={{ P: 'Diamond Pickaxe' }}
+  result="ヴェインピッケル"
+  resultCount={1}
+/>
+
+### ティンバーアックス
+木を一括伐採。**64回使用可 / 25pt消費**
+
+耐久値消費なし。魔神インゴットで使用回数を全回復できます。
+
+<CraftingGrid
+  grid={['AAA','AAA','AAA']}
+  legend={{ A: 'Diamond Axe' }}
+  result="ティンバーアックス"
+  resultCount={1}
+/>
+
+### 葉刈り鋏
+葉ブロックを破壊すると起点から同心円状に連結葉を刈り取り。**64回使用可 / 15pt消費**
+
+26方向探索なので斜めの葉も連鎖。落ち葉(LEAF_LITTER)・淡いオークの葉(PALE_OAK_LEAVES)など全ての葉ブロックに対応。バニラ耐久消費なし。魔神インゴットで使用回数を全回復できます。
+
+<CraftingGrid
+  grid={['LSL','OSO','LSL']}
+  legend={{ S: 'Shears', L: 'Oak Leaves', O: 'Slime Ball' }}
+  result="葉刈り鋏"
+  resultCount={1}
+/>
+
+</Tab>
+
+<Tab value="⚔ 攻撃系">
+
+### ブラストアロー
+着弾時に小爆発（ブロック破壊なし）。**消費型 / 15pt消費**
+
+<CraftingGrid
+  grid={[' T ',' A ','   ']}
+  legend={{ T: 'TNT', A: 'Arrow' }}
+  result="ブラストアロー"
+  resultCount={8}
+/>
+
+### グラビティロッド
+右クリックで重力弾を発射、命中した敵を地面に叩きつけ。**64回使用可 / 40pt消費**
+
+魔神インゴットで使用回数を全回復できます。
+
+<CraftingGrid
+  grid={['PBP','PBP','PBP']}
+  legend={{ B: 'Blaze Rod', P: 'Blaze Powder' }}
+  result="グラビティロッド"
+  resultCount={1}
+/>
+
+### チキンボム
+投げると1/8の確率で鶏が爆発。**消費型 / 15pt消費**
+
+<CraftingGrid
+  grid={['   ',' T ',' E ']}
+  legend={{ T: 'TNT', E: 'Egg' }}
+  result="チキンボム"
+  resultCount={4}
+/>
+
+### モロトフ
+投げると着弾点 半径3m が燃える火炎瓶。約8秒で鎮火。**消費型 / 20pt消費**
+
+<CraftingGrid
+  grid={[' B ','BPB',' F ']}
+  legend={{ B: 'Blaze Powder', P: 'Splash Potion', F: 'Flint and Steel' }}
+  result="モロトフ"
+  resultCount={4}
+/>
+
+### エンダーブレス
+正面に強化エンドラブレスを発射、着弾点に毒の滞留雲を生成。**16回使用可 / 50pt消費**
+
+魔神インゴットで使用回数を全回復できます。
+
+<CraftingGrid
+  grid={['MPM','PDP','MPM']}
+  legend={{ M: 'Phantom Membrane', P: 'Ender Pearl', D: 'Dragon Head' }}
+  result="エンダーブレス"
+  resultCount={1}
+/>
+
+### ストームチャージ
+ウィンドチャージを発射、着弾点で強化ウィンドバースト（広範囲・強ノックバック）。足元に当てて自分を打ち上げ可能。打ち上げ中は落下ダメージ無効。**消費型 / 15pt消費**
+
+<CraftingGrid
+  grid={['WWW','WWW','WWW']}
+  legend={{ W: 'Wind Charge' }}
+  result="ストームチャージ"
+  resultCount={1}
+/>
+
+</Tab>
+
+<Tab value="🧪 ポーション系">
+
+<Callout type="info" title="エッセンスの入手方法">
+  ポーションのクラフトには特殊素材「エッセンス」が必要です。エッセンスはクラフトでは作れず、以下の方法でのみ入手できます。
+
+  **グロウスエッセンス** (光るグロウストーンダスト)
+  - **動物を繁殖させると5%の確率でドロップ**
+  - 牛・豚・羊・鶏など、繁殖可能な動物なら何でもOK
+  - 小麦や種で繁殖 → 子どもが生まれた瞬間に確率判定
+
+  **シュリンクエッセンス** (光るプリズマリンの欠片)
+  - **大型スライムまたはマグマキューブを倒すと10%の確率でドロップ**
+  - サイズ3以上(最大サイズ)のスライム/マグマキューブが対象
+  - 小さく分裂した後のスライムからはドロップしません
+
+  ドロップ時は発光アイテム + チャイム音で通知されます。
+</Callout>
+
+### グロウスポーション
+対象を1.5倍に巨大化（15秒間、効果切れで元に戻る）。**消費型 / 100pt消費**
+
+<CraftingGrid
+  grid={['   ',' E ',' P ']}
+  legend={{ E: 'Growth Essence', P: 'Potion' }}
+  result="グロウスポーション"
+  resultCount={1}
+/>
+
+### シュリンクポーション
+対象を0.75倍に縮小（15秒間、効果切れで元に戻る）。**消費型 / 100pt消費**
+
+<CraftingGrid
+  grid={['   ',' E ',' P ']}
+  legend={{ E: 'Shrink Essence', P: 'Potion' }}
+  result="シュリンクポーション"
+  resultCount={1}
+/>
+
+### グラビティリフター
+半径8mの動物の重力を軽減（2分間）。**消費型 / 75pt消費**
+
+<CraftingGrid
+  grid={[' F ','FFF',' F ']}
+  legend={{ F: 'Feather' }}
+  result="グラビティリフター"
+  resultCount={1}
+/>
+
+</Tab>
+
+<Tab value="🌀 移動系">
+
+### ワープトライデント
+投げた先にテレポート。**64回使用可 / 50pt消費**
+
+魔神インゴットで使用回数を全回復できます。
+
+<CraftingGrid
+  grid={['EEE','ETE','EEE']}
+  legend={{ E: 'Ender Pearl', T: 'Trident' }}
+  result="ワープトライデント"
+  resultCount={1}
+/>
+
+### ポータル
+使用地点を記録し、5秒後に現在地と接続するゲートを生成。15秒間、A/Bを通ると相互テレポート（最大100m・同一ワールド）。設置者の向きにゲートが向き、A↔Bが光の道で結ばれます。**消費型 / 80pt消費**
+
+<CraftingGrid
+  grid={['GPG','PEP','GPG']}
+  legend={{ G: 'Glass', P: 'Ender Pearl', E: 'Ender Eye' }}
+  result="ポータル"
+  resultCount={1}
+/>
+
+### レッドブル
+右クリックで真上に大きく打ち上げ。背中に光の翼が現れ、落下ダメージ軽減付き。**消費型 / 15pt消費**
+
+<CraftingGrid
+  grid={['FSF','FHF','FGF']}
+  legend={{ F: 'Feather', S: 'Sugar', H: 'Honey Bottle', G: 'Gunpowder' }}
+  result="レッドブル"
+  resultCount={1}
+/>
+
+### チキンレース
+右クリックで10〜40mをランダムに直進突進。視点固定・途中で止まれない・壁に激突するとダメージ。**16回使用可 / 20pt消費**
+
+魔神インゴットで使用回数を全回復できます。
+
+<CraftingGrid
+  grid={['ERE','RFR','ERE']}
+  legend={{ E: 'Egg', R: "Rabbit's Foot", F: 'Feather' }}
+  result="チキンレース"
+  resultCount={1}
+/>
+
+</Tab>
+
+<Tab value="🎲 ネタ・その他">
+
+### デコイトーテム
+自分そっくりの分身NPCを召喚（2分間）。**消費型 / 75pt消費**
+
+<CraftingGrid
+  grid={['TTT','TTT','TTT']}
+  legend={{ T: 'Totem of Undying' }}
+  result="デコイトーテム"
+  resultCount={1}
+/>
+
+### レインボーシアー
+半径10mの羊の色をランダムに変更。**16回使用可 / 60pt消費**
+
+魔神インゴットで使用回数を全回復できます。
+
+<CraftingGrid
+  grid={['RYG','BSB','CMW']}
+  legend={{ S: 'Shears', R: 'Red Dye', Y: 'Yellow Dye', G: 'Green Dye', B: 'Blue Dye', C: 'Cyan Dye', M: 'Magenta Dye', W: 'White Dye' }}
+  result="レインボーシアー"
+  resultCount={1}
+/>
+
+### 魔神マグネット
+右クリック発動で15秒間、半径8m内のドロップアイテム・経験値オーブを自分に吸い寄せる。**耐久消費なし / 30pt消費**
+
+他プレイヤーがスポーン直後(5秒以内)のドロップは盗難防止のため除外。葉刈り鋏やティンバーアックスとの相性◎
+
+<CraftingGrid
+  grid={['ILI','LCL','ILI']}
+  legend={{ I: 'Iron Ingot', L: 'Lodestone', C: 'Nether Star' }}
+  result="魔神マグネット"
+  resultCount={1}
+/>
+
+### 魔神スポンジ
+右クリックした地点を中心に、**半径12ブロックの水を一度に吸い取る**。**32回使用可 / 25pt消費**
+
+バニラのスポンジは距離7・最大65ブロックまでしか吸わないので、海底の拠点づくりでは何十個も置き直すことになります。これは**バニラの約110倍（最大約7,200ブロック）**を1回で片付けます。
+
+水源・流水だけでなく、**水没ブロック（waterlogged）の水も抜けます**。階段やハーフブロックに入った水はそのままに、ブロック自体は残ります。
+
+<Callout type="warn">
+  - **設置はできません。** 右クリックで発動する道具です（置くとバニラのスポンジとして働いてしまうため）
+  - **他人の土地の水は吸えません。** 自分が建築できる範囲だけが対象です
+  - 連続使用には**3秒のクールダウン**があります
+</Callout>
+
+<CraftingGrid
+  grid={['SSS','SSS','SSS']}
+  legend={{ S: 'Sponge' }}
+  result="魔神スポンジ"
+  resultCount={1}
+/>
+
+</Tab>
+
+</Tabs>
+
+## 🔧 アイテム修復
+
+使用回数があるアイテムは、**魔神インゴット**（通称「まじ！？インゴット」）で修復できます。
+
+<Steps>
+  <Step>**金床**を開く</Step>
+  <Step>左スロットに修復したいアイテムを置く</Step>
+  <Step>右スロットに**魔神インゴット**を置く</Step>
+  <Step>結果スロットから修復済みアイテムを取り出す（経験値1レベル消費）</Step>
+</Steps>
+
+<Callout type="info">
+  魔神インゴット1個で**16回分**回復します。必要な分だけ消費され、余りは返却されます。
+</Callout>
+
+| 対象アイテム | 回復後の使用回数 |
+|-------------|---------------|
+| ヴェインピッケル | 64回 |
+| ティンバーアックス | 64回 |
+| グラビティロッド | 64回 |
+| ワープトライデント | 64回 |
+| レインボーシアー | 16回 |
+| エンダーブレス | 16回 |
+| チキンレース | 16回 |
+| 葉刈り鋏 | 64回 |
+
+## 💰 コスト早見表
+
+| アイテム | タイプ | 消費MP/回 |
+|---------|--------|----------|
+| ヴェインピッケル | 64回使用可 | 25 pt |
+| ティンバーアックス | 64回使用可 | 25 pt |
+| グラビティロッド | 64回使用可 | 40 pt |
+| デコイトーテム | 消費型 | 75 pt |
+| ブラストアロー | 消費型 | 15 pt |
+| チキンボム | 消費型 | 15 pt |
+| ワープトライデント | 64回使用可 | 50 pt |
+| レインボーシアー | 16回使用可 | 60 pt |
+| グラビティリフター | 消費型 | 75 pt |
+| グロウスポーション | 消費型 | 100 pt |
+| シュリンクポーション | 消費型 | 100 pt |
+| ポータル | 消費型 | 80 pt |
+| レッドブル | 消費型 | 15 pt |
+| モロトフ | 消費型 | 20 pt |
+| エンダーブレス | 16回使用可 | 50 pt |
+| ストームチャージ | 消費型 | 15 pt |
+| チキンレース | 16回使用可 | 20 pt |
+| 葉刈り鋏 | 64回使用可 | 15 pt |
+| 魔神マグネット | 耐久なし | 30 pt |
+| 魔神スポンジ | 32回使用可 | 25 pt |
+
+## ⚠️ 注意事項
+
+<Callout type="warn">
+  - MajinCraftアイテムは**金床・かまど・エンチャント台・砥石・鍛冶台**では使用できません
+  - Towny権限のない場所ではアイテムの効果が発動しません
+  - ポイントが足りない場合はアイテムが発動しません
+</Callout>

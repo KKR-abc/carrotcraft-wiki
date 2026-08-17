@@ -1,0 +1,168 @@
+---
+title: Town Ranking
+description: Weekly competition based on growing new players
+icon: trophy
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Trophy, Calendar, TrendingUp, Sparkles, Users, Award } from 'lucide-react';
+
+<Callout type="info" title="Purpose of this system">
+The single purpose of this system is to **encourage growing new players**.
+You can't win by just gathering members or stacking veterans. The towns that
+attract, support, and retain new players are the ones rewarded.
+</Callout>
+
+Every Saturday evening, the **weekly Town Ranking** is announced.
+The top 3 towns receive **Market Intervention rights**, allowing them to manipulate
+prices of selected CarrotMarket items for one week.
+
+## 🏆 How is the Ranking Decided?
+
+Each town's score rises as its members **play normally on the server**.
+You don't need to complete specific tasks. Just play as you like and you'll contribute.
+
+<Callout type="warn" title="Scoring criteria is hidden">
+**What activities give points and how much** is intentionally undisclosed.
+The system rewards **balanced, varied play** rather than exploiting a specific metric.
+</Callout>
+
+## ✨ New Players Are Special
+
+Players who joined the server recently contribute **massively more** to their town's score.
+Active newcomers are the single biggest driver of a town's ranking.
+
+This is why towns work hard to invite, support, and retain new players.
+**New players are genuinely valuable to a town.**
+
+The multiplier is based on **server first-join date** — switching towns does not reset it.
+The exact contribution rate is not disclosed.
+
+## 📅 Ranking Schedule
+
+| Item | Timing | Notes |
+|------|--------|-------|
+| Aggregation | Daily at 0:00 JST | Background processing |
+| Display update | Every other day | With ~1 day lag |
+| **Weekly Ranking announcement** | **Saturday 18:00 JST** | Weekly reveal time |
+| Discord notification | With the announcement | Posted automatically |
+
+<Callout type="warn">
+**The ranking cannot be viewed until it is officially announced.**
+Results are revealed as a surprise at Saturday 18:00 JST each week.
+</Callout>
+
+## 🥇 Top-3 Reward: Market Intervention
+
+The top 3 towns can **inject funds** into the wallet of selected CarrotMarket items.
+This makes those items **sellable at a higher price for everyone**.
+
+| Rank | Items | Wallet Boost |
+|------|-------|--------------|
+| 🥇 1st | 2 items | **+35% wallet** |
+| 🥈 2nd | 1 item | +30% wallet |
+| 🥉 3rd | 1 item | +20% wallet |
+
+### Intervention Flow
+
+Every **Saturday 18:00 JST** is the single weekly transition point.
+
+<Steps>
+<Step>
+### Saturday 18:00 — New Ranking Announced
+
+The new ranking goes live.
+</Step>
+<Step>
+### Application Window (1 week)
+
+**Saturday 18:00 → following Saturday 18:00** — top-town mayors/vice-mayors apply at any time.
+</Step>
+<Step>
+### Following Saturday 18:00 — Simultaneous Activation
+
+Submission deadline & all confirmed applications activate simultaneously (previous week's interventions end at the same time).
+</Step>
+<Step>
+### Lasts 1 Week
+
+Each intervention lasts **1 week** from activation.
+</Step>
+</Steps>
+
+### How to Apply
+
+**Mayors and vice-mayors of any town always see the Market Intervention button**
+when they open `/market`. If your town is in this week's top 3, the application
+screen opens. Otherwise, you'll see an explanation and the current qualifying ranks.
+
+<Callout type="warn">
+Confirm your application before the **next Saturday 18:00 JST**.
+Towns that miss this window forfeit their intervention rights for that week.
+The fixed activation time prevents late-night surprises.
+</Callout>
+
+### What if Multiple Towns Pick the Same Item?
+
+When multiple top towns choose the same item, **only the largest boost applies**.
+Smaller boosts are ignored, and those towns lose their slot for that item.
+
+| Example | Result |
+|---------|--------|
+| 1st (+35%) and 2nd (+30%) both pick Diamond | Only 1st's +35% applies; 2nd's slot is forfeit |
+| 2nd (+30%) and 3rd (+20%) both pick Iron | Only 2nd's +30% applies; 3rd's slot is forfeit |
+
+### Consecutive Win Penalty
+
+<Callout type="warn">
+If the same town wins 1st place multiple weeks in a row, the intervention effect
+diminishes **gradually by -5% per consecutive week**. It does not jump to -20%
+immediately — only after 5 consecutive 1st-place wins does the penalty reach
+the maximum of -20%. Missing 1st place even once resets the counter back to 100%.
+This keeps opportunities open for other towns.
+</Callout>
+
+### Item Cooldown
+
+An item that has been intervened cannot be intervened again by **any town for 4 weeks**.
+This prevents specific items from being permanently manipulated.
+
+## 📊 Viewing Your Town's Total Score
+
+Mayors of towns with **15 or more members** can view their town's total score
+through a dedicated button inside the `/market` GUI.
+
+Smaller towns will not see this button. The breakdown and formula are not disclosed.
+
+## 💻 Commands
+
+| Command | Description |
+|---------|-------------|
+| `/market` | Intervention button is always visible to mayors and vice-mayors. Mayors of 15+ member towns also see a button to view their total score. |
+
+## ❓ FAQ
+
+<Accordions>
+<Accordion title="How do I earn points?">
+A town's score grows the most when **new players are active across many different
+aspects of the game**. Just play normally and try varied activities — that's the
+most effective way to contribute.
+</Accordion>
+<Accordion title="Do AFK hours count?">
+No. Points are awarded for **activity across many different aspects of the game**,
+not idle time.
+</Accordion>
+<Accordion title="Does switching towns reset my multiplier?">
+The new-player multiplier is based on your **server first-join date**, so it doesn't reset.
+Contributions however go to your current town (the day you switch towns counts as 0 for both).
+</Accordion>
+<Accordion title="What happens during an active intervention?">
+The price stays elevated for the full 1-week intervention period.
+**Sellers benefit during this window.**
+Once the 1 week ends, the price returns to normal.
+</Accordion>
+</Accordions>

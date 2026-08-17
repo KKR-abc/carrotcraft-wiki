@@ -1,0 +1,144 @@
+---
+title: XPManager Guide
+description: How to bottle, store, and trade experience points with XPManager
+icon: flask
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { FlaskConical, Package, ArrowRightLeft, Wrench, Info, ShieldAlert } from 'lucide-react';
+
+<Callout type="info" title="What is XPManager?">
+A plugin that converts experience points (XP) into bottle items for safe storage and trading — prevent XP loss on death and trade XP with other players. Base command: `/bottle` (aliases: `/b`, `/xpm`).
+</Callout>
+
+## ✨ Features
+
+<Cards>
+  <Card icon={<Package />} title="Bottle XP" description="Create standard bottles (10 XP each) or store bottles (any amount)" />
+  <Card icon={<ArrowRightLeft />} title="Merge / Instant Use" description="Merge standard bottles, or consume without throwing" />
+  <Card icon={<Wrench />} title="Mending Bottle" description="Auto-calculate the XP needed to fully repair your item" />
+  <Card icon={<Info />} title="Info Commands" description="See your XP, others' XP, or XP needed to reach a level" />
+</Cards>
+
+## 🍶 Bottling XP
+
+<Tabs items={['Standard (get)', 'Store (store)']}>
+<Tab value="Standard (get)">
+
+**Standard bottles** hold a fixed 10 XP each.
+
+| Command | Type | Description |
+|---|---|---|
+| /b get &lt;amount&gt; | standard | Create standard XP bottles (10 XP each) |
+| /b get max | standard | Convert all XP into standard bottles |
+
+```
+/b get 10        ← Create 10 standard bottles (100 XP)
+```
+
+</Tab>
+<Tab value="Store (store)">
+
+**Store bottles** can hold any amount of XP in a single bottle.
+
+| Command | Type | Description |
+|---|---|---|
+| /b store &lt;xp&gt; | store | Store specified XP in one store bottle |
+| /b store &lt;xp&gt; &lt;qty&gt; | store | Create multiple store bottles with the same XP value |
+| /b store max | store | Store all XP in one bottle |
+
+```
+/b store 500     ← Store 500 XP in one bottle
+/b store 100 64  ← Create 64 bottles of 100 XP each
+```
+
+</Tab>
+</Tabs>
+
+## 🎯 Retrieving XP
+
+<Steps>
+<Step>
+### Throw the bottle
+
+**Throw** the bottle (like a regular XP bottle) to get the XP back.
+</Step>
+<Step>
+### Instant consumption mode (optional)
+
+Toggle instant consumption mode for store bottles:
+
+```
+/b toggle thrown
+```
+
+In this mode, using a bottle adds XP instantly without throwing. Handy when you have a lot of bottles to consume.
+</Step>
+</Steps>
+
+## 🔗 Consolidating Bottles
+
+If you have many standard bottles in your inventory, merge them into one store bottle:
+
+```
+/b convert
+```
+
+Merges all standard XP bottles in your inventory into a single store bottle.
+
+## 🛠️ Mending
+
+Auto-calculate and create a bottle with exactly the XP needed to repair the item in your hand:
+
+```
+/b mend
+```
+
+Creates a bottle with exactly enough XP to fully repair the held tool or armor.
+
+## 📊 Info Commands
+
+| Command | Type | Description |
+|---|---|---|
+| /b stats | info | Show your current level and XP |
+| /b stats &lt;player&gt; | info | View another player's XP info |
+| /b until &lt;level&gt; | info | Show XP needed to reach a level |
+
+## 💱 Trading XP
+
+XPManager has no direct send-XP command, but bottles are regular items and can be traded.
+
+<Steps>
+<Step>
+### Bottle your XP
+Use `/b store` to create store bottles.
+</Step>
+<Step>
+### Hand them over
+Drop or trade the bottles to another player.
+</Step>
+<Step>
+### They absorb XP
+The other player throws the bottle to absorb the XP.
+</Step>
+</Steps>
+
+<Callout type="warn" title="Trade safety">
+You can also sell XP bottles via QuickShop. Bottles are normal items — if they're dropped on the ground they can despawn. **Only trade with players you trust.**
+</Callout>
+
+## 📝 Command Cheat Sheet
+
+| Command | Type | Description |
+|---|---|---|
+| /b get &lt;amount/max&gt; | create | Create standard bottles (10 XP each) |
+| /b store &lt;xp&gt; [qty] | create | Create store bottle(s) |
+| /b convert | utility | Merge standard bottles into one |
+| /b mend | utility | Mending-sized bottle for your held item |
+| /b toggle thrown | mode | Toggle instant-consumption mode |
+| /b stats | info | Show XP info |
+| /b until &lt;Lv&gt; | info | XP needed to reach a level |

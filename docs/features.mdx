@@ -1,0 +1,176 @@
+---
+title: サーバー機能
+description: CarrotCraftで使える便利機能・エンタメ機能の一覧
+icon: sparkles
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Mic, ArrowUpDown, Home, Map, Armchair, Lock, Vote, Dices, Sparkles, Rabbit, Box, Pickaxe, Swords, Gavel, CookingPot } from 'lucide-react';
+
+<Callout type="info" title="サーバー機能カタログ">
+CarrotCraftで利用できる主要な機能をカテゴリ別に紹介します。各機能の詳しい使い方は、それぞれの詳細ページをご覧ください。
+</Callout>
+
+## 📡 通信
+
+<Cards>
+  <Card icon={<Mic />} href="https://modrinth.com/plugin/simple-voice-chat" title="ボイスチャット" description="近くのプレイヤーと距離型VC。Simple Voice Chat MOD(Java)が必要。" />
+</Cards>
+
+### 🎙 ボイスチャット
+
+近くにいるプレイヤーと会話することができます。
+※Java版で「Simple Voice Chat」MODを導入しているプレイヤーのみ利用可能です。
+
+[MODのダウンロード (Modrinth) →](https://modrinth.com/plugin/simple-voice-chat)
+
+## 🛠 便利機能・移動
+
+<Cards>
+  <Card icon={<ArrowUpDown />} href="/docs/elevator" title="エレベーター" description="鉄ブロックを上下に設置してジャンプ/しゃがみで階移動。" />
+  <Card icon={<Home />} href="/docs/home" title="ホーム・チュートリアル" description="/home でホームGUI。/tpa でテレポート申請。初回はチュートリアル付き。" />
+  <Card icon={<Map />} href="/docs/rtp" title="ランダムテレポート" description="/rtp で未開拓地にテレポート。他プレイヤーの町は避けます。" />
+  <Card icon={<Armchair />} href="/docs/features" title="GSit（座る）" description="階段・半ブロックを右クリックで着席。多彩なエモートも。" />
+</Cards>
+
+### 🛗 エレベーター
+
+**鉄ブロック**を上下に設置することで、その上で **ジャンプ/しゃがみ** をすることで階を移動できます。高層建築や町のタワーで便利に使えます。
+
+[詳細を見る →](/docs/elevator)
+
+### 🏠 ホーム・チュートリアル
+
+`/home` で自分専用のホームGUIを開き、テレポート先を基本5箇所（ccで追加購入可）まで登録できます。`/tpa` で他のプレイヤーへのテレポート申請も可能です。
+
+新規プレイヤーは、初回参加時にスポーンの**チュートリアル**でクイズ形式の遊び方ガイドを受けられます。
+
+[詳細を見る →](/docs/home)
+
+### 🌍 ランダムテレポート (RTP)
+
+`/rtp` で未開拓地にランダムテレポート。新規拠点探しや資源採集に便利です。他プレイヤーの町にはテレポートしません。
+
+[詳細を見る →](/docs/rtp)
+
+### 🪑 GSit（座る）
+
+階段や半ブロックの上で**右クリック**すると座れます。エモートやポーズも可能。
+
+| コマンド | 説明 |
+|---------|------|
+| `/sit` | その場に座る |
+| `/lay` | 寝そべる |
+| `/crawl` | 匍匐（ほふく） |
+| `/bellyflop` | うつ伏せ |
+| `/spin` | 回転 |
+
+立ち上がるには **しゃがむ** か、再度コマンドを入力してください。
+
+## 🔒 保護
+
+<Cards>
+  <Card icon={<Lock />} href="/docs/bolt" title="チェスト保護 (Bolt)" description="シフト＋右クリック2回でロック。チェスト・ドア・かまどに対応。" />
+</Cards>
+
+### 🔒 チェスト保護
+
+チェスト・ドア・かまど等を**ロック**して、他のプレイヤーから守れます。
+シフトしながら右クリックを2回でロック。
+
+<Callout type="warn" title="町の管理者は閲覧可能">
+保護を行った場合でも、そのチェストが設置されている**町の市長・副市長・補佐は中身の閲覧および破壊が可能** です。最も確実な盗難対策は、自分の町を建設してその範囲内に設置することです。
+</Callout>
+
+[詳細を見る →](/docs/bolt)
+
+## 🎁 エンタメ・報酬
+
+<Cards>
+  <Card icon={<Vote />} href="/docs/vote" title="投票 (Vote)" description="投票サイトで投票するとガチャキーが貰える。CCや鍛冶型が当たる。" />
+  <Card icon={<Dices />} href="/docs/casino" title="カジノ" description="サーバー通貨で遊べるスロット。最高100倍配当。" />
+  <Card icon={<Sparkles />} href="/docs/cosmetics" title="コスメ" description="パーティクル・ペット・変身・帽子・エモート。/uc menu で起動。" />
+</Cards>
+
+### 🗳 投票（Vote）
+
+投票サイトでサーバーに投票すると、**投票ガチャのキー**がもらえます。CCや装飾用鍛冶型などが当たります。
+
+[詳細を見る →](/docs/vote)
+
+### 🎰 カジノ
+
+サーバー内通貨を使って遊べる**スロットマシン**です。ティア別に演出が変わり、最高100倍の配当が出ます。
+
+[詳細を見る →](/docs/casino)
+
+### ✨ コスメ
+
+パーティクルエフェクト、ペット、変身、帽子、エモートなどの装飾コスメを使えます。`/uc menu` でメニューを開きます。
+
+<Callout type="info" title="VIP限定">
+コスメ機能は **VIP・メディアランク限定** です。VIPランクの取得方法は[VIPページ](/docs/vip)をご覧ください。
+</Callout>
+
+[詳細を見る →](/docs/cosmetics)
+
+## ⚔️ 対戦・取引
+
+<Cards>
+  <Card icon={<Swords />} href="/docs/commands#pvpコマンド" title="PvPモード" description="/pvp mode で戦闘スタイルを選択。同モード間でのみダメージが通る。" />
+  <Card icon={<Gavel />} href="/docs/economy#オークション" title="オークション" description="/auction でアイテムを競り売り。開始5,000cc〜・手数料5%。" />
+</Cards>
+
+### ⚔️ PvPモード
+
+`/pvp mode crystal / mace / sword / potion / all` で好きな戦闘スタイルを選べます。ダメージが通るのは**お互いのモードが両方許可している攻撃のみ**（例: crystal同士は爆発OK、crystal vs sword は剣・斧のみ）。戦闘中は変更不可（15秒クールダウン）、現在のモードはアクションバーに表示されます。
+
+[詳細を見る →](/docs/commands#pvpコマンド)
+
+### 🥕 オークション
+
+プレイヤー間でアイテムを競り売りできる**イングリッシュ式オークション**。`/auction` から出品（開始価格5,000cc〜・同時3件・クールタイム30分）、入札はGUIまたは `b <金額>`。上回られたら即時全額返金、落札品は `/auction box` で受け取れます（保管7日・手数料5%）。
+
+[詳細を見る →](/docs/economy#オークション)
+
+## 🍳 料理（Farmer's Delight）
+
+<Cards>
+  <Card icon={<CookingPot />} href="/docs/farmers-delight" title="Farmer's Delight" description="人気料理MODをプラグイン移植。170種類以上の料理・食材。設定不要で誰でも遊べる。" />
+</Cards>
+
+人気料理MOD「**Farmer's Delight**」をプラグインとして移植しています。MODの導入や特別な設定なしで、クッキングポット・まな板＋包丁・スキレット・大皿料理・新作物（トマト/玉ねぎ/キャベツ/稲）など **170種類以上** の料理が誰でもそのまま遊べます。
+
+[詳細を見る →](/docs/farmers-delight)
+
+## 🐎 育成・採集
+
+<Cards>
+  <Card icon={<Rabbit />} href="/docs/horses" title="馬の育成" description="馬・骨格馬・ゾンビ馬をHP300・速度0.4・ジャンプ1.2まで育成。" />
+  <Card icon={<Pickaxe />} href="/docs/spawners" title="スポナー回収" description="シルクタッチ付きピッケルでモンスタースポナーを再設置可能。" />
+</Cards>
+
+### 🐎 馬の育成
+
+馬・骨格馬・ゾンビ馬を **HP最大300・速度0.4・ジャンプ1.2** まで育成可能。**訓練** で能力が伸び、**繁殖** で次世代に引き継ぎ、**特性（traits）** を持つ希少な馬が生まれます。
+
+[詳細を見る →](/docs/horses)
+
+### 📦 スポナー回収
+
+**シルクタッチ付きピッケル**でモンスタースポナーを破壊せずに回収・再設置できます。
+
+[詳細を見る →](/docs/spawners)
+
+## 🌐 別サーバー
+
+<Cards>
+  <Card icon={<Box />} href="/docs/shigen" title="資源サーバー" description="/shigen で採掘・素材集めに特化した別ワールドへ。" />
+</Cards>
+
+### ⛏ 資源サーバー
+
+`/shigen` で**採掘・素材集めに特化した資源サーバー**にアクセスできます。地形を遠慮なく掘れる別ワールドで、メインサーバーの建築を傷つけません。
+
+[詳細を見る →](/docs/shigen)

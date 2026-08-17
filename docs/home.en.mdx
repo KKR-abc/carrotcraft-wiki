@@ -1,0 +1,124 @@
+---
+title: Home & Tutorial
+description: Save teleport points with /home, send teleport requests with /tpa, and learn the server with the Tutorial
+icon: house
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Home, Users, BookOpen, MapPin, Timer, Sparkles } from 'lucide-react';
+
+<Callout type="info" title="On this page">
+**/home** saves your teleport points (5 by default, more purchasable with cc), **/tpa** sends teleport requests between players. First-time joiners go through a **13-question tutorial** at spawn before being released to survival.
+</Callout>
+
+## 🏠 Home Feature
+
+`/home` saves and manages personal teleport locations. Hop between your house, farm, base, and more in one click.
+
+---
+
+### Basic Usage
+
+<Tabs items={['Home (/home)', 'Teleport Request (/tpa)']}>
+<Tab value="Home (/home)">
+
+| Command | Type | Description |
+|---|---|---|
+| /home | command | Open the home GUI (select a home to teleport) |
+| /sethome &lt;name&gt; | command | Save the current location as a home |
+| /delhome &lt;name&gt; | command | Delete a home |
+
+Home names accept **alphanumeric, Japanese, and `_` `-`, up to 16 characters**.
+
+To rename a home, use the **anvil icon** in the `/home` GUI (there is no rename command).
+
+</Tab>
+<Tab value="Teleport Request (/tpa)">
+
+Request to teleport to (or summon) other players.
+
+| Command | Type | Description |
+|---|---|---|
+| /tpa &lt;player&gt; | command | Request to teleport to another player |
+| /tpahere &lt;player&gt; | command | Request that another player come to you |
+| /tpaccept | command | Accept a pending request |
+| /tpdeny | command | Deny a pending request |
+
+Requests **expire after 30 seconds**.
+
+<Callout type="info">
+The TPA GUI opens automatically on the receiving end (contact staff if you'd like this disabled).
+</Callout>
+
+</Tab>
+</Tabs>
+
+---
+
+### Home Limit
+
+You start with **5 home slots**. Extra slots can be **purchased with cc**.
+
+| Extra slots | Price |
+|---|---|
+| +2 | 3,000 cc |
+| +15 | 22,500 cc |
+
+---
+
+### Teleport Behavior
+
+- Teleporting takes **3 seconds**
+- **Moving during this time cancels** the teleport
+- Teleports now go through **even if the destination is dangerous** — watch out for falls and lava
+
+---
+
+## 📘 Tutorial
+
+If this is your **first time joining** CarrotCraft, you'll find a **Tutorial** at spawn that teaches the basics.
+
+<Callout type="info">
+Stepping into the gate area starts a **13-question tutorial quiz**. Once finished, `/rtp` runs automatically and drops you into unexplored land to start surviving.
+</Callout>
+
+### How it works
+
+<Steps>
+<Step>
+### Enter the tutorial gate at spawn
+
+First-time joiners are automatically routed to the spawn tutorial gate area.
+</Step>
+<Step>
+### Answer the 13 quiz questions
+
+The following 13 topics are presented as a quiz:
+
+1. Welcome — which editions can join
+2. Rules and Mods — banned actions / allowed mods
+3. Chat — global / town / nation channels
+4. Currency & CarrotMarket — earning money
+5. Creating Towns — `/t new` usage
+6. Maintaining Towns — fees and expansion
+7. Player Shops — using QuickShop
+8. PvP — `/pvp` toggle and self-responsibility
+9. Theft & Griefing — prohibited actions
+10. Bug Reports & Accounts — one account per person
+11. When Stuck — Discord tickets
+12. Joining a Town — `/t list` usage
+13. Inside a Town — getting a plot
+</Step>
+<Step>
+### `/rtp` to unexplored land
+
+After finishing, `/rtp` runs automatically and you'll teleport to unexplored land to start your survival adventure!
+</Step>
+</Steps>
+
+<Callout type="info">
+On subsequent joins, the gate is skipped and you go straight to survival.
+</Callout>

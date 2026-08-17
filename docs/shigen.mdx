@@ -1,0 +1,129 @@
+---
+title: 資源サーバー
+description: 採掘・素材集めに特化した資源サーバーへの行き方と仕様
+icon: pickaxe
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Pickaxe, Home, Radar, Mic, Sparkles, Ban, AlertTriangle, Package } from 'lucide-react';
+
+<Callout type="info" title="資源サーバーとは？">
+  CarrotCraftには、メインサーバー（経済・町）とは別に **採掘・素材集めに特化した資源サーバー** があります。地形を遠慮なく掘り尽くせる場所です。
+</Callout>
+
+## 🚪 アクセス方法
+
+<Steps>
+  <Step>
+    **ログイン後、メインサーバーに参加**
+
+    通常通り `play.carrotcraft.net` に接続してメインサーバーに入ります。
+  </Step>
+  <Step>
+    **`/shigen` を実行**
+
+    サーバー間移動が始まり、資源サーバーに切り替わります。
+
+    ```
+    /shigen
+    ```
+  </Step>
+  <Step>
+    **採掘・伐採し放題**
+
+    `/rtp` で離れた場所にランダムテレポートして掘り始めましょう。
+  </Step>
+  <Step>
+    **戻るには `/kokka`**
+
+    メインサーバーに戻る時は次のコマンドを実行します。
+
+    ```
+    /kokka
+    ```
+  </Step>
+</Steps>
+
+## 📋 資源サーバーの特徴
+
+| 項目 | 内容 |
+|------|------|
+| ワールド | 独立した別ワールド |
+| 難易度 | イージー |
+| Towny（町） | 無し — 誰でも自由に採掘可能 |
+| インベントリ | メインサーバーと共有しません |
+| ボイスチャット | 利用可能 |
+
+<Callout type="warn">
+  資源サーバーは **メインサーバーとはインベントリが別** です。**エンダーチェストも共有されません**。集めたアイテムをメインに持ち帰るには、サーバー間共有チェスト **`/post`** を使ってください。
+</Callout>
+
+## ✅ 利用できる機能
+
+<Cards>
+  <Card icon={<Home />} title="/home" description="ホーム登録（5個まで、メインとは別管理）" />
+  <Card icon={<Radar />} title="/rtp" description="ランダムテレポートで採掘ポイントへ" />
+  <Card icon={<Package />} title="/post" description="サーバー間共有チェスト（メインへの持ち帰りに使う）" />
+  <Card icon={<Mic />} title="ボイスチャット" description="他プレイヤーと会話しながら採掘" />
+  <Card icon={<Pickaxe />} title="/co i" description="CoreProtect履歴確認" />
+  <Card icon={<Sparkles />} title="XPManager" description="経験値ボトル化" />
+</Cards>
+
+## 🚫 利用できない機能
+
+- Towny — 町の作成・住民管理は不可
+- プレイヤーショップ（QuickShop）
+- CarrotMarket（経済取引）
+- Brewery — 醸造はメインのみ
+- カジノ・コスメ・投票ガチャ
+- 馬の育成
+
+## 🛠 できること / できないこと
+
+| できる | できない |
+|--------|---------|
+| 自由に採掘・伐採・地形改変 | 拠点建築（定期リセットの可能性あり） |
+| モンスター討伐・素材ドロップ獲得 | 町の作成 |
+| ボイスチャットで他プレイヤーと協力 | プレイヤー間の妨害（PvP・略奪） |
+
+## 📦 アイテムをメインに持ち帰る
+
+<Steps>
+  <Step>
+    **`/post` に預ける**
+
+    `/post` で **サーバー間共有チェスト** を開き、集めたアイテムを入れます。このチェストの中身は全サーバーで共通です。
+  </Step>
+  <Step>
+    **`/kokka` でメインに戻る**
+
+    メインサーバーに戻り、もう一度 `/post` を開いて取り出します。
+  </Step>
+</Steps>
+
+<Callout type="warn">
+  **エンダーチェストはサーバー間で共有されません。** 資源サーバーのエンダーチェストに入れたアイテムはメインには現れません。持ち帰りには必ず `/post` を使ってください。
+</Callout>
+
+<Callout type="info">
+  `/shigen` を抜ける前に、重要アイテムは必ず `/post` に預けましょう。資源サーバー内に置いたチェストはリセットで消える可能性があります。
+
+  なお、**料理（Farmer's Delight系）のアイテムは資源サーバーでは `/post` から取り出せません**。メインサーバーで受け取ってください。
+</Callout>
+
+## ❓ よくある質問
+
+<Accordions>
+  <Accordion title="資源サーバーで死んだらアイテムは戻る？">
+    **ロスト補償はありません**。Keep Inventory も無効です。価値のあるアイテムを持ち込まないようにしてください。
+  </Accordion>
+  <Accordion title="拠点を建てても良い？">
+    一時的な作業小屋は問題ありませんが、**定期リセットの可能性あり** です。長期拠点はメインサーバーに建ててください。
+  </Accordion>
+  <Accordion title="他プレイヤーが採掘中の場所に入っても良い？">
+    自由に採掘できるサーバーですが、**他プレイヤーへの妨害行為（PvP・略奪）は禁止** です。また採掘した範囲を放置・占拠する行為も禁止です。
+  </Accordion>
+</Accordions>

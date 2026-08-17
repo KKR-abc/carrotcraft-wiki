@@ -1,0 +1,237 @@
+---
+title: Brewery Guide
+description: How to brew with BreweryX, plus a full recipe list
+icon: flask-conical
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { FlaskConical, Flame, Wine, Coffee, Beer, Droplet, Snowflake } from 'lucide-react';
+
+<Callout type="info" title="What is Brewery?">
+The **BreweryX** plugin lets you craft real drinks by cooking, distilling, and aging ingredients. Each drink is rated **â1â5** for quality, and drinking it makes you tipsy (the screen sways) and may grant **special effects** depending on the recipe.
+</Callout>
+
+## ð¶ The Brewing Process
+
+<Steps>
+<Step>
+### Cook in a cauldron
+
+Place a **water-filled cauldron** with a **heat source directly below it** (fire, lava, magma block, campfire, soul variants all work). **Right-click the cauldron** while holding an ingredient to add it.
+
+- **Right-click the cauldron with a clock** to see the current cooking time (minutes)
+- The particle color above the cauldron is also a timing hint
+- When the recipe's **cooking time** is reached, right-click with **3 glass bottles** to bottle the liquid
+</Step>
+<Step>
+### Distill (only for some recipes)
+
+Put the bottles in a **Brewing Stand and use Blaze Powder as fuel** to start distilling. Repeat for the recipe's required number of **distill runs** (the plugin processes all bottles automatically).
+
+Recipes with **0 distill runs** (most beers, wines, and sakes) skip this step.
+</Step>
+<Step>
+### Age in a barrel (only for some recipes)
+
+Attach a sign reading **"barrel"** to a structure of wood blocks to create a **barrel**. Put bottles inside and let them age the required number of **years**.
+
+- **1 "year" â 20 minutes** of real time
+- The **wood type** affects quality â match the recipe's wood type for the best result
+</Step>
+<Step>
+### Quality (â) is decided
+
+The more precisely you match the recipe's ingredient amounts, cooking time, distill runs, aging years, and wood type, the more **â** you earn. Higher **difficulty** recipes are stricter.
+</Step>
+</Steps>
+
+<Callout type="warn" title="Watch out for failures">
+Over-cooking, over-distilling, over-aging, or using the wrong wood lowers quality or produces an undrinkable "ruined" brew. Until you get the hang of it, **measure the time with a clock** and test in small batches.
+</Callout>
+
+### ðªµ Barrel Wood Numbers
+
+The wood in the "Barrel/Age" column of the recipe tables maps as follows (`Any` = any wood works).
+
+| # | Wood | # | Wood | # | Wood |
+|---|---|---|---|---|---|
+| Any | Any wood | 5 | Acacia | 10 | Cherry |
+| 1 | Birch | 6 | Dark Oak | 11 | Bamboo |
+| 2 | Oak | 7 | Crimson (Nether) | 12 | Cut Copper |
+| 3 | Jungle | 8 | Warped (Nether) | 13 | Pale Oak |
+| 4 | Spruce | 9 | Mangrove | | |
+
+<Callout type="info">
+**Reading the tables** â Cook = cooking time (min) / Distill = distill runs (â if not needed) / Barrel/Age = wood & years (â if not needed) / Diff = difficulty 1â10 / ABV = alcohol content.
+</Callout>
+
+<Callout type="warn" title="Drink names change with quality">
+The same recipe shows a different name depending on quality (low / normal / high). Tables list the **normal/high-quality** names; for Japanese-named drinks the in-game name is Japanese, shown in parentheses (e.g. normal ç½é → high-quality **èå°é**).
+</Callout>
+
+## ðº Beers
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Wheatbeer | WheatÃ3 | 8m | â | Birch/2y | 1 | 5 | â |
+| Beer | WheatÃ6 | 8m | â | Any/3y | 1 | 6 | â |
+| Darkbeer | WheatÃ6 | 8m | â | Dark Oak/8y | 2 | 7 | â |
+| Pumpkin Beer (ãã³ãã­ã³ãã¼ã«ï¼ã¹ãã¤ã¹ãã³ãã­ã³ãã¼ã«) | WheatÃ6, PumpkinÃ3, SugarÃ2 | 10m | â | Any/2y | 4 | 6 | Saturation, Regen |
+| Ginger Beer (ã¸ã³ã¸ã£ã¼ãã¼ã«ï¼ã¹ãã¤ã·ã¼ã¸ã³ã¸ã£ã¼ãã¼ã«) | WheatÃ5, SugarÃ4, Honey BottleÃ1 | 6m | â | Birch/1y | 3 | 5 | Speed, Haste, Fire Res |
+| Mushroom Ale (ã­ãã³ã¨ã¼ã«ï¼ãã¹ããªã¼ããã·ã¥ã«ã¼ã ã¨ã¼ã«) | WheatÃ8, Red MushroomÃ6, Brown MushroomÃ6 | 10m | â | Dark Oak/4y | 7 | 8 | Night Vision, Regen, Nausea, Glowing |
+
+## ð· Wines
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Red Wine | Sweet BerriesÃ5 | 5m | â | Any/20y | 4 | 8 | â |
+| Chianti | Sweet BerriesÃ12, Oak SaplingÃ2 | 8m | â | Oak/15y | 6 | 12 | Strength, Health Boost |
+| Vermouth | Sweet BerriesÃ8, GrassÃ4 | 6m | â | Oak/10y | 5 | 16 | Luck, Regen |
+| Cherry Wine (ãã§ãªã¼ã¯ã¤ã³ï¼ãã³ãã¼ã¸ãã§ãªã¼ã¯ã¤ã³) | Sweet BerriesÃ12, SugarÃ4, AppleÃ2 | 8m | â | Cherry/12y | 6 | 11 | Regen, Luck, Health Boost |
+| RosÃ© Wine (ã­ã¼ã¯ã¤ã³ï¼ãã­ã´ã¡ã³ã¹ã­ã¼) | Sweet BerriesÃ8, AppleÃ4, SugarÃ2 | 6m | â | Any/8y | 5 | 9 | Regen, Saturation, Luck |
+| Mulled Wine (ã°ãªã¥ã¼ã¯ã¤ã³ï¼ãã¬ãã¢ã ã°ãªã¥ã¼ã¯ã¤ã³) | Sweet BerriesÃ10, SugarÃ6, Blaze PowderÃ1 | 10m | â | Oak/4y | 5 | 10 | Fire Res, Regen, Health Boost |
+| Ice Wine (ã¢ã¤ã¹ã¯ã¤ã³ï¼ã¨ã¯ã¹ããªã¼ã ã¢ã¤ã¹ã¯ã¤ã³) | Sweet BerriesÃ20, SugarÃ10, SnowballÃ6 | 12m | â | Birch/15y | 9 | 12 | Regen, Absorption, Luck, Health Boost |
+| Elderflower Wine (ã¨ã«ãã¼ãã©ã¯ã¼ã¯ã¤ã³ï¼ã¨ã«ãã¼ãã©ã¯ã¼ã·ã£ã³ãã³) | WheatÃ6, SugarÃ8, GrassÃ6, Glow BerriesÃ3 | 7m | â | Birch/5y | 6 | 10 | Regen, Luck, Glowing |
+| Elven Wine (ã¨ã«ãã¯ã¤ã³ï¼ãã«ã¦ããã®ã¨ã«ãã¯ã¤ã³) | Sweet BerriesÃ12, Glow BerriesÃ8, GrassÃ6, Honey BottleÃ2 | 8m | â | Birch/25y | 9 | 10 | Regen, Health Boost, Absorption, Luck, Glowing |
+
+## ð¶ Sake (Japanese Rice Wine)
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Sake (æ¥æ¬éï¼å¤§åé¸) | WheatÃ10, Sugar CaneÃ4 | 12m | 1 | Bamboo/5y | 6 | 15 | Regen, Luck |
+| Junmai (ç´ç±³éï¼ç¹å¥ç´ç±³é) | WheatÃ14, Sugar CaneÃ2 | 10m | â | Bamboo/3y | 5 | 15 | Regen, Saturation, Luck |
+| Honjozo (æ¬é¸é ï¼ç¹å¥æ¬é¸é ) | WheatÃ12, Sugar CaneÃ3 | 8m | â | Bamboo/2y | 4 | 15 | Regen, Speed, Saturation |
+| Ginjo (åé¸éï¼å¤§åé¸) | WheatÃ16, Sugar CaneÃ3, SnowballÃ2 | 12m | â | Bamboo/6y | 7 | 16 | Regen, Luck, Glowing |
+| Daiginjo (å¤§åé¸ï¼æ¥µä¸å¤§åé¸) | WheatÃ20, Sugar CaneÃ4, SnowballÃ4, Honey BottleÃ1 | 15m | â | Bamboo/10y | 9 | 17 | Regen, Luck, Health Boost, Glowing |
+| Namazake (çéï¼çåé) | WheatÃ14, Sugar CaneÃ4, SnowballÃ6 | 10m | â | â | 6 | 18 | Regen, Speed, Jump, Luck |
+| Nigori (æ¿ãéï¼æ´»æ§æ¿ãé) | WheatÃ12, SugarÃ6, Milk BucketÃ1 | 10m | â | Bamboo/2y | 4 | 14 | Regen, Saturation |
+| Sparkling Sake (ã¹ãã¼ã¯ãªã³ã°æ¥æ¬é/ã·ã£ã³ãã³é) | WheatÃ12, Sugar CaneÃ6, SugarÃ8, Honey BottleÃ2 | 8m | â | Bamboo/3y | 6 | 12 | Regen, Speed, Jump, Luck |
+| Koshu (å¤éï¼ç§èµå¤é) | WheatÃ16, Sugar CaneÃ6 | 12m | â | Dark Oak/30y | 8 | 18 | Regen, Health Boost, Absorption, Luck, Resistance |
+| Doburoku (ã©ã¶ããï¼ä¸è³ªãªã©ã¶ãã) | WheatÃ10, Sugar CaneÃ4, Milk BucketÃ1 | 6m | â | â | 3 | 14 | Regen, Saturation, Luck |
+| Amazake (çéï¼éº¹çé) | WheatÃ8, SugarÃ6, Milk BucketÃ1 | 3m | â | â | 2 | 0 (non-alc) | Regen, Saturation, Health Boost |
+| Yuzu Sake (æå­éï¼æ¥µä¸æå­é) | WheatÃ8, Glow BerriesÃ6, SugarÃ4, Honey BottleÃ1 | 8m | â | Bamboo/4y | 5 | 12 | Regen, Speed, Luck |
+| Bamboo Sake (ç«¹é/ç¿ ç«¹) | WheatÃ10, Sugar CaneÃ6, BambooÃ4 | 14m | 1 | Bamboo/7y | 7 | 18 | Speed, Jump, Luck |
+
+## ð¥ Shochu & Awamori
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Shochu (ç¼éï¼æ¬æ ¼ç¼é) | PotatoÃ15, WheatÃ5 | 14m | 2 | â | 5 | 25 | Fire Res, Strength |
+| Awamori (æ³¡çï¼å¤é) | WheatÃ12, Sugar CaneÃ6 | 16m | 3 | Oak/10y | 7 | 30 | Strength, Fire Res, Resistance |
+| Kasutori Shochu (ç²åãç¼éï¼åé¸ç²ç¼é) | WheatÃ12, Sugar CaneÃ8 | 10m | 2 | Bamboo/5y | 6 | 25 | Regen, Speed, Luck, Fire Res |
+| Makgeolli (ããã³ãªï¼çããã³ãª) | WheatÃ8, SugarÃ4 | 6m | â | Any/1y | 3 | 8 | Regen, Saturation |
+
+## ð¯ Mead & Plum Wine
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Mead | Sugar CaneÃ6 | 3m | â | Oak/4y | 2 | 9 | â |
+| Apple Mead | Sugar CaneÃ6, AppleÃ2 | 4m | â | Oak/4y | 4 | 11 | Water Breathing |
+| Royal Mead (èèéï¼ã­ã¤ã¤ã«ãã¼ã) | Honey BottleÃ6, Sugar CaneÃ4 | 5m | â | Oak/6y | 5 | 14 | Regen, Health Boost, Absorption |
+| Umeshu (æ¢éï¼çææ¢é) | Sweet BerriesÃ10, SugarÃ8, Honey BottleÃ2 | 5m | â | Oak/8y | 4 | 13 | Regen, Saturation, Luck |
+
+## ð¥ Whiskey & Spirits
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Whiskey | WheatÃ10 | 10m | 2 | Spruce/18y | 7 | 26 | â |
+| Bourbon | WheatÃ12, SugarÃ2 | 12m | 2 | Oak/12y | 6 | 25 | Strength, Fire Res |
+| Scotch | WheatÃ14 | 14m | 3 | Oak/25y | 8 | 28 | Strength, Resistance, Absorption |
+| Burning Whiskey | WheatÃ10, Blaze PowderÃ2 | 12m | 3 | Spruce/18y | 7 | 28 | Burning-mouth effect |
+| Korn | WheatÃ12 | 10m | 2 | Any/2y | 4 | 22 | Haste |
+| Vodka | PotatoÃ10 | 15m | 3 | â | 4 | 20 | Weakness, Poison |
+| Golden Vodka | PotatoÃ10, Gold NuggetÃ2 | 18m | 3 | â | 6 | 20 | Weakness, Poison |
+| Mushroom Vodka | PotatoÃ10, Red MushroomÃ3, Brown MushroomÃ3 | 18m | 5 | â | 7 | 18 | Weakness, Nausea, Night Vision, Blindness, Slowness |
+| Melon Vodka (ã¡ã­ã³ã¦ã©ãã«ï¼ãã¬ãã¢ã ã¡ã­ã³ã¦ã©ãã«) | PotatoÃ10, MelonÃ8, SugarÃ3 | 16m | 3 | â | 6 | 22 | Speed, Jump, Regen |
+| Gin | WheatÃ9, Blue FlowersÃ6, AppleÃ1 | 6m | 2 | â | 6 | 20 | â |
+| Tequila | CactusÃ8 | 15m | 2 | Birch/12y | 5 | 20 | â |
+| Moonshine (ã ã¼ã³ã·ã£ã¤ã³ï¼ãã¥ã¢ã ã¼ã³ã·ã£ã¤ã³) | Sugar CaneÃ20, PotatoÃ10 | 20m | 5 | â | 8 | 60 | Strength, Resistance, Nausea, Blindness (very strong) |
+| Baijiu (ç½éï¼èå°é) | WheatÃ16, Sugar CaneÃ8 | 18m | 4 | Oak/15y | 9 | 52 | Strength, Fire Res, Resistance, Nausea |
+| Desert Spirit (ç æ¼ ã®é/ç æ¼ ã®å¹»å½±) | CactusÃ12, Dead BushÃ6, SugarÃ4 | 16m | 3 | Acacia/8y | 8 | 38 | Speed, Jump, Night Vision, Nausea, Glowing |
+
+## ð¸ Brandy & Liqueurs
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Calvados | AppleÃ12 | 16m | 3 | Acacia/6y | 5 | 14 | â |
+| Apple Cider | AppleÃ14 | 7m | â | Any/3y | 4 | 7 | â |
+| Grappa | Sweet BerriesÃ15, AppleÃ3 | 10m | 3 | Oak/8y | 6 | 24 | Speed, Jump |
+| Cognac | Sweet BerriesÃ20 | 15m | 3 | Oak/20y | 8 | 27 | Health Boost, Regen, Absorption |
+| Plum Brandy (ãã©ã ãã©ã³ãã¼ï¼ã¹ãªã´ã©ã´ã£ãã) | Sweet BerriesÃ18, SugarÃ4 | 12m | 3 | Oak/10y | 7 | 35 | Health Boost, Regen, Absorption |
+| Rum | Sugar CaneÃ18 | 6m | 2 | Oak/14y | 6 | 30 | Fire Res, Poison |
+| Tropical Rum (ãã­ãã«ã«ã©ã ï¼ãã©ãã¤ã¹ã©ã ) | Sugar CaneÃ18, MelonÃ6, Sweet BerriesÃ4, Glow BerriesÃ2 | 8m | 2 | Jungle/8y | 6 | 28 | Speed, Jump, Regen, Luck |
+| CachaÃ§a | Sugar CaneÃ20 | 8m | 2 | Any/3y | 5 | 23 | Speed, Jump, Haste |
+| Aquavit | PotatoÃ12, GrassÃ5, CarrotÃ3 | 12m | 2 | Oak/6y | 7 | 21 | Dolphin's Grace, Water Breathing, Resistance |
+| Amaretto | Cocoa BeansÃ8, SugarÃ6, AppleÃ4 | 5m | 1 | Oak/5y | 4 | 15 | Regen, Saturation |
+| KahlÃºa | Cocoa BeansÃ15, SugarÃ8 | 4m | 1 | Oak/3y | 3 | 12 | Speed, Haste, Regen |
+| Sambuca | Sugar CaneÃ12, GrassÃ8 | 6m | 2 | Any/2y | 5 | 22 | Speed, Glowing, Night Vision |
+| Chartreuse | GrassÃ20, Sugar CaneÃ6, Glow BerriesÃ3 | 10m | 2 | Oak/15y | 9 | 35 | Regen, Health Boost, Absorption, Luck |
+| JÃ¤germeister | GrassÃ18, Brown MushroomÃ4, Red MushroomÃ4, SugarÃ4 | 12m | 2 | Oak/8y | 7 | 25 | Strength, Night Vision, Resistance, Nausea (fading) |
+| Campari | Sweet BerriesÃ10, GrassÃ8, Glow BerriesÃ4 | 7m | 1 | Any/4y | 6 | 18 | Hunger (fading), Health Boost, Luck |
+| Eggnog | EggÃ5, SugarÃ2, Milk BucketÃ1 | 2m | â | Any/3y | 4 | 10 | â |
+
+## ð¹ Cocktails
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Mojito (ã¢ãã¼ãï¼ãã¬ãã¢ã ã¢ãã¼ã) | Sugar CaneÃ8, GrassÃ6, Glow BerriesÃ4, SugarÃ3 | 2m | â | â | 3 | 12 | Speed, Regen, Jump |
+| Margarita (ãã«ã¬ãªã¼ã¿ï¼ãã­ã¼ãºã³ãã«ã¬ãªã¼ã¿) | CactusÃ6, Glow BerriesÃ8, SugarÃ6 | 3m | 1 | â | 4 | 18 | Strength, Speed |
+| Moscow Mule (ã¢ã¹ã³ãã¥ã¼ã«ï¼ãã¬ãã¢ã ã¢ã¹ã³ãã¥ã¼ã«) | PotatoÃ8, Honey BottleÃ2, Glow BerriesÃ4 | 4m | 2 | â | 4 | 15 | Speed, Fire Res, Haste |
+| Martini (ããã£ã¼ãï¼ãã©ã¤ããã£ã¼ã) | WheatÃ9, Blue OrchidÃ6, AppleÃ1, Sweet BerriesÃ4, GrassÃ2 | 5m | 1 | Oak/2y | 7 | 22 | Luck, Regen |
+| Manhattan (ãã³ããã¿ã³ï¼ãã¼ãã§ã¯ããã³ããã¿ã³) | WheatÃ10, Sweet BerriesÃ6, GrassÃ3 | 8m | 2 | Spruce/5y | 6 | 24 | Strength, Resistance, Luck |
+| Negroni (ãã°ã­ã¼ãï¼ãã°ã­ã¼ãã»ã¹ããªã¢ã¼ã) | WheatÃ6, Blue OrchidÃ4, Sweet BerriesÃ8, GrassÃ6, Glow BerriesÃ3 | 5m | 1 | Any/1y | 6 | 20 | Health Boost, Luck, Hunger (fading) |
+| Daiquiri (ãã¤ã­ãªï¼ãã­ã¼ãºã³ãã¤ã­ãª) | Sugar CaneÃ12, Glow BerriesÃ6, SugarÃ5 | 3m | 1 | â | 4 | 16 | Speed, Jump, Regen |
+| PiÃ±a Colada (ããã£ã³ã©ã¼ãï¼ãã­ãã«ã«ããã£ã³ã©ã¼ã) | Sugar CaneÃ10, Cocoa BeansÃ6, MelonÃ8, Milk BucketÃ1 | 4m | 1 | â | 5 | 14 | Regen, Saturation, Luck |
+| Cosmopolitan | PotatoÃ8, Glow BerriesÃ6, Sweet BerriesÃ8, SugarÃ3 | 3m | 2 | â | 5 | 17 | Speed, Luck, Glowing |
+| Bloody Mary (ãã©ããã£ããªã¼ï¼ã¹ãã¤ã·ã¼ãã©ããã£ããªã¼) | PotatoÃ8, Sweet BerriesÃ12, GrassÃ4, SugarÃ2 | 2m | 1 | â | 4 | 13 | Regen, Saturation, Fire Res |
+| White Russian (ãã¯ã¤ãã­ã·ã¢ã³ï¼ã¯ãªã¼ãã¼ãã¯ã¤ãã­ã·ã¢ã³) | PotatoÃ8, Cocoa BeansÃ10, SugarÃ6, Milk BucketÃ1 | 3m | 2 | â | 4 | 16 | Speed, Regen, Haste |
+| Black Russian | PotatoÃ8, Cocoa BeansÃ10, SugarÃ5 | 3m | 2 | â | 4 | 20 | Speed, Haste, Strength |
+| Long Island (ã­ã³ã°ã¢ã¤ã©ã³ãï¼ã­ã³ã°ã¢ã¤ã©ã³ãã¢ã¤ã¹ãã£ã¼) | PotatoÃ6, Sugar CaneÃ6, WheatÃ6, CactusÃ4, Glow BerriesÃ4, SugarÃ4 | 4m | 2 | â | 8 | 28 | Strength, Speed, Nausea (strong) |
+| Caipirinha | Sugar CaneÃ14, Glow BerriesÃ8, SugarÃ6 | 4m | 1 | â | 4 | 17 | Speed, Jump, Luck |
+| Sidecar | Sweet BerriesÃ16, Glow BerriesÃ6, SugarÃ5 | 10m | 2 | Oak/8y | 7 | 22 | Health Boost, Regen, Luck |
+| Whiskey Sour | WheatÃ10, Glow BerriesÃ8, SugarÃ6, EggÃ1 | 8m | 1 | Spruce/6y | 5 | 19 | Strength, Regen, Luck |
+| Amaretto Sour | Cocoa BeansÃ8, SugarÃ8, AppleÃ4, Glow BerriesÃ6 | 4m | 1 | Oak/2y | 4 | 13 | Regen, Saturation, Luck |
+| Godfather | WheatÃ10, Cocoa BeansÃ6, SugarÃ4 | 8m | 2 | Spruce/8y | 6 | 21 | Strength, Resistance, Health Boost |
+| Espresso Martini | PotatoÃ8, Cocoa BeansÃ12, SugarÃ6, Milk BucketÃ1 | 2m | 1 | â | 5 | 17 | Speed, Haste, Regen |
+| Blue Lagoon | PotatoÃ8, Glow BerriesÃ10, Blue OrchidÃ6, SugarÃ4 | 3m | 2 | â | 4 | 15 | Speed, Luck, Glowing, Water Breathing |
+
+## â Soft Drinks & Coffee
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Coffee | Cocoa BeansÃ12, Milk BucketÃ2 | 2m | â | â | 3 | sobering | Regen, Speed |
+| Iced Coffee | CookieÃ8, SnowballÃ4, Milk BucketÃ1 | 1m | â | â | 4 | sobering | Regen, Speed |
+| Hot Chocolate | CookieÃ3 | 2m | â | â | 2 | 0 (non-alc) | Haste |
+| Potato Soup | PotatoÃ5, GrassÃ3 | 3m | â | â | 1 | 0 (non-alc) | Instant Health |
+
+## ð¿ Absinthe
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Absinthe | GrassÃ15 | 3m | 6 | â | 8 | 42 | Poison |
+| Green Absinthe | GrassÃ17, Poisonous PotatoÃ2 | 5m | 6 | â | 9 | 46 | Poison, Instant Damage, Night Vision |
+
+## ð¥ Rare & Special Brews
+
+<Callout type="error" title="Extreme difficulty">
+The recipes below are the hardest (difficulty 9â10). Ingredients are rare and failure is likely, but they grant powerful effects.
+</Callout>
+
+| Name | Ingredients | Cook | Distill | Barrel/Age | Diff | ABV | Main effects |
+|---|---|---|---|---|---|---|---|
+| Nether Fire (ãã¶ã¼ãã¡ã¤ã¢/å°çã®æ¥­ç«) | WheatÃ12, Blaze PowderÃ6, Magma CreamÃ3 | 18m | 4 | Crimson/12y | 9 | 42 | Fire Res, Strength, Health Boost, Nausea |
+| Ender Dragon Breath (ãã©ã´ã³ãã¬ã¹ï¼ã¨ã³ãã¼ãã©ã´ã³ãã¬ã¹) | WheatÃ10, Blaze PowderÃ4, Ender PearlÃ2, Sugar CaneÃ6 | 20m | 5 | Crimson/20y | 10 | 45 | Strength, Fire Res, Resistance, Speed, Absorption, Nausea, Blindness |
+
+## â¨ï¸ Main Commands
+
+| Command | Description |
+|---|---|
+| `/breweryx` (aliases: `/brewery`, `/brew`) | The plugin's main command |
+| `/brew Info` | Show info about the drink in your hand |
+| `/brew ItemName` | Get the material name of the held item (for checking recipe ingredients) |
+
+<Callout type="info">
+Drinking makes you tipsy; as you get drunker your chat gets distorted and the screen sways. Eating/drinking **bread or milk** lowers your drunkenness. Please don't overdo it ð¶
+</Callout>

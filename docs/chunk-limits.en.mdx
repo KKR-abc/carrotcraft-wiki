@@ -1,0 +1,130 @@
+---
+title: Chunk Limits
+description: Per-chunk block and entity placement limits
+icon: shield
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Shield, Boxes, Bug, Lightbulb, Cog, AlertTriangle } from 'lucide-react';
+
+<Callout type="info" title="About chunk limits">
+To maintain server stability, there are limits on the number of blocks and entities that can be placed per chunk (16×16 blocks). Placement or spawning is restricted once the limit is reached.
+</Callout>
+
+## 📋 Overview
+
+<Cards>
+  <Card icon={<Boxes />} title="Block Limits" description="Caps for redstone, storage, light sources, and special blocks" />
+  <Card icon={<Bug />} title="Entity Limits" description="Per-chunk caps for animals, monsters, and other entities" />
+  <Card icon={<AlertTriangle />} title="When Limits Are Hit" description="Placement blocked / automatic removal rules" />
+</Cards>
+
+## 🧱 Block Placement Limits
+
+Maximum number of each block type per chunk.
+
+<Tabs items={['Redstone', 'Storage & Workstations', 'Light Sources', 'Special Blocks']}>
+<Tab value="Redstone">
+
+| Block | Limit |
+| --- | --- |
+| Hopper | 384 |
+| Piston | 240 |
+| Sticky Piston | 240 |
+| Observer | 240 |
+| Dispenser | 192 |
+| Dropper | 192 |
+| Redstone Lamp | 300 |
+| Note Block | 192 |
+
+</Tab>
+<Tab value="Storage & Workstations">
+
+| Block | Limit |
+| --- | --- |
+| Chest | 384 |
+| Trapped Chest | 240 |
+| Barrel | 768 |
+| Shulker Box | 192 |
+| Furnace | 384 |
+| Blast Furnace | 192 |
+| Smoker | 192 |
+| Brewing Stand | 96 |
+| Enchanting Table | 60 |
+| Anvil | 96 |
+| Cauldron | 192 |
+| Composter | 150 |
+| Lectern | 192 |
+
+</Tab>
+<Tab value="Light Sources">
+
+| Block | Limit |
+| --- | --- |
+| Sea Lantern | 384 |
+| Glowstone | 384 |
+| Shroomlight | 384 |
+| End Rod | 450 |
+
+</Tab>
+<Tab value="Special Blocks">
+
+| Block | Limit |
+| --- | --- |
+| Spawner | 3,000 |
+| Beacon | 30 |
+| Conduit | 30 |
+| Bell | 120 |
+| Jukebox | 60 |
+| Turtle Egg | 120 |
+
+</Tab>
+</Tabs>
+
+## 🐾 Entity Limits
+
+Limits for entities (mobs, items, etc.). The check counts the chunk **plus its surrounding chunks (a 3x3 chunk area)**.
+
+There are no per-species limits — entities are capped by **category totals** (villagers are the one exception with an individual cap).
+
+| Category | Total Limit |
+| --- | --- |
+| Animals | 70 |
+| Monsters | 140 |
+| NPC | 60 |
+| Water Mobs | 20 |
+| Ambient | 20 |
+| Other (armor stands, item frames, etc.) | 500 |
+
+<Callout type="info" title="Villagers only: individual cap">
+Villagers tend to concentrate in trading halls, so they have an individual cap of **40 per area** in addition to the category total.
+</Callout>
+
+## ⚠️ When Limits Are Reached
+
+<Callout type="warn" title="Excess entities are auto-removed">
+**Blocks**: You will be unable to place more and a notification will appear on screen.
+
+**Entities**: Excess entities are automatically removed. Named entities are prioritized for preservation.
+</Callout>
+
+<Callout type="info" title="Design tip">
+When building large devices, spreading them across multiple chunks helps avoid hitting limits.
+</Callout>
+
+## ❓ FAQ
+
+<Accordions>
+<Accordion title="How do I see chunk borders?">
+Press F3 + G (Java Edition) to show chunk borders. One chunk is 16×16 blocks.
+</Accordion>
+<Accordion title="Are named mobs always safe?">
+Named entities are prioritized for preservation, but they can still be removed if the limit is heavily exceeded.
+</Accordion>
+<Accordion title="Can the limits be raised for me?">
+For performance reasons, individual exceptions are not granted. Please spread your build across multiple chunks instead.
+</Accordion>
+</Accordions>

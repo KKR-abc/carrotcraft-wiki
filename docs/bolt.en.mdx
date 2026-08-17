@@ -1,0 +1,135 @@
+---
+title: Chest Protection
+description: Lock chests, doors, and furnaces to keep them safe from other players
+icon: lock
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Lock, Unlock, ShieldCheck, KeySquare, Users, Info, AlertTriangle, Home } from 'lucide-react';
+
+<Callout type="info" title="On this page">
+Use the **Bolt** plugin to lock chests, doors, furnaces, barrels, and more so other players can't access them. Sneak + right-click twice to quick-lock, or use `/lock` via command.
+</Callout>
+
+## 🔒 What is Chest Protection?
+
+The **Bolt** plugin lets you **lock** chests, doors, furnaces, barrels, and more, so other players can't access them.
+
+<Callout type="warn" title="Town officials can bypass">
+Even when protection is active, the **mayor, co-mayor, and assistants** of the town containing the chest can view its contents and break it.
+
+This means that if you place a protected chest inside another town's boundary, or if a town later expands to include your chest, the town's leaders can still access or take its contents.
+
+**The most reliable theft prevention is to build your own town and place chests within its claim.**
+</Callout>
+
+---
+
+## 🛡 How to Lock
+
+<Tabs items={['Quick Lock (Recommended)', 'Lock by Command']}>
+<Tab value="Quick Lock (Recommended)">
+
+<Steps>
+<Step>
+### Sneak and open the block
+
+While sneaking, **right-click** the target chest, door, etc. (the normal open action).
+</Step>
+<Step>
+### Repeat the same action
+
+**Sneak + right-click twice** in a row to instantly lock the block as `private`.
+</Step>
+<Step>
+### Verify the lock
+
+Use `/bolt info` and click the block to check its protection details.
+</Step>
+</Steps>
+
+</Tab>
+<Tab value="Lock by Command">
+
+| Command | Description |
+|---|---|
+| `/lock` | Lock the next block you click (private) |
+| `/unlock` | Remove the lock |
+| `/bolt modify add normal player <player>` | Add a trusted player |
+| `/bolt modify remove player <player>` | Remove a trusted player |
+| `/bolt info` | Show lock info for the clicked block |
+
+</Tab>
+</Tabs>
+
+---
+
+## 📦 Lockable Blocks
+
+| Category | Blocks |
+|---|---|
+| Containers | Chests, trapped chests, ender chests, barrels |
+| Processing | Furnaces, smokers, blast furnaces, brewing stands |
+| Transport | Hoppers, dispensers, droppers |
+| Openables | Doors, trapdoors, fence gates |
+| Display | Signs, item frames |
+| Decoration | Jukeboxes, lecterns, chiseled bookshelves |
+| Other | Shulker boxes, decorated pots |
+
+---
+
+## 🗝 Protection Types
+
+Change the type with `/lock <type>`.
+
+| Type | Description |
+|---|---|
+| `private` | Only you can use it (default) |
+| `display` | Anyone can view, but not interact |
+| `deposit` | Anyone can deposit, but not withdraw |
+| `withdrawal` | Anyone can withdraw, but not deposit |
+| `public` | Anyone can use freely |
+
+---
+
+## 👥 Adding Trusted Players
+
+<Steps>
+<Step>
+### Run the `/bolt modify` command
+
+```
+/bolt modify add normal player <player_name>
+```
+</Step>
+<Step>
+### Click the target chest
+
+After naming the player you want to trust, click the chest to apply.
+</Step>
+<Step>
+### Grant admin permission (optional)
+
+The same command can also grant `admin` permission to that player.
+</Step>
+</Steps>
+
+---
+
+## 📋 Specifications
+
+- Multiple players can be trusted on a single chest
+- Redstone-based interactions are allowed by default
+- Town officials (mayor, co-mayor, assistant) can bypass protection (**reason: to prevent griefing via locked chests placed maliciously inside towns**)
+
+---
+
+## ⚠️ Notes
+
+<Callout type="warn">
+**If you place protected chests inside another player's town**, the town's mayor, co-mayor, and assistants may view or break them. To avoid theft and disputes, only use protected chests inside your own town or one you trust.
+</Callout>

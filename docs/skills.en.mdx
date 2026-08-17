@@ -1,0 +1,160 @@
+---
+title: Skills
+description: Level up 11 skills like Mining and Farming to earn money and unlock abilities
+icon: trending-up
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Callout type="info" title="Quick summary">
+Skills grow from **what you already do** — breaking blocks, harvesting crops, fighting mobs. Leveling up unlocks **abilities**, and Mining and Farming also **pay you directly**.
+</Callout>
+
+## 📈 What are skills?
+
+CarrotCraft has **11 skills**. There is nothing to set up: just play normally and they level up on their own.
+
+Open the menu with `/skills`.
+
+| Skill | How it levels | Pays money |
+|---|---|---|
+| **Mining** | Breaking stone and ores | ⭕️ |
+| **Farming** | Harvesting crops | ⭕️ |
+| **Foraging** | Breaking logs and leaves | ✖️ |
+| **Excavation** | Digging dirt, sand, gravel | ✖️ |
+| **Fishing** | Catching fish | ✖️ |
+| **Archery** | Killing mobs with a bow | ✖️ |
+| **Fighting** | Killing mobs in melee | ✖️ |
+| **Defense** | Taking damage | ✖️ |
+| **Agility** | Taking fall damage | ✖️ |
+| **Alchemy** | Drinking and brewing potions | ✖️ |
+| **Enchanting** | Enchanting, anvils, grindstones | ✖️ |
+
+---
+
+## 💰 How income works
+
+**Only Mining and Farming** pay money, and it arrives the moment you break the block. More valuable ores pay more.
+
+| Block | Payout |
+|---|---|
+| Ancient Debris | 20 CC |
+| Diamond Ore | 10 CC |
+| Lapis Ore | 3 CC |
+| Gold Ore | 2 CC |
+| Emerald Ore | 2 CC |
+| Iron Ore | 1.5 CC |
+| Copper / Redstone Ore | 1 CC |
+| Coal Ore | 0.5 CC |
+| Wheat / Beetroot | 0.5 CC |
+| Nether Wart | 1 CC |
+| Carrot | 0.4 CC |
+| Potato | 0.35 CC |
+
+Stone, netherrack, logs and dirt give **XP only** — no money.
+
+### Earnings taper past 10,000 CC per day
+
+So that a handful of players cannot break the economy by grinding, **once your daily income passes 10,000 CC your share gradually decreases**.
+
+| Income that day | Your share |
+|---|---|
+| Up to 10,000 CC | **100%** |
+| 15,000 CC | 50% |
+| 20,000 CC | 20% |
+| 25,000 CC | 10% |
+
+<Callout type="info">
+This resets at **midnight Japan time (JST)**, back to 100%. Normal play rarely reaches 10,000 CC, so most players never notice it.
+</Callout>
+
+Your current share is shown in the `/skills` menu.
+
+---
+
+## ✨ Abilities unlocked by leveling
+
+<Steps>
+<Step>
+### Farming — Auto Replant (Lv5+)
+
+Harvesting a crop **replants it automatically**, so you never have to plant it back by hand.
+
+The chance rises with your level: **25% at Lv5, up to 100% at Lv100**. When the roll fails, **no seed is consumed**.
+</Step>
+
+<Step>
+### Foraging — Extra Drop (Lv1+)
+
+Breaking a log sometimes **drops one extra**. The chance rises to **25% at Lv100**. It is independent of Fortune, so both apply.
+</Step>
+
+<Step>
+### Mining — Haste (Lv10 / 25 / 50)
+
+You sometimes gain the Haste effect. Cooldown is 10 minutes.
+
+| Level | Effect |
+|---|---|
+| Lv10 | Haste I (15s) |
+| Lv25 | Haste II (15s) |
+| Lv50 | Haste II (25s) |
+</Step>
+
+<Step>
+### Fighting / Defense / Agility — Passive buffs
+
+| Skill | Effect | Max at Lv100 |
+|---|---|---|
+| **Fighting** | Damage dealt | +5% |
+| **Defense** | Damage taken | -5% |
+| **Agility** | Movement speed | +20% |
+
+These scale gradually with your level.
+</Step>
+</Steps>
+
+---
+
+## 🔍 Commands
+
+| Command | Description |
+|---|---|
+| `/skills` | Open the skills menu |
+| `/skills stats` | See your income broken down by skill |
+| `/skills top` | View the rankings |
+
+`/skill` and `/carrotskills` work too.
+
+---
+
+## ⚠️ What does not count
+
+A few things are excluded so skills cannot be farmed unfairly.
+
+- **Blocks you placed yourself** — place-and-break loops give nothing
+- **Blocks moved by pistons**
+- **Breaking a lot at once** — from the 33rd block onward XP drops to 25%
+- **Anvil work that only renames an item** — Enchanting only counts when enchantments increase or durability is restored
+- **Grindstone use on unenchanted items**
+
+---
+
+## ❓ FAQ
+
+**Q. Am I missing out if I ignore skills?**
+
+No. They level up naturally as you play. There is no need to grind them deliberately.
+
+**Q. Is there a level cap?**
+
+No cap, but each level needs more XP than the last.
+
+**Q. Where does the money go?**
+
+Straight into your server balance (CC). Check it with `/bal`.
+
+**Q. My income seems to have dropped.**
+
+Check `/skills` to see whether you passed 10,000 CC today. It resets at midnight JST.

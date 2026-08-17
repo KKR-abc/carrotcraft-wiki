@@ -1,0 +1,63 @@
+---
+title: Cosmetics
+description: Decorate your character with particles, pets, morphs, hats, and more
+icon: wand-sparkles
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Sparkles, Dog, Bird, Crown, Smile, WandSparkles } from 'lucide-react';
+
+<Callout type="warn" title="VIP / Media Rank Only">
+  Cosmetics are **available only to VIP and Media rank players**. See the [VIP page](/docs/vip) for how to obtain VIP rank.
+</Callout>
+
+<Callout type="info" title="What are Cosmetics?">
+  **Decorative items** that change your appearance. These do not affect combat or stats — purely visual.
+</Callout>
+
+## 🎒 How to Open
+
+```
+/uc menu
+```
+
+This opens the main menu. Choose a category and click a cosmetic to equip it.
+
+## 🗂 Categories
+
+The following categories are available on this server:
+
+<Cards>
+  <Card icon={<Sparkles />} title="✨ Particle Effects" description="Visual effects around your character" />
+  <Card icon={<Dog />} title="🐶 Pets" description="A small mob that follows you" />
+  <Card icon={<Bird />} title="🦊 Morphs" description="Disguise yourself as another mob" />
+  <Card icon={<Crown />} title="🎩 Hats" description="Wear various items as a helmet" />
+  <Card icon={<Smile />} title="💃 Emotes" description="Animations like dancing, bowing, etc." />
+</Cards>
+
+<Callout type="info">
+  Some individual cosmetics within a category may be unavailable due to permissions or server settings. Pick from what you actually see in the menu.
+</Callout>
+
+## ⌨️ Main Commands
+
+| Command | Description |
+|---------|-------------|
+| `/uc menu` | Open the main menu |
+| `/uc clear` | Unequip all cosmetics |
+
+## ❓ FAQ
+
+<Accordions>
+  <Accordion title="Do cosmetics make me stronger?">
+    No. Cosmetics are **purely visual** — they don't affect combat, stats, or anything mechanical.
+  </Accordion>
+  <Accordion title="Other players become invisible or laggy">
+    Heavy use of particle cosmetics can cause performance issues. Try unequipping cosmetics from the menu.
+  </Accordion>
+  <Accordion title="A cosmetic is broken">
+    Report bugs or broken cosmetics to staff.
+  </Accordion>
+</Accordions>

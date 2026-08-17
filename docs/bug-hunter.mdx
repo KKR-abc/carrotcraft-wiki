@@ -1,0 +1,65 @@
+---
+title: バグハンター
+description: バグを報告して限定バッジと報奨金を獲得するプログラム
+icon: bug
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Bug, Coins, Search, FileText, ShieldAlert, MessageCircle } from 'lucide-react';
+
+<Callout type="info" title="バグハンタープログラムとは">
+バグを発見・報告してくれたメンバーに、**限定バッジ**と**報奨金（最大 1,000,000cc）**を付与するプログラムです。小さなバグでも大きなバグでも、報告をお待ちしています 🙌
+</Callout>
+
+## 🎁 もらえるもの
+
+<Cards>
+  <Card icon={<Bug />} title="バグハンター バッジ" description="プログラムに貢献した証となる限定バッジ" />
+  <Card icon={<Coins />} title="報奨金 最大 1,000,000cc" description="バグの内容・深刻度に応じて付与されます" />
+</Cards>
+
+## 📋 報告の流れ
+
+<Steps>
+<Step>
+### バグを発見する
+
+プレイ中に見つけた不具合や想定外の挙動をメモします。**再現できるか**を確認しておくと審査がスムーズです。
+</Step>
+<Step>
+### サポートセンターに再現手順を投稿
+
+[Discord](https://discord.gg/EKUPDxXaqb) の **サポートセンター** に、再現手順・発生状況をできるだけ詳しく投稿します。スクリーンショットや録画があると審査が早くなります。
+</Step>
+<Step>
+### 審査 → バッジ＆報奨金を付与
+
+運営がバグの内容・深刻度を審査し、対象と判断された場合に **バッジと報奨金** を付与します。
+</Step>
+</Steps>
+
+## ✍️ 良い報告のコツ
+
+<Cards>
+  <Card icon={<FileText />} title="再現手順を箇条書きで" description="「何を → どうしたら → どうなった」の順で書く" />
+  <Card icon={<Search />} title="状況情報を添える" description="発生日時・ワールド・座標・使用アイテムなど" />
+  <Card icon={<Bug />} title="証拠を添付" description="スクリーンショットや録画があるとベスト" />
+  <Card icon={<MessageCircle />} title="1報告につき1バグ" description="複数まとめず分けて報告すると審査が早い" />
+</Cards>
+
+## ⚠️ 注意事項
+
+<Callout type="warn">
+- バッジ・報奨金は **バグの内容・深刻度によって異なります**。すべての報告が対象となるわけではありません。
+- すでに報告・把握済みのバグは対象外となる場合があります。
+</Callout>
+
+<Callout type="error" title="バグの悪用は禁止（報奨金ではなくBANの対象）">
+発見したバグを**報告せず悪用する行為**は固く禁止されています。アイテム増殖（Dupe）などの悪用は報奨金ではなく **処罰・BAN** の対象です。詳しくは [サーバールール](/docs/rules) の「バグ・不具合の悪用・アイテム増殖」を確認してください。
+</Callout>
+
+## 📮 報告はこちら
+
+バグを見つけたら、[Discord サポートセンター](https://discord.gg/EKUPDxXaqb) から遠慮なく報告してください！

@@ -1,0 +1,129 @@
+---
+title: Resource Server
+description: How to access the resource server for mining and gathering
+icon: pickaxe
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Pickaxe, Home, Radar, Mic, Sparkles, Ban, AlertTriangle, Package } from 'lucide-react';
+
+<Callout type="info" title="What is the Resource Server?">
+  CarrotCraft hosts a separate **resource server** dedicated to mining and material gathering, where you can dig and harvest freely without affecting the main world.
+</Callout>
+
+## 🚪 How to Access
+
+<Steps>
+  <Step>
+    **Log in to the main server**
+
+    Connect to `play.carrotcraft.net` as usual to join the main server.
+  </Step>
+  <Step>
+    **Run `/shigen`**
+
+    You'll be transferred to the resource server.
+
+    ```
+    /shigen
+    ```
+  </Step>
+  <Step>
+    **Mine & gather freely**
+
+    Use `/rtp` to teleport to a fresh area and start digging.
+  </Step>
+  <Step>
+    **Return with `/kokka`**
+
+    When you're done, run this to return to the main server.
+
+    ```
+    /kokka
+    ```
+  </Step>
+</Steps>
+
+## 📋 Resource Server Features
+
+| Item | Details |
+|------|---------|
+| World | Independent, separate world |
+| Difficulty | Easy |
+| Towny | None — anyone can mine anywhere |
+| Inventory | NOT shared with main server |
+| Voice Chat | Available |
+
+<Callout type="warn">
+  Inventories are **separate from the main server**, and **Ender Chests are not shared either**. To bring items back, use the cross-server shared chest: **`/post`**.
+</Callout>
+
+## ✅ Available Features
+
+<Cards>
+  <Card icon={<Home />} title="/home" description="Home registration (up to 5, separate from main)" />
+  <Card icon={<Radar />} title="/rtp" description="Random teleport to a fresh mining area" />
+  <Card icon={<Package />} title="/post" description="Cross-server shared chest (use this to bring items home)" />
+  <Card icon={<Mic />} title="Voice Chat" description="Chat with players while you mine" />
+  <Card icon={<Pickaxe />} title="/co i" description="CoreProtect history lookup" />
+  <Card icon={<Sparkles />} title="XPManager" description="Bottle your XP" />
+</Cards>
+
+## 🚫 Unavailable Features
+
+- Towny — No town creation or resident management
+- Player shops (QuickShop)
+- CarrotMarket (economy trades)
+- Brewery — only on the main server
+- Casino, Cosmetics, Vote crates
+- Horse training
+
+## 🛠 What You Can / Can't Do
+
+| Can do | Can't do |
+|--------|---------|
+| Mine, log, and modify terrain freely | Build a permanent base (periodic resets) |
+| Hunt mobs and collect drops | Create towns |
+| Use voice chat with other players | Grief / PvP / loot other players |
+
+## 📦 Bringing Items Back
+
+<Steps>
+  <Step>
+    **Deposit into `/post`**
+
+    Run `/post` to open the **cross-server shared chest** and put your items in. Its contents are the same on every server.
+  </Step>
+  <Step>
+    **Return with `/kokka`**
+
+    Go back to the main server, open `/post` again, and take them out.
+  </Step>
+</Steps>
+
+<Callout type="warn">
+  **Ender Chests are NOT shared between servers.** Anything you leave in an Ender Chest on the resource server will not appear on the main server. Always use `/post` to bring items home.
+</Callout>
+
+<Callout type="info">
+  Don't forget to deposit valuables into `/post` before leaving — chests you place on the resource server may be wiped in a reset.
+
+  Note: **cooked food items (Farmer's Delight) cannot be withdrawn from `/post` on the resource server.** Collect those on the main server.
+</Callout>
+
+## ❓ FAQ
+
+<Accordions>
+  <Accordion title="Do I get my items back if I die?">
+    **Death item-loss is not compensated.** Keep Inventory is also disabled. Don't bring valuable items into the resource server.
+  </Accordion>
+  <Accordion title="Can I build a base here?">
+    A temporary work shed is fine, but **the server may reset periodically**. Build permanent bases on the main server.
+  </Accordion>
+  <Accordion title="Can I enter another player's mining area?">
+    The server is free-mine, but **griefing other players (PvP, looting) is prohibited**. Don't camp or claim large areas you've mined.
+  </Accordion>
+</Accordions>

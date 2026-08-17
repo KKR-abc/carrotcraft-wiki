@@ -1,0 +1,122 @@
+---
+title: Buyback Shop
+description: An admin-run shop that buys your spare items for CC
+icon: hand-coins
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Callout type="info" title="What is the Buyback Shop?">
+  It is an admin-run shop where **the server buys your spare items**. Open it with `/kaitori`, click an item you want to sell, and you receive **CC (Carrot Coins)** on the spot.
+</Callout>
+
+## 🥕 In short
+
+<Cards>
+  <Card title="1. Open with /kaitori" description="A GUI opens listing every item the server currently buys." />
+  <Card title="2. Click the item to sell" description="Pick the amount on the confirmation screen and hit Confirm. Your payout is shown before you commit." />
+  <Card title="3. Get CC instantly" description="You are paid immediately for whatever you sell. Every sale is logged." />
+</Cards>
+
+<Callout type="warn" title="This is 'sell only'">
+  The buyback shop is **player → server**, one way only. You **cannot buy items** from it (the server does not sell here). For buying, use [CarrotMarket or QuickShop](/docs/economy).
+</Callout>
+
+***
+
+## 🧰 How to use
+
+<Steps>
+  <Step>
+    **Open `/kaitori`**
+
+    The buyback list opens, showing only the items the server is currently buying.
+  </Step>
+  <Step>
+    **Click the item you want to sell**
+
+    A **confirmation screen** opens for that item. Any click (left or right) works.
+  </Step>
+  <Step>
+    **Choose the amount and Confirm**
+
+    Adjust the amount with the buttons, check your payout, then confirm. **Nothing sells until you confirm.**
+  </Step>
+</Steps>
+
+### Choosing the amount (confirmation screen)
+
+There is **no chat input** — everything is done with buttons.
+
+| Button | Action |
+| --- | --- |
+| `-64 / -10 / -1` | Decrease the amount |
+| `+1 / +10 / +64` | Increase the amount |
+| **All** | As many as possible (limited by your inventory and today's remaining quota) |
+| **Confirm** | Sell that amount (CC paid) |
+| **Cancel** | Return to the list (nothing sold) |
+
+### Reading the icons
+
+Each item's icon shows:
+
+| Shown | Meaning |
+| --- | --- |
+| Unit price | How many CC per item |
+| Remaining today | Server-wide remaining / your remaining |
+| Your sales today | How many you've sold here today |
+| **Gray glass pane** | Today's limit is reached (available again tomorrow) |
+
+***
+
+## 📋 Buyback rules
+
+| Item | Detail |
+| --- | --- |
+| What is bought | **Plain items only** (no name, enchantments, or custom data) |
+| What is not bought | Named, enchanted, and special items such as **compressed goods and Majin items** |
+| Items & prices | **Set by staff.** The lineup, unit prices, and limits are adjusted over time |
+| Daily limits | Each item has a **server-wide** cap and a **per-player** cap |
+| Limit reset | Every day at **00:00 (JST)** |
+| Payment | CC is paid **instantly** the moment a sale succeeds |
+
+<Callout type="info" title="Buying items with contents (e.g. spawners)">
+  Items with contents — such as spawners, whose value depends entirely on the mob inside — are only bought when they **exactly match** an entry the staff registered, contents included. A spawner of a different type will not be accepted.
+</Callout>
+
+<Callout type="warn" title="Special items are not bought (dupe protection)">
+  Items with a custom name, enchantments, or special data are generally excluded. This prevents value mix-ups and item duplication. If you have a special item you'd like sold, ask the staff.
+</Callout>
+
+***
+
+## 💬 Commands
+
+| Command | Description |
+| --- | --- |
+| /kaitori | Open the buyback shop (aliases: /buyshop, /sellshop) |
+
+***
+
+## ❓ FAQ
+
+<Accordions>
+  <Accordion title="An item is grayed out and I can't sell it">
+    That item has reached **today's limit** (server-wide or yours). Limits reset every day at **00:00 (JST)**, so you can sell again the next day.
+  </Accordion>
+  <Accordion title="I have the item but it's not in the list">
+    The server **isn't currently buying** that item. The lineup is set by staff and changes over time.
+  </Accordion>
+  <Accordion title="Can I sell compressed goods or Majin items?">
+    No. Items with a name, enchantments, or special data are excluded to prevent value mix-ups and duplication.
+  </Accordion>
+  <Accordion title="My spawner won't sell">
+    It must **match a registered entry, including the mob inside**. Spawners of a different type are not accepted.
+  </Accordion>
+  <Accordion title="I sold something but didn't get CC">
+    You're paid instantly for whatever succeeds. If payment fails, the **items are returned** and no CC is deducted — a sale never ends halfway. If something still looks wrong, report it to staff.
+  </Accordion>
+</Accordions>

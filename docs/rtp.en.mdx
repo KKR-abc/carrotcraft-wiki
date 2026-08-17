@@ -1,0 +1,70 @@
+---
+title: Random Teleport
+description: Teleport to unexplored areas of the world
+icon: shuffle
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Shuffle, Map, Timer, ShieldCheck } from 'lucide-react';
+
+<Callout type="info" title="On this page">
+Use `/rtp` to teleport to a random location in the world. It avoids **existing towns, lava, mid-air, and oceans**, so you only land on safe terrain — perfect for new bases and resource runs.
+</Callout>
+
+## 🎲 Random Teleport (RTP)
+
+The `/rtp` command teleports you to a random location in the world. Use it to find unsettled land for a new base, or to start an adventure in a fresh area.
+
+---
+
+## 🧭 Basic Commands
+
+| Command | Type | Description |
+|---|---|---|
+| /rtp | command | Random teleport in the current world |
+| /wild | command | Alias (same function) |
+
+---
+
+## 📋 Specifications
+
+| Item | Type | Description |
+|---|---|---|
+| Range | spec | Random location within the world border (Chunky setting) |
+| Towns | spec | Always outside any existing town's borders (Towny integration) |
+| Unsafe spots | spec | Will not teleport into lava or mid-air |
+| Oceans | spec | Will not drop you into oceans — auto-selects land |
+| Cooldown | spec | Repeated use has a cooldown of a few to a few dozen seconds |
+
+<Callout type="info">
+You won't be teleported into other players' **towns**. Use `/rtp` with peace of mind.
+</Callout>
+
+---
+
+## 💡 Tips
+
+<Steps>
+<Step>
+### Looking for a new base
+
+Run `/rtp` a few times until you find a spot you like.
+</Step>
+<Step>
+### Resource gathering
+
+Find untouched chunks to harvest fresh materials.
+</Step>
+<Step>
+### Mind the cooldown
+
+Repeated use has a **cooldown** of a few to a few dozen seconds.
+</Step>
+</Steps>
+
+---
+
+## 📘 Tutorial Integration
+
+New players who complete the [Tutorial](/docs/home#tutorial) at spawn are **automatically teleported** to a candidate base location via `/rtp`.

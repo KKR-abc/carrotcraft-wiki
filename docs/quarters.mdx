@@ -1,0 +1,201 @@
+---
+title: Quarters ガイド
+description: Townyの区画をさらに細かく区分けできるQuartersプラグインの使い方
+icon: layout-grid
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { LayoutGrid, Wand2, Home, Building2, Train, ShieldCheck } from 'lucide-react';
+
+<Callout type="info" title="Quarters とは">
+Townyのアドオンで、町のチャンク（16×16ブロック）を**さらに小さな3D区画**に分割できるプラグインです。アパート、ショップスペース、駅など、チャンクに縛られない自由なサイズの区画を作成・管理・売買できます。
+</Callout>
+
+<Callout type="info" title="権限は加算式">
+Quartersの権限は **加算式** です。町やプロットの既存の権限を奪うことはなく、追加で権限を付与する形で動作します。
+</Callout>
+
+## 🏗️ 区画の作り方
+
+<Steps>
+<Step>
+### ワンドを取得
+
+```
+/q wand
+```
+
+選択用のワンドアイテムを受け取ります。
+</Step>
+<Step>
+### 範囲を選択
+
+ワンドを手に持って:
+
+- **左クリック** → 1つ目の角（pos1）を設定
+- **右クリック** → 2つ目の角（pos2）を設定
+
+この2点が直方体の対角となります。コマンドでも設定可能:
+
+```
+/q pos1
+/q pos2
+```
+
+足元の位置が設定されます。相対座標も使えます（例: `/q pos1 0 5 0` = 5ブロック上）。
+
+ワンドを持っている間は、選択範囲と既存の区画がパーティクルで表示されます。
+</Step>
+<Step>
+### 選択に追加
+
+```
+/q selection add
+```
+
+定義した直方体を選択リストに追加します。L字型の部屋や複数階にまたがる区画を作りたい場合は、手順2-3を繰り返して複数の直方体を追加してください。
+</Step>
+<Step>
+### 区画を作成
+
+```
+/q create
+```
+
+選択リストの全直方体が1つの区画として作成されます。
+</Step>
+</Steps>
+
+## 🎯 選択の管理
+
+| コマンド | 説明 |
+|---------|------|
+| `/q selection add` | 現在の選択範囲を追加 |
+| `/q selection remove` | 立っている直方体を選択から削除 |
+| `/q selection clear` | 選択をすべてクリア |
+
+## ✏️ 区画の編集・削除
+
+| コマンド | 説明 |
+|---------|------|
+| `/q edit addselection` | 既存の区画に新しい直方体を追加 |
+| `/q edit remove` | 立っている直方体を区画から除去 |
+| `/q delete` | 立っている区画を完全に削除 |
+
+## 💰 所有権と信頼設定
+
+### 区画の売買
+
+<Tabs items={['売りに出す', '購入する']}>
+<Tab value="売りに出す">
+
+町長・区画オーナーが実行できます:
+
+```
+/q sell <価格>
+```
+
+</Tab>
+<Tab value="購入する">
+
+売りに出ている区画の中に入って:
+
+```
+/q claim
+```
+
+</Tab>
+</Tabs>
+
+その他の所有権コマンド:
+
+| コマンド | 説明 |
+|---------|------|
+| `/q sell cancel` | 販売をキャンセル |
+| `/q unclaim` | 所有権を放棄 |
+| `/q set owner <プレイヤー>` | 所有者を直接設定 |
+| `/q evict` | 所有者を強制退去（町長用） |
+| `/q set defaultsellprice <価格>` | 町のデフォルト販売価格を設定 |
+
+### 信頼プレイヤー
+
+```
+/q trust add <プレイヤー>
+```
+
+信頼されたプレイヤーは区画内で建築・破壊・コンテナ操作・アイテム使用のすべての権限を持ちます。
+
+```
+/q trust remove <プレイヤー>
+```
+
+## 🔒 権限設定
+
+```
+/q set perm <アクション> <グループ> <true/false>
+```
+
+**アクション:**
+
+| アクション | 説明 |
+|-----------|------|
+| `build` | ブロック設置 |
+| `destroy` | ブロック破壊 |
+| `switch` | コンテナ・ドア・ボタン等の操作 |
+| `itemuse` | ポーション・バケツ等のアイテム使用 |
+
+**グループ:**
+
+| グループ | 対象 |
+|---------|------|
+| `resident` | 町の住民 |
+| `nation` | 同じ国家のメンバー |
+| `ally` | 同盟国のメンバー |
+| `outsider` | それ以外の全員 |
+
+**例:**
+
+```
+/q set perm build resident true
+/q set perm switch outsider false
+```
+
+## 🏘️ 区画の種類
+
+<Cards>
+  <Card icon={<Home />} title="Apartment" description="デフォルト。オーナーと信頼プレイヤーが操作可能" />
+  <Card icon={<Building2 />} title="Inn" description="ベッドでスポーン地点を設定可能" />
+  <Card icon={<Train />} title="Station" description="ボート・トロッコの設置・使用が可能" />
+</Cards>
+
+タイプを変更するには（町長用）:
+
+```
+/q set type <タイプ名>
+```
+
+Embassy（大使館）モードを有効にすると、町の住民でなくても利用可能になります:
+
+```
+/q toggle embassy
+```
+
+## 🔎 情報の確認
+
+```
+/q here
+```
+
+立っている区画の詳細情報（名前、オーナー、タイプ、権限等）を表示します。
+
+## ⚠️ 制約
+
+<Callout type="warn">
+- 区画同士を重ねることはできません
+- 区画は複数の町にまたがれません
+- 荒野（未請求チャンク）には作成できません
+</Callout>

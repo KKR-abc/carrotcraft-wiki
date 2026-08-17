@@ -1,0 +1,333 @@
+---
+title: Towny Guide
+description: Complete guide for creating and managing towns and nations
+icon: castle
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Castle, Users, Coins, MapPin, Crown, Shield, Settings, Flag } from 'lucide-react';
+
+<Callout type="info" title="What is Towny?">
+A land protection and town-building plugin. Create a town, invite residents, protect your land, and grow your settlement. You can also form nations to unite multiple towns.
+</Callout>
+
+<Callout type="warn" title="Towns have a daily upkeep of 500 CC">
+This is automatically deducted from the town bank. If the town cannot pay, it will be deleted. Make sure to deposit regularly with `/t deposit`.
+</Callout>
+
+## 🎥 Watch the guide
+
+A video walkthrough: from an empty plot to building a town, inviting friends, and sharing land.
+
+<div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', margin: '1rem 0' }}>
+  <iframe
+    src="https://www.youtube.com/embed/R0_Nx60_iSc"
+    title="CarrotCraft Towny Guide"
+    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />
+</div>
+
+## 🏰 Creating a Town
+
+<Steps>
+<Step>
+### Create a Town
+
+```
+/t new <town name>
+```
+
+- Cost: **4,000 CC**
+- Town names must use **alphanumeric characters only**
+- The chunk you're standing in becomes your homeblock (town center)
+</Step>
+<Step>
+### Joining a Town
+
+```
+/t join <town name>
+```
+
+Works for open towns. For closed towns, you need an invitation from the mayor.
+</Step>
+</Steps>
+
+## 📊 Town Levels
+
+As your town gains residents, it levels up and can claim more land.
+
+| Residents | Title | Mayor Title | Max Chunks |
+|-----------|-------|-------------|-----------|
+| 1 | Settlement | Pioneer | 16 |
+| 2 | Hamlet | Chief | 32 |
+| 6 | Village | Village Chief | 96 |
+| 10 | Town | Town Mayor | 160 |
+| 14 | Large Town | City Mayor | 224 |
+| 20 | City | City Chief | 320 |
+| 24 | Large City | Governor | 384 |
+| 28 | Metropolis | Leader | 448 |
+
+Max chunks are also calculated as `residents × 12` (whichever is higher applies).
+
+<Callout type="warn">
+Outposts (non-contiguous land claims) are disabled. Town land must be claimed contiguously.
+</Callout>
+
+## 🗺️ Land Management
+
+### Claiming Land
+
+```
+/t claim
+```
+
+Claims the current chunk (16×16 blocks) for your town.
+
+- Cost: **500 CC** per chunk
+- Must be adjacent to existing town land
+- Must be at least **5 chunks** away from other towns
+- Maximum **100 plots** per player
+- `/t claim auto` — claim continuously as you walk
+
+### Unclaiming
+
+```
+/t unclaim
+```
+
+### Plot Sales
+
+```
+/plot forsale <price>    — Put plot up for sale
+/plot notforsale         — Cancel sale
+/plot claim              — Buy a plot that's for sale
+/plot unclaim            — Return a personally owned plot
+```
+
+## 👥 Resident Management
+
+| Command | Description |
+|---------|-------------|
+| `/t invite add <player>` | Invite a resident |
+| `/t kick <player>` | Kick a resident |
+| `/t leave` | Leave the town |
+
+## 🎖️ Town Ranks
+
+Mayors can assign ranks to residents with different permissions.
+
+| Rank | Display | Abilities |
+|------|---------|----------|
+| **vicemayor** | `[副市長]` | Land claims, invites, settings, plot management |
+| **builder** | `[建築士]` | Build on town-owned land, plot permissions |
+| **recruiter** | `[広報]` | Invite players |
+| **treasurer** | `[会計]` | Set taxes, deposit/withdraw |
+| **guard** | `[警備]` | Jail management, outlaw management |
+
+Assign ranks:
+
+```
+/t rank add <player> <rank>
+/t rank remove <player> <rank>
+```
+
+## ⚙️ Town Settings
+
+### Basic Settings
+
+| Command | Description |
+|---------|-------------|
+| `/t set name <name>` | Change town name |
+| `/t set board <message>` | Set town board message |
+| `/t set spawn` | Set town spawn to current location |
+| `/t set homeblock` | Change homeblock |
+| `/t set taxes <amount>` | Set resident tax |
+| `/t set plottax <amount>` | Set plot tax |
+| `/t set mapcolor <color>` | Change map color |
+
+### Toggle Settings
+
+| Command | Description |
+|---------|-------------|
+| `/t toggle pvp` | Toggle PvP |
+| `/t toggle fire` | Toggle fire spread |
+| `/t toggle explosion` | Toggle explosions |
+| `/t toggle mobs` | Toggle mob spawning |
+| `/t toggle public` | Toggle public spawn access |
+| `/t toggle open` | Toggle open join (no invite needed) |
+| `/t toggle taxpercent` | Toggle percentage-based tax |
+
+## 🔐 Permissions
+
+### Town-wide Permissions
+
+```
+/t set perm <group> <action> <on/off>
+```
+
+**Groups:** `resident`, `nation`, `ally`, `outsider`
+
+**Actions:** `build`, `destroy`, `switch`, `itemuse`
+
+### Plot Permissions
+
+```
+/plot set perm <group> <action> <on/off>
+```
+
+### Trust System
+
+```
+/plot trust add <player>    — Trust on specific plot
+/t trust add <player>       — Trust across entire town
+```
+
+## 🏗️ Plot Types
+
+```
+/plot set <type>
+```
+
+| Type | Description |
+|------|-------------|
+| `default` | Normal plot |
+| `shop` | Shop plot |
+| `arena` | PvP arena (friendly fire enabled) |
+| `embassy` | Embassy (non-residents can buy) |
+| `wilds` | Wilderness (only specific blocks can be mined) |
+| `inn` | Inn (bed spawn allowed) |
+| `jail` | Jail |
+| `farm` | Farm (only crop-related blocks) |
+| `bank` | Bank |
+
+## 🏦 Town Bank
+
+| Command | Description |
+|---------|-------------|
+| `/t deposit <amount>` | Deposit to town bank |
+| `/t withdraw <amount>` | Withdraw (mayor/treasurer only) |
+
+### Upkeep
+
+<Callout type="warn">
+Towns pay **500 CC/day** in upkeep, automatically deducted from the town bank. If the town can't pay, it gets deleted.
+</Callout>
+
+## 🚀 Teleportation
+
+| Command | Description | Cost |
+|---------|-------------|------|
+| `/t spawn` | Teleport to your town | Free |
+| `/t spawn <town>` | Teleport to another public town | Up to 10 CC |
+| `/n spawn` | Teleport to nation capital | Free |
+
+Nation member towns: **5 CC**, Allied towns: **10 CC**
+
+<Callout type="info">
+Teleports have a **30-second** cooldown.
+</Callout>
+
+## 🚫 Outlaws
+
+Players kicked from a town can be designated as "outlaws."
+
+```
+/t outlaw add <player>
+/t outlaw remove <player>
+```
+
+## 👑 Nations
+
+### Creating a Nation
+
+```
+/n new <nation name>
+```
+
+- Cost: **150,000 CC**
+- Mayors only, alphanumeric names only
+
+### Nation Levels
+
+| Total Residents | Title | King Title | Bonus Chunks |
+|----------------|-------|------------|-------------|
+| 0 | Nation | Leader | +10 |
+| 10 | Federation | Count | +20 |
+| 20 | Dominion | Duke | +40 |
+| 30 | Kingdom | King | +60 |
+| 40 | Empire | Emperor | +100 |
+| 60 | Great Empire | Grand Emperor | +140 |
+
+Bonus chunks are additional chunks that towns within the nation can claim.
+
+### Nation Commands
+
+| Command | Description |
+|---------|-------------|
+| `/n` | View nation info |
+| `/n list` | List nations |
+| `/n invite add <town>` | Invite a town |
+| `/n kick <town>` | Kick a town |
+| `/n ally add <nation>` | Request alliance |
+| `/n enemy add <nation>` | Declare enemy |
+| `/n set king <player>` | Change king |
+| `/n set taxes <amount>` | Set nation tax |
+| `/n deposit <amount>` | Deposit to nation bank |
+| `/n withdraw <amount>` | Withdraw from nation bank |
+| `/n spawn` | Teleport to capital |
+| `/n leave` | Leave nation (mayor) |
+
+### Nation Ranks
+
+| Rank | Display | Abilities |
+|------|---------|----------|
+| **viceroy** | `[総督]` | Invites, alliances, enemies, settings, rank management |
+| **diplomat** | `[外交官]` | Alliance & enemy management |
+| **recruiter** | `[国家広報]` | Town invitations |
+| **treasurer** | `[国家会計]` | Deposits/withdrawals, tax settings |
+| **helper** | — | Adding towns |
+
+### Nation Upkeep
+
+<Callout type="warn">
+Nations pay **1,000 CC/day**. If the nation can't pay, it is disbanded.
+</Callout>
+
+## 📋 Info Commands
+
+| Command | Description |
+|---------|-------------|
+| `/t` | Your town info |
+| `/t <town>` | Specific town info |
+| `/t list` | List all towns |
+| `/t online` | Online town members |
+| `/t here` | Town info at current location |
+| `/n` | Your nation info |
+| `/n list` | List nations |
+| `/n townlist <nation>` | Towns in a nation |
+| `/res <player>` | Resident info |
+| `/res friend add <player>` | Add friend |
+| `/towny map` | ASCII map of surrounding area |
+
+## ❓ FAQ
+
+<Accordions>
+<Accordion title="When does a town get deleted?">
+When it can't pay the daily upkeep (500 CC/day). Keep your town bank funded with `/t deposit`.
+</Accordion>
+<Accordion title="Can others destroy my builds?">
+Permissions (`/t set perm`) control access. By default, only residents can build/destroy. Outsiders cannot.
+</Accordion>
+<Accordion title="How do I get more chunks?">
+Recruit more residents, or buy bonus chunks with `/t buy bonus <amount>` (25 CC each). Joining a nation also provides bonus chunks.
+</Accordion>
+<Accordion title="MajinCraft Items & Towny Permissions">
+MajinCraft custom items (Vein Pickaxe, Timber Axe, Blast Arrow, etc.) **respect Towny permissions**. Block breaking and explosions won't work in areas where you lack build permission. Mob interaction items (Potions, Rainbow Shears, etc.) also respect mob interaction permissions. Items can only be used on your own town land or in the wilderness.
+</Accordion>
+</Accordions>

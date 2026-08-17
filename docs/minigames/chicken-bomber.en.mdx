@@ -1,0 +1,101 @@
+---
+title: ChickenBomber
+description: A guide to the explosive chicken PVP minigame
+icon: bomb
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Bomb, Egg, Crosshair, Trophy, Zap, Shield } from 'lucide-react';
+
+<Callout type="info" title="🐔 ChickenBomber">
+An asymmetric PVP game where players are split into Bombers and Survivors. Survivors dodge explosions while collecting "**Legendary Eggs**," and Bombers try to eliminate all Survivors with explosive chickens.
+</Callout>
+
+## 📖 Game Flow
+
+### 1. Collection Phase (First Half)
+
+<Tabs items={['🥚 Survivors', '💥 Bombers']}>
+<Tab value="🥚 Survivors">
+
+- **Dodge & Collect** — Avoid Chicken Bomber explosions and collect "Legendary Eggs" that appear at blast sites
+- **Chests** — Obtain Legendary Eggs and potions from chests scattered across the stage
+- **Healing** — While holding **5+ eggs**, continue sneaking to recover health
+- **Phase Transition** — When the total eggs held by all Survivors exceeds a threshold, the "Counter-Attack Phase" begins
+
+</Tab>
+<Tab value="💥 Bombers">
+
+- **Place Bombs** — Set Chicken Bombers to try to eliminate all Survivors
+- **Blast Range** — Explosions deal damage in a **cross-shaped area**
+- **Chain Detonation** — When an explosion hits another Chicken Bomber, it detonates faster than normal
+
+</Tab>
+</Tabs>
+
+### 2. Counter-Attack Phase (Second Half)
+
+<Tabs items={['🏹 Survivors', '💥 Bombers']}>
+<Tab value="🏹 Survivors">
+
+- **Revival** — Eliminated Survivors respawn with **1 HP**
+- **Fight Back** — Survivors receive a crossbow
+- **Sniping** — Hold the crossbow and **sneak (about 2 seconds)** to load an egg, then fire. The trajectory is a **straight line**
+
+</Tab>
+<Tab value="💥 Bombers">
+
+- **Vulnerable** — Bombers teleport into the stage and can now take damage from Survivors
+- **Resupply** — Obtain additional Chicken Bombers from chests for a final push
+
+</Tab>
+</Tabs>
+
+## 🏆 Win Conditions
+
+<Cards>
+  <Card icon={<Trophy />} title="Survivors" description="Collect enough eggs and defeat the Bomber with crossbow shots" />
+  <Card icon={<Bomb />} title="Bombers" description="Eliminate all Survivors" />
+</Cards>
+
+## 📋 Important Points
+
+| Item | Role | Description |
+|---|---|---|
+| Stamina System | Movement | Running continuously drains stamina and reduces movement speed. Walk or stop to recover |
+| Egg Drop | Survivor | When a Survivor is eliminated, they drop half their eggs on the spot |
+| Resupply Speed | Bomber | Bomber's bomb resupply time changes based on how many eggs Survivors have collected |
+| Max Capacity | Bomber | Bombers can hold up to 6 Chicken Bombers at a time |
+
+## 🥚 How to Obtain Legendary Eggs
+
+| Source | Type | Description |
+|---|---|---|
+| From blast sites | pickup | Pick up eggs that appear after Chicken Bomber explosions |
+| From chests | pickup | Open chests scattered across the stage |
+| From eliminated players | pickup | Pick up half of the eggs dropped by eliminated Survivors |
+
+## 🔧 How to Start
+
+<Steps>
+<Step>
+### Gather at the waiting area
+Players assemble in the lobby or waiting area.
+</Step>
+<Step>
+### Choose Bomber preference
+In the waiting area, you can choose whether to **volunteer as a Bomber**.
+</Step>
+<Step>
+### Player balancing
+Due to player balancing, some players may be assigned as **CPUs**.
+</Step>
+<Step>
+### Match begins
+Starts in the collection phase, then transitions to the counter-attack phase based on progress.
+</Step>
+</Steps>

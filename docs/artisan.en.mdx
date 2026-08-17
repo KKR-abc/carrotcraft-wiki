@@ -1,0 +1,205 @@
+---
+title: Artisan / Resource Border
+description: Deliver materials for Compression Points, then move or reset the resource world border
+icon: package
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Callout type="warn" title="This system is temporarily paused">
+  **Point conversion from deliveries** and **buying a Reset** are temporarily disabled. If you put materials in the delivery box and close it, nothing is converted — everything is returned to you. We'll announce when it comes back.
+
+  Points you have already earned are safe, and **buying a Move still works**.
+</Callout>
+
+<Callout type="info" title="What is the Artisan?">
+  Turn your leftover stone and dirt into **Compression Points**, then spend them to **expand or rebuild the resource world**. When the resource world runs dry, the players fix it themselves.
+</Callout>
+
+## 📦 In short
+
+<Cards>
+  <Card title="1. Deliver materials" description="Drop cobblestone, iron, diamonds and more into the delivery box and close it. You earn Compression Points (pt)." />
+  <Card title="2. Buy frontier work" description="Spend points to Move the resource world border, or Reset the world entirely." />
+  <Card title="3. Everyone benefits" description="Your purchase is announced server-wide and executed after a delay. Fresh land opens up for everyone." />
+</Cards>
+
+<Callout type="warn" title="Points are not money">
+  Compression Points **cannot be converted to CC (currency)**. They are only good for resource world frontier work.
+</Callout>
+
+***
+
+## 🧰 How to use
+
+<Steps>
+  <Step>
+    **Open `/assyuku`**
+
+    The Artisan hub opens: balance, delivery box, price list, and the frontier shop.
+  </Step>
+  <Step>
+    **Put materials in the delivery box and close it**
+
+    Everything is delivered the moment you close it. **Shulker boxes work too** — the contents get delivered and the box is returned.
+  </Step>
+  <Step>
+    **Buy from the frontier shop**
+
+    Choose Move (slide the border) or Reset (rebuild the world). Your purchase is announced to every server.
+  </Step>
+</Steps>
+
+***
+
+## 🪙 Delivering materials
+
+| Item | Type | Description |
+| --- | --- | --- |
+| Accepted items | spec | Cobblestone, stone, deepslate, dirt, sand, gravel, netherrack, logs, coal, iron, gold, copper, redstone, lapis, quartz, emerald, diamond, and more |
+| Rejected items | spec | Named, enchanted, or custom items are returned to you untouched |
+| Shulker boxes | spec | Contents are delivered; the box itself comes back |
+| Daily limit | spec | There is a daily cap on how much you can deliver. The remaining amount is shown in the hub |
+| Reset time | spec | 4:00 AM (JST) every day |
+
+<Callout type="info" title="Prices move">
+  Materials that get delivered a lot **drop in price**, and slowly **recover** when nobody delivers them. Check the current rate in the **price list** inside `/assyuku`. The more people sell it, the cheaper it gets.
+</Callout>
+
+***
+
+## 🧱 How compression works
+
+Every accepted material can be **compressed on a crafting table**. Fill a 3×3 grid with 9 of the same item and you get one compressed block, one tier up. You can stack this up to **7 tiers**.
+
+<Steps>
+  <Step>
+    **9 in, 1 out**
+
+    Put 9 of the same material into a crafting table (fill the whole 3×3) to get one tier-1 compressed block.
+  </Step>
+  <Step>
+    **Stack it up**
+
+    Nine tier-1 blocks make one tier-2 block, and so on — **up to tier 7**.
+  </Step>
+  <Step>
+    **Unpacking gives 8 back**
+
+    Put a compressed block alone in a crafting table and it becomes 8 of the tier below.
+  </Step>
+</Steps>
+
+<Callout type="warn" title="A round trip costs you one item">
+  Compressing is **9 → 1**, unpacking is **1 → 8**. Go both ways and you lose one item (the compression tax). A compressed block is worth exactly what it unpacks into (tier 1 = 8 items, tier 7 = 2,097,152 items).
+</Callout>
+
+<Callout type="error" title="Never place a compressed block, never craft with it">
+  A compressed block looks exactly like the plain material but holds up to millions of items. **Placing it destroys that value.** Only compress, unpack, or deliver it — the plugin blocks it from ordinary recipes.
+</Callout>
+
+***
+
+## ⚖️ Efficiency — compressing before delivery costs you
+
+How much you get paid depends on **how many times the item has been compressed**.
+
+| What you deliver | Type | Efficiency |
+| --- | --- | --- |
+| Plain, uncompressed material | spec | **100%** |
+| Tier 1–6 | spec | Drops linearly as the tier goes up |
+| Tier 7 (max) | spec | **75%** |
+| Anything inside a shulker box | spec | Flat **75%**, whatever the tier |
+
+<Callout type="warn" title="In other words">
+  **Delivering plain, uncompressed material pays the most.** Compression exists for hauling and for compression ranks/badges — not as a way to earn more points. Dumping a whole shulker is convenient, and that convenience costs a flat 25%.
+</Callout>
+
+***
+
+## 🗺️ Frontier work — Move and Reset
+
+The resource world has a **border**. You can slide it, or rebuild the world from scratch.
+
+### Move (slide the border)
+
+The border keeps its **size** and slides in the direction you choose. Fresh land opens ahead; the land behind falls outside.
+
+| Item | Type | Description |
+| --- | --- | --- |
+| Unit | spec | 1 unit = 1,000 blocks. Up to 20 units per purchase |
+| Direction | spec | Frontline / North / East / South / West |
+| Takes effect | spec | **1 hour** after purchase |
+| Next purchase | spec | **2 hours** from the moment you buy |
+
+### Reset (rebuild the world)
+
+<Callout type="warn">
+  **Buying a Reset is temporarily disabled.** The purchase screen shows "currently disabled" and the option cannot be bought.
+</Callout>
+
+The resource world is **regenerated with brand new terrain**. The border returns to its starting position.
+
+| Item | Type | Description |
+| --- | --- | --- |
+| Takes effect | spec | **2 hours** after purchase |
+| Next purchase | spec | **5 hours** from the moment you buy |
+| Your items | spec | Inventory, XP and ender chest are **kept** |
+| Your builds | spec | Anything placed in the resource world is **gone** |
+
+<Callout type="error" title="Do not keep valuables in the resource world">
+  Both Move and Reset change the terrain. **Chests and builds do not come back.** Keep your base on the main server and use the resource world for mining.
+</Callout>
+
+***
+
+## ⏰ Announcements and countdown
+
+Every purchase is **announced on all servers** — who bought it, which world, which direction, and how far.
+
+The countdown runs at **45m → 30m → 15m → 10m → 5m → 2m → 1m → 30s**, then **10 → 5 → 3 → 2 → 1**. **Use that time to haul your loot out.**
+
+<Callout type="info" title="You are moved somewhere safe during a reset">
+  When a reset executes, anyone in the resource world is moved to a **safe empty space**. You take no damage and cannot fall. When it finishes you are **teleported into the new world** automatically.
+</Callout>
+
+***
+
+## 💬 Commands
+
+| Command | Type | Description |
+| --- | --- | --- |
+| /assyuku | command | Open the Artisan hub (deliver, prices, frontier) |
+| /assyuku pay &lt;name&gt; &lt;pt&gt; | command | Send Compression Points to another player |
+| /assyuku top [n] | command | Compression point ranking (shows your rank too) |
+| /assyuku help | command | Command list |
+| /frontier balance | command | Your Compression Point balance |
+| /frontier history | command | Point history |
+| /frontier top | command | Balance ranking |
+| /frontier rate list | command | Current rate per material |
+| /carrotborder eta | command | Time left on the current Move / Reset (**resource world only**) |
+
+***
+
+## ❓ FAQ
+
+<Accordions>
+  <Accordion title="I delivered items but nothing happened">
+    The material may not be **accepted**, or you may have hit the **daily cap**. Rejected items are returned to you. Your remaining cap is shown in the `/assyuku` hub.
+  </Accordion>
+  <Accordion title="Can I convert points into money?">
+    No. Compression Points are only good for frontier work. You can **send** them to other players (`/assyuku pay`).
+  </Accordion>
+  <Accordion title="I bought it but nothing moved">
+    Move takes effect after 1 hour, Reset after 2 hours. That delay exists so everyone can **haul their loot out**. Check the remaining time by running `/carrotborder eta` in the resource world (it is not available on the main server).
+  </Accordion>
+  <Accordion title="What happens to my base in the resource world?">
+    Land that falls outside after a Move, and land rebuilt by a Reset, **never comes back**. The resource world is for mining. Keep valuables on the main server.
+  </Accordion>
+  <Accordion title="The price changed since yesterday">
+    Rates move with **how much has been delivered**. Heavily delivered materials get cheaper and recover once people stop. Check the price list for the current rate.
+  </Accordion>
+</Accordions>

@@ -1,0 +1,137 @@
+---
+title: Getting Started
+description: How to join CarrotCraft and basic gameplay
+icon: rocket
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Rocket, Users, Map, Coins, Sparkles, Mic, Scroll, Home } from 'lucide-react';
+
+<Callout type="info" title="Welcome to CarrotCraft">
+This page covers how to join the server, your first steps, and the basic commands. You can join from both Java and Bedrock Editions.
+</Callout>
+
+## 🚀 Joining the Server
+
+<Tabs items={['Java Edition', 'Bedrock Edition']}>
+<Tab value="Java Edition">
+
+<Steps>
+<Step>
+### Launch Minecraft Java Edition
+
+Open the latest version of Minecraft Java Edition.
+</Step>
+<Step>
+### Add Server
+
+Go to "Multiplayer" → "Add Server".
+</Step>
+<Step>
+### Enter the Address
+
+Use `play.carrotcraft.net` as the server address.
+</Step>
+<Step>
+### Connect
+
+Click "Done" → "Join Server".
+</Step>
+</Steps>
+
+</Tab>
+<Tab value="Bedrock Edition">
+
+Bedrock players can join via floodgate.
+
+<Steps>
+<Step>
+### Launch Minecraft
+
+Open Bedrock Edition Minecraft.
+</Step>
+<Step>
+### Add Server
+
+Go to "Play" → "Servers" → "Add Server".
+</Step>
+<Step>
+### Enter Connection Info
+
+| Field | Value | Description |
+|-------|-------|-------------|
+| Server Address | `play.carrotcraft.net` | Main server domain |
+| Port | `19132` | Port for Bedrock Edition |
+</Step>
+<Step>
+### Save and Connect
+
+Save the entry and connect.
+</Step>
+</Steps>
+
+</Tab>
+</Tabs>
+
+## 🎯 First Steps
+
+When you join the server, you'll arrive at the lobby.
+
+<Steps>
+<Step>
+### Choose a Mode
+
+Click an NPC in the lobby to select your game mode.
+</Step>
+<Step>
+### Read the Rules
+
+Use `/rule` to check the server rules.
+</Step>
+<Step>
+### Starter Kit
+
+You'll receive a starter kit on your first login.
+</Step>
+</Steps>
+
+## 💰 Basic Gameplay
+
+<Cards>
+  <Card icon={<Coins />} href="/docs/economy" title="Earning Money" description="Gather materials and sell at CarrotMarket with /market. Prices fluctuate with supply and demand." />
+  <Card icon={<Users />} href="/docs/towny" title="Joining or Creating a Town" description="Browse with /t list or create your own with /t new <name>." />
+  <Card icon={<Map />} href="/docs/rtp" title="Random Teleport" description="Use /rtp to teleport to unexplored land and find a new frontier." />
+  <Card icon={<Sparkles />} href="/docs/custom-recipes" title="Majin Points" description="Earned through trading, required to use special custom items." />
+</Cards>
+
+### ✨ Majin Points & Custom Items
+
+Trading at CarrotMarket earns you **Majin Points**. These points are **required to use** special custom items (MajinCraft items).
+
+- Trade at `/market` → earn 10% of traded quantity as points
+- `/majin` to check points, `/majin convert` to create Majin Ingots
+- 11 unique items available: 3×3 mining pickaxe, tree-felling axe, teleport trident, and more
+
+See [Economy System](/docs/economy) and [Custom Recipes](/docs/custom-recipes) for details.
+
+### 🎙 Voice Chat
+
+<Callout type="info" title="Simple Voice Chat supported">
+The server supports **Simple Voice Chat**. Install the mod to enjoy proximity voice chat with nearby players. You can still play normally without the mod.
+</Callout>
+
+## 🧭 Basic Commands
+
+| Command | Description |
+|---------|-------------|
+| `/home` | Open Home GUI |
+| `/rtp` | Random teleport |
+| `/bal` | Check your balance |
+| `/market` | Open CarrotMarket |
+| `/majin` | Check Majin Points |
+| `/rule` | View server rules |
+
+For a full list, see [Commands](/docs/commands).

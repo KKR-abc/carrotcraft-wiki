@@ -1,0 +1,65 @@
+---
+title: Fishing Guide
+description: Catch fish, sell them, and complete the journal
+icon: fish
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Fish, CircleDollarSign, BookOpen, Trophy } from 'lucide-react';
+
+<Callout type="info" title="Enjoy fishing">
+Every custom fish has a rarity and size. Rare and large fish can sell for more and fill your journal.
+</Callout>
+
+## What you can do
+
+<Cards>
+  <Card icon={<Fish />} title="Catch fish" description="Use a fishing rod at any suitable waterside." />
+  <Card icon={<CircleDollarSign />} title="Sell fish" description="Sell catches for money; size can affect value." />
+  <Card icon={<BookOpen />} title="Fill the journal" description="Track discovered fish and hunt for missing entries." />
+</Cards>
+
+## Getting started
+
+<Steps>
+<Step>
+### Cast into water
+
+Right-click with a fishing rod and make sure the bobber is floating.
+
+</Step>
+<Step>
+### Reel in when the bobber sinks
+
+Watch the bubbles and right-click as soon as the bobber dips.
+
+</Step>
+<Step>
+### Check your catch
+
+Look at the fish name, rarity, and size in your inventory.
+
+</Step>
+</Steps>
+
+## Sell fish
+
+```text
+/emf shop
+```
+
+Use the sell GUI. To sell all EMF fish in your inventory:
+
+```text
+/emf sellall
+```
+
+## Journal and bait
+
+| Command | What it does |
+|---|---|
+| `/emf journal` | Opens the fish journal |
+| `/emf applybaits` | Applies bait to the held fishing rod |
+Fishing competitions are not currently being held.

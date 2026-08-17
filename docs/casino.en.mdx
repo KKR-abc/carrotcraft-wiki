@@ -1,0 +1,58 @@
+---
+title: Casino
+description: Play slot machines at the casino
+icon: dices
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Dices, Coins, Crown, Gem, Pickaxe, Cookie } from 'lucide-react';
+
+<Callout type="info" title="🎰 Casino">
+  Play **slot machines** using in-server currency **CC (Carrot Coins)**.
+</Callout>
+
+## 🎮 Slot Machine Tiers
+
+Four themed tiers, selected by your bet amount.
+
+<Cards>
+  <Card icon={<Cookie />} title="🍪 Snack Slot" description="up to 50 CC｜Golden Apple, Cookie, Cake, Bread, Wheat" />
+  <Card icon={<Pickaxe />} title="⛏ Ore Slot" description="51–500 CC｜Diamond, Gold, Emerald, Iron, Coal" />
+  <Card icon={<Gem />} title="💎 Block Slot" description="501–5,000 CC｜Each ore block" />
+  <Card icon={<Crown />} title="👑 VIP Slot" description="5,001 CC and above｜Dragon Egg, Nether Star, Beacon, Elytra, Netherite" />
+</Cards>
+
+## 💰 Pay Table
+
+| Combination | Multiplier |
+|-------------|------------|
+| **Jackpot** (highest symbol ×3) | **100x** bet |
+| **Triple Gold** | 40x |
+| **Triple Emerald** | 12x |
+| **Triple Iron** | 5x |
+| **Triple Coal** | 2.5x |
+| **Two Match** | 1.0x (returns your bet) |
+
+## 🎲 How to Play
+
+<Steps>
+  <Step>**Visit the casino area**</Step>
+  <Step>**Right-click a slot machine** and enter your bet</Step>
+  <Step>**Reels spin** — match symbols to win</Step>
+</Steps>
+
+<Callout type="warn">
+  The casino is **for fun**. Be mindful of how much CC you wager.
+</Callout>
+
+<Callout type="info" title="📱 Laggy? Try the lightweight casino">
+  If the casino area lags too much to play (especially on Bedrock), use the **lightweight casino** at `/t spawn casino_paper`.
+</Callout>
+
+## ⌨️ Commands
+
+| Command | Description |
+|---------|-------------|
+| `/casino` | Open the casino menu |

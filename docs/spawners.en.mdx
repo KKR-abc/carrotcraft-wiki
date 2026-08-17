@@ -1,0 +1,61 @@
+---
+title: Spawner Pickup
+description: How to collect and reposition mob spawners with silk touch
+icon: box
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Box, Pickaxe, Sparkles, AlertTriangle } from 'lucide-react';
+
+<Callout type="info" title="On this page">
+Use a **Silk Touch pickaxe** to collect mob spawners at **100% success rate** and place them anywhere. Without Silk Touch, the spawner is destroyed permanently.
+</Callout>
+
+## 📦 What is Spawner Pickup?
+
+On CarrotCraft, you can collect dungeon **mob spawners** without destroying them. Place them somewhere else to set up a custom mob farm.
+
+---
+
+## ✅ Pickup Requirements
+
+| Requirement | Type | Description |
+|---|---|---|
+| Silk Touch | required | Mine with a Silk Touch pickaxe |
+| Pickaxe | required | Must mine with a pickaxe (any tier) |
+| Success Rate | rate | 100% |
+
+<Callout type="warn">
+Mining a spawner with a pickaxe **without Silk Touch** destroys it. Always use Silk Touch when collecting.
+</Callout>
+
+---
+
+## 🧱 Placement
+
+<Steps>
+<Step>
+### Hold the spawner item
+
+Take the collected spawner item from your inventory.
+</Step>
+<Step>
+### Click the side of a block
+
+Click the side of any block to place the spawner there.
+</Step>
+<Step>
+### Check the mob type
+
+The mob type stored in the spawner item is shown in its **item text** (e.g., "Spawner — Zombie").
+</Step>
+</Steps>
+
+---
+
+## ⚠️ Notes
+
+- Spawners are destroyed by explosions (not recoverable)
+- Vanilla 1.13+ keeps spawners as their original mob type — collect them on sight
+- Use **end rods** to suppress spawning while moving them home

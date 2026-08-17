@@ -1,0 +1,63 @@
+---
+title: コスメ
+description: パーティクル・ペット・変身・帽子などの装飾コスメ機能
+icon: wand-sparkles
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Sparkles, Dog, Bird, Crown, Smile, WandSparkles } from 'lucide-react';
+
+<Callout type="warn" title="VIP・メディアランク限定">
+  コスメ機能は **VIP・メディアランクのプレイヤーのみ** が利用できます。VIPランクの取得方法は[VIPページ](/docs/vip)をご覧ください。
+</Callout>
+
+<Callout type="info" title="コスメとは？">
+  見た目を装飾する **コスメアイテム** を装備できる機能です。攻撃力やステータスには影響せず、純粋に見た目を楽しむための機能です。
+</Callout>
+
+## 🎒 開き方
+
+```
+/uc menu
+```
+
+メインメニューが開きます。カテゴリを選んでクリックして装着してください。
+
+## 🗂 カテゴリ
+
+サーバーで利用できるカテゴリ：
+
+<Cards>
+  <Card icon={<Sparkles />} title="✨ パーティクルエフェクト" description="プレイヤーの周りにエフェクトを表示" />
+  <Card icon={<Dog />} title="🐶 ペット" description="動物・モブを連れて歩く" />
+  <Card icon={<Bird />} title="🦊 モーフ（変身）" description="自分の姿を他のモブに変える" />
+  <Card icon={<Crown />} title="🎩 帽子" description="頭装備スロットに様々なアイテムを装着" />
+  <Card icon={<Smile />} title="💃 エモート" description="踊る・お辞儀する等のアニメーション" />
+</Cards>
+
+<Callout type="info">
+  カテゴリ内の個別コスメは、プレイヤーの権限やサーバーの設定により利用できないものがあります。実際にメニューで表示されるものから選んでください。
+</Callout>
+
+## ⌨️ 主なコマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/uc menu` | メインメニューを開く |
+| `/uc clear` | 装着中のコスメを全解除 |
+
+## ❓ よくある質問
+
+<Accordions>
+  <Accordion title="コスメを装着しても強くなる？">
+    いいえ。コスメは **見た目のみ** の機能で、攻撃力・ステータス・戦闘には一切影響しません。
+  </Accordion>
+  <Accordion title="他プレイヤーが見えなくなったり重くなる">
+    パーティクル系コスメを多くのプレイヤーが装着していると重くなる場合があります。メニューから装着解除してみてください。
+  </Accordion>
+  <Accordion title="コスメが動作しない・バグっている">
+    動作不具合があれば運営に報告してください。
+  </Accordion>
+</Accordions>

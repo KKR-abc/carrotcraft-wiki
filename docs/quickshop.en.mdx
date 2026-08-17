@@ -1,0 +1,142 @@
+---
+title: QuickShop Guide
+description: How to create and manage player shops with QuickShop-Hikari
+icon: store
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Store, ShoppingCart, ShoppingBag, Users, Search, Bell } from 'lucide-react';
+
+<Callout type="info" title="What is QuickShop-Hikari?">
+A plugin that lets you create chest-based shops to sell and buy items automatically, even while you're offline. **There are no trading fees.**
+</Callout>
+
+<Callout type="warn" title="Shops are limited to town shop areas">
+Shops can only be created on town plots set as **shop areas**. Run `/plot set shop` on the plot first — shops cannot be created outside towns.
+</Callout>
+
+## 🏪 Creating a Shop
+
+<Steps>
+<Step>
+### Place a Chest
+
+Place a chest (or barrel/shulker box) with an empty adjacent block for the sign.
+</Step>
+<Step>
+### Hold the Item
+
+Hold the item you want to sell — **the quantity you hold becomes the trade unit** (e.g. hold 16 diamonds to create a shop that trades 16 at a time).
+</Step>
+<Step>
+### Left-click the Chest
+
+While still holding the item, left-click the chest.
+</Step>
+<Step>
+### Type the Price
+
+Type the price in chat and press Enter.
+
+Done! A sign appears on the chest and the item floats above it.
+</Step>
+</Steps>
+
+## 🔀 Shop Types
+
+<Tabs items={['Selling Shop', 'Buying Shop']}>
+<Tab value="Selling Shop">
+
+**You sell items to players** (default). Keep items in the chest and players can buy from you.
+
+```
+/qs sell    ← Switch to selling
+```
+
+</Tab>
+<Tab value="Buying Shop">
+
+**You buy items from players**. Keep money in your account and players come to sell to you.
+
+```
+/qs buy     ← Switch to buying
+```
+
+</Tab>
+</Tabs>
+
+<Callout type="info" title="Both buy and sell">
+Place a double chest and create one shop on each half — set one to Selling, the other to Buying.
+</Callout>
+
+## 📜 Commands
+
+### Shop Management
+
+| Command | Description |
+|---------|-------------|
+| `/qs create <price>` | Create shop via command |
+| `/qs price <price>` | Change price |
+| `/qs buy` | Switch to buying mode |
+| `/qs sell` | Switch to selling mode |
+| `/qs item` | Change the traded item |
+| `/qs size` | Change trade unit size |
+| `/qs name <name>` | Set custom shop name |
+
+### Finding Shops
+
+```
+/qs find <item>
+```
+
+Finds the nearest shop matching your search (partial match supported).
+
+### Staff
+
+| Command | Description |
+|---------|-------------|
+| `/qs staff add <player>` | Add staff (can manage inventory) |
+| `/qs staff del <player>` | Remove staff |
+| `/qs staff list` | List staff |
+
+<Callout type="info">
+Staff can manage the chest inventory but cannot change shop settings.
+</Callout>
+
+### Ownership
+
+| Command | Description |
+|---------|-------------|
+| `/qs setowner <player>` | Transfer ownership |
+| `/qs transfer <player>` | Transfer all shops |
+
+<Callout type="info" title="Plot owners can remove shops">
+Players with **permissions on the plot** can break shops placed there. Place your shops on your own land (or somewhere you have permission) to avoid removal.
+</Callout>
+
+## 📦 Stock Management
+
+<Tabs items={['Selling Shop', 'Buying Shop']}>
+<Tab value="Selling Shop">
+
+Keep items in the chest. When a player buys, items decrease and money enters your account. When the chest is empty, no one can buy.
+
+</Tab>
+<Tab value="Buying Shop">
+
+Keep money in your account. Players sell to you and items go into the chest. When the chest is full, no one can sell.
+
+</Tab>
+</Tabs>
+
+## 🔔 Transaction Notifications
+
+Notifications appear in chat when you next log in. Manual fetch:
+
+```
+/qs fetchmessage
+```

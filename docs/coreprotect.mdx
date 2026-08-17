@@ -1,0 +1,174 @@
+---
+title: CoreProtect ガイド
+description: ブロックの変更履歴を調べるCoreProtectの使い方
+icon: search
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Search, MousePointerClick, MousePointer2, Package, History, ShieldAlert } from 'lucide-react';
+
+<Callout type="info" title="CoreProtectとは？">
+CoreProtect は、サーバー上のすべてのブロック変更やコンテナ操作を記録しているプラグインです。**調査モード（inspect）**を使って、「誰がこのブロックを壊したか」「誰がチェストからアイテムを取ったか」を調べられます。荒らし被害や盗難の犯人を特定する手がかりになります。
+</Callout>
+
+## 🔍 できること
+
+<Cards>
+  <Card icon={<MousePointerClick />} title="左クリック" description="ブロックを誰が設置したか調べる" />
+  <Card icon={<MousePointer2 />} title="右クリック" description="その場所から撤去されたブロックを調べる" />
+  <Card icon={<Package />} title="チェスト" description="出し入れの履歴を時系列で確認" />
+  <Card icon={<History />} title="ドア・ボタン" description="最後に操作したプレイヤーを確認" />
+</Cards>
+
+## 🛠️ 調査モードの使い方
+
+<Steps>
+<Step>
+### `/co i` で調査モードを ON
+
+```
+/co i
+```
+
+チャットに `Inspector now enabled.` と表示されます。
+</Step>
+<Step>
+### ブロックをクリックして履歴を表示
+
+左クリック・右クリックで履歴を確認します（詳細は下記）。
+
+<Callout type="warn">
+**調査モード中はブロックの設置・破壊ができません。** 調べ終わったら必ず OFF にしてください。
+</Callout>
+</Step>
+<Step>
+### `/co i` で OFF に戻す
+
+もう一度 `/co i` を実行して `Inspector now disabled.` を確認します。
+</Step>
+</Steps>
+
+## 🖱️ クリック種別と確認内容
+
+<Tabs items={['左クリック (設置)', '右クリック (撤去)', 'チェスト', 'ドア/ボタン']}>
+<Tab value="左クリック (設置)">
+
+ブロックを**左クリック**すると、そのブロックを**誰が設置したか**がわかります。
+
+例えば、怪しい丸石の壁を左クリックすると:
+
+```
+3 hours ago — Steve placed Stone
+```
+
+のように「いつ」「誰が」「何を置いたか」が表示されます。
+
+</Tab>
+<Tab value="右クリック (撤去)">
+
+ブロックを**右クリック**すると、その場所で**以前撤去されたブロック**の情報がわかります。
+
+例えば、壁に穴が空いている場所を右クリックすると:
+
+```
+1 hour ago — Alex removed Oak Planks
+```
+
+のように「誰がブロックを壊したか」がわかります。
+
+</Tab>
+<Tab value="チェスト">
+
+チェストを**右クリック**すると、**取引履歴**がわかります。誰が何を出し入れしたかが時系列で表示されます。
+
+```
+30 minutes ago — Steve removed Diamond x5
+2 hours ago — Alex added Iron Ingot x32
+```
+
+</Tab>
+<Tab value="ドア/ボタン">
+
+ドア・ボタン等を**右クリック**すると、**最後に操作した人**がわかります。
+
+</Tab>
+</Tabs>
+
+## 📖 表示の読み方
+
+各行のフォーマット:
+
+```
+<時間> — <プレイヤー名> <アクション> <ブロック/アイテム名>
+```
+
+| 項目 | 例 | 説明 |
+|---|---|---|
+| 時間 | 2 hours ago / 3 days ago | いつ起きたか |
+| プレイヤー名 | Steve / Alex | 誰がやったか |
+| アクション | placed / removed / clicked | 何をしたか（設置・撤去・操作） |
+| ブロック/アイテム名 | Stone / Diamond x5 | 対象のブロックまたはアイテム |
+
+1つの場所に複数の変更履歴がある場合は、**すべて時系列で表示**されます。古い履歴から順に確認できるので、荒らしの経緯を追うことができます。
+
+## 📚 具体的な使い方の例
+
+<Tabs items={['家が荒らされた', 'チェストが盗難', '犯人が判明したら']}>
+<Tab value="家が荒らされた">
+
+<Steps>
+<Step>
+### `/co i` で調査モード ON
+</Step>
+<Step>
+### 壊されたブロックがあった場所を**右クリック**
+誰が壊したかがわかります。
+</Step>
+<Step>
+### 知らないブロックが置かれていたら**左クリック**
+誰が置いたかがわかります。
+</Step>
+<Step>
+### 調べ終わったら `/co i` で OFF
+</Step>
+</Steps>
+
+</Tab>
+<Tab value="チェストが盗難">
+
+<Steps>
+<Step>
+### `/co i` で調査モード ON
+</Step>
+<Step>
+### チェストを**右クリック**
+誰がいつ何を取ったかがわかります。
+</Step>
+<Step>
+### `/co i` で OFF
+</Step>
+</Steps>
+
+</Tab>
+<Tab value="犯人が判明したら">
+
+<Callout type="warn" title="運営に報告">
+スクリーンショットを撮って、Discord のチケットで運営に報告してください。CoreProtect のログは運営側でも確認でき、ロールバック（巻き戻し）対応が可能です。
+</Callout>
+
+</Tab>
+</Tabs>
+
+## 📝 まとめ
+
+| やりたいこと | 操作 | 説明 |
+|---|---|---|
+| 調査モードON/OFF | /co i | 同じコマンドでトグル |
+| 誰が置いたか調べる | ブロックを左クリック | 設置者を表示 |
+| 誰が壊したか調べる | その場所を右クリック | 撤去者を表示 |
+| チェストの履歴を見る | チェストを右クリック | 出し入れを時系列で表示 |
+| 調べ終わったら | /co i で OFF | 必ず OFF に戻す |

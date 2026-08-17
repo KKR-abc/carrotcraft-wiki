@@ -1,0 +1,138 @@
+---
+title: はじめに
+description: CarrotCraftサーバーへの参加方法と基本的な遊び方
+icon: rocket
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Rocket, Users, Map, Coins, Sparkles, Mic, Scroll, Home } from 'lucide-react';
+
+<Callout type="info" title="ようこそ CarrotCraft へ">
+このページではサーバーへの参加方法、最初のステップ、基本コマンドをまとめています。Java版と統合版どちらからでも参加できます。
+</Callout>
+
+## 🚀 サーバーに参加する
+
+<Tabs items={['Java Edition', '統合版 (Bedrock)']}>
+<Tab value="Java Edition">
+
+<Steps>
+<Step>
+### Minecraft Java Edition を起動
+
+最新バージョンの Minecraft Java Edition を立ち上げてください。
+</Step>
+<Step>
+### サーバーを追加
+
+「マルチプレイ」→「サーバーを追加」を選択します。
+</Step>
+<Step>
+### アドレスを入力
+
+サーバーアドレスに `play.carrotcraft.net` を入力します。
+</Step>
+<Step>
+### 接続
+
+「完了」→「サーバーに接続」をクリックして参加します。
+</Step>
+</Steps>
+
+</Tab>
+<Tab value="統合版 (Bedrock)">
+
+floodgateにより統合版からも参加できます。
+
+<Steps>
+<Step>
+### Minecraft を起動
+
+統合版 Minecraft を立ち上げます。
+</Step>
+<Step>
+### サーバーを追加
+
+「遊ぶ」→「サーバー」→「サーバーを追加」を選択します。
+</Step>
+<Step>
+### 接続情報を入力
+
+| 項目 | 値 | 説明 |
+|------|----|------|
+| サーバーアドレス | `play.carrotcraft.net` | メインサーバーのドメイン |
+| ポート | `19132` | 統合版用のポート番号 |
+</Step>
+<Step>
+### 保存して接続
+
+「保存」してから接続します。
+</Step>
+</Steps>
+
+</Tab>
+</Tabs>
+
+## 🎯 最初にすること
+
+サーバーに参加したら、まずはロビーに到着します。
+
+<Steps>
+<Step>
+### モード選択
+
+ロビーのNPCをクリックして行きたいモードを選びましょう。
+</Step>
+<Step>
+### ルール確認
+
+`/rule` コマンドでサーバールールを確認してください。
+</Step>
+<Step>
+### 初期装備
+
+初回ログイン時にスターターキットがもらえます。
+</Step>
+</Steps>
+
+## 💰 基本操作
+
+<Cards>
+  <Card icon={<Coins />} href="/docs/economy" title="お金を稼ぐ" description="素材を集めて /market でCarrotMarketに売却。価格は需給で変動します。" />
+  <Card icon={<Users />} href="/docs/towny" title="町に参加・作成" description="/t list で既存の町を確認。/t new <名前> で自分の町も作れます。" />
+  <Card icon={<Map />} href="/docs/rtp" title="ランダムテレポート" description="/rtp で未開拓の土地にランダムテレポートできます。" />
+  <Card icon={<Sparkles />} href="/docs/custom-recipes" title="マジンポイント" description="取引で貯まり、特殊カスタムアイテムの使用に必要です。" />
+</Cards>
+
+### ✨ マジンポイントとカスタムアイテム
+
+CarrotMarketで取引すると**マジンポイント**が貯まります。マジンポイントは特殊なカスタムアイテム（MajinCraftアイテム）を**使用するために必要**です。
+
+- `/market` で取引 → 取引数の10%がポイントとして付与
+- `/majin` でポイント確認、`/majin convert` でマジンインゴットに変換
+- 耐久無限の3×3範囲採掘ピッケル、一括伐採斧、テレポートトライデントなど多数の特殊アイテムが利用可能
+- 魔神インゴットで使用回数制アイテムの修復も可能
+
+詳しくは[経済システム](/docs/economy)と[カスタムレシピ](/docs/custom-recipes)をご覧ください。
+
+### 🎙 ボイスチャット
+
+<Callout type="info" title="Simple Voice Chat 対応">
+サーバーは **Simple Voice Chat** に対応しています。MODを導入すると、近くのプレイヤーと距離に応じたボイスチャットが楽しめます。MODなしでも通常プレイには影響ありません。
+</Callout>
+
+## 🧭 基本コマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/home` | ホームGUIを開く |
+| `/rtp` | ランダムテレポート |
+| `/bal` | 所持金を確認 |
+| `/market` | CarrotMarketを開く |
+| `/majin` | マジンポイント確認 |
+| `/rule` | サーバールールを表示 |
+
+詳しいコマンドは[コマンド一覧](/docs/commands)をご覧ください。

@@ -1,0 +1,182 @@
+---
+title: Quarters Guide
+description: How to use the Quarters plugin to subdivide Towny plots
+icon: layout-grid
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { LayoutGrid, Wand2, Home, Building2, Train, ShieldCheck } from 'lucide-react';
+
+<Callout type="info" title="What is Quarters?">
+A Towny addon that lets you create **3D subdivisions** within town chunks. Instead of being limited to 16×16 chunk-based plots, you can define apartments, shop spaces, and stations of any size using cuboid selections.
+</Callout>
+
+<Callout type="info" title="Permissions are additive">
+Quarters permissions are **additive** — they grant additional permissions without revoking existing ones from plots or town ranks.
+</Callout>
+
+## 🏗️ Creating a Quarter
+
+<Steps>
+<Step>
+### Get the Wand
+
+```
+/q wand
+```
+
+Receive the selection wand item.
+</Step>
+<Step>
+### Select the Area
+
+With the wand in hand:
+
+- **Left-click** a block → set corner 1 (pos1)
+- **Right-click** a block → set corner 2 (pos2)
+
+Or use commands: `/q pos1` and `/q pos2` (sets at your feet). Relative coordinates work too: `/q pos1 0 5 0`.
+
+Particle outlines show your selection while holding the wand.
+</Step>
+<Step>
+### Add to Selection
+
+```
+/q selection add
+```
+
+For complex shapes (L-shaped rooms, multi-floor), repeat steps 2-3 to add multiple cuboids.
+</Step>
+<Step>
+### Create
+
+```
+/q create
+```
+
+All cuboids in the selection list become a single quarter.
+</Step>
+</Steps>
+
+## 🎯 Selection Management
+
+| Command | Description |
+|---------|-------------|
+| `/q selection add` | Add current selection |
+| `/q selection remove` | Remove cuboid you're standing in |
+| `/q selection clear` | Clear all selections |
+
+## ✏️ Editing & Deleting
+
+| Command | Description |
+|---------|-------------|
+| `/q edit addselection` | Add new cuboids to existing quarter |
+| `/q edit remove` | Remove a cuboid from a quarter |
+| `/q delete` | Delete the quarter entirely |
+
+## 💰 Ownership & Sales
+
+<Tabs items={['Selling', 'Buying']}>
+<Tab value="Selling">
+
+Mayors and quarter owners can execute:
+
+```
+/q sell <price>
+```
+
+</Tab>
+<Tab value="Buying">
+
+Stand inside a quarter that's for sale:
+
+```
+/q claim
+```
+
+</Tab>
+</Tabs>
+
+Other ownership commands:
+
+| Command | Description |
+|---------|-------------|
+| `/q sell cancel` | Cancel sale |
+| `/q unclaim` | Give up ownership |
+| `/q set owner <player>` | Set owner directly |
+| `/q evict` | Force remove owner (mayor) |
+| `/q toggle embassy` | Allow non-residents to claim |
+
+### Trust System
+
+```
+/q trust add <player>
+```
+
+Trusted players have full permissions (build, destroy, switch, itemuse) within the quarter.
+
+```
+/q trust remove <player>
+```
+
+## 🔒 Permissions
+
+```
+/q set perm <action> <group> <true/false>
+```
+
+**Actions:**
+
+| Action | Description |
+|--------|-------------|
+| `build` | Place blocks |
+| `destroy` | Break blocks |
+| `switch` | Operate containers, doors, buttons, etc. |
+| `itemuse` | Use potions, buckets, etc. |
+
+**Groups:**
+
+| Group | Targets |
+|-------|---------|
+| `resident` | Town residents |
+| `nation` | Members of the same nation |
+| `ally` | Allied nation members |
+| `outsider` | Everyone else |
+
+**Example:**
+
+```
+/q set perm build resident true
+/q set perm switch outsider false
+```
+
+## 🏘️ Quarter Types
+
+<Cards>
+  <Card icon={<Home />} title="Apartment" description="Default. Owner and trusted players can interact" />
+  <Card icon={<Building2 />} title="Inn" description="Players can set bed spawns inside" />
+  <Card icon={<Train />} title="Station" description="Players can place/use boats and minecarts" />
+</Cards>
+
+Change type (mayor): `/q set type <type>`
+
+## 🔎 Info
+
+```
+/q here
+```
+
+Shows details about the quarter you're standing in (name, owner, type, permissions, etc.).
+
+## ⚠️ Constraints
+
+<Callout type="warn">
+- Quarters cannot overlap
+- Cannot span multiple towns
+- Cannot include unclaimed (wilderness) chunks
+</Callout>

@@ -1,0 +1,65 @@
+---
+title: Bug Hunter
+description: Report bugs to earn a limited badge and a bounty
+icon: bug
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Bug, Coins, Search, FileText, ShieldAlert, MessageCircle } from 'lucide-react';
+
+<Callout type="info" title="What is the Bug Hunter Program?">
+A program that awards a **limited badge** and a **bounty (up to 1,000,000cc)** to members who find and report bugs. Reports of all sizes are welcome 🙌
+</Callout>
+
+## 🎁 Rewards
+
+<Cards>
+  <Card icon={<Bug />} title="Bug Hunter badge" description="A limited badge marking your contribution to the program" />
+  <Card icon={<Coins />} title="Bounty up to 1,000,000cc" description="Awarded based on the nature and severity of the bug" />
+</Cards>
+
+## 📋 How to Report
+
+<Steps>
+<Step>
+### Find a bug
+
+Note any glitch or unexpected behavior you run into. Confirming that you can **reproduce it** makes review smoother.
+</Step>
+<Step>
+### Post reproduction steps to the Support Center
+
+Post the reproduction steps and context in as much detail as possible to the **Support Center** on [Discord](https://discord.gg/EKUPDxXaqb). Screenshots or recordings speed up the review.
+</Step>
+<Step>
+### Review → badge & bounty awarded
+
+Staff review the nature and severity of the bug and, if it qualifies, award the **badge and bounty**.
+</Step>
+</Steps>
+
+## ✍️ Tips for a Good Report
+
+<Cards>
+  <Card icon={<FileText />} title="List the reproduction steps" description="In the order of 'what → did what → result'" />
+  <Card icon={<Search />} title="Add context" description="Date/time, world, coordinates, items used, etc." />
+  <Card icon={<Bug />} title="Attach evidence" description="Screenshots or recordings are ideal" />
+  <Card icon={<MessageCircle />} title="One bug per report" description="Splitting them up speeds up review" />
+</Cards>
+
+## ⚠️ Notes
+
+<Callout type="warn">
+- The badge and bounty **vary by the nature and severity** of the bug. Not every report qualifies.
+- Bugs that are already reported or known may not be eligible.
+</Callout>
+
+<Callout type="error" title="Exploiting bugs is prohibited (results in a BAN, not a bounty)">
+**Exploiting a bug instead of reporting it** is strictly prohibited. Abuse such as item duplication (dupe) results in **punishment or a BAN**, not a bounty. See "Exploiting Bugs / Item Duplication" in the [Server Rules](/en/docs/rules).
+</Callout>
+
+## 📮 Where to Report
+
+Found a bug? Report it freely via the [Discord Support Center](https://discord.gg/EKUPDxXaqb)!

@@ -1,0 +1,192 @@
+---
+title: Horses
+description: Horse breeding, training, traits, and enhanced stats
+icon: rabbit
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Rabbit, Sparkles, HeartPulse, Wind, ArrowUpRight, Brush, Apple, Flame, Snowflake, Ghost, Footprints, Cloud } from 'lucide-react';
+
+<Callout type="info" title="On this page">
+Horses on CarrotCraft can become far stronger than vanilla. **Train them** (riding / brushing / feeding) to boost stats, **breed** for inherited gains, and inherit rare **traits** with special abilities. Max stats: HP 300 / Speed 0.4 / Jump 1.2.
+</Callout>
+
+## 🐴 About Horse Training
+
+On CarrotCraft, horses can become far more capable than vanilla. **Train** them to boost stats, **breed** them across generations, and inherit rare **traits** with special abilities.
+
+Supported mobs: **Horses, Skeleton Horses, Zombie Horses** (camels disabled).
+
+---
+
+## 📈 Stat Caps (vs. Vanilla)
+
+| Stat | Type | Description |
+|---|---|---|
+| HP | stat | Vanilla max 30 HP → CarrotCraft max 300 HP |
+| Movement Speed | stat | Vanilla max 0.337 → CarrotCraft max 0.4 |
+| Jump Strength | stat | Vanilla max 1.0 → CarrotCraft max 1.2 |
+
+---
+
+## 🎒 Horse Items
+
+Horses can be carried in your inventory as a **saddle item**.
+
+- **Right-click** the item to summon the horse
+- The item displays **gender, stats, growth, training progress, and traits**
+- If you never want to lose your horse, store it as an item in a safe place
+
+---
+
+## 🌱 Growth System
+
+Foals reach **adulthood after 3 minutes**. Adult horses are **1.3× vanilla size**.
+
+---
+
+## 💪 Training System
+
+Riding, brushing, and feeding your horse improves **3 separate stat categories** permanently.
+
+<Tabs items={['Riding', 'Brushing', 'Feeding']}>
+<Tab value="Riding">
+
+### 🐴 Riding
+
+Distance ridden = riding progress. **+0.2% speed per 1% progress**.
+
+| Unit | Amount |
+|---|---|
+| 100 blocks ridden | +1% progress |
+| Per 1% progress | +0.2% speed |
+
+</Tab>
+<Tab value="Brushing">
+
+### 🪮 Brushing
+
+Use a **brush** on your horse. **+0.2% jump per 1% progress**.
+
+| Item | Value |
+|---|---|
+| Per brush use | +2 units |
+| Units per 1% | 1 unit |
+| Cooldown | 180 sec |
+| Per 1% progress | +0.2% jump |
+
+</Tab>
+<Tab value="Feeding">
+
+### 🍎 Feeding
+
+Feed your horse. **+0.2% max HP per 1% progress**.
+
+| Food | Food Value |
+|---|---|
+| Wheat / Apple / Carrot / Sugar | 1.0 |
+| Hay Block | 2.0 |
+| Golden Carrot | 3.0 |
+| Golden Apple | 5.0 |
+| Enchanted Golden Apple | 8.0 |
+
+Cooldown 180s. **2.0 total food value = +1% progress**.
+
+</Tab>
+</Tabs>
+
+<Callout type="info">
+Training bonuses are **permanent for that horse only** — they are NOT inherited by offspring. Each horse must be trained individually.
+</Callout>
+
+---
+
+## ✨ Traits
+
+Some horses are born with rare **special abilities**:
+
+<Cards>
+  <Card icon={<Flame />} title="🔥 Hellmare" description="Leaves a trail of fire" />
+  <Card icon={<Flame />} title="❤️‍🔥 Fireheart" description="Immune to fire damage" />
+  <Card icon={<Wind />} title="💨 DashBoost" description="Temporary speed burst" />
+  <Card icon={<Footprints />} title="🪶 Featherhooves" description="Reduced fall damage" />
+  <Card icon={<Snowflake />} title="❄️ Frosthooves" description="Leaves an ice trail" />
+  <Card icon={<ArrowUpRight />} title="🦵 Kickback" description="Strongly knocks back nearby enemies" />
+  <Card icon={<Ghost />} title="👻 Ghosthorse" description="Becomes briefly invisible" />
+  <Card icon={<Cloud />} title="🌪 Skyburst" description="Bonus effect on jump" />
+  <Card icon={<Sparkles />} title="💀 Revenantcurse" description="Temporary buff" />
+  <Card icon={<Sparkles />} title="✨ Heavenhooves" description="Heavily reduces fall damage" />
+</Cards>
+
+Traited horses always emit a **particle effect**, so you can spot them at a glance.
+
+---
+
+## 🧬 Breeding & Mutation
+
+A child's stats are **the average of both parents ± a mutation range**:
+
+| Stat | Mutation Range |
+|---|---|
+| Health | ±3 HP |
+| Speed | ±0.05 |
+| Jump | ±0.05 |
+
+### Breeding Rules
+
+- **Opposite-gender pairs only** (same-gender breeding disabled)
+- **Males** have no breeding cooldown
+- **Females** have a **5-minute breeding cooldown**
+
+### Tips
+
+<Steps>
+<Step>
+### Collect spawn horses
+
+Catch horses with strong stats whenever you find them.
+</Step>
+<Step>
+### Pair an opposite-sex couple
+
+One male + multiple females is efficient.
+</Step>
+<Step>
+### Train every horse separately
+
+Bonuses don't pass to children, so train each one individually.
+</Step>
+<Step>
+### Goal
+
+Max out HP 300 / Speed 0.4 / Jump 1.2.
+</Step>
+</Steps>
+
+---
+
+## 🏘 Towny Integration
+
+Horse actions inside towns require **town permissions**:
+
+- Spawning horses
+- Breeding
+- Interacting with horses
+
+You may be restricted in towns you don't belong to.
+
+---
+
+## 🎮 Commands & Actions
+
+| Action | How |
+|---|---|
+| Summon a horse | **Right-click** the saddle item |
+| Convert horse to item | Dismount, then pick up the saddle |
+| Check stats | Look at the **item lore** |
+| Brushing | **Right-click** with a Brush |
+| Feeding | Hold food and **right-click** the horse |

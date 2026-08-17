@@ -1,0 +1,132 @@
+---
+title: Vote
+description: Vote for the server on listing sites and receive rewards
+icon: vote
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide-react';
+
+<Callout type="info" title="Vote for a free crate key">
+  When you vote for CarrotCraft on a server listing site, you receive **one Vote Crate key**.
+  Keys are opened with a roulette animation, awarding CC (Carrot Coins) or armor trim smithing templates.
+</Callout>
+
+## 🎥 Watch the guide
+
+A video walkthrough of how to vote.
+
+<div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: '12px', margin: '1rem 0' }}>
+  <iframe
+    src="https://www.youtube.com/embed/n5Gx8mogSIU"
+    title="How to vote for CarrotCraft"
+    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />
+</div>
+
+## 🌐 Vote Sites
+
+You can vote on the following sites. Each site allows **one vote per 24 hours**:
+
+<Cards>
+  <Card
+    href="https://mineportal.jp/servers/cmg1z9s6s0000vqxlmbpa85vr"
+    icon={<ExternalLink />}
+    title="MinePortal"
+    description="Vote on mineportal.jp"
+  />
+  <Card
+    href="https://minecraft.jp/servers/play.carrotcraft.net"
+    icon={<ExternalLink />}
+    title="minecraft.jp"
+    description="Vote on minecraft.jp"
+  />
+</Cards>
+
+<Callout type="warn">
+  Make sure to enter your **exact Minecraft username** when voting. If you mistype it, you won't receive your key.
+</Callout>
+
+## 🎁 Opening the Vote Crate
+
+<Steps>
+  <Step>
+    **Receive a key by voting**
+
+    After voting, a **Vote Key (Echo Shard)** is added to your inventory.
+  </Step>
+  <Step>
+    **Open the crate with `/cc`**
+
+    ```
+    /cc
+    ```
+  </Step>
+  <Step>
+    **Spin the roulette**
+
+    The reward is decided by a **roulette**.
+  </Step>
+  <Step>
+    **Collect your reward**
+
+    Won items / coins are automatically added to your inventory or balance.
+  </Step>
+</Steps>
+
+<Callout type="warn">
+  A full inventory may prevent you from receiving item rewards. Make space before opening keys.
+</Callout>
+
+## 💰 Possible Rewards
+
+### CC (Carrot Coins)
+
+| Amount | Rarity |
+|--------|--------|
+| 5,000 CC | ★★★★ Rare |
+| 3,000 CC | ★★★ Uncommon |
+| 1,000 CC | ★★ Common |
+| 800 CC | ★★ Common |
+| 500 CC | ★ Normal |
+| 250 CC | Consolation |
+| 150 CC | Consolation |
+| 100 CC | Consolation |
+| 50 CC | Consolation |
+
+### ✨ Armor Trim Smithing Templates (18 types)
+
+Random armor trim templates for netherite gear:
+
+Sentry / Dune / Coast / Wild / Ward / Eye / Vex / Tide / Snout / Rib / Spire / Wayfinder / Shaper / Silence / Raiser / Host / Flow / Bolt
+
+<Callout type="info">
+  **Drop rates are not disclosed.** A server-wide announcement plays whenever a rare prize is won!
+</Callout>
+
+## ⌨️ Commands
+
+| Command | Description |
+|---------|-------------|
+| `/vote` | Show the vote sites |
+| `/cc` | Open vote keys you own |
+| `/cc preview VoteCrate` | Preview the prize pool |
+
+## ❓ FAQ
+
+<Accordions>
+  <Accordion title="I voted but didn't receive a key">
+    Your Minecraft username might be incorrect. It can also take a few minutes — try rejoining the server after a short wait.
+  </Accordion>
+  <Accordion title="What if I don't use a key?">
+    Vote keys persist between sessions and never expire.
+  </Accordion>
+  <Accordion title="Can I vote on the same site multiple times in a day?">
+    No — each site has a **24-hour cooldown**.
+  </Accordion>
+</Accordions>

@@ -1,0 +1,134 @@
+---
+title: Land Protection
+description: Protect your land by area with beginner and town protection (CarrotGuard)
+icon: shield
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Callout type="info" title="How to read this page">
+**Land Protection (CarrotGuard)** lets you protect your land **by area**. Select two corners with a wooden hoe and create the protection via `/guard`. This is separate from [chest protection](/docs/bolt) (single containers) and [Towny](/docs/towny) (whole towns).
+</Callout>
+
+## 🛡 What is Land Protection?
+
+It protects an **area you outline with a wooden hoe**, preventing other players from breaking, placing, or stealing inside it. There are two types.
+
+<Cards>
+<Card title="Beginner Protection" description="Free protection usable for a limited period after joining. A starter tool to protect your first base." />
+<Card title="Town Protection" description="Created by mayors and assistants. The size cap grows with your resident count, and it costs money." />
+</Cards>
+
+<Callout type="warn" title="Do not protect others' builds without permission">
+Enclosing another player's build or land within your own protection **without their permission is prohibited**. If discovered, the protection will be **forcibly removed** and the offender **subject to punishment** (Rules 3.1).
+</Callout>
+
+---
+
+## ✏️ How to create
+
+<Steps>
+<Step>
+### Get a wooden hoe
+
+Selection uses **a plain wooden hoe**. Just craft one and hold it (no special item is handed out).
+</Step>
+<Step>
+### Select two points
+
+Holding the wooden hoe, **left-click for point 1** and **right-click for point 2**. The selected area is shown as a particle outline (the full height is always included).
+</Step>
+<Step>
+### Create with `/guard`
+
+Run `/guard` and click **"Create from selection"**. On the confirmation screen, check the **type (beginner / town)**, size, cost, and eligibility, then **confirm**.
+
+<Callout type="info" title="Switch type if you qualify for both">
+If you qualify for both (e.g. a mayor/assistant still within the beginner period), use the button at the top of the confirmation screen to switch between **beginner ⇔ town** protection.
+</Callout>
+</Step>
+</Steps>
+
+---
+
+## ⚙️ Protection settings (toggles)
+
+`/guard` → click a protection → **Settings (toggles)** lets you switch the following ON (restricted) / OFF (allowed) for that protection.
+
+| Toggle | When ON |
+|---|---|
+| Block breaking | Non-members cannot break blocks |
+| Block placing | Non-members cannot place blocks |
+| Use / open chests | Non-members cannot use/open |
+| Attack (PvP / animals) | PvP and animal damage banned inside |
+| Monster spawning | Monsters won't spawn inside |
+| Fire spread | Fire won't spread |
+
+Break, place, and use are ON (protected) by default.
+
+---
+
+## 👥 Adding members
+
+From a protection's management screen → **Add member**, you can add people who may build with you.
+
+- **Online players**: click their head from the list
+- **Offline players**: use the **anvil** button to type a name (players who haven't joined yet can also be specified)
+
+---
+
+## 🚫 Where you cannot create protection
+
+Protection cannot be created in the following places/situations.
+
+<Accordions>
+<Accordion title="Common (both types)">
+- Overlapping an existing protection or a **Towny town plot**
+- Where a **town already exists nearby (within 150 blocks)**
+- On another player's build/land (unauthorized protection breaks the rules)
+</Accordion>
+<Accordion title="Beginner protection">
+- The beginner period (14 days after joining) has **expired**
+- Exceeding the **max count (3)** of beginner protections
+- Exceeding the **max size (32×32)**
+</Accordion>
+<Accordion title="Town protection">
+- You are **not a mayor or assistant**
+- The town's total protected area exceeds the **size cap (residents ÷ 2 × 256 blocks²)**
+- You **don't have enough money (CC)**
+</Accordion>
+</Accordions>
+
+---
+
+## 🗑 When protection is removed
+
+<Callout type="warn" title="Beginner protection disappears automatically">
+Beginner protection is **automatically removed after a fixed period (14 days) from joining**. You'll be warned as the deadline approaches. Before it disappears, **create a town** or **have an existing town protect you**.
+</Callout>
+
+- **Beginner expiry**: auto-removed 14 days after joining
+- **Overlapping a town plot**: protection later overlapped by a Towny plot is auto-removed
+- **Manual deletion**: management screen → Delete → confirm on the confirmation screen
+- **Rule violations**: protections confirmed as violations (e.g. protecting others' builds) are forcibly removed by staff
+
+<Callout type="info" title="Griefing can be recovered">
+Even if a protection is lost and the area is griefed, staff **may be able to restore it via rollback** if you report it ([Compensation & Rollback](/docs/rules#6-補填ロールバック)).
+</Callout>
+
+---
+
+## 📋 Commands
+
+| Command | Description |
+|---|---|
+| `/guard` | Protection menu (list / create / manage) |
+| `/guard tool` | Info on how to select (using a wooden hoe) |
+| `/guard create` | Create from your selection (without opening the GUI) |
+| `/guard list` | List your own protections |
+
+Admins have `/guardadmin` (list, info, teleport, flag toggles, delete, and more).

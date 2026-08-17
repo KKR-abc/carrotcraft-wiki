@@ -1,0 +1,129 @@
+---
+title: Commands
+description: List of commands available on CarrotCraft
+icon: terminal
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Terminal, Home, Coins, Building2, MessageSquare, Sparkles, Map, Swords } from 'lucide-react';
+
+<Callout type="info" title="Command Reference">
+The main CarrotCraft commands grouped by category. `<>` denotes required arguments, `[]` denotes optional ones.
+</Callout>
+
+<Cards>
+  <Card icon={<Terminal />} href="#basic-commands" title="Basic" description="RTP, rules view" />
+  <Card icon={<Home />} href="#home-commands" title="Home" description="/home GUI" />
+  <Card icon={<Coins />} href="#economy-commands" title="Economy" description="Balance, pay, shops" />
+  <Card icon={<Building2 />} href="#towny-commands" title="Towny" description="Town & nation management" />
+  <Card icon={<MessageSquare />} href="#chat-commands" title="Chat" description="Messages & channels" />
+  <Card icon={<Swords />} href="#pvp-commands" title="PvP" description="PvP toggle & combat modes" />
+  <Card icon={<Sparkles />} href="#majin-points--majincraft" title="Majin" description="Points & ingots" />
+</Cards>
+
+## ⚙️ Basic Commands
+
+| Command | Description |
+|---------|-------------|
+| `/rtp` | Random teleport |
+| `/rule` | View server rules (`/rule 1`–`/rule 8` for individual sections) |
+| `/gui toggledeath` | Toggle the auto-given GUI book on death |
+
+## 🏠 Home Commands
+
+| Command | Description |
+|---------|-------------|
+| `/home` | Open the Home GUI (view, teleport, set, and delete homes all from the GUI) |
+
+## 💰 Economy Commands
+
+| Command | Description |
+|---------|-------------|
+| `/bal` | Check balance |
+| `/pay <player> <amount>` | Send money |
+| `/baltop` | Wealth ranking |
+| `/market` | Open CarrotMarket |
+| `/qs create <price>` | Create a QuickShop |
+| `/qs find <item>` | Search for shops |
+| `/auction` | Open the auction house (list items from here) |
+| `/auction box` | Collect winnings & refunds (held 7 days) |
+| `/auction notify off` | Mute auction notifications |
+
+## 🏛 Towny Commands
+
+<Tabs items={['Town', 'Nation']}>
+<Tab value="Town">
+
+| Command | Description |
+|---------|-------------|
+| `/t` | View your town info |
+| `/t new <name>` | Create a town |
+| `/t invite <player>` | Invite a player |
+| `/t kick <player>` | Kick a player |
+| `/t claim` | Claim the current chunk |
+| `/t unclaim` | Unclaim land |
+| `/t spawn` | Teleport to town spawn |
+| `/t set spawn` | Set town spawn point |
+| `/t deposit <amount>` | Deposit to town bank |
+| `/t withdraw <amount>` | Withdraw from town bank |
+| `/t list` | List all towns |
+| `/t set board <message>` | Set town board message |
+
+</Tab>
+<Tab value="Nation">
+
+| Command | Description |
+|---------|-------------|
+| `/n` | View your nation info |
+| `/n new <name>` | Create a nation |
+| `/n invite <town>` | Invite a town |
+| `/n spawn` | Teleport to nation capital |
+| `/n list` | List all nations |
+
+</Tab>
+</Tabs>
+
+## ⚔️ PvP Commands
+
+| Command | Description |
+|---------|-------------|
+| `/pvp` | Toggle PvP on/off |
+| `/pvp mode <mode>` | Choose your combat mode (see below) |
+
+| Mode | Allowed attacks |
+|---|---|
+| `crystal` | Explosives + sword/axe + bow |
+| `mace` | Mace + wind charge + axe + bow |
+| `sword` | Sword/axe melee only |
+| `potion` | Sword/axe + splash potions |
+| `all` | Everything (default) |
+
+<Callout type="info">
+Damage only applies when **both players' modes allow the attack** (e.g. crystal vs crystal allows explosions; crystal vs sword is melee only). You can't change modes mid-combat (15s cooldown). Your current mode shows on the action bar.
+</Callout>
+
+## 💬 Chat Commands
+
+| Command | Description |
+|---------|-------------|
+| `/msg <player> <message>` | Private message |
+| `/r <message>` | Reply |
+| `/tc` | Switch to town chat |
+| `/nc` | Switch to nation chat |
+| `/g` | Switch to global chat |
+| `/lc` | Local chat |
+
+## ✨ Majin Points & MajinCraft
+
+| Command | Description |
+|---------|-------------|
+| `/majin` | Check Majin Points |
+| `/majin convert [amount]` | Convert points to Majin Ingots (100pt = 1) |
+
+## 🗺 Other
+
+| Command | Description |
+|---------|-------------|
+| `/map` | Show Pl3xMap link |

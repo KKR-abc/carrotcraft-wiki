@@ -1,0 +1,96 @@
+---
+title: Elevator
+description: How to build and use elevators with iron blocks
+icon: arrow-up-down
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { ArrowUp, ArrowDown, Layers, Info } from 'lucide-react';
+
+<Callout type="info" title="On this page">
+Stack two **iron blocks** vertically and **jump to go up / sneak to go down**. Works between 3 and 100 blocks apart, in both the Overworld and the Nether.
+</Callout>
+
+## 🛗 What is the Elevator?
+
+By placing **iron blocks** vertically aligned (two or more), you can **jump or sneak** while standing on one to instantly travel between floors. Convenient for tower-style towns and tall buildings.
+
+---
+
+## 🪜 How to Use
+
+<Steps>
+<Step>
+### Place an iron block on the floor
+
+Place an **iron block** at the bottom floor.
+</Step>
+<Step>
+### Place another iron block directly above
+
+Place a second **iron block** at a higher Y, sharing the **same X,Z coordinates**.
+</Step>
+<Step>
+### Jump to teleport up
+
+Stand on the lower iron block and **jump** to teleport up.
+</Step>
+<Step>
+### Sneak to teleport down
+
+Stand on the upper iron block and **sneak** to teleport down.
+</Step>
+</Steps>
+
+For multi-floor builds, place an iron block at every floor along the same column to use as elevator floors.
+
+---
+
+## 📋 Specifications
+
+| Item | Value |
+|---|---|
+| Block | Iron Block |
+| Min distance | 3 blocks or more |
+| Max distance | 100 blocks or less |
+| Up | Spacebar (Jump) |
+| Down | Shift (Sneak) |
+| Worlds | Main world & Nether |
+
+### Conditions
+
+| Condition | Detail |
+|---|---|
+| Headroom | The 2 blocks above the destination iron block must be passable (air, signs, water, etc.) — so the player has space to stand |
+| X,Z alignment | The two iron blocks must share the same X,Z coordinates |
+| Spacing | They must be 3 to 100 blocks apart |
+
+<Callout type="info">
+**It's fine to have other blocks between the iron blocks.** The plugin only checks the destination iron block and the 2 blocks of space above it. Floors, walls, and decoration in between are no problem.
+</Callout>
+
+---
+
+## ⚠️ Notes
+
+- Cannot be used in spectator mode
+- Works in survival, adventure, and creative modes
+- In creative, **flying takes priority over the elevator** — fly mode may prevent activation
+
+---
+
+## ❓ Troubleshooting
+
+<Accordions>
+<Accordion title="Q. Jumping on the iron block does nothing">
+- The iron blocks may be **less than 3 blocks apart**
+- Check that they share the **same X,Z coordinates**
+- The 2 blocks of space **above** the destination iron block must be clear
+</Accordion>
+<Accordion title="Q. Can't go down">
+- Use **sneak (left Shift)** while standing on the upper iron block
+- Don't combine jump and sneak — that may not register
+</Accordion>
+</Accordions>

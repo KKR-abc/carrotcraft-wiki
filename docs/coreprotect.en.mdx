@@ -1,0 +1,174 @@
+---
+title: CoreProtect Guide
+description: How to inspect block history with CoreProtect
+icon: search
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Search, MousePointerClick, MousePointer2, Package, History, ShieldAlert } from 'lucide-react';
+
+<Callout type="info" title="What is CoreProtect?">
+CoreProtect logs all block changes and container transactions on the server. Use **inspect mode** to check who placed or broke blocks, and who took items from chests. It helps identify griefers and thieves.
+</Callout>
+
+## 🔍 What You Can Do
+
+<Cards>
+  <Card icon={<MousePointerClick />} title="Left-click" description="Find out who placed a block" />
+  <Card icon={<MousePointer2 />} title="Right-click" description="Check what was removed from that spot" />
+  <Card icon={<Package />} title="Chest" description="View transaction history chronologically" />
+  <Card icon={<History />} title="Door / Button" description="See who last interacted with it" />
+</Cards>
+
+## 🛠️ Using Inspect Mode
+
+<Steps>
+<Step>
+### Toggle inspect mode ON with `/co i`
+
+```
+/co i
+```
+
+You'll see `Inspector now enabled.` in chat.
+</Step>
+<Step>
+### Click blocks to view history
+
+Use left- and right-click to inspect (see details below).
+
+<Callout type="warn">
+**You cannot place or break blocks while inspect mode is active.** Always turn it off when you're done.
+</Callout>
+</Step>
+<Step>
+### Toggle OFF with `/co i`
+
+Run `/co i` again and confirm `Inspector now disabled.`
+</Step>
+</Steps>
+
+## 🖱️ Click Types
+
+<Tabs items={['Left-click (placed)', 'Right-click (removed)', 'Chest', 'Door / Button']}>
+<Tab value="Left-click (placed)">
+
+**Left-click** a block to see **who placed** it.
+
+Example — left-clicking a suspicious cobblestone wall:
+
+```
+3 hours ago — Steve placed Stone
+```
+
+Shows "when", "who", and "what was placed".
+
+</Tab>
+<Tab value="Right-click (removed)">
+
+**Right-click** a spot to see what was **previously removed** from there.
+
+Example — right-clicking where a wall has a hole:
+
+```
+1 hour ago — Alex removed Oak Planks
+```
+
+Shows who broke the block.
+
+</Tab>
+<Tab value="Chest">
+
+**Right-click** a chest to see its **transaction history** — who added or removed items, and when.
+
+```
+30 minutes ago — Steve removed Diamond x5
+2 hours ago — Alex added Iron Ingot x32
+```
+
+</Tab>
+<Tab value="Door / Button">
+
+**Right-click** a door/button to see **who last interacted** with it.
+
+</Tab>
+</Tabs>
+
+## 📖 Reading Results
+
+Each line in the results:
+
+```
+<time> — <player> <action> <block/item>
+```
+
+| Field | Example | Description |
+|---|---|---|
+| Time | 2 hours ago / 3 days ago | When it happened |
+| Player | Steve / Alex | Who did it |
+| Action | placed / removed / clicked | What was done |
+| Block / Item | Stone / Diamond x5 | What was affected |
+
+If a location has multiple changes, **all are shown chronologically**, so you can trace the full history of griefing.
+
+## 📚 Practical Examples
+
+<Tabs items={['Build griefed', 'Items stolen', 'Found the culprit']}>
+<Tab value="Build griefed">
+
+<Steps>
+<Step>
+### `/co i` to enable inspect mode
+</Step>
+<Step>
+### **Right-click** where blocks were broken
+See who broke them.
+</Step>
+<Step>
+### **Left-click** any unfamiliar blocks
+See who placed them.
+</Step>
+<Step>
+### `/co i` to disable inspect mode
+</Step>
+</Steps>
+
+</Tab>
+<Tab value="Items stolen">
+
+<Steps>
+<Step>
+### `/co i` to enable inspect mode
+</Step>
+<Step>
+### **Right-click** the chest
+See who took what and when.
+</Step>
+<Step>
+### `/co i` to disable
+</Step>
+</Steps>
+
+</Tab>
+<Tab value="Found the culprit">
+
+<Callout type="warn" title="Report to staff">
+Take a screenshot and report it to staff via a Discord ticket. Staff can verify CoreProtect logs and perform rollbacks (restorations).
+</Callout>
+
+</Tab>
+</Tabs>
+
+## 📝 Summary
+
+| Task | Action | Description |
+|---|---|---|
+| Toggle inspect mode | /co i | Same command toggles ON/OFF |
+| Check who placed | Left-click block | Shows the placer |
+| Check who broke | Right-click spot | Shows who removed it |
+| View chest history | Right-click chest | Shows transactions in time order |
+| When done | /co i (turn OFF) | Always turn inspect mode off |

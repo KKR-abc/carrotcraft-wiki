@@ -1,0 +1,84 @@
+---
+title: MagicalSheep
+description: 魔法の羊を武器にして戦うPVPミニゲームのガイド
+icon: sword
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Sword, Bomb, FlaskRound, Target, Sparkles, Users } from 'lucide-react';
+
+<Callout type="info" title="🐑 MagicalSheep">
+羊を武器にして戦うユニークな PVP ゲームです。ステージに散らばったアイテムを集めながら、羊を撃ち合って相手にダメージを与えます。羊にはそれぞれ特殊な能力があり、戦略的に使い分けることが勝利の鍵となります。
+</Callout>
+
+## 🎯 基本ルール
+
+<Cards>
+  <Card icon={<Sword />} title="アイテム収集" description="チェストから羊やアイテムを入手する" />
+  <Card icon={<Target />} title="羊の発射" description="「アイテムを捨てる操作」で羊を相手に撃つ" />
+  <Card icon={<Sparkles />} title="能力発動" description="羊が当たると爆発や毒などの効果が発動" />
+  <Card icon={<Users />} title="ソロ/チーム" description="相手を倒して最後まで生き残ろう" />
+</Cards>
+
+### 🏆 勝利条件
+
+| モード | 区分 | 説明 |
+|---|---|---|
+| チーム戦 | Team | 相手チームのメンバーを全員倒したチームの勝利 |
+| ソロモード | Solo | 最後の1人になるまで戦い抜いた人の勝利 |
+
+## 📋 操作方法
+
+<Tabs items={['アイテム収集', '羊の発射', '能力の発動', '矢での起爆']}>
+<Tab value="アイテム収集">
+
+ステージに落ちているチェストを開けて、様々な種類の羊やその他のアイテムを入手しましょう。**人数に応じて入手できる羊の数が調整**されます。
+
+</Tab>
+<Tab value="羊の発射">
+
+インベントリから羊を選んで「**アイテムを捨てる操作**」を行うことで、羊を飛ばして攻撃できます。
+
+</Tab>
+<Tab value="能力の発動">
+
+羊が敵や障害物に当たると、その羊固有の特殊能力が発動します。**爆発ダメージ**や**毒効果**など、羊によって異なる効果を持っています。
+
+</Tab>
+<Tab value="矢での起爆">
+
+羊に**矢を当てる**と、飛んでいる最中でもその場で能力を発動させることができます。タイミングを狙った戦術が可能です。
+
+</Tab>
+</Tabs>
+
+## ⚠️ 重要なポイント
+
+<Callout type="warn" title="戦闘の前に確認">
+- **人数調整** — 参加人数によって入手できる羊の数が変わります
+- **多様なアイテム** — インベントリには剣などの他のアイテムも含まれています
+- **戦略性** — 羊の種類と能力を理解して、状況に応じた使い分けが重要です
+</Callout>
+
+## 🔧 ゲーム開始方法
+
+<Steps>
+<Step>
+### ロビーでミニゲーム NPC を探す
+ロビーまたはミニゲームエリアで MagicalSheep の NPC を見つけます。
+</Step>
+<Step>
+### NPC をクリック
+NPC をクリックしてゲームに参加します。
+</Step>
+<Step>
+### マッチ開始 → 戦う
+チェストを開けて羊を集め、撃ち合って勝利を目指します。
+</Step>
+</Steps>
+
+羊を使った独特な戦闘システムで、相手との駆け引きを楽しみましょう！

@@ -1,0 +1,30 @@
+---
+title: Minigames
+description: Minigames available on CarrotCraft
+icon: gamepad
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Sword, Bomb } from 'lucide-react';
+
+<Callout type="info" title="Play original minigames">
+CarrotCraft offers original minigames for everyone to enjoy. Join from the lobby by clicking an NPC.
+</Callout>
+
+## 🎮 Minigame List
+
+<Cards>
+  <Card
+    icon={<Sword />}
+    title="🐑 MagicalSheep"
+    href="/docs/minigames/magical-sheep"
+    description="A unique PVP game where you fight using sheep as weapons. Each sheep has a special ability — explosions, poison, and more. Supports solo and team modes."
+  />
+  <Card
+    icon={<Bomb />}
+    title="🐔 ChickenBomber"
+    href="/docs/minigames/chicken-bomber"
+    description='An asymmetric PVP game where Bombers and Survivors battle it out. Survivors collect "Legendary Eggs" to fight back, while Bombers try to eliminate everyone with explosive chickens.'
+  />
+</Cards>

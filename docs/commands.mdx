@@ -1,0 +1,129 @@
+---
+title: コマンド一覧
+description: CarrotCraftで使えるコマンド一覧
+icon: terminal
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Terminal, Home, Coins, Building2, MessageSquare, Sparkles, Map, Swords } from 'lucide-react';
+
+<Callout type="info" title="コマンドリファレンス">
+CarrotCraftで使える主要コマンドをカテゴリ別にまとめています。引数の `<>` は必須、`[]` は任意です。
+</Callout>
+
+<Cards>
+  <Card icon={<Terminal />} href="#基本コマンド" title="基本" description="RTP・ルール表示など" />
+  <Card icon={<Home />} href="#ホームコマンド" title="ホーム" description="/home GUI" />
+  <Card icon={<Coins />} href="#経済コマンド" title="経済" description="所持金・送金・ショップ" />
+  <Card icon={<Building2 />} href="#townyコマンド" title="Towny" description="町・国家の管理" />
+  <Card icon={<MessageSquare />} href="#チャットコマンド" title="チャット" description="メッセージ・チャンネル切替" />
+  <Card icon={<Swords />} href="#pvpコマンド" title="PvP" description="PvP切替・戦闘モード" />
+  <Card icon={<Sparkles />} href="#マジンポイントmajincraft" title="マジン" description="ポイント・インゴット" />
+</Cards>
+
+## ⚙️ 基本コマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/rtp` | ランダムテレポート |
+| `/rule` | サーバールール表示（`/rule 1`〜`/rule 8` で章ごとに読める） |
+| `/gui toggledeath` | 死亡時のGUI本自動付与をON/OFF |
+
+## 🏠 ホームコマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/home` | ホームGUIを開く（ホームの一覧・テレポート・設定・削除がすべてGUIで操作可能） |
+
+## 💰 経済コマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/bal` | 所持金確認 |
+| `/pay <プレイヤー> <金額>` | 送金 |
+| `/baltop` | 資産ランキング |
+| `/market` | CarrotMarketを開く |
+| `/qs create <価格>` | QuickShopを作成 |
+| `/qs find <アイテム名>` | ショップ検索 |
+| `/auction` | オークションを開く（出品もここから） |
+| `/auction box` | 落札品・返金の受け取り（保管7日間） |
+| `/auction notify off` | オークション通知をオフ |
+
+## 🏛 Townyコマンド
+
+<Tabs items={['町 (Town)', '国家 (Nation)']}>
+<Tab value="町 (Town)">
+
+| コマンド | 説明 |
+|---------|------|
+| `/t` | 自分の町の情報を表示 |
+| `/t new <名前>` | 町を作成 |
+| `/t invite <プレイヤー>` | プレイヤーを町に招待 |
+| `/t kick <プレイヤー>` | プレイヤーを追放 |
+| `/t claim` | 今いるチャンクを町の土地にする |
+| `/t unclaim` | 土地の権利を放棄 |
+| `/t spawn` | 町のスポーンにテレポート |
+| `/t set spawn` | 町のスポーン地点を設定 |
+| `/t deposit <金額>` | 町の銀行に入金 |
+| `/t withdraw <金額>` | 町の銀行から出金 |
+| `/t list` | 町一覧を表示 |
+| `/t set board <メッセージ>` | 町の掲示板を設定 |
+
+</Tab>
+<Tab value="国家 (Nation)">
+
+| コマンド | 説明 |
+|---------|------|
+| `/n` | 自分の国家の情報を表示 |
+| `/n new <名前>` | 国家を建設 |
+| `/n invite <町名>` | 町を国家に招待 |
+| `/n spawn` | 国家の首都にテレポート |
+| `/n list` | 国家一覧を表示 |
+
+</Tab>
+</Tabs>
+
+## ⚔️ PvPコマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/pvp` | PvPのON/OFFを切り替え |
+| `/pvp mode <モード>` | 戦闘モードを選択（下表参照） |
+
+| モード | 許可される攻撃 |
+|---|---|
+| `crystal` | 爆発系 ＋ 剣・斧 ＋ 弓 |
+| `mace` | メイス ＋ ウィンドチャージ ＋ 斧 ＋ 弓 |
+| `sword` | 剣・斧の近接のみ |
+| `potion` | 剣・斧 ＋ スプラッシュポーション |
+| `all` | 全部あり（デフォルト） |
+
+<Callout type="info">
+ダメージが通るのは**お互いのモードが両方許可している攻撃のみ**です（例: crystal同士は爆発OK、crystal vs sword は剣・斧のみ）。戦闘中はモード変更不可（15秒クールダウン）。現在のモードはアクションバーに表示されます。
+</Callout>
+
+## 💬 チャットコマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/msg <プレイヤー> <メッセージ>` | プライベートメッセージ |
+| `/r <メッセージ>` | 返信 |
+| `/tc` | 町チャットに切り替え |
+| `/nc` | 国家チャットに切り替え |
+| `/g` | グローバルチャットに切り替え |
+| `/lc` | ローカルチャット |
+
+## ✨ マジンポイント・MajinCraft
+
+| コマンド | 説明 |
+|---------|------|
+| `/majin` | マジンポイント確認 |
+| `/majin convert [数量]` | ポイントをマジンインゴットに変換 (100pt = 1個) |
+
+## 🗺 その他
+
+| コマンド | 説明 |
+|---------|------|
+| `/map` | Pl3xMap のリンクを表示 |

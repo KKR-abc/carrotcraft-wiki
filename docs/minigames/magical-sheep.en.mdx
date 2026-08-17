@@ -1,0 +1,84 @@
+---
+title: MagicalSheep
+description: A PVP minigame guide where you fight using magical sheep as weapons
+icon: sword
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { Sword, Bomb, FlaskRound, Target, Sparkles, Users } from 'lucide-react';
+
+<Callout type="info" title="🐑 MagicalSheep">
+A unique PVP game where you fight using sheep as weapons. Collect items scattered across the stage while shooting sheep at opponents to deal damage. Each sheep has a special ability, and using them strategically is the key to victory.
+</Callout>
+
+## 🎯 Basic Rules
+
+<Cards>
+  <Card icon={<Sword />} title="Collect Items" description="Open chests to gather sheep and items" />
+  <Card icon={<Target />} title="Launch Sheep" description='Use the "drop item" action to shoot sheep at opponents' />
+  <Card icon={<Sparkles />} title="Ability Activation" description="Sheep trigger effects like explosions or poison when they hit" />
+  <Card icon={<Users />} title="Solo / Team" description="Defeat opponents and be the last one standing" />
+</Cards>
+
+### 🏆 Win Conditions
+
+| Mode | Type | Description |
+|---|---|---|
+| Team Battle | Team | The team that eliminates all members of the opposing team wins |
+| Solo Mode | Solo | The last player standing wins |
+
+## 📋 Controls
+
+<Tabs items={['Item Collection', 'Launch Sheep', 'Ability Activation', 'Arrow Detonation']}>
+<Tab value="Item Collection">
+
+Open chests on the stage to obtain various types of sheep and other items. **The number of sheep available is adjusted based on the number of players.**
+
+</Tab>
+<Tab value="Launch Sheep">
+
+Select a sheep from your inventory and perform the "**drop item**" action to launch it as an attack.
+
+</Tab>
+<Tab value="Ability Activation">
+
+When a sheep hits an enemy or obstacle, its unique special ability activates. Different sheep have different effects, such as **explosion damage** or **poison**.
+
+</Tab>
+<Tab value="Arrow Detonation">
+
+**Hit a sheep with an arrow** to trigger its ability mid-flight. This enables precision-timed tactical plays.
+
+</Tab>
+</Tabs>
+
+## ⚠️ Important Points
+
+<Callout type="warn" title="Before you fight">
+- **Player Scaling** — The number of sheep available changes based on player count
+- **Diverse Items** — Your inventory includes other items like swords
+- **Strategy** — Understanding sheep types and abilities for situational use is crucial
+</Callout>
+
+## 🔧 How to Start
+
+<Steps>
+<Step>
+### Find the minigame NPC
+Locate the MagicalSheep NPC in the lobby or minigame area.
+</Step>
+<Step>
+### Click the NPC
+Click the NPC to join the game.
+</Step>
+<Step>
+### Match starts → fight
+Open chests to collect sheep and shoot at opponents to win.
+</Step>
+</Steps>
+
+Enjoy the unique combat system and outplay your opponents with sheep!

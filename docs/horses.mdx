@@ -1,0 +1,192 @@
+---
+title: 馬の育成
+description: 馬・骨格馬・ゾンビ馬の能力強化、訓練、特性、繁殖システム
+icon: rabbit
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { Rabbit, Sparkles, HeartPulse, Wind, ArrowUpRight, Brush, Apple, Flame, Snowflake, Ghost, Footprints, Cloud } from 'lucide-react';
+
+<Callout type="info" title="このページの読み方">
+バニラより遥かに強力な馬を育てられます。**訓練（騎乗・ブラッシング・餌やり）** でステータスアップ、**繁殖** で次世代に能力を継承、**特性（traits）** をランダムに引き継ぐ独自システムです。最大 HP 300 / 速度 0.4 / ジャンプ 1.2。
+</Callout>
+
+## 🐴 馬の育成とは？
+
+CarrotCraftでは、バニラより遥かに強力な馬を育てられます。**訓練**で能力アップ、**繁殖**で次世代を産み出し、**特性（traits）** をランダムに継承する独自システムです。
+
+対応モブ：**馬・骨格馬・ゾンビ馬**（ラクダは無効）
+
+---
+
+## 📈 ステータス上限（バニラとの比較）
+
+| ステータス | 種別 | 説明 |
+|---|---|---|
+| HP | stat | バニラ最大 30 HP → CarrotCraft最大 300 HP |
+| 移動速度 | stat | バニラ最大 0.337 → CarrotCraft最大 0.4 |
+| ジャンプ力 | stat | バニラ最大 1.0 → CarrotCraft最大 1.2 |
+
+---
+
+## 🎒 馬アイテム
+
+馬は **サドル型のアイテム** としてインベントリに持ち運べます。
+
+- アイテムを **右クリック** で馬を召喚
+- アイテムには **性別・ステータス・成長度・訓練進捗・特性** が記載されています
+- 馬を絶対に失いたくないなら、馬アイテムにして安全な場所に保管しましょう
+
+---
+
+## 🌱 成長システム
+
+子馬は **3分** で大人になります。大人になると **バニラの1.3倍サイズ** に成長します。
+
+---
+
+## 💪 訓練システム
+
+馬を乗ったり手入れしたりすると、**3つのカテゴリ** で能力が伸びていきます。
+
+<Tabs items={['騎乗 (Riding)', 'ブラッシング (Brushing)', '餌やり (Feeding)']}>
+<Tab value="騎乗 (Riding)">
+
+### 🐴 騎乗（Riding）
+
+馬に乗って **走った距離** で進捗が貯まります。**進捗1%につき移動速度 +0.2%** の永続ボーナス。
+
+| 単位 | 量 |
+|---|---|
+| 100ブロック走行 | 進捗 +1% |
+| 進捗1%あたり | 速度 +0.2% |
+
+</Tab>
+<Tab value="ブラッシング (Brushing)">
+
+### 🪮 ブラッシング（Brushing）
+
+**ブラシ** で馬を擦ると進捗UP。**進捗1%につきジャンプ力 +0.2%**。
+
+| 項目 | 値 |
+|---|---|
+| 1回のブラッシング | +2 単位 |
+| 1%に必要な単位 | 1 単位 |
+| クールダウン | 180秒 |
+| 進捗1%あたり | ジャンプ +0.2% |
+
+</Tab>
+<Tab value="餌やり (Feeding)">
+
+### 🍎 餌やり（Feeding）
+
+馬に餌を与えると進捗UP。**進捗1%につき最大HP +0.2%**。
+
+| 餌 | 食物価 |
+|---|---|
+| 小麦・リンゴ・ニンジン・砂糖 | 1.0 |
+| 干し草の俵 | 2.0 |
+| 金のニンジン | 3.0 |
+| 金のリンゴ | 5.0 |
+| エンチャント金リンゴ | 8.0 |
+
+クールダウン180秒。**1%に必要な合計食物価 = 2.0**。
+
+</Tab>
+</Tabs>
+
+<Callout type="info">
+訓練で得たボーナスは **永続的** で、繁殖時には引き継がれません。各個体ごとに地道に積み上げる必要があります。
+</Callout>
+
+---
+
+## ✨ 特性（Traits）
+
+繁殖や生まれ持った能力として、低確率で **特殊能力** がついた馬が登場します。
+
+<Cards>
+  <Card icon={<Flame />} title="🔥 Hellmare（地獄馬）" description="通った場所に炎の道が残る" />
+  <Card icon={<Flame />} title="❤️‍🔥 Fireheart（炎の心）" description="火炎ダメージ無効" />
+  <Card icon={<Wind />} title="💨 DashBoost（疾走）" description="一時的なスピードブースト" />
+  <Card icon={<Footprints />} title="🪶 Featherhooves（羽蹄）" description="落下ダメージ軽減" />
+  <Card icon={<Snowflake />} title="❄️ Frosthooves（氷蹄）" description="通った場所に氷の道が残る" />
+  <Card icon={<ArrowUpRight />} title="🦵 Kickback（蹴り返し）" description="周囲の敵を強く吹き飛ばす" />
+  <Card icon={<Ghost />} title="👻 Ghosthorse（亡霊馬）" description="一時的に透明化" />
+  <Card icon={<Cloud />} title="🌪 Skyburst（天空爆裂）" description="ジャンプ時に追加効果" />
+  <Card icon={<Sparkles />} title="💀 Revenantcurse（亡者の呪い）" description="一時的なバフ" />
+  <Card icon={<Sparkles />} title="✨ Heavenhooves（天の蹄）" description="落下時に大きく軽減" />
+</Cards>
+
+特性持ちの馬は **常時パーティクル** が出るので一目で分かります。
+
+---
+
+## 🧬 繁殖と突然変異
+
+子馬のステータスは **両親の平均値 ± 突然変異幅** で決まります：
+
+| 項目 | 突然変異幅 |
+|---|---|
+| 体力 | ±3 HP |
+| 速度 | ±0.05 |
+| ジャンプ | ±0.05 |
+
+### 繁殖ルール
+
+- **異性のみ繁殖可能**（同性繁殖は不可）
+- **オス**：繁殖クールダウン無し
+- **メス**：繁殖後 **5分のクールダウン**
+
+### 育成のコツ
+
+<Steps>
+<Step>
+### スポーン馬を集める
+
+高ステータスの個体を見つけたら確保しましょう。
+</Step>
+<Step>
+### 異性ペアを作る
+
+オス1頭・メス複数頭で効率化できます。
+</Step>
+<Step>
+### 訓練
+
+親世代でも訓練ボーナスは個体ごとに別管理です。
+</Step>
+<Step>
+### 目標
+
+HP 300 / 速度 0.4 / ジャンプ 1.2 のオールマックスを目指しましょう。
+</Step>
+</Steps>
+
+---
+
+## 🏘 Towny連携
+
+町の中での馬関連操作には **町の権限** が必要です：
+
+- 馬の召喚
+- 繁殖
+- 馬とのインタラクション
+
+他人の町では制限される可能性があります。
+
+---
+
+## 🎮 コマンド・操作まとめ
+
+| 操作 | 方法 |
+|---|---|
+| 馬を召喚 | サドル型アイテムを **右クリック** |
+| 馬をアイテム化 | 騎乗中に降りる→マウスで拾う |
+| ステータス確認 | **アイテムの説明欄（lore）** を見る |
+| ブラッシング | **ブラシ**で馬を右クリック |
+| 餌やり | 餌を持って馬に **右クリック** |

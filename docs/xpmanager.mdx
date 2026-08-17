@@ -1,0 +1,144 @@
+---
+title: XPManager ガイド
+description: 経験値をボトルに詰めて保管・取引できるXPManagerの使い方
+icon: flask
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordions, Accordion } from 'fumadocs-ui/components/accordion';
+import { FlaskConical, Package, ArrowRightLeft, Wrench, Info, ShieldAlert } from 'lucide-react';
+
+<Callout type="info" title="XPManager とは？">
+経験値（XP）をボトルに変換して保管・取引できるプラグインです。死亡時の XP ロスを防いだり、他のプレイヤーと XP を交換したりできます。基本コマンドは `/bottle`（エイリアス: `/b`, `/xpm`）。
+</Callout>
+
+## ✨ 主な機能
+
+<Cards>
+  <Card icon={<Package />} title="ボトルに変換" description="標準ボトル(10XP固定) / ストアボトル(任意XP)を作成" />
+  <Card icon={<ArrowRightLeft />} title="統合 / 即時消費" description="複数の標準ボトルを1本に統合、投げずに即消費" />
+  <Card icon={<Wrench />} title="修繕用ボトル" description="手持ちアイテムを修復するのに必要なXP量を計算" />
+  <Card icon={<Info />} title="情報確認" description="自分/他人のXP状態や、目標レベルまでの必要XP" />
+</Cards>
+
+## 🍶 経験値をボトルに変換
+
+<Tabs items={['標準ボトル (get)', 'ストアボトル (store)']}>
+<Tab value="標準ボトル (get)">
+
+**標準ボトル** は1本 10XP 固定。
+
+| コマンド | 種別 | 説明 |
+|---|---|---|
+| /b get &lt;数量&gt; | standard | 標準XPボトルを作成（1本 = 10XP） |
+| /b get max | standard | 持っているXPを可能な限り標準ボトルに変換 |
+
+```
+/b get 10        ← 標準ボトルを10本作成（100XP消費）
+```
+
+</Tab>
+<Tab value="ストアボトル (store)">
+
+**ストアボトル** は好きなXP量を1本に詰められます。
+
+| コマンド | 種別 | 説明 |
+|---|---|---|
+| /b store &lt;XP量&gt; | store | 指定したXP量を1本のストアボトルに保存 |
+| /b store &lt;XP量&gt; &lt;本数&gt; | store | 同じXP量のストアボトルを複数作成 |
+| /b store max | store | 全XPを1本のストアボトルに保存 |
+
+```
+/b store 500     ← 500XPを1本のストアボトルに保存
+/b store 100 64  ← 100XPのストアボトルを64本作成
+```
+
+</Tab>
+</Tabs>
+
+## 🎯 XPを取り戻す
+
+<Steps>
+<Step>
+### ボトルを投げる
+
+ボトルを**投げる**（通常の経験値の瓶と同じ操作）と XP が戻ります。
+</Step>
+<Step>
+### 即時消費モード（任意）
+
+ストアボトルは即時消費モードに切り替えることもできます:
+
+```
+/b toggle thrown
+```
+
+このモードでは、ボトルを使用すると投げずにその場で XP が加算されます。大量のボトルを一気に消費したい時に便利です。
+</Step>
+</Steps>
+
+## 🔗 ボトルの統合
+
+標準ボトルがインベントリにたくさんある場合、1本のストアボトルにまとめられます:
+
+```
+/b convert
+```
+
+インベントリ内のすべての標準XPボトルが1本のストアボトルに統合されます。
+
+## 🛠️ 修繕 (Mend)
+
+手に持っているアイテムを修繕するのに必要なXPを自動計算してボトルにします:
+
+```
+/b mend
+```
+
+持っているツールや防具を完全修復するのにちょうど必要な XP 分のボトルが作成されます。
+
+## 📊 情報確認
+
+| コマンド | 種別 | 説明 |
+|---|---|---|
+| /b stats | info | 自分の現在のレベルとXP量を表示 |
+| /b stats &lt;プレイヤー&gt; | info | 他のプレイヤーのXP情報を確認 |
+| /b until &lt;レベル&gt; | info | 指定レベルまでに必要なXP量を表示 |
+
+## 💱 XPの取引
+
+XPManagerには直接的な送金コマンドはありませんが、ボトルは通常のアイテムとして取引できます。
+
+<Steps>
+<Step>
+### XPをボトルに変換
+`/b store` でストアボトルを作成。
+</Step>
+<Step>
+### 相手に渡す
+ボトルを相手にドロップまたはトレード。
+</Step>
+<Step>
+### 相手がXPを受け取る
+ボトルを投げてXPを受け取る。
+</Step>
+</Steps>
+
+<Callout type="warn" title="取引時の注意">
+QuickShop で XP ボトルを販売することも可能です。ボトルはアイテムなので落とせば失われます。**信頼できる相手とのみ取引してください。**
+</Callout>
+
+## 📝 コマンド早見表
+
+| コマンド | 種別 | 説明 |
+|---|---|---|
+| /b get &lt;数/max&gt; | create | 標準ボトル作成（1本10XP） |
+| /b store &lt;XP&gt; [本数] | create | ストアボトル作成 |
+| /b convert | utility | 標準ボトルを1本に統合 |
+| /b mend | utility | 手持ちアイテム修繕用ボトル作成 |
+| /b toggle thrown | mode | 即時消費モード切り替え |
+| /b stats | info | XP情報表示 |
+| /b until &lt;Lv&gt; | info | 目標レベルまでの必要XP |

@@ -1,0 +1,30 @@
+---
+title: ミニゲーム
+description: CarrotCraftで遊べるミニゲームの紹介
+icon: gamepad
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Cards, Card } from 'fumadocs-ui/components/card';
+import { Sword, Bomb } from 'lucide-react';
+
+<Callout type="info" title="ミニゲームで遊ぼう">
+CarrotCraft では、オリジナルのミニゲームを楽しめます。ロビーから NPC をクリックして参加できます。
+</Callout>
+
+## 🎮 ミニゲーム一覧
+
+<Cards>
+  <Card
+    icon={<Sword />}
+    title="🐑 MagicalSheep"
+    href="/docs/minigames/magical-sheep"
+    description="羊を武器にして戦うユニークなPVPゲーム。羊にはそれぞれ特殊な能力があり、爆発・毒などの効果で相手にダメージを与えます。ソロ・チーム戦に対応。"
+  />
+  <Card
+    icon={<Bomb />}
+    title="🐔 ChickenBomber"
+    href="/docs/minigames/chicken-bomber"
+    description='ボンバーとサバイバーに分かれて戦う非対称型PVPゲーム。サバイバーは「でんせつのたまご」を集めて逆襲、ボンバーは爆弾チキンでサバイバーの全滅を狙います。'
+  />
+</Cards>
