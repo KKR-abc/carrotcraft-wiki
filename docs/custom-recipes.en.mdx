@@ -37,6 +37,35 @@ Durability is never consumed. Use counts can be fully restored with a Majin Ingo
   resultCount={1}
 />
 
+### Ore Vein Pickaxe
+Instantly mine a cluster of connected ores of the same type. **Usable 64 times.**
+
+No durability is consumed. You can fully restore the number of uses using a Demon God Ingot.
+
+<CraftingGrid
+  grid={['PPP','PSP','PPP']}
+  legend={{ P: 'Diamond Pickaxe', S: 'Slime Block' }}
+  result="Ore Vein Pickaxe"
+  resultCount={1}
+/>
+
+### Transcendent Pickaxe
+A pickaxe created by combining a Vein Pickaxe and an Ore Vein Pickaxe.
+It features both area mining and mass-breaking capabilities. **Usable 640 times.**
+
+No durability is consumed. You can fully restore the number of uses using a Demon God Ingot.
+
+<Callout type="error" title="Fusion success rate 1%">
+The probability of obtaining it during fusion is **1%**. Please proceed with caution.
+</Callout>
+
+<CraftingGrid
+  grid={['KV ','   ','   ']}
+  legend={{ K: 'Diamond Pickaxe', V: 'Diamond Pickaxe' }}
+  result="Transcendent Pickaxe"
+  resultCount={1}
+/>
+
 ### Timber Axe
 Chop connected logs at once. **64 uses / 25pt per use**
 
@@ -301,7 +330,7 @@ Items with a use count can be repaired with a **Majin Ingot**.
 </Steps>
 
 <Callout type="info">
-  One Majin Ingot restores **16 uses**. Only the needed amount is consumed; extras are returned.
+  You can also repair it at a workbench.
 </Callout>
 
 | Target Item | Restored Uses |
