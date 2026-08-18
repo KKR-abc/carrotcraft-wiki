@@ -37,6 +37,35 @@ import { Sparkles, Sword, Shield, Bomb, FlaskConical, Wand2, Wrench, Hammer, Ale
   resultCount={1}
 />
 
+### 鉱脈ピッケル
+つながった同種の鉱石を一括破壊。**64回使用可**
+
+耐久値消費なし。魔神インゴットで使用回数を全回復できます。
+
+<CraftingGrid
+  grid={['PPP','PSP','PPP']}
+  legend={{ P: 'Diamond Pickaxe', S: 'Slime Block' }}
+  result="鉱脈ピッケル"
+  resultCount={1}
+/>
+
+### 超越ピッケル
+ヴェインピッケルと鉱脈ピッケルを合成させてできるピッケル。
+範囲採掘と一括破壊を併せ持つ。**640回使用可**
+
+耐久値消費なし。魔神インゴットで使用回数を全回復できます。
+
+<Callout type="error" title="融合成功率1%">
+ 融合の際に入手できる確率は**1%**です。注意して行ってください。
+</Callout>
+
+<CraftingGrid
+  grid={['KV ','   ','   ']}
+  legend={{ K: 'Diamond Pickaxe', V: 'Diamond Pickaxe' }}
+  result="超越ピッケル"
+  resultCount={1}
+/>
+
 ### ティンバーアックス
 木を一括伐採。**64回使用可 / 25pt消費**
 
@@ -301,7 +330,7 @@ import { Sparkles, Sword, Shield, Bomb, FlaskConical, Wand2, Wrench, Hammer, Ale
 </Steps>
 
 <Callout type="info">
-  魔神インゴット1個で**16回分**回復します。必要な分だけ消費され、余りは返却されます。
+  作業台でも修復できます。
 </Callout>
 
 | 対象アイテム | 回復後の使用回数 |
