@@ -92,13 +92,17 @@ Merges all standard XP bottles in your inventory into a single store bottle.
 
 ## 🛠️ Mending
 
-Auto-calculate and create a bottle with exactly the XP needed to repair the item in your hand:
+Repairs the item held in your hand by consuming the necessary amount of your own XP.
 
 ```
 /b mend
 ```
 
-Creates a bottle with exactly enough XP to fully repair the held tool or armor.
+If you want to repair everything you have equipped and everything in your inventory...
+
+```
+/b mend all
+```
 
 ## 📊 Info Commands
 
@@ -138,7 +142,8 @@ You can also sell XP bottles via QuickShop. Bottles are normal items — if they
 | /b get &lt;amount/max&gt; | create | Create standard bottles (10 XP each) |
 | /b store &lt;xp&gt; [qty] | create | Create store bottle(s) |
 | /b convert | utility | Merge standard bottles into one |
-| /b mend | utility | Mending-sized bottle for your held item |
+| /b mend | utility | Repair held items in mainhand |
+| /b mend all | utility | Repair all held items |
 | /b toggle thrown | mode | Toggle instant-consumption mode |
 | /b stats | info | Show XP info |
 | /b until &lt;Lv&gt; | info | XP needed to reach a level |
