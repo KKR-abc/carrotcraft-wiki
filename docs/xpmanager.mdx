@@ -92,13 +92,19 @@ import { FlaskConical, Package, ArrowRightLeft, Wrench, Info, ShieldAlert } from
 
 ## 🛠️ 修繕 (Mend)
 
-手に持っているアイテムを修繕するのに必要なXPを自動計算してボトルにします:
+手に持っているアイテムを自身のxpを必要な分だけ消費して修繕します。
 
 ```
 /b mend
 ```
 
-持っているツールや防具を完全修復するのにちょうど必要な XP 分のボトルが作成されます。
+装備しているものやインベントリ内のものすべてを修繕したいときは
+
+```
+/b mend all
+```
+
+
 
 ## 📊 情報確認
 
@@ -138,7 +144,8 @@ QuickShop で XP ボトルを販売することも可能です。ボトルはア
 | /b get &lt;数/max&gt; | create | 標準ボトル作成（1本10XP） |
 | /b store &lt;XP&gt; [本数] | create | ストアボトル作成 |
 | /b convert | utility | 標準ボトルを1本に統合 |
-| /b mend | utility | 手持ちアイテム修繕用ボトル作成 |
+| /b mend | utility | 手持ちアイテム修繕 |
+| /b mend all | utility | 手持ちアイテムをすべて修繕 |
 | /b toggle thrown | mode | 即時消費モード切り替え |
 | /b stats | info | XP情報表示 |
 | /b until &lt;Lv&gt; | info | 目標レベルまでの必要XP |
