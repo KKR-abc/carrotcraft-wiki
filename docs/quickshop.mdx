@@ -83,9 +83,6 @@ import { Store, ShoppingCart, ShoppingBag, Users, Search, Bell } from 'lucide-re
 | `/qs price <価格>` | 価格を変更 |
 | `/qs buy` | 買取モードに切り替え |
 | `/qs sell` | 販売モードに切り替え |
-| `/qs item` | 取扱アイテムを変更 |
-| `/qs size` | まとめ売り数量を変更 |
-| `/qs name <名前>` | ショップにカスタム名を設定 |
 
 ### ショップ検索
 
@@ -94,25 +91,6 @@ import { Store, ShoppingCart, ShoppingBag, Users, Search, Bell } from 'lucide-re
 ```
 
 指定したアイテムを扱っている最寄りのショップを検索します。部分一致で検索可能（例: `/qs find dia` でダイヤ関連のショップを検索）。
-
-### スタッフ管理
-
-| コマンド | 説明 |
-|---------|------|
-| `/qs staff add <プレイヤー>` | スタッフを追加（在庫管理を委任） |
-| `/qs staff del <プレイヤー>` | スタッフを削除 |
-| `/qs staff list` | スタッフ一覧 |
-
-<Callout type="info">
-スタッフはチェストの在庫管理ができますが、ショップ設定の変更はできません。
-</Callout>
-
-### 所有権
-
-| コマンド | 説明 |
-|---------|------|
-| `/qs setowner <プレイヤー>` | オーナーを変更 |
-| `/qs transfer <プレイヤー>` | 全ショップを移管 |
 
 <Callout type="info" title="土地の権限者はショップを撤去できます">
 ショップが建っている**土地の権限を持つプレイヤー**は、そのショップを破壊できます。他人の土地に置いたショップは撤去される可能性があるため、自分の土地（または許可を得た場所）に設置しましょう。
