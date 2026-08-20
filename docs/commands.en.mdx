@@ -11,6 +11,7 @@ import { Terminal, Home, Coins, Building2, MessageSquare, Sparkles, Map, Swords 
 
 <Callout type="info" title="Command Reference">
 The main CarrotCraft commands grouped by category. `<>` denotes required arguments, `[]` denotes optional ones.
+Commands enclosed in quotation marks are aliases (they can be used in the same way).
 </Callout>
 
 <Cards>
@@ -30,12 +31,32 @@ The main CarrotCraft commands grouped by category. `<>` denotes required argumen
 | `/rtp` | Random teleport |
 | `/rule` | View server rules (`/rule 1`–`/rule 8` for individual sections) |
 | `/gui toggledeath` | Toggle the auto-given GUI book on death |
+| `/gui give` | Obtaining the GUI book | 
 
 ## 🏠 Home Commands
 
 | Command | Description |
 |---------|-------------|
 | `/home` | Open the Home GUI (view, teleport, set, and delete homes all from the GUI) |
+| `/sethome [name]` | Set the current location as the home location |
+| `/delhome <name>` | Delete the specified home |
+
+## 🌀　Teleport Commands
+
+| Command | Description |
+|---------|------|
+| `/tpa <player>` | Send a teleport request to the player |
+| `/tpahere <player>` | Teleport the player to your location |
+| `/tpauto` | Automatically approve submitted TP requests. |
+
+## 🌎　Server Commands
+
+| Command | Description |
+|---------|------|
+|`/kokka` | Go to the main server |
+|`/shigen` |Go to the resource server |
+|`/hub` | Return to the lobby「`/lobby`」 |
+|`/ffa` |Go to the FFA server |
 
 ## 💰 Economy Commands
 
@@ -43,13 +64,16 @@ The main CarrotCraft commands grouped by category. `<>` denotes required argumen
 |---------|-------------|
 | `/bal` | Check balance |
 | `/pay <player> <amount>` | Send money |
+| `/paytoggle` | Whether or not to accept the remitted funds |
 | `/baltop` | Wealth ranking |
-| `/market` | Open CarrotMarket |
+| `/market` | Open the CarrotMarket「`/shop`」 |
+| `/sellall` | Sell ​​all items placed in the GUI |
+| `/trash` | Discard all items placed in the GUI |
 | `/qs create <price>` | Create a QuickShop |
 | `/qs find <item>` | Search for shops |
-| `/auction` | Open the auction house (list items from here) |
-| `/auction box` | Collect winnings & refunds (held 7 days) |
-| `/auction notify off` | Mute auction notifications |
+| `/auc` | Open the auction house (list items from here) |
+| `/auc box` | Collect winnings & refunds (held 7 days) |
+| `/auc notify off` | Mute auction notifications |
 
 ## 🏛 Towny Commands
 
@@ -81,6 +105,10 @@ The main CarrotCraft commands grouped by category. `<>` denotes required argumen
 | `/n invite <town>` | Invite a town |
 | `/n spawn` | Teleport to nation capital |
 | `/n list` | List all nations |
+
+<Callout type="info" title="Click here for details.">
+[towny command](/en/docs/towny)
+</Callout>
 
 </Tab>
 </Tabs>
@@ -121,9 +149,3 @@ Damage only applies when **both players' modes allow the attack** (e.g. crystal 
 |---------|-------------|
 | `/majin` | Check Majin Points |
 | `/majin convert [amount]` | Convert points to Majin Ingots (100pt = 1) |
-
-## 🗺 Other
-
-| Command | Description |
-|---------|-------------|
-| `/map` | Show Pl3xMap link |
