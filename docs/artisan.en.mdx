@@ -9,12 +9,6 @@ import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
-<Callout type="warn" title="This system is temporarily paused">
-  **Point conversion from deliveries** and **buying a Reset** are temporarily disabled. If you put materials in the delivery box and close it, nothing is converted — everything is returned to you. We'll announce when it comes back.
-
-  Points you have already earned are safe, and **buying a Move still works**.
-</Callout>
-
 <Callout type="info" title="What is the Artisan?">
   Turn your leftover stone and dirt into **Compression Points**, then spend them to **expand or rebuild the resource world**. When the resource world runs dry, the players fix it themselves.
 </Callout>
@@ -24,7 +18,7 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 <Cards>
   <Card title="1. Deliver materials" description="Drop cobblestone, iron, diamonds and more into the delivery box and close it. You earn Compression Points (pt)." />
   <Card title="2. Buy frontier work" description="Spend points to Move the resource world border, or Reset the world entirely." />
-  <Card title="3. Everyone benefits" description="Your purchase is announced server-wide and executed after a delay. Fresh land opens up for everyone." />
+  <Card title="3. Everyone benefits" description="Your purchase is announced server-wide and executed at a set time. Fresh land opens up for everyone." />
 </Cards>
 
 <Callout type="warn" title="Points are not money">
@@ -65,15 +59,23 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 | Daily limit | spec | There is a daily cap on how much you can deliver. The remaining amount is shown in the hub |
 | Reset time | spec | 4:00 AM (JST) every day |
 
-<Callout type="info" title="Prices move">
-  Materials that get delivered a lot **drop in price**, and slowly **recover** when nobody delivers them. Check the current rate in the **price list** inside `/assyuku`. The more people sell it, the cheaper it gets.
+<Callout type="info" title="How prices are decided — each material has a quota">
+  Every material has a **daily quota that is bought at full price**.
+
+  - While the quota lasts, you get the **full price**
+  - Once it runs out, you get **half price**
+  - Once that runs out too, that material is **done for the day** (it sells again tomorrow)
+
+  The quota **refills gradually over time**, so there is no morning rush to be first in line.
+
+  If everyone delivers the same material, its quota runs out early. Materials **nobody has been delivering** still have quota left, so those pay better. Check the current rate in the **price list** inside `/assyuku`.
 </Callout>
 
 ***
 
 ## 🧱 How compression works
 
-Every accepted material can be **compressed on a crafting table**. Fill a 3×3 grid with 9 of the same item and you get one compressed block, one tier up. You can stack this up to **7 tiers**.
+Every accepted material can be **compressed on a crafting table**. Fill a 3×3 grid with 9 of the same item and you get one compressed block, one tier up. You can stack this up to **11 tiers**.
 
 <Steps>
   <Step>
@@ -84,7 +86,7 @@ Every accepted material can be **compressed on a crafting table**. Fill a 3×3 g
   <Step>
     **Stack it up**
 
-    Nine tier-1 blocks make one tier-2 block, and so on — **up to tier 7**.
+    Nine tier-1 blocks make one tier-2 block, and so on — **up to tier 11**.
   </Step>
   <Step>
     **Unpacking gives 8 back**
@@ -94,28 +96,31 @@ Every accepted material can be **compressed on a crafting table**. Fill a 3×3 g
 </Steps>
 
 <Callout type="warn" title="A round trip costs you one item">
-  Compressing is **9 → 1**, unpacking is **1 → 8**. Go both ways and you lose one item (the compression tax). A compressed block is worth exactly what it unpacks into (tier 1 = 8 items, tier 7 = 2,097,152 items).
+  Compressing is **9 → 1**, unpacking is **1 → 8**. Go both ways and you lose one item (the compression tax).
 </Callout>
 
 <Callout type="error" title="Never place a compressed block, never craft with it">
-  A compressed block looks exactly like the plain material but holds up to millions of items. **Placing it destroys that value.** Only compress, unpack, or deliver it — the plugin blocks it from ordinary recipes.
+  A compressed block looks exactly like the plain material but holds thousands of items. **Placing it destroys that value.** Only compress, unpack, or deliver it — the plugin blocks it from ordinary recipes.
 </Callout>
 
 ***
 
-## ⚖️ Efficiency — compressing before delivery costs you
+## ⚖️ Compressing now pays MORE
 
-How much you get paid depends on **how many times the item has been compressed**.
+It used to cost you to compress before delivering. **That is reversed now.** Deliveries count the number of items that went **into** the compression, plus a bonus based on the tier.
 
-| What you deliver | Type | Efficiency |
+| What you deliver | Type | What you get |
 | --- | --- | --- |
-| Plain, uncompressed material | spec | **100%** |
-| Tier 1–6 | spec | Drops linearly as the tier goes up |
-| Tier 7 (max) | spec | **75%** |
-| Anything inside a shulker box | spec | Flat **75%**, whatever the tier |
+| Plain, uncompressed material | spec | **100%**, as-is |
+| Tier 1 | spec | **+11%** (9 items compressed once = 10 items' worth) |
+| Tier 2 | spec | **+22%** |
+| Tier 3 | spec | **+33%** |
+| Tier 4 | spec | **+44%** |
+| Tier 5 and above | spec | **+50%** (caps here) |
+| Anything inside a shulker box | spec | Flat **75%**, whatever the tier — **no bonus** |
 
 <Callout type="warn" title="In other words">
-  **Delivering plain, uncompressed material pays the most.** Compression exists for hauling and for compression ranks/badges — not as a way to earn more points. Dumping a whole shulker is convenient, and that convenience costs a flat 25%.
+  **Compressing by hand before you deliver pays the most.** Dumping a whole shulker is convenient, and that convenience costs you: a flat 75% with no bonus. The exact points per tier are shown in the `/assyuku` price list.
 </Callout>
 
 ***
@@ -133,20 +138,32 @@ The border keeps its **size** and slides in the direction you choose. Fresh land
 | Unit | spec | 1 unit = 1,000 blocks. Up to 20 units per purchase |
 | Direction | spec | Frontline / North / East / South / West |
 | Takes effect | spec | **1 hour** after purchase |
-| Next purchase | spec | **2 hours** from the moment you buy |
 
-### Reset (rebuild the world)
+### Reset (rebuild the world) — by reservation
 
-<Callout type="warn">
-  **Buying a Reset is temporarily disabled.** The purchase screen shows "currently disabled" and the option cannot be bought.
+You no longer pick the time. A reset always happens at **18:00 (JST) on the day it is booked**.
+
+| Time | Type | What happens |
+| --- | --- | --- |
+| The moment you buy | spec | The reservation is locked in and **that world closes** — nobody can enter while the new terrain is prepared |
+| 15:00 | spec | **Booking deadline** for that day. Later purchases roll over to the next day |
+| 17:00 | spec | The new world goes live — **only the buyer and the people they picked** can enter |
+| 18:00 | spec | **Open to everyone.** The border also starts expanding, reaching full size over 30 minutes |
+
+<Callout type="warn" title="One reservation per day, first come first served">
+  You cannot stack reservations on the same day. **The world closes the moment a reservation is made**, so never leave valuables in the resource world — lost items cannot be restored.
 </Callout>
 
-The resource world is **regenerated with brand new terrain**. The border returns to its starting position.
+### Bringing people in early
+
+The buyer can choose who joins them at 17:00. Run `/frontier reserve`, then click the heads you want to add (**up to 20 people**). You get to gather supplies together before the world opens to everyone.
+
+### The dragon egg
+
+The End is **reset by staff on the 1st of every month**. **Only that dragon drops the egg** — dragons in a purchased reset do not.
 
 | Item | Type | Description |
 | --- | --- | --- |
-| Takes effect | spec | **2 hours** after purchase |
-| Next purchase | spec | **5 hours** from the moment you buy |
 | Your items | spec | Inventory, XP and ender chest are **kept** |
 | Your builds | spec | Anything placed in the resource world is **gone** |
 
@@ -156,15 +173,24 @@ The resource world is **regenerated with brand new terrain**. The border returns
 
 ***
 
+## 🏘️ Saving points as a town
+
+`/frontier town` lets you use your **town wallet**.
+
+- **Deposit** — any resident of the town
+- **Withdraw** — the mayor and the helpers the mayor picks
+
+Pool your points and buy frontier work as a town.
+
+***
+
 ## ⏰ Announcements and countdown
 
-Every purchase is **announced on all servers** — who bought it, which world, which direction, and how far.
+Every Move purchase is **announced on all servers** — who bought it, which world, which direction, and how far.
 
 The countdown runs at **45m → 30m → 15m → 10m → 5m → 2m → 1m → 30s**, then **10 → 5 → 3 → 2 → 1**. **Use that time to haul your loot out.**
 
-<Callout type="info" title="You are moved somewhere safe during a reset">
-  When a reset executes, anyone in the resource world is moved to a **safe empty space**. You take no damage and cannot fall. When it finishes you are **teleported into the new world** automatically.
-</Callout>
+A Reset is announced when it is booked, and the switch-over times are fixed (see the table above).
 
 ***
 
@@ -197,7 +223,8 @@ When you compress the target materials to 5 stages, you can add text next to the
 | /frontier balance | command | Your Compression Point balance |
 | /frontier history | command | Point history |
 | /frontier top | command | Balance ranking |
-| /frontier rate list | command | Current rate per material |
+| /frontier reserve | command | Check the reset reservation and pick who joins you early |
+| /frontier town | command | Town wallet (deposit, withdraw, helpers) |
 | /carrotborder eta | command | Time left on the current Move / Reset (**resource world only**) |
 
 ***
@@ -208,16 +235,19 @@ When you compress the target materials to 5 stages, you can add text next to the
   <Accordion title="I delivered items but nothing happened">
     The material may not be **accepted**, or you may have hit the **daily cap**. Rejected items are returned to you. Your remaining cap is shown in the `/assyuku` hub.
   </Accordion>
+  <Accordion title="Should I compress before delivering?">
+    Yes. Anything you compressed by hand earns a bonus that grows with the tier (capped from tier 5). But **items dumped inside a shulker box get no bonus** — those are a flat 75%.
+  </Accordion>
   <Accordion title="Can I convert points into money?">
     No. Compression Points are only good for frontier work. You can **send** them to other players (`/assyuku pay`).
   </Accordion>
-  <Accordion title="I bought it but nothing moved">
-    Move takes effect after 1 hour, Reset after 2 hours. That delay exists so everyone can **haul their loot out**. Check the remaining time by running `/carrotborder eta` in the resource world (it is not available on the main server).
+  <Accordion title="I bought a Reset but nothing changed yet">
+    Resets run at **18:00 (JST)** on the day they are booked (deadline 15:00; later purchases roll to the next day). The buyer and their guests get in from 17:00. A Move takes effect 1 hour after purchase — check the time left by running `/carrotborder eta` in the resource world (it is not available on the main server).
   </Accordion>
   <Accordion title="What happens to my base in the resource world?">
     Land that falls outside after a Move, and land rebuilt by a Reset, **never comes back**. The resource world is for mining. Keep valuables on the main server.
   </Accordion>
   <Accordion title="The price changed since yesterday">
-    Rates move with **how much has been delivered**. Heavily delivered materials get cheaper and recover once people stop. Check the price list for the current rate.
+    Each material has a daily quota that sells at full price; once it is gone the price halves, and once that is gone the material stops selling for the day. The quota refills over time. Check the price list for the current rate.
   </Accordion>
 </Accordions>
