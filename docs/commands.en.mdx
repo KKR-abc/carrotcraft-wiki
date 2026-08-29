@@ -15,18 +15,19 @@ Commands enclosed in quotation marks are aliases (they can be used in the same w
 </Callout>
 
 <Cards>
-  <Card icon={<Terminal />} href="#-basic-commands" title="Basic" description="RTP, rules view" />
+  <Card icon={<Terminal />} href="#-basic--convenience-commands" title="Basic" description="RTP, rules view" />
   <Card icon={<Home />} href="#-home-commands" title="Home" description="/home GUI" />
-  <Card icon={<Orbit />} href="#-Teleport Commands" title="Teleport" description="Teleport to a person" />
-  <Card icon={<Server />} href="#-Server Commands" title="Server" description="/Server Transfer" />
+  <Card icon={<Orbit />} href="#-Teleport-Commands" title="Teleport" description="Teleport to a person" />
+  <Card icon={<Server />} href="#-Server-Commands" title="Server" description="/Server Transfer" />
   <Card icon={<Coins />} href="#-economy-commands" title="Economy" description="Balance, pay, shops" />
-  <Card icon={<Building2 />} href="#towny-commands" title="Towny" description="Town & nation management" />
+  <Card icon={<Building2 />} href="#-towny-commands" title="Towny" description="Town & nation management" />
   <Card icon={<MessageSquare />} href="#-chat-commands" title="Chat" description="Messages & channels" />
-  <Card icon={<Swords />} href="#-PvP-commands" title="PvP" description="PvP toggle & combat modes" />
+ <Card icon={<gamepad-2 />} href="#-entertainment-commands" title="Entertainment" description="Entertainment features" />
+  <Card icon={<Swords />} href="#-pvp-commands" title="PvP" description="PvP toggle & combat modes" />
   <Card icon={<Sparkles />} href="#-majin-points--majincraft" title="Majin" description="Points & ingots" />
 </Cards>
 
-## ⚙️ Basic Commands
+## ⚙️ Basic&Convenience Commands
 
 | Command | Description |
 |---------|-------------|
@@ -34,6 +35,18 @@ Commands enclosed in quotation marks are aliases (they can be used in the same w
 | `/rule` | View server rules (`/rule 1`–`/rule 8` for individual sections) |
 | `/gui toggledeath` | Toggle the auto-given GUI book on death |
 | `/gui give` | Obtaining the GUI book | 
+| `/nv` | Toggle permanent night vision |
+| `/skills` | Open skills menu [Details](/en/docs/skills) |
+| `/assyuku` | Open compression menu [Details](/en/docs/artisan) |
+| `/ai` | Ask the AI ​​a question |
+| `/accept` | Accept |
+| `/denny` | Deny |
+| `/afk` | Toggle AFK mode |
+| `/back` | Return to death location (newbie period only) |
+| `lock` | Protect chests, etc. [Details](/en/docs/bolt) |
+| `/tablist` | Display tab list in chat |
+| `/p <player>` | Show player information |
+| `/setting` | Settings |
 
 ## 🏠 Home Commands
 
@@ -50,6 +63,8 @@ Commands enclosed in quotation marks are aliases (they can be used in the same w
 | `/tpa <player>` | Send a teleport request to the player |
 | `/tpahere <player>` | Teleport the player to your location |
 | `/tpauto` | Automatically approve submitted TP requests. |
+| `/tpaccept` | Accept a teleport request |
+| `/tpdenny` | Reject a teleport request |
 
 ## 🌎 Server Commands
 
@@ -59,6 +74,7 @@ Commands enclosed in quotation marks are aliases (they can be used in the same w
 |`/shigen` |Go to the resource server |
 |`/hub` | Return to the lobby「`/lobby`」 |
 |`/ffa` |Go to the FFA server |
+| `/casino` | Casino selection screen |
 
 ## 💰 Economy Commands
 
@@ -108,12 +124,28 @@ Commands enclosed in quotation marks are aliases (they can be used in the same w
 | `/n spawn` | Teleport to nation capital |
 | `/n list` | List all nations |
 
-<Callout type="info" title="Click here for details.">
-[towny command](/en/docs/towny)
-</Callout>
-
 </Tab>
 </Tabs>
+
+<Callout type="info" title="Learn more here">
+[Towny commands](/en/docs/towny)
+</Callout>
+
+## 🎮 Entertainment Commands
+
+| Command | Description |
+|---------|------|
+| `/vote` | Voting site URL |
+| `/cc` | Open the voting gacha |
+| `/hilo` | Play Hi-Lo |
+| `/bj` | Play Blackjack |
+| `/uc menu` | Open cosmetics menu |
+| `/uc clear` | Unequip cosmetics |
+| `/emf` | Open fishing menu [Details](/en/docs/fishing) |
+| `/bellyflop` | Belly flop |
+| `/spin` | Spin |
+| `/crawl` | Crawl |
+| `/lay` | Lie down |
 
 ## ⚔️ PvP Commands
 
@@ -151,3 +183,4 @@ Damage only applies when **both players' modes allow the attack** (e.g. crystal 
 |---------|-------------|
 | `/majin` | Check Majin Points |
 | `/majin convert [amount]` | Convert points to Majin Ingots (100pt = 1) |
+| `/recipes` | Display recipes for MajinCraft items |
