@@ -7,7 +7,7 @@ icon: terminal
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { Terminal, Home, Coins, Building2, MessageSquare, Sparkles, Map, Swords } from 'lucide-react';
+import { Terminal, Home, Coins, Building2, MessageSquare, Sparkles, Map, Swords, Orbit, Server } from 'lucide-react';
 
 <Callout type="info" title="コマンドリファレンス">
 CarrotCraftで使える主要コマンドをカテゴリ別にまとめています。引数の `<>` は必須、`[]` は任意です。
@@ -22,11 +22,12 @@ CarrotCraftで使える主要コマンドをカテゴリ別にまとめていま
   <Card icon={<Coins />} href="#-経済コマンド" title="経済" description="所持金・送金・ショップ" />
   <Card icon={<Building2 />} href="#-townyコマンド" title="Towny" description="町・国家の管理" />
   <Card icon={<MessageSquare />} href="#-チャットコマンド" title="チャット" description="メッセージ・チャンネル切替" />
-  <Card icon={<Swords />} href="#-pvpコマンド" title="PvP" description="PvP切替・戦闘モード" />
+  <Card icon={<gamepad-2 />} href="#-エンタメコマンド" title="エンタメ" description="エンタメ機能" />
+  <Card icon={<Swords />} href="#-PvPコマンド" title="PvP" description="PvP切替・戦闘モード" />
   <Card icon={<Sparkles />} href="#-マジンポイントmajincraft" title="マジン" description="ポイント・インゴット" />
 </Cards>
 
-## ⚙️ 基本コマンド
+## ⚙️ 基本・便利コマンド
 
 | コマンド | 説明 |
 |---------|------|
@@ -34,6 +35,21 @@ CarrotCraftで使える主要コマンドをカテゴリ別にまとめていま
 | `/rule` | サーバールール表示（`/rule 1`〜`/rule 8` で章ごとに読める） |
 | `/gui toggledeath` | 死亡時のGUI本自動付与をON/OFF |
 | `/gui give` | GUI本の取得 |
+| `/nv` | 常時暗視 |
+| `/skills` | スキルメニューを開く [詳細](/docs/skills) |
+| `/assyuku` | 圧縮メニューを開く  [詳細](/docs/artisan) |
+| `/ai` | AIにわからないことを質問 |
+| `/accept` | 承認 |
+| `/denny` | 拒否 |
+| `/afk` | AFKモードになる |
+| `/back` | 死亡地点にもどる（初心者期間のみ） |
+| `lock` | チェストなどを保護する [詳細](/docs/bolt) |
+| `/tablist` | タブをチャットに表示する |
+| `/p <プレイヤー>` | プレイヤーの情報を出す |
+| `/setting` | 設定 |
+
+
+
 
 ## 🏠 ホームコマンド
 
@@ -43,22 +59,25 @@ CarrotCraftで使える主要コマンドをカテゴリ別にまとめていま
 | `/sethome [名前]` | 現在地にホームを設定する |
 | `/delhome <名前>` | 指定したホームを削除する |
 
-## 🌀　テレポートコマンド
+## 🌀 テレポートコマンド
 
 | コマンド | 説明 |
 |---------|------|
 | `/tpa <プレイヤー名>` | プレイヤーにテレポート申請を送る |
 | `/tpahere <プレイヤー名>` | プレイヤーを自身の場所にテレポート |
 | `/tpauto` | 送られたtp申請を自動で承認 |
+| `/tpaccept` | テレポートを承認する |
+| `/tpdenny` | テレポートを拒否する |
 
-## 🌎　サーバーコマンド
+## 🌎 サーバーコマンド
 
 | コマンド | 説明 |
 |---------|------|
-|`/kokka` | 国家サーバーに行く |
-|`/shigen` | 資源サーバーに行く |
-|`/hub` | ロビーに戻る 「`/lobby`」 |
-|`/ffa` | FFAサーバーに行く |
+| `/kokka` | 国家サーバーに行く |
+| `/shigen` | 資源サーバーに行く |
+| `/hub` | ロビーに戻る 「`/lobby`」 |
+| `/ffa` | FFAサーバーに行く |
+| `/casino` | カジノ選択画面 |
 
 
 ## 💰 経済コマンド
@@ -109,12 +128,29 @@ CarrotCraftで使える主要コマンドをカテゴリ別にまとめていま
 | `/n spawn` | 国家の首都にテレポート |
 | `/n list` | 国家一覧を表示 |
 
-<Callout type="info" title="詳しいことはこちら">
-[townyコマンド](/ja/docs/towny)
-</Callout>
-
 </Tab>
 </Tabs>
+
+<Callout type="info" title="詳しいことはこちら">
+[townyコマンド](/docs/towny)
+</Callout>
+
+## 🎮 エンタメコマンド
+
+| コマンド | 説明 |
+|---------|------|
+| `/vote` | 投票サイトのURL |
+| `/cc` | 投票ガチャを開く |
+| `/hilo` | ハイローを遊ぶ |
+| `/bj` | ブラックジャックを遊ぶ |
+| `/uc menu` | コスメメニューを開く |
+| `/uc clear` | コスメを装備解除する |
+| `/emf` | 釣りメニューを開く  [詳細](/docs/fishing)|
+| `/bellyflop` | 伏せる |
+| `/spin` | 回転する |
+| `/crawl` | 匍匐前進 |
+| `/lay` | 寝る |
+
 
 ## ⚔️ PvPコマンド
 
@@ -152,3 +188,4 @@ CarrotCraftで使える主要コマンドをカテゴリ別にまとめていま
 |---------|------|
 | `/majin` | マジンポイント確認 |
 | `/majin convert [数量]` | ポイントをマジンインゴットに変換 (100pt = 1個) |
+| `/recipes` | MajinCraftアイテムのレシピを表示 |
