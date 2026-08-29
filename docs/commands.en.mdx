@@ -7,7 +7,7 @@ icon: terminal
 import { Callout } from 'fumadocs-ui/components/callout';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { Terminal, Home, Coins, Building2, MessageSquare, Sparkles, Map, Swords, Orbit, Server } from 'lucide-react';
+import { Terminal, Home, Coins, Building2, MessageSquare, Sparkles, Map, Swords, Orbit, Server, Gamepad2 } from 'lucide-react';
 
 <Callout type="info" title="Command Reference">
 The main CarrotCraft commands grouped by category. `<>` denotes required arguments, `[]` denotes optional ones.
@@ -17,17 +17,17 @@ Commands enclosed in quotation marks are aliases (they can be used in the same w
 <Cards>
   <Card icon={<Terminal />} href="#-basic--convenience-commands" title="Basic" description="RTP, rules view" />
   <Card icon={<Home />} href="#-home-commands" title="Home" description="/home GUI" />
-  <Card icon={<Orbit />} href="#-Teleport-Commands" title="Teleport" description="Teleport to a person" />
-  <Card icon={<Server />} href="#-Server-Commands" title="Server" description="/Server Transfer" />
+  <Card icon={<Orbit />} href="#-teleport-commands" title="Teleport" description="Teleport to a person" />
+  <Card icon={<Server />} href="#-server-commands" title="Server" description="/Server Transfer" />
   <Card icon={<Coins />} href="#-economy-commands" title="Economy" description="Balance, pay, shops" />
   <Card icon={<Building2 />} href="#-towny-commands" title="Towny" description="Town & nation management" />
   <Card icon={<MessageSquare />} href="#-chat-commands" title="Chat" description="Messages & channels" />
- <Card icon={<gamepad-2 />} href="#-entertainment-commands" title="Entertainment" description="Entertainment features" />
+ <Card icon={<Gamepad2 />} href="#-entertainment-commands" title="Entertainment" description="Entertainment features" />
   <Card icon={<Swords />} href="#-pvp-commands" title="PvP" description="PvP toggle & combat modes" />
   <Card icon={<Sparkles />} href="#-majin-points--majincraft" title="Majin" description="Points & ingots" />
 </Cards>
 
-## ⚙️ Basic&Convenience Commands
+## ⚙ Basic & Convenience Commands
 
 | Command | Description |
 |---------|-------------|
@@ -40,13 +40,13 @@ Commands enclosed in quotation marks are aliases (they can be used in the same w
 | `/assyuku` | Open compression menu [Details](/en/docs/artisan) |
 | `/ai` | Ask the AI ​​a question |
 | `/accept` | Accept |
-| `/denny` | Deny |
+| `/deny` | Deny an invite |
 | `/afk` | Toggle AFK mode |
 | `/back` | Return to death location (newbie period only) |
-| `lock` | Protect chests, etc. [Details](/en/docs/bolt) |
+| `/lock` | Protect chests, etc. [Details](/en/docs/bolt) |
 | `/tablist` | Display tab list in chat |
 | `/p <player>` | Show player information |
-| `/setting` | Settings |
+| `/settings` | Open your settings (`/setting` also works) |
 
 ## 🏠 Home Commands
 
@@ -64,7 +64,7 @@ Commands enclosed in quotation marks are aliases (they can be used in the same w
 | `/tpahere <player>` | Teleport the player to your location |
 | `/tpauto` | Automatically approve submitted TP requests. |
 | `/tpaccept` | Accept a teleport request |
-| `/tpdenny` | Reject a teleport request |
+| `/tpdeny` | Reject a teleport request |
 
 ## 🌎 Server Commands
 
@@ -147,7 +147,7 @@ Commands enclosed in quotation marks are aliases (they can be used in the same w
 | `/crawl` | Crawl |
 | `/lay` | Lie down |
 
-## ⚔️ PvP Commands
+## ⚔ PvP Commands
 
 | Command | Description |
 |---------|-------------|
