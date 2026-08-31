@@ -1,0 +1,70 @@
+---
+title: 建築サーバー
+description: 自由な建築してみんなの建築を見るサーバー
+icon: hard-hat
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { hard-hat, Pickaxe, Home, Radar, Mic, Sparkles, Ban, AlertTriangle, Package } from 'lucide-react';
+
+<Callout type="info" title="建築サーバーとは？">
+ 建築サーバーでは、クリエイティブモードを使用し、自分の区画内で自由な建築を行えます。
+</Callout>
+
+## 🚪 アクセス方法
+
+<Steps>
+ 
+  <Step>
+   どのサーバーでもいいので、 **`/server kenchiku` を実行**
+
+    サーバー間移動が始まり、建築サーバーに移動します。
+
+    ```
+    /server kenchiku
+    ```
+  </Step>
+  <Step>
+    **戻るには `/kokka`**
+
+    メインサーバーに戻る時は次のコマンドを実行します。
+
+    ```
+    /kokka
+    ```
+  </Step>
+</Steps>
+
+## ✅ 建築サーバーでできること
+
+<Cards>
+  <Card icon={<hard-hat />} title="自由な建築" description="63×63の区画を1人2区画もらえます。  クリエイティブで好きな建築をすることができます。" />
+ <Card icon={<thumbs-up />} title="いいね機能" description="他の人の建築にいいねをすることができます。" />
+</Cards>
+
+<Callout type="warn" title="作ってはいけないもの">
+サーバールールに違反するものや他人の迷惑になるもの、公序良俗に反するものは作ってはいけません。
+</Callout>
+
+## 🔧 建築サーバーで使える便利機能
+
+建築サーバーではサーバーに入ったときに配られる **コンパス** または **`/menu`** を使うことで、様々な機能を使えます。
+
+| 名称 | 詳細 |
+|------|------|
+| 区画をもらう | 最大２つまで自分の区画をもらう |
+| 自分の区画 | 自分の区画にtp |
+| 区画の設定 | 砂や水などの動きを制限したりするルールを設ける |
+| 一緒に作る人 | 共同作成者を設定 |
+| みんなの区画を見に行く | 他人の区画にtp |
+| 評価の様子 | 自分へのいいね |
+| 今立っている区画 | 今いる区画の情報を出す |
+| 飛ぶ速さ | 飛行スピードをゆっくりから普通の10倍まで |
+| 入室時の表示 | 他人の区画に入った時のGUI |
+| 時間と天気 | 自分だけに見える天候を設定する |
+
+
+
