@@ -1,0 +1,67 @@
+---
+title: Building Server
+description: A server for free-form building and viewing others' creations
+icon: hard-hat
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Card, Cards } from 'fumadocs-ui/components/card';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+import { hard-hat, Pickaxe, Home, Radar, Mic, Sparkles, Ban, AlertTriangle, Package } from 'lucide-react';
+
+<Callout type="info" title="What is the Building Server?">
+On the Building Server, you can use Creative Mode to build freely within your own designated plots.
+</Callout>
+
+## 🚪 How to Access
+
+<Steps>
+
+<Step>
+**Run `/server kenchiku`** from any server
+
+You will be transferred to the Building Server. 
+
+```
+/server kenchiku
+```
+</Step>
+<Step>
+**Use `/kokka` to return**
+
+Run the following command to return to the main server. 
+
+```
+/kokka
+```
+</Step>
+</Steps>
+
+## ✅ What You Can Do
+
+<Cards>
+<Card icon={<hard-hat />} title="Free-form Building" description="You receive two 63x63 plots. Build whatever you like using Creative Mode." />
+<Card icon={<thumbs-up />} title="Like Feature" description="You can 'like' other players' builds." />
+</Cards>
+
+<Callout type="warn" title="Prohibited Builds">
+Do not build anything that violates server rules, causes trouble for others, or goes against public order and morals.
+</Callout>
+
+## 🔧 Useful Features
+
+You can access various features on the Building Server by using the **compass** provided when you join or by running **`/menu`**. 
+
+| Name | Details |
+|------|------|
+| Claim a Plot | Claim up to two plots of your own |
+| My Plot | Teleport to your own plot |
+| Plot Settings | Set rules to restrict the movement of elements like sand or water |
+| Collaborators | Designate co-creators |
+| Visit Other Plots | Teleport to other players' plots |
+| Ratings | View "likes" received |
+| Current Plot | Display information about the plot you are currently in |
+| Flight Speed ​​| Adjust flight speed from slow to 10x normal speed |
+| Entry Display | GUI shown when entering another player's plot |
+| Time and Weather | Set weather visible only to you |
