@@ -256,6 +256,24 @@ import { Sparkles, Sword, Shield, Bomb, FlaskConical, Wand2, Wrench, Hammer, Ale
   resultCount={1}
 />
 
+### 圧縮ロケット
+エリトラ用の花火を1本にまとめて持てます。持ち物の中では常に1本で、使うとすぐ次の1本が出てきます。**最大1728本 / まとめる1回につき25pt消費**
+
+使い心地は普通の花火と同じです。滑空中の加速も地上での打ち上げも変わりません。
+
+<CraftingGrid
+  grid={['FFF','FFF','FFF']}
+  legend={{ F: 'Firework Rocket' }}
+  result="圧縮ロケット"
+  resultCount={1}
+/>
+
+- 同じ種類の花火だけまとめられます（飛行時間や効果が違うものは混ざりません）
+- 圧縮ロケット同士を作業台で合わせると、本数は足し算になります
+- 作業台に1本だけ置くと、普通の花火を64本取り出せます（無料）
+- 上限を超える置き方をすると、あと何本多いかが結果欄に出ます
+- 分けられません。発射装置・ドロッパー・クロスボウには入りません
+
 </Tab>
 
 <Tab value="🎲 ネタ・その他">
@@ -368,6 +386,7 @@ import { Sparkles, Sword, Shield, Bomb, FlaskConical, Wand2, Wrench, Hammer, Ale
 | 葉刈り鋏 | 64回使用可 | 15 pt |
 | 魔神マグネット | 耐久なし | 30 pt |
 | 魔神スポンジ | 32回使用可 | 25 pt |
+| 圧縮ロケット | まとめる時のみ | 25 pt |
 
 ## ⚠️ 注意事項
 

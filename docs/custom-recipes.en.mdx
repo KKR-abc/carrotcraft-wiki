@@ -256,6 +256,24 @@ Use counts can be fully restored with a Majin Ingot.
   resultCount={1}
 />
 
+### Compressed Rocket
+Carry your elytra fireworks as a single item. You always hold exactly one, and the next one appears the moment you use it. **Up to 1728 rockets / 25pt each time you combine**
+
+It flies exactly like a normal firework. Elytra boosts and ground launches are unchanged.
+
+<CraftingGrid
+  grid={['FFF','FFF','FFF']}
+  legend={{ F: 'Firework Rocket' }}
+  result="Compressed Rocket"
+  resultCount={1}
+/>
+
+- Only fireworks of the same kind combine (different flight durations or effects stay separate)
+- Combining two Compressed Rockets in a crafting table adds their counts together
+- Place one on its own in a crafting table to take out 64 normal fireworks (free)
+- If a layout would go over the limit, the result slot tells you how many rockets too many
+- It cannot be split, and it will not go into dispensers, droppers or crossbows
+
 </Tab>
 
 <Tab value="🎲 Fun / Misc">
@@ -368,6 +386,7 @@ Items with a use count can be repaired with a **Majin Ingot**.
 | Leaf Shears | 64 uses | 15 pt |
 | Majin Magnet | No durability | 30 pt |
 | Majin Sponge | 32 uses | 25 pt |
+| Compressed Rocket | on combine only | 25 pt |
 
 ## ⚠️ Important Notes
 
