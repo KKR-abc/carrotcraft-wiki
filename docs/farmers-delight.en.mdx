@@ -1,6 +1,6 @@
 ---
 title: Farmer's Delight
-description: Plugin port of Farmer's Delight + 4 addons — stations, new crops and 470+ dishes with full recipes
+description: Plugin port of Farmer's Delight + 4 addons — stations, new crops and 490+ dishes with full recipes
 icon: cooking-pot
 ---
 
@@ -12,7 +12,7 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 import { CookingPot, Utensils, Flame, Sprout, Archive, Soup, Croissant, CalendarDays } from 'lucide-react';
 
 <Callout type="info" title="What is Farmer's Delight?">
-A plugin port of the popular **Farmer's Delight** cooking mod plus 4 addons (**Ocean's Delight / Corn Delight / Delightful / Cultural Delights**). **No mod or setup required** — both Java and Bedrock players can use it right away. Over **470** dishes and ingredients are added.
+A plugin port of the popular **Farmer's Delight** cooking mod plus 4 addons (**Ocean's Delight / Corn Delight / Delightful / Cultural Delights**). **No mod or setup required** — both Java and Bedrock players can use it right away. Over **490** dishes and ingredients are added.
 </Callout>
 
 ## 🍳 What you can do
@@ -73,7 +73,7 @@ Prepped slices can be cooked in a vanilla **furnace, smoker or campfire** (smoke
 An ingredient written as "**A / B**" means **either works** (e.g. Beef / Minced Beef). Like the original mod, several ingredients are accepted.
 </Callout>
 
-<Tabs items={['🍲 Cooking Pot', '🎋 Bamboo Mat', '🔪 Cutting Board', '♨️ Furnace & Smoker', '🛠️ Crafting']}>
+<Tabs items={['🍲 Cooking Pot', '🎋 Bamboo Mat', '🔪 Cutting Board', '♨️ Furnace & Smoker', '🍢 Grill', '🛠️ Crafting']}>
 
 <Tab value="🍲 Cooking Pot">
 
@@ -120,7 +120,7 @@ Drop ingredients into a pot over a fire to simmer, then serve with the listed co
 | <Item img="/items/cc/ratatouille.png" name="Ratatouille" /> | <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item name="Beetroot" /> + <Item img="/items/cc/onion.png" name="Onion" /> / <Item img="/items/cc/tomato.png" name="Tomato" /> / <Item img="/items/carrot.png" name="Carrot" /> / <Item name="Potato" /> / <Item name="Beetroot" /> | 10s | <Item name="Bowl" /> |
 | <Item name="Stuffed Pumpkin Stage0" /> | <Item img="/items/cc/rice.png" name="Rice" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item name="Brown Mushroom" /> + <Item name="Potato" /> + <Item name="Sweet Berries" /> / <Item name="Glow Berries" /> + <Item img="/items/cc/onion.png" name="Onion" /> / <Item img="/items/cc/tomato.png" name="Tomato" /> / <Item img="/items/carrot.png" name="Carrot" /> / <Item name="Potato" /> / <Item name="Beetroot" /> | 20s | <Item name="Pumpkin" /> |
 | <Item img="/items/cc/tomato_sauce.png" name="Tomato Sauce" /> | <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item img="/items/cc/tomato.png" name="Tomato" /> | 5s | <Item name="Bowl" /> |
-| <Item img="/items/cc/dog_food.png" name="Dog Food" /> | <Item name="Rotten Flesh" /> + <Item name="Bone Meal" /> + <Item name="Beef" /> / <Item img="/items/cc/minced_beef.png" name="Minced Beef" /> / <Item name="Chicken" /> / <Item img="/items/cc/chicken_cuts.png" name="Chicken Cuts" /> / <Item name="Porkchop" /> / <Item img="/items/cc/bacon.png" name="Bacon" /> …+2 more + <Item img="/items/cc/rice.png" name="Rice" /> | 10s | hand |
+| <Item img="/items/cc/dog_food.png" name="Dog Food" /> | <Item name="Rotten Flesh" /> + <Item name="Bone Meal" /> + <Item name="Beef" /> / <Item img="/items/cc/minced_beef.png" name="Minced Beef" /> / <Item name="Chicken" /> / <Item img="/items/cc/chicken_cuts.png" name="Chicken Cuts" /> / <Item name="Porkchop" /> / <Item img="/items/cc/bacon.png" name="Bacon" /> …+2 more + <Item img="/items/cc/rice.png" name="Rice" /> | 10s | <Item name="Bowl" /> |
 
 </Accordion>
 <Accordion title="Drinks & Desserts">
@@ -128,7 +128,7 @@ Drop ingredients into a pot over a fire to simmer, then serve with the listed co
 | Dish | Ingredients | Time | Serve with |
 |---|---|---|---|
 | <Item img="/items/cc/hot_cocoa.png" name="Hot Cocoa" /> | <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/sugar.png" name="Sugar" /> + <Item name="Cocoa Beans" /> + <Item name="Cocoa Beans" /> | 10s | <Item name="Glass Bottle" /> |
-| <Item img="/items/cc/glow_berry_custard.png" name="Glow Berry Custard" /> | <Item name="Glow Berries" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/egg.png" name="Egg" /> + <Item img="/items/sugar.png" name="Sugar" /> | 10s | hand |
+| <Item img="/items/cc/glow_berry_custard.png" name="Glow Berry Custard" /> | <Item name="Glow Berries" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/egg.png" name="Egg" /> + <Item img="/items/sugar.png" name="Sugar" /> | 10s | <Item name="Glass Bottle" /> |
 | <Item img="/items/cc/apple_cider.png" name="Apple Cider" /> | <Item name="Apple" /> + <Item name="Apple" /> + <Item img="/items/sugar.png" name="Sugar" /> | 10s | <Item name="Glass Bottle" /> |
 
 </Accordion>
@@ -215,22 +215,22 @@ Drop ingredients into a pot over a fire to simmer, then serve with the listed co
 | Dish | Ingredients | Time | Serve with |
 |---|---|---|---|
 | <Item img="/items/cc/beef_noodles.png" name="Beef Noodles" /> | <Item name="Beef" /> + <Item name="Beef" /> + <Item img="/items/cc/raw_pasta.png" name="Raw Pasta" /> + <Item img="/items/carrot.png" name="Carrot" /> + <Item img="/items/cc/cabbage.png" name="Cabbage" /> + <Item img="/items/cc/onion.png" name="Onion" /> | 10s | <Item name="Bowl" /> |
-| <Item img="/items/cc/cabbage_bobo_chicken.png" name="Cabbage Bobo Chicken" /> | <Item img="/items/cc/raw_cabbage_bobo_chicken.png" name="Raw Cabbage Bobo Chicken" /> + <Item img="/items/cc/tomato_sauce.png" name="Tomato Sauce" /> | 10s | hand |
-| <Item img="/items/cc/chicken_bobo_chicken.png" name="Chicken Bobo Chicken" /> | <Item img="/items/cc/raw_chicken_bobo_chicken.png" name="Raw Chicken Bobo Chicken" /> + <Item img="/items/cc/tomato_sauce.png" name="Tomato Sauce" /> | 10s | hand |
+| <Item img="/items/cc/cabbage_bobo_chicken.png" name="Cabbage Bobo Chicken" /> | <Item img="/items/cc/raw_cabbage_bobo_chicken.png" name="Raw Cabbage Bobo Chicken" /> + <Item img="/items/cc/tomato_sauce.png" name="Tomato Sauce" /> | 10s | <Item name="Stick" /> |
+| <Item img="/items/cc/chicken_bobo_chicken.png" name="Chicken Bobo Chicken" /> | <Item img="/items/cc/raw_chicken_bobo_chicken.png" name="Raw Chicken Bobo Chicken" /> + <Item img="/items/cc/tomato_sauce.png" name="Tomato Sauce" /> | 10s | <Item name="Stick" /> |
 | <Item img="/items/cc/fish_and_chips.png" name="Fish And Chips" /> | <Item img="/items/cc/cod_slice.png" name="Cod Slice" /> + <Item name="Potato" /> + <Item name="Potato" /> + <Item img="/items/cc/wheat_dough.png" name="Wheat Dough" /> | 10s | <Item name="Bowl" /> |
 | <Item img="/items/cc/fried_chicken_chip.png" name="Fried Chicken Chip" /> | <Item img="/items/cc/chicken_cuts.png" name="Chicken Cuts" /> | 10s | hand |
 | <Item img="/items/cc/fried_dumpling.png" name="Fried Dumpling" /> | <Item img="/items/cc/raw_fried_dumpling.png" name="Raw Fried Dumpling" /> | 10s | hand |
-| <Item img="/items/cc/paper_wrapped_fish.png" name="Paper Wrapped Fish" /> | <Item name="Salmon" /> / <Item name="Cod" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item name="Potato" /> + <Item img="/items/cc/cabbage.png" name="Cabbage" /> + <Item name="Potato" /> | 10s | <Item name="Bowl" /> |
+| <Item img="/items/cc/paper_wrapped_fish.png" name="Paper Wrapped Fish" /> | <Item name="Salmon" /> / <Item name="Cod" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item name="Potato" /> + <Item img="/items/cc/cabbage.png" name="Cabbage" /> + <Item name="Potato" /> | 10s | hand |
 | <Item img="/items/cc/phantom_dumplings.png" name="Phantom Dumplings" />×2 | <Item img="/items/phantom_membrane.png" name="Phantom Membrane" /> + <Item img="/items/cc/cabbage.png" name="Cabbage" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item name="Chicken" /> / <Item img="/items/cc/chicken_cuts.png" name="Chicken Cuts" /> / <Item name="Porkchop" /> / <Item img="/items/cc/bacon.png" name="Bacon" /> / <Item name="Beef" /> / <Item img="/items/cc/minced_beef.png" name="Minced Beef" /> …+1 more | 10s | hand |
 | <Item img="/items/cc/phantom_puff.png" name="Phantom Puff" />×2 | <Item img="/items/phantom_membrane.png" name="Phantom Membrane" /> + <Item img="/items/cc/cheese.png" name="Cheese" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> | 10s | hand |
-| <Item img="/items/cc/potato_bobo_chicken.png" name="Potato Bobo Chicken" /> | <Item img="/items/cc/raw_potato_bobo_chicken.png" name="Raw Potato Bobo Chicken" /> + <Item img="/items/cc/tomato_sauce.png" name="Tomato Sauce" /> | 10s | hand |
+| <Item img="/items/cc/potato_bobo_chicken.png" name="Potato Bobo Chicken" /> | <Item img="/items/cc/raw_potato_bobo_chicken.png" name="Raw Potato Bobo Chicken" /> + <Item img="/items/cc/tomato_sauce.png" name="Tomato Sauce" /> | 10s | <Item name="Stick" /> |
 | <Item img="/items/cc/quiche_lorraine.png" name="Quiche Lorraine" /> | <Item img="/items/egg.png" name="Egg" /> + <Item img="/items/egg.png" name="Egg" /> + <Item img="/items/cc/cooked_bacon.png" name="Cooked Bacon" /> + <Item img="/items/cc/smoked_ham.png" name="Smoked Ham" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/cc/pie_crust.png" name="Pie Crust" /> | 10s | hand |
 | <Item img="/items/cc/raw_cheese_wheel.png" name="Raw Cheese Wheel" /> | <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item name="Brown Mushroom" /> / <Item name="Red Mushroom" /> + <Item name="Brown Mushroom" /> / <Item name="Red Mushroom" /> + <Item name="Brown Mushroom" /> / <Item name="Red Mushroom" /> | 20s | hand |
 | <Item img="/items/cc/raw_gluten.png" name="Raw Gluten" /> | <Item img="/items/cc/wheat_dough.png" name="Wheat Dough" /> | 10s | hand |
 | <Item img="/items/cc/spicy_strips.png" name="Spicy Strips" /> | <Item name="Rotten Flesh" /> + <Item name="Rotten Flesh" /> + <Item img="/items/cc/wheat_dough.png" name="Wheat Dough" /> + <Item img="/items/cc/onion.png" name="Onion" /> | 10s | hand |
 | <Item img="/items/cc/spring_roll.png" name="Spring Roll" /> | <Item img="/items/cc/raw_spring_roll.png" name="Raw Spring Roll" /> | 10s | hand |
 | <Item img="/items/cc/stargazy_pie.png" name="Stargazy Pie" /> | <Item name="Cod" /> / <Item name="Salmon" /> + <Item img="/items/egg.png" name="Egg" /> + <Item img="/items/cc/wheat_dough.png" name="Wheat Dough" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/cc/pie_crust.png" name="Pie Crust" /> | 10s | hand |
-| <Item img="/items/cc/sweet_rice.png" name="Sweet Rice" /> | <Item img="/items/cc/rice.png" name="Rice" /> + <Item img="/items/cc/rice.png" name="Rice" /> + <Item img="/items/honey_bottle.png" name="Honey Bottle" /> + <Item img="/items/sugar.png" name="Sugar" /> + <Item name="Beetroot" /> + <Item name="Apple" /> | 10s | <Item name="Bowl" /> |
+| <Item img="/items/cc/sweet_rice.png" name="Sweet Rice" /> | <Item img="/items/cc/rice.png" name="Rice" /> + <Item img="/items/cc/rice.png" name="Rice" /> + <Item img="/items/honey_bottle.png" name="Honey Bottle" /> + <Item img="/items/sugar.png" name="Sugar" /> + <Item name="Beetroot" /> + <Item name="Apple" /> | 10s | hand |
 | <Item img="/items/cc/tonkatsu.png" name="Tonkatsu" /> | <Item name="Porkchop" /> | 10s | hand |
 
 </Accordion>
@@ -252,8 +252,8 @@ Drop ingredients into a pot over a fire to simmer, then serve with the listed co
 | Dish | Ingredients | Time | Serve with |
 |---|---|---|---|
 | <Item img="/items/cc/batter.png" name="Batter" />×2 | <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/egg.png" name="Egg" /> + <Item name="Wheat" /> + <Item name="Wheat" /> | 5s | <Item name="Bowl" /> |
-| <Item img="/items/cc/bell_pepper_pasta.png" name="Bell Pepper Pasta" /> | <Item img="/items/cc/raw_pasta.png" name="Raw Pasta" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> | 10s | <Item name="Bowl" /> |
-| <Item img="/items/cc/bell_pepper_soup.png" name="Bell Pepper Soup" /> | <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> | 10s | <Item name="Bowl" /> |
+| <Item img="/items/cc/bell_pepper_pasta.png" name="Bell Pepper Pasta" /> | <Item img="/items/cc/raw_pasta.png" name="Raw Pasta" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_green.png" name="Bell Pepper Green" /> / <Item img="/items/cc/bell_pepper_yellow.png" name="Bell Pepper Yellow" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> / <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" /> / <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_green.png" name="Bell Pepper Green" /> / <Item img="/items/cc/bell_pepper_yellow.png" name="Bell Pepper Yellow" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> / <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" /> / <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_green.png" name="Bell Pepper Green" /> / <Item img="/items/cc/bell_pepper_yellow.png" name="Bell Pepper Yellow" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> / <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" /> / <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" /> | 10s | <Item name="Bowl" /> |
+| <Item img="/items/cc/bell_pepper_soup.png" name="Bell Pepper Soup" /> | <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_green.png" name="Bell Pepper Green" /> / <Item img="/items/cc/bell_pepper_yellow.png" name="Bell Pepper Yellow" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> / <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" /> / <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_green.png" name="Bell Pepper Green" /> / <Item img="/items/cc/bell_pepper_yellow.png" name="Bell Pepper Yellow" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> / <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" /> / <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" /> + <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> / <Item img="/items/cc/bell_pepper_green.png" name="Bell Pepper Green" /> / <Item img="/items/cc/bell_pepper_yellow.png" name="Bell Pepper Yellow" /> / <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> / <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" /> / <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" /> | 10s | <Item name="Bowl" /> |
 | <Item img="/items/cc/calamari_soup.png" name="Calamari Soup" /> | <Item img="/items/cc/tentacles.png" name="Tentacles" /> / <Item img="/items/cc/cut_tentacles.png" name="Cut Tentacles" /> + <Item name="Potato" /> / <Item img="/items/cc/potato_slices.png" name="Potato Slices" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> | 10s | <Item name="Bowl" /> |
 | <Item img="/items/cc/cherry_blossom_coffee.png" name="Cherry Blossom Coffee" /> | <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> + <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> + <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item name="Pink Petals" /> / <Item name="Cherry Leaves" /> / <Item name="Cherry Sapling" /> | 10s | <Item name="Glass Bottle" /> |
 | <Item img="/items/cc/cherry_blossom_pancakes.png" name="Cherry Blossom Pancakes" /> | <Item img="/items/cc/batter.png" name="Batter" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item name="Pink Petals" /> / <Item name="Cherry Leaves" /> / <Item name="Cherry Sapling" /> + <Item name="Pink Petals" /> / <Item name="Cherry Leaves" /> / <Item name="Cherry Sapling" /> + <Item name="Pink Petals" /> / <Item name="Cherry Leaves" /> / <Item name="Cherry Sapling" /> + <Item name="Pink Petals" /> / <Item name="Cherry Leaves" /> / <Item name="Cherry Sapling" /> | 20s | <Item name="Bowl" /> |
@@ -277,7 +277,9 @@ Drop ingredients into a pot over a fire to simmer, then serve with the listed co
 | <Item img="/items/cc/pancakes.png" name="Pancakes" /> | <Item img="/items/cc/batter.png" name="Batter" /> + <Item img="/items/cc/syrup.png" name="Syrup" /> + <Item img="/items/sugar.png" name="Sugar" /> + <Item img="/items/sugar.png" name="Sugar" /> + <Item img="/items/sugar.png" name="Sugar" /> + <Item img="/items/sugar.png" name="Sugar" /> | 20s | <Item name="Bowl" /> |
 | <Item img="/items/cc/pumpkin_coffee.png" name="Pumpkin Coffee" /> | <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> + <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> + <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/cc/pumpkin_slice.png" name="Pumpkin Slice" /> | 10s | <Item name="Glass Bottle" /> |
 | <Item img="/items/cc/pumpkin_pancakes.png" name="Pumpkin Pancakes" /> | <Item img="/items/cc/batter.png" name="Batter" /> + <Item img="/items/cc/syrup.png" name="Syrup" /> + <Item img="/items/cc/pumpkin_slice.png" name="Pumpkin Slice" /> + <Item img="/items/cc/pumpkin_slice.png" name="Pumpkin Slice" /> + <Item img="/items/cc/pumpkin_slice.png" name="Pumpkin Slice" /> + <Item img="/items/cc/pumpkin_slice.png" name="Pumpkin Slice" /> | 20s | <Item name="Bowl" /> |
+| <Item img="/items/cc/stuffed_bell_pepper_green.png" name="Stuffed Bell Pepper Green" /> | <Item img="/items/cc/bell_pepper_green.png" name="Bell Pepper Green" /> + <Item img="/items/cc/rice.png" name="Rice" /> + <Item name="Beef" /> / <Item img="/items/cc/minced_beef.png" name="Minced Beef" /> / <Item name="Chicken" /> / <Item img="/items/cc/chicken_cuts.png" name="Chicken Cuts" /> / <Item name="Porkchop" /> / <Item img="/items/cc/bacon.png" name="Bacon" /> …+15 more | 10s | hand |
 | <Item img="/items/cc/stuffed_bell_pepper_red.png" name="Stuffed Bell Pepper Red" /> | <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> + <Item img="/items/cc/rice.png" name="Rice" /> + <Item name="Beef" /> / <Item img="/items/cc/minced_beef.png" name="Minced Beef" /> / <Item name="Chicken" /> / <Item img="/items/cc/chicken_cuts.png" name="Chicken Cuts" /> / <Item name="Porkchop" /> / <Item img="/items/cc/bacon.png" name="Bacon" /> …+15 more | 10s | hand |
+| <Item img="/items/cc/stuffed_bell_pepper_yellow.png" name="Stuffed Bell Pepper Yellow" /> | <Item img="/items/cc/bell_pepper_yellow.png" name="Bell Pepper Yellow" /> + <Item img="/items/cc/rice.png" name="Rice" /> + <Item name="Beef" /> / <Item img="/items/cc/minced_beef.png" name="Minced Beef" /> / <Item name="Chicken" /> / <Item img="/items/cc/chicken_cuts.png" name="Chicken Cuts" /> / <Item name="Porkchop" /> / <Item img="/items/cc/bacon.png" name="Bacon" /> …+15 more | 10s | hand |
 | <Item img="/items/cc/syrup.png" name="Syrup" /> | <Item name="Apple" /> / <Item name="Beetroot" /> + <Item img="/items/sugar.png" name="Sugar" /> | 5s | <Item name="Glass Bottle" /> |
 | <Item img="/items/cc/syrup_coffee.png" name="Syrup Coffee" /> | <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> + <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> + <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/cc/syrup.png" name="Syrup" /> | 10s | <Item name="Glass Bottle" /> |
 | <Item img="/items/cc/vegetable_pancakes.png" name="Vegetable Pancakes" /> | <Item img="/items/cc/batter.png" name="Batter" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/cc/onion.png" name="Onion" /> / <Item img="/items/cc/tomato.png" name="Tomato" /> / <Item img="/items/carrot.png" name="Carrot" /> / <Item name="Potato" /> / <Item name="Beetroot" /> / <Item img="/items/cc/cabbage.png" name="Cabbage" /> + <Item img="/items/cc/onion.png" name="Onion" /> / <Item img="/items/cc/tomato.png" name="Tomato" /> / <Item img="/items/carrot.png" name="Carrot" /> / <Item name="Potato" /> / <Item name="Beetroot" /> / <Item img="/items/cc/cabbage.png" name="Cabbage" /> + <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> + <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> | 20s | <Item name="Bowl" /> |
@@ -347,6 +349,8 @@ Drop ingredients into a pot over a fire to simmer, then serve with the listed co
 | <Item img="/items/cc/cranberry_jam.png" name="Cranberry Jam" /> | <Item img="/items/cc/cranberry.png" name="Cranberry" /> + <Item img="/items/cc/cranberry.png" name="Cranberry" /> + <Item img="/items/sugar.png" name="Sugar" /> | 10s | <Item name="Glass Bottle" /> |
 | <Item img="/items/cc/cranberry_jello.png" name="Cranberry Jello" /> | <Item img="/items/cc/cranberry_jam.png" name="Cranberry Jam" /> + <Item img="/items/sugar.png" name="Sugar" /> + <Item name="Snowball" /> | 10s | <Item name="Bowl" /> |
 | <Item img="/items/cc/cranberry_muffin.png" name="Cranberry Muffin" />×2 | <Item img="/items/cc/cranberry.png" name="Cranberry" /> + <Item img="/items/cc/cranberry.png" name="Cranberry" /> + <Item img="/items/cc/wheat_dough.png" name="Wheat Dough" /> + <Item name="Milk Bucket" /> / <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" /> + <Item img="/items/egg.png" name="Egg" /> + <Item img="/items/sugar.png" name="Sugar" /> | 10s | hand |
+| <Item img="/items/cc/durian_jam.png" name="Durian Jam" /> | <Item img="/items/cc/durian_flesh.png" name="Durian Flesh" /> + <Item img="/items/cc/durian_flesh.png" name="Durian Flesh" /> + <Item img="/items/sugar.png" name="Sugar" /> | 10s | <Item name="Glass Bottle" /> |
+| <Item img="/items/cc/durian_jello.png" name="Durian Jello" /> | <Item img="/items/cc/durian_jam.png" name="Durian Jam" /> + <Item img="/items/sugar.png" name="Sugar" /> + <Item name="Snowball" /> | 10s | <Item name="Bowl" /> |
 | <Item img="/items/cc/durian_pie.png" name="Durian Pie" />×2 | <Item img="/items/cc/durian_flesh.png" name="Durian Flesh" /> + <Item img="/items/cc/durian_flesh.png" name="Durian Flesh" /> + <Item img="/items/cc/pie_crust.png" name="Pie Crust" /> + <Item img="/items/egg.png" name="Egg" /> + <Item img="/items/sugar.png" name="Sugar" /> | 10s | hand |
 | <Item img="/items/cc/fig_chicken_stew.png" name="Fig Chicken Stew" /> | <Item name="Chicken" /> / <Item img="/items/cc/chicken_cuts.png" name="Chicken Cuts" /> + <Item img="/items/cc/fig.png" name="Fig" /> + <Item img="/items/cc/fig.png" name="Fig" /> | 10s | <Item name="Bowl" /> |
 | <Item img="/items/cc/fig_jam.png" name="Fig Jam" /> | <Item img="/items/cc/fig.png" name="Fig" /> + <Item img="/items/cc/fig.png" name="Fig" /> + <Item img="/items/sugar.png" name="Sugar" /> | 10s | <Item name="Glass Bottle" /> |
@@ -429,7 +433,9 @@ A no-fire station. Right-click ingredients in, collect the result bare-handed.
 | <Item img="/items/cc/bacon_sandwich.png" name="Bacon Sandwich" /> | <Item img="/items/cc/bread_slice.png" name="Bread Slice" /> + <Item img="/items/cc/cooked_smoked_tofu_slices.png" name="Cooked Smoked Tofu Slices" /> + <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> + <Item img="/items/cc/tomato.png" name="Tomato" /> |
 | <Item img="/items/cc/bbq_beef_skewer.png" name="Bbq Beef Skewer" /> | <Item img="/items/cc/grilled_beef_skewer.png" name="Grilled Beef Skewer" /> + <Item img="/items/cc/barbeque_sauce.png" name="Barbeque Sauce" /> |
 | <Item img="/items/cc/beef_burrito.png" name="Beef Burrito" />×2 | <Item img="/items/cc/tortilla.png" name="Tortilla" /> + <Item name="Cooked Beef" /> + <Item name="Cooked Beef" /> + <Item img="/items/cc/avocado.png" name="Avocado" /> / <Item img="/items/cc/cut_avocado.png" name="Cut Avocado" /> + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
+| <Item img="/items/cc/bell_pepper_roll_green.png" name="Bell Pepper Roll Green" />×2 | <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" /> + <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" /> + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
 | <Item img="/items/cc/bell_pepper_roll_red.png" name="Bell Pepper Roll Red" />×2 | <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> + <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
+| <Item img="/items/cc/bell_pepper_roll_yellow.png" name="Bell Pepper Roll Yellow" />×2 | <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" /> + <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" /> + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
 | <Item img="/items/cc/buffalo_sausage_skewer.png" name="Buffalo Sausage Skewer" /> | <Item img="/items/cc/grilled_pork_sausage_skewer.png" name="Grilled Pork Sausage Skewer" /> + <Item img="/items/cc/buffalo_sauce.png" name="Buffalo Sauce" /> |
 | <Item img="/items/cc/calamari_roll.png" name="Calamari Roll" />×2 | <Item img="/items/cc/cut_tentacles.png" name="Cut Tentacles" /> + <Item img="/items/cc/cut_tentacles.png" name="Cut Tentacles" /> + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
 | <Item img="/items/cc/cheese_wrap.png" name="Cheese Wrap" /> | <Item img="/items/cc/bread_slice.png" name="Bread Slice" /> + <Item img="/items/cc/cheese.png" name="Cheese" /> + <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> + <Item img="/items/cc/onion.png" name="Onion" /> |
@@ -537,7 +543,9 @@ Place food on the board and process it with a tool. Some recipes have bonus drop
 | <Item img="/items/cc/avocado.png" name="Avocado" /> | Knife | <Item img="/items/cc/cut_avocado.png" name="Cut Avocado" />×2 |
 | <Item name="Baked Potato" /> | Knife | <Item img="/items/cc/diced_potatoes.png" name="Diced Potatoes" />×2 |
 | <Item name="Beef" /> | Knife | <Item img="/items/cc/minced_beef.png" name="Minced Beef" />×2 |
+| <Item img="/items/cc/bell_pepper_green.png" name="Bell Pepper Green" /> | Knife | <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" />×2, <Item img="/items/cc/bell_pepper_seeds.png" name="Bell Pepper Seeds" /> (10%) |
 | <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> | Knife | <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" />×2, <Item img="/items/cc/bell_pepper_seeds.png" name="Bell Pepper Seeds" /> (10%) |
+| <Item img="/items/cc/bell_pepper_yellow.png" name="Bell Pepper Yellow" /> | Knife | <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" />×2, <Item img="/items/cc/bell_pepper_seeds.png" name="Bell Pepper Seeds" /> (10%) |
 | <Item name="Bread" /> | Knife | <Item img="/items/cc/bread_slice.png" name="Bread Slice" />×4 |
 | <Item img="/items/cc/cabbage.png" name="Cabbage" /> | Knife | <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" />×2 |
 | <Item name="Cactus" /> | Knife | <Item img="/items/cc/cactus_flesh.png" name="Cactus Flesh" />×2 |
@@ -562,7 +570,6 @@ Place food on the board and process it with a tool. Some recipes have bonus drop
 | <Item img="/items/cc/corn.png" name="Corn" /> | Knife | <Item img="/items/cc/corn_seeds.png" name="Corn Seeds" />×2, <Item img="/items/cc/corncob.png" name="Corncob" /> |
 | <Item img="/items/cc/cucumber.png" name="Cucumber" /> | Knife | <Item img="/items/cc/cut_cucumber.png" name="Cut Cucumber" />×2 |
 | <Item img="/items/cc/dantes_special.png" name="Dantes Special" /> | Knife | <Item img="/items/cc/dantes_special_slice.png" name="Dantes Special Slice" />×4 |
-| <Item img="/items/cc/durian.png" name="Durian" /> | Knife | <Item img="/items/cc/durian_flesh.png" name="Durian Flesh" />×6, <Item img="/items/cc/durian_shell.png" name="Durian Shell" /> |
 | <Item img="/items/cc/eggplant.png" name="Eggplant" /> | Knife | <Item img="/items/cc/cut_eggplant.png" name="Cut Eggplant" />×2 |
 | <Item img="/items/cc/elder_guardian_slab.png" name="Elder Guardian Slab" /> | Knife | <Item img="/items/cc/elder_guardian_slice.png" name="Elder Guardian Slice" />×9, <Item name="Bone Meal" /> |
 | <Item img="/items/cc/fig_pudding.png" name="Fig Pudding" /> | Knife | <Item img="/items/cc/fig_pudding_slice.png" name="Fig Pudding Slice" />×4 |
@@ -580,7 +587,7 @@ Place food on the board and process it with a tool. Some recipes have bonus drop
 | <Item img="/items/cc/orange.png" name="Orange" /> | Knife | <Item img="/items/cc/orange_slice.png" name="Orange Slice" />×4 |
 | <Item img="/items/cc/pancakes.png" name="Pancakes" /> | Knife | <Item img="/items/cc/pancake.png" name="Pancake" />×6, <Item name="Bowl" /> |
 | <Item img="/items/cc/pickle.png" name="Pickle" /> | Knife | <Item img="/items/cc/cut_pickle.png" name="Cut Pickle" />×2 |
-| <Item img="/items/cc/pineapple.png" name="Pineapple" /> | Knife | <Item img="/items/cc/pineapple_slice.png" name="Pineapple Slice" />×6 |
+| <Item img="/items/cc/pineapple.png" name="Pineapple" /> | Knife | <Item img="/items/cc/pineapple_slice.png" name="Pineapple Slice" />×6, <Item img="/items/cc/pineapple_sapling.png" name="Pineapple Sapling" />, <Item img="/items/cc/pineapple_sapling.png" name="Pineapple Sapling" /> (50%) |
 | <Item name="Pitcher Plant" /> | Knife | <Item img="/items/cc/pitcher_taro.png" name="Pitcher Taro" /> |
 | <Item img="/items/cc/pizza_diavola.png" name="Pizza Diavola" /> | Knife | <Item img="/items/cc/pizza_diavola_slice.png" name="Pizza Diavola Slice" />×4 |
 | <Item img="/items/cc/pizza_margherita.png" name="Pizza Margherita" /> | Knife | <Item img="/items/cc/pizza_margherita_slice.png" name="Pizza Margherita Slice" />×4 |
@@ -593,13 +600,17 @@ Place food on the board and process it with a tool. Some recipes have bonus drop
 | <Item img="/items/cc/quiche_lorraine.png" name="Quiche Lorraine" /> | Knife | <Item img="/items/cc/quiche_lorraine_slice.png" name="Quiche Lorraine Slice" />×4 |
 | <Item img="/items/cc/raw_gluten.png" name="Raw Gluten" /> | Knife | <Item img="/items/cc/gluten.png" name="Gluten" /> |
 | <Item img="/items/cc/rice_panicle.png" name="Rice Panicle" /> | Knife | <Item img="/items/cc/rice.png" name="Rice" />, <Item img="/items/cc/straw.png" name="Straw" /> |
+| <Item img="/items/cc/roasted_bell_pepper_green.png" name="Roasted Bell Pepper Green" /> | Knife | <Item img="/items/cc/roasted_bell_pepper_slice_green.png" name="Roasted Bell Pepper Slice Green" />×2, <Item img="/items/cc/bell_pepper_seeds.png" name="Bell Pepper Seeds" /> (10%) |
 | <Item img="/items/cc/roasted_bell_pepper_red.png" name="Roasted Bell Pepper Red" /> | Knife | <Item img="/items/cc/roasted_bell_pepper_slice_red.png" name="Roasted Bell Pepper Slice Red" />×2, <Item img="/items/cc/bell_pepper_seeds.png" name="Bell Pepper Seeds" /> (10%) |
+| <Item img="/items/cc/roasted_bell_pepper_yellow.png" name="Roasted Bell Pepper Yellow" /> | Knife | <Item img="/items/cc/roasted_bell_pepper_slice_yellow.png" name="Roasted Bell Pepper Slice Yellow" />×2, <Item img="/items/cc/bell_pepper_seeds.png" name="Bell Pepper Seeds" /> (10%) |
 | <Item img="/items/cc/salami.png" name="Salami" /> | Knife | <Item img="/items/cc/salami_pieces.png" name="Salami Pieces" />×4 |
 | <Item name="Salmon" /> | Knife | <Item img="/items/cc/salmon_slice.png" name="Salmon Slice" />×2, <Item name="Bone Meal" /> |
 | <Item img="/items/cc/salmonberry_pie.png" name="Salmonberry Pie" /> | Knife | <Item img="/items/cc/salmonberry_pie_slice.png" name="Salmonberry Pie Slice" />×4 |
 | <Item img="/items/cc/smoked_ham.png" name="Smoked Ham" /> | Knife | <Item name="Cooked Porkchop" />×2, <Item name="Bone" /> |
 | <Item img="/items/cc/smoked_tofu.png" name="Smoked Tofu" /> | Knife | <Item img="/items/cc/smoked_tofu_slices.png" name="Smoked Tofu Slices" />×2 |
 | <Item img="/items/cc/stargazy_pie.png" name="Stargazy Pie" /> | Knife | <Item img="/items/cc/stargazy_pie_slice.png" name="Stargazy Pie Slice" />×4 |
+| <Item name="String" /> | Knife | <Item img="/items/feather.png" name="Feather" /> |
+| <Item name="Sugar Cane" /> | Knife | <Item img="/items/sugar.png" name="Sugar" />, <Item img="/items/sugar.png" name="Sugar" /> (50%) |
 | <Item img="/items/cc/sweet_berry_cheesecake.png" name="Sweet Berry Cheesecake" /> | Knife | <Item img="/items/cc/sweet_berry_cheesecake_slice.png" name="Sweet Berry Cheesecake Slice" />×4 |
 | <Item img="/items/cc/syrup_cheesecake.png" name="Syrup Cheesecake" /> | Knife | <Item img="/items/cc/syrup_cheesecake_slice.png" name="Syrup Cheesecake Slice" />×4 |
 | <Item img="/items/cc/tentacles.png" name="Tentacles" /> | Knife | <Item img="/items/cc/cut_tentacles.png" name="Cut Tentacles" />×3 |
@@ -625,6 +636,8 @@ Place food on the board and process it with a tool. Some recipes have bonus drop
 | <Item name="Crimson Stem" /> | Axe | <Item name="Stripped Crimson Stem" />, <Item img="/items/cc/tree_bark.png" name="Tree Bark" /> |
 | <Item name="Dark Oak Log" /> | Axe | <Item name="Stripped Dark Oak Log" />, <Item img="/items/cc/tree_bark.png" name="Tree Bark" /> |
 | <Item name="Dark Oak Wood" /> | Axe | <Item name="Stripped Dark Oak Wood" />, <Item img="/items/cc/tree_bark.png" name="Tree Bark" /> |
+| <Item name="Dead Bush" /> | Axe | <Item name="Stick" />×2 |
+| <Item img="/items/cc/durian.png" name="Durian" /> | Axe | <Item img="/items/cc/durian_flesh.png" name="Durian Flesh" />×6, <Item img="/items/cc/durian_helmet.png" name="Durian Helmet" />, <Item img="/items/cc/durian_shell.png" name="Durian Shell" /> |
 | <Item name="Jungle Log" /> | Axe | <Item name="Stripped Jungle Log" />, <Item img="/items/cc/tree_bark.png" name="Tree Bark" /> |
 | <Item name="Jungle Wood" /> | Axe | <Item name="Stripped Jungle Wood" />, <Item img="/items/cc/tree_bark.png" name="Tree Bark" /> |
 | <Item name="Mangrove Log" /> | Axe | <Item name="Stripped Mangrove Log" />, <Item img="/items/cc/tree_bark.png" name="Tree Bark" /> |
@@ -680,7 +693,7 @@ Slices and dough can be cooked in a vanilla furnace, smoker or campfire (most fo
 | <Item img="/items/cc/durian_flesh.png" name="Durian Flesh" /> | <Item img="/items/cc/baked_durian.png" name="Baked Durian" /> | Furnace / Smoker / Campfire |
 | <Item img="/items/cc/pear.png" name="Pear" /> | <Item img="/items/cc/baked_pear.png" name="Baked Pear" /> | Furnace / Smoker / Campfire |
 | <Item name="Pitcher Pod" /> | <Item img="/items/cc/baked_pitcher_pod.png" name="Baked Pitcher Pod" /> | Furnace |
-| <Item img="/items/cc/potato_slices.png" name="Potato Slices" /> | <Item img="/items/cc/baked_potato_slices.png" name="Baked Potato Slices" /> | Furnace |
+| <Item img="/items/cc/potato_slices.png" name="Potato Slices" /> | <Item img="/items/cc/baked_potato_slices.png" name="Baked Potato Slices" /> | Furnace / Smoker / Campfire |
 | <Item img="/items/cc/tentacle_on_a_stick.png" name="Tentacle On A Stick" /> | <Item img="/items/cc/baked_tentacle_on_a_stick.png" name="Baked Tentacle On A Stick" /> | Furnace / Smoker / Campfire |
 | <Item name="Torchflower Seeds" /> | <Item img="/items/cc/baked_torchflower_seeds.png" name="Baked Torchflower Seeds" /> | Furnace |
 | <Item img="/items/cc/minced_beef.png" name="Minced Beef" /> | <Item img="/items/cc/beef_patty.png" name="Beef Patty" /> | Furnace / Smoker / Campfire |
@@ -690,7 +703,7 @@ Slices and dough can be cooked in a vanilla furnace, smoker or campfire (most fo
 | <Item img="/items/cc/bacon.png" name="Bacon" /> | <Item img="/items/cc/cooked_bacon.png" name="Cooked Bacon" /> | Furnace / Smoker / Campfire |
 | <Item img="/items/cc/chicken_cuts.png" name="Chicken Cuts" /> | <Item img="/items/cc/cooked_chicken_cuts.png" name="Cooked Chicken Cuts" /> | Furnace / Smoker / Campfire |
 | <Item img="/items/cc/cod_slice.png" name="Cod Slice" /> | <Item img="/items/cc/cooked_cod_slice.png" name="Cooked Cod Slice" /> | Furnace / Smoker / Campfire |
-| <Item img="/items/cc/raw_donkey_meat.png" name="Raw Donkey Meat" /> | <Item img="/items/cc/cooked_donkey_meat.png" name="Cooked Donkey Meat" /> | Furnace |
+| <Item img="/items/cc/raw_donkey_meat.png" name="Raw Donkey Meat" /> | <Item img="/items/cc/cooked_donkey_meat.png" name="Cooked Donkey Meat" /> | Furnace / Campfire |
 | <Item img="/items/cc/elder_guardian_slice.png" name="Elder Guardian Slice" /> | <Item img="/items/cc/cooked_elder_guardian_slice.png" name="Cooked Elder Guardian Slice" /> | Furnace / Smoker / Campfire |
 | <Item img="/items/cc/guardian_tail.png" name="Guardian Tail" /> | <Item img="/items/cc/cooked_guardian_tail.png" name="Cooked Guardian Tail" /> | Furnace / Smoker / Campfire |
 | <Item img="/items/cc/marshmallow_stick.png" name="Marshmallow Stick" /> | <Item img="/items/cc/cooked_marshmallow_stick.png" name="Cooked Marshmallow Stick" /> | Campfire |
@@ -707,33 +720,27 @@ Slices and dough can be cooked in a vanilla furnace, smoker or campfire (most fo
 | <Item img="/items/cc/tofu.png" name="Tofu" /> | <Item img="/items/cc/cooked_tofu.png" name="Cooked Tofu" /> | Furnace / Campfire |
 | <Item img="/items/cc/tofu_slices.png" name="Tofu Slices" /> | <Item img="/items/cc/cooked_tofu_slices.png" name="Cooked Tofu Slices" /> | Furnace / Campfire |
 | <Item img="/items/cc/cornbread_batter.png" name="Cornbread Batter" /> | <Item img="/items/cc/cornbread.png" name="Cornbread" /> | Furnace / Smoker / Campfire |
-| <Item img="/items/cc/raw_dante_special.png" name="Raw Dante Special" /> | <Item img="/items/cc/dantes_special.png" name="Dantes Special" /> | Furnace |
+| <Item img="/items/cc/raw_dante_special.png" name="Raw Dante Special" /> | <Item img="/items/cc/dantes_special.png" name="Dantes Special" /> | Furnace / Smoker |
 | <Item img="/items/cc/cherry_petal.png" name="Cherry Petal" /> | <Item img="/items/cc/dried_cherry_petal.png" name="Dried Cherry Petal" /> | Furnace |
 | <Item img="/items/cc/persimmon.png" name="Persimmon" /> | <Item img="/items/cc/dried_persimmon.png" name="Dried Persimmon" /> | Furnace / Smoker / Campfire |
 | <Item img="/items/egg.png" name="Egg" /> | <Item img="/items/cc/fried_egg.png" name="Fried Egg" /> | Furnace / Smoker / Campfire |
-| <Item img="/items/cc/raw_beef_skewer.png" name="Raw Beef Skewer" /> | <Item img="/items/cc/grilled_beef_skewer.png" name="Grilled Beef Skewer" /> | Furnace |
-| <Item img="/items/cc/raw_chicken_skewer.png" name="Raw Chicken Skewer" /> | <Item img="/items/cc/grilled_chicken_skewer.png" name="Grilled Chicken Skewer" /> | Furnace |
-| <Item img="/items/cc/raw_cod_skewer.png" name="Raw Cod Skewer" /> | <Item img="/items/cc/grilled_cod_skewer.png" name="Grilled Cod Skewer" /> | Furnace |
 | <Item img="/items/cc/corn.png" name="Corn" /> | <Item img="/items/cc/grilled_corn.png" name="Grilled Corn" /> | Furnace / Smoker / Campfire |
-| <Item img="/items/cc/raw_lamb_skewer.png" name="Raw Lamb Skewer" /> | <Item img="/items/cc/grilled_lamb_skewer.png" name="Grilled Lamb Skewer" /> | Furnace |
-| <Item img="/items/cc/raw_mushroom_skewer.png" name="Raw Mushroom Skewer" /> | <Item img="/items/cc/grilled_mushroom_skewer.png" name="Grilled Mushroom Skewer" /> | Furnace |
-| <Item img="/items/cc/raw_pork_sausage_skewer.png" name="Raw Pork Sausage Skewer" /> | <Item img="/items/cc/grilled_pork_sausage_skewer.png" name="Grilled Pork Sausage Skewer" /> | Furnace |
-| <Item img="/items/cc/raw_potato_skewer.png" name="Raw Potato Skewer" /> | <Item img="/items/cc/grilled_potato_skewer.png" name="Grilled Potato Skewer" /> | Furnace |
-| <Item img="/items/cc/raw_rabbit_skewer.png" name="Raw Rabbit Skewer" /> | <Item img="/items/cc/grilled_rabbit_skewer.png" name="Grilled Rabbit Skewer" /> | Furnace |
-| <Item img="/items/cc/raw_salmon_skewer.png" name="Raw Salmon Skewer" /> | <Item img="/items/cc/grilled_salmon_skewer.png" name="Grilled Salmon Skewer" /> | Furnace |
-| <Item img="/items/cc/raw_vegetable_skewer.png" name="Raw Vegetable Skewer" /> | <Item img="/items/cc/grilled_vegetable_skewer.png" name="Grilled Vegetable Skewer" /> | Furnace |
-| <Item img="/items/cc/raw_ham_pizza.png" name="Raw Ham Pizza" /> | <Item img="/items/cc/ham_pizza.png" name="Ham Pizza" /> | Furnace |
+| <Item img="/items/cc/raw_ham_pizza.png" name="Raw Ham Pizza" /> | <Item img="/items/cc/ham_pizza.png" name="Ham Pizza" /> | Furnace / Smoker |
 | <Item img="/items/cc/leather_substitute.png" name="Leather Substitute" /> | <Item name="Leather" /> | Smoker / Campfire |
-| <Item img="/items/cc/raw_mushroom_pizza.png" name="Raw Mushroom Pizza" /> | <Item img="/items/cc/mushroom_pizza.png" name="Mushroom Pizza" /> | Furnace |
-| <Item img="/items/cc/raw_diavola.png" name="Raw Diavola" /> | <Item img="/items/cc/pizza_diavola.png" name="Pizza Diavola" /> | Furnace |
-| <Item img="/items/cc/raw_margherita.png" name="Raw Margherita" /> | <Item img="/items/cc/pizza_margherita.png" name="Pizza Margherita" /> | Furnace |
+| <Item img="/items/cc/raw_mushroom_pizza.png" name="Raw Mushroom Pizza" /> | <Item img="/items/cc/mushroom_pizza.png" name="Mushroom Pizza" /> | Furnace / Smoker |
+| <Item img="/items/cc/raw_diavola.png" name="Raw Diavola" /> | <Item img="/items/cc/pizza_diavola.png" name="Pizza Diavola" /> | Furnace / Smoker |
+| <Item img="/items/cc/raw_margherita.png" name="Raw Margherita" /> | <Item img="/items/cc/pizza_margherita.png" name="Pizza Margherita" /> | Furnace / Smoker |
 | <Item img="/items/cc/corn_seeds.png" name="Corn Seeds" /> | <Item img="/items/cc/popcorn.png" name="Popcorn" /> | Furnace / Smoker / Campfire |
-| <Item img="/items/cc/gluten_skewer.png" name="Gluten Skewer" /> | <Item img="/items/cc/roast_gluten.png" name="Roast Gluten" /> | Furnace |
+| <Item img="/items/cc/gluten_skewer.png" name="Gluten Skewer" /> | <Item img="/items/cc/roast_gluten.png" name="Roast Gluten" /> | Furnace / Campfire |
 | <Item img="/items/cc/acorn.png" name="Acorn" /> | <Item img="/items/cc/roasted_acorn.png" name="Roasted Acorn" /> | Furnace / Smoker / Campfire |
-| <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> | <Item img="/items/cc/roasted_bell_pepper_red.png" name="Roasted Bell Pepper Red" /> | Furnace |
-| <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> | <Item img="/items/cc/roasted_bell_pepper_slice_red.png" name="Roasted Bell Pepper Slice Red" /> | Furnace |
-| <Item img="/items/cc/coffee_beans.png" name="Coffee Beans" /> | <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> | Furnace |
-| <Item img="/items/cc/wine_salami.png" name="Wine Salami" /> | <Item img="/items/cc/salami.png" name="Salami" /> | Furnace |
+| <Item img="/items/cc/bell_pepper_green.png" name="Bell Pepper Green" /> | <Item img="/items/cc/roasted_bell_pepper_green.png" name="Roasted Bell Pepper Green" /> | Furnace / Smoker / Campfire |
+| <Item img="/items/cc/bell_pepper_red.png" name="Bell Pepper Red" /> | <Item img="/items/cc/roasted_bell_pepper_red.png" name="Roasted Bell Pepper Red" /> | Furnace / Smoker / Campfire |
+| <Item img="/items/cc/bell_pepper_slice_green.png" name="Bell Pepper Slice Green" /> | <Item img="/items/cc/roasted_bell_pepper_slice_green.png" name="Roasted Bell Pepper Slice Green" /> | Furnace / Smoker / Campfire |
+| <Item img="/items/cc/bell_pepper_slice_red.png" name="Bell Pepper Slice Red" /> | <Item img="/items/cc/roasted_bell_pepper_slice_red.png" name="Roasted Bell Pepper Slice Red" /> | Furnace / Smoker / Campfire |
+| <Item img="/items/cc/bell_pepper_slice_yellow.png" name="Bell Pepper Slice Yellow" /> | <Item img="/items/cc/roasted_bell_pepper_slice_yellow.png" name="Roasted Bell Pepper Slice Yellow" /> | Furnace / Smoker / Campfire |
+| <Item img="/items/cc/bell_pepper_yellow.png" name="Bell Pepper Yellow" /> | <Item img="/items/cc/roasted_bell_pepper_yellow.png" name="Roasted Bell Pepper Yellow" /> | Furnace / Smoker / Campfire |
+| <Item img="/items/cc/coffee_beans.png" name="Coffee Beans" /> | <Item img="/items/cc/roasted_coffee_beans.png" name="Roasted Coffee Beans" /> | Furnace / Smoker / Campfire |
+| <Item img="/items/cc/wine_salami.png" name="Wine Salami" /> | <Item img="/items/cc/salami.png" name="Salami" /> | Furnace / Smoker |
 | <Item img="/items/cc/cut_eggplant.png" name="Cut Eggplant" /> | <Item img="/items/cc/smoked_cut_eggplant.png" name="Smoked Cut Eggplant" /> | Smoker |
 | <Item img="/items/cc/eggplant.png" name="Eggplant" /> | <Item img="/items/cc/smoked_eggplant.png" name="Smoked Eggplant" /> | Smoker |
 | <Item img="/items/cc/ham.png" name="Ham" /> | <Item img="/items/cc/smoked_ham.png" name="Smoked Ham" /> | Smoker |
@@ -745,6 +752,34 @@ Slices and dough can be cooked in a vanilla furnace, smoker or campfire (most fo
 | <Item img="/items/cc/bread_slice.png" name="Bread Slice" /> | <Item img="/items/cc/toast.png" name="Toast" /> | Furnace / Smoker / Campfire |
 | <Item img="/items/cc/minced_tofu.png" name="Minced Tofu" /> | <Item img="/items/cc/tofu_patty.png" name="Tofu Patty" /> | Furnace / Smoker / Campfire |
 | <Item img="/items/cc/tortilla_raw.png" name="Tortilla Raw" /> | <Item img="/items/cc/tortilla.png" name="Tortilla" /> | Furnace / Smoker / Campfire |
+
+</Tab>
+
+<Tab value="🍢 Grill">
+
+The **grill** needs a heat source below it (campfire, magma, lava or a stove). It holds two skewers.
+
+1. Right-click holding a raw skewer to lay it on the grate
+2. Halfway through it **starts smoking** — right-click with an **empty hand to flip it**
+3. Once it is done, right-click with an empty hand to take it
+
+<Callout type="warn">
+Leave it without flipping and it **burns** (a burnt skewer: poison and nausea when eaten).
+Flipping rewinds it to the halfway point, so flipping buys you time.
+</Callout>
+
+| Raw skewer | Grilled | Time |
+|---|---|---|
+| <Item img="/items/cc/raw_beef_skewer.png" name="Raw Beef Skewer" /> | <Item img="/items/cc/grilled_beef_skewer.png" name="Grilled Beef Skewer" /> | 16s |
+| <Item img="/items/cc/raw_chicken_skewer.png" name="Raw Chicken Skewer" /> | <Item img="/items/cc/grilled_chicken_skewer.png" name="Grilled Chicken Skewer" /> | 14s |
+| <Item img="/items/cc/raw_cod_skewer.png" name="Raw Cod Skewer" /> | <Item img="/items/cc/grilled_cod_skewer.png" name="Grilled Cod Skewer" /> | 12s |
+| <Item img="/items/cc/raw_lamb_skewer.png" name="Raw Lamb Skewer" /> | <Item img="/items/cc/grilled_lamb_skewer.png" name="Grilled Lamb Skewer" /> | 16s |
+| <Item img="/items/cc/raw_mushroom_skewer.png" name="Raw Mushroom Skewer" /> | <Item img="/items/cc/grilled_mushroom_skewer.png" name="Grilled Mushroom Skewer" /> | 12s |
+| <Item img="/items/cc/raw_pork_sausage_skewer.png" name="Raw Pork Sausage Skewer" /> | <Item img="/items/cc/grilled_pork_sausage_skewer.png" name="Grilled Pork Sausage Skewer" /> | 18s |
+| <Item img="/items/cc/raw_potato_skewer.png" name="Raw Potato Skewer" /> | <Item img="/items/cc/grilled_potato_skewer.png" name="Grilled Potato Skewer" /> | 14s |
+| <Item img="/items/cc/raw_rabbit_skewer.png" name="Raw Rabbit Skewer" /> | <Item img="/items/cc/grilled_rabbit_skewer.png" name="Grilled Rabbit Skewer" /> | 14s |
+| <Item img="/items/cc/raw_salmon_skewer.png" name="Raw Salmon Skewer" /> | <Item img="/items/cc/grilled_salmon_skewer.png" name="Grilled Salmon Skewer" /> | 12s |
+| <Item img="/items/cc/raw_vegetable_skewer.png" name="Raw Vegetable Skewer" /> | <Item img="/items/cc/grilled_vegetable_skewer.png" name="Grilled Vegetable Skewer" /> | 8s |
 
 </Tab>
 
@@ -771,7 +806,7 @@ Stations and some items are crafted at a workbench.
 | <Item img="/items/cc/avocado_pit.png" name="Avocado Pit" /> | <Item img="/items/cc/avocado.png" name="Avocado" /> |
 | <Item img="/items/cc/bacon_and_eggs.png" name="Bacon And Eggs" /> | <Item img="/items/cc/cooked_bacon.png" name="Cooked Bacon" />×2 + <Item img="/items/cc/fried_egg.png" name="Fried Egg" />×2 + <Item name="Bowl" /> |
 | <Item img="/items/cc/bacon_sandwich.png" name="Bacon Sandwich" /> | <Item name="Bread" /> + <Item img="/items/cc/cooked_bacon.png" name="Cooked Bacon" /> + <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> + <Item img="/items/cc/tomato.png" name="Tomato" /> |
-| <Item img="/items/cc/barbecue_stick.png" name="Barbecue Stick" /> | <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item name="Cooked Beef" /> + <Item name="Stick" /> |
+| <Item img="/items/cc/barbecue_stick.png" name="Barbecue Stick" /> | <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item name="Cooked Beef" /> (or similar) + <Item name="Stick" /> |
 | <Item name="Beetroot" />×9 | <Item name="Beetroot Crate" /> |
 | <Item name="Bowl" /> | <Item img="/items/cc/durian_shell.png" name="Durian Shell" /> |
 | <Item img="/items/cc/cabbage.png" name="Cabbage" /> | <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" />×2 |
@@ -783,15 +818,24 @@ Stations and some items are crafted at a workbench.
 | <Item img="/items/cc/caramel_popcorn.png" name="Caramel Popcorn" /> | <Item img="/items/cc/popcorn.png" name="Popcorn" /> + <Item img="/items/sugar.png" name="Sugar" /> |
 | <Item img="/items/carrot.png" name="Carrot" />×9 | <Item name="Carrot Crate" /> |
 | <Item name="Checkout Machine" /> | <Item img="/items/iron_ingot.png" name="Iron Ingot" />×4 + <Item name="Chest" /> + <Item name="Glass Pane" /> |
+| <Item img="/items/cc/cherry_blossom_cheesecake.png" name="Cherry Blossom Cheesecake" /> | <Item img="/items/cc/cherry_blossom_cheesecake_slice.png" name="Cherry Blossom Cheesecake Slice" />×4 |
+| <Item img="/items/cc/cherry_blossom_pancake.png" name="Cherry Blossom Pancake" />×6 | <Item img="/items/cc/cherry_blossom_pancakes.png" name="Cherry Blossom Pancakes" /> |
+| <Item img="/items/cc/cherry_blossom_pancakes.png" name="Cherry Blossom Pancakes" /> | <Item img="/items/cc/cherry_blossom_pancake.png" name="Cherry Blossom Pancake" />×6 + <Item name="Bowl" /> |
 | <Item img="/items/cc/chicken_sandwich.png" name="Chicken Sandwich" /> | <Item name="Bread" /> + <Item img="/items/cc/cooked_chicken_cuts.png" name="Cooked Chicken Cuts" /> + <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> + <Item img="/items/carrot.png" name="Carrot" /> |
+| <Item img="/items/cc/chocolate_pancake.png" name="Chocolate Pancake" />×6 | <Item img="/items/cc/chocolate_pancakes.png" name="Chocolate Pancakes" /> |
+| <Item img="/items/cc/chocolate_pancakes.png" name="Chocolate Pancakes" /> | <Item img="/items/cc/chocolate_pancake.png" name="Chocolate Pancake" />×6 + <Item name="Bowl" /> |
 | <Item img="/items/cc/chocolate_pie.png" name="Chocolate Pie" /> | <Item img="/items/cc/chocolate_pie_slice.png" name="Chocolate Pie Slice" />×4 |
 | <Item img="/items/cc/classic_corn_dog.png" name="Classic Corn Dog" /> | <Item img="/items/cc/corn_dog.png" name="Corn Dog" /> + <Item img="/items/cc/tomato_sauce.png" name="Tomato Sauce" /> |
 | <Item img="/items/cc/cod_roll.png" name="Cod Roll" />×2 | <Item img="/items/cc/cod_slice.png" name="Cod Slice" />×2 + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
+| <Item img="/items/cc/coffee_cheesecake.png" name="Coffee Cheesecake" /> | <Item img="/items/cc/coffee_cheesecake_slice.png" name="Coffee Cheesecake Slice" />×4 |
+| <Item img="/items/cc/coffee_pancake.png" name="Coffee Pancake" />×6 | <Item img="/items/cc/coffee_pancakes.png" name="Coffee Pancakes" /> |
+| <Item img="/items/cc/coffee_pancakes.png" name="Coffee Pancakes" /> | <Item img="/items/cc/coffee_pancake.png" name="Coffee Pancake" />×6 + <Item name="Bowl" /> |
 | <Item img="/items/cc/corn_popsicle.png" name="Corn Popsicle" /> | <Item img="/items/cc/corn.png" name="Corn" />×2 + <Item name="Ice" />×2 + <Item name="Stick" /> |
 | <Item img="/items/cc/corn_seeds.png" name="Corn Seeds" /> | <Item img="/items/cc/corn.png" name="Corn" /> |
-| <Item img="/items/cc/cornbread_batter.png" name="Cornbread Batter" />×3 | <Item img="/items/cc/corn.png" name="Corn" />×2 + <Item name="Milk Bucket" /> + <Item img="/items/egg.png" name="Egg" /> |
+| <Item img="/items/cc/cornbread_batter.png" name="Cornbread Batter" />×3 | <Item img="/items/cc/corn.png" name="Corn" />×2 + <Item name="Milk Bucket" /> (or similar) + <Item img="/items/egg.png" name="Egg" /> |
 | <Item img="/items/cc/egg_sandwich.png" name="Egg Sandwich" /> | <Item name="Bread" /> + <Item img="/items/cc/fried_egg.png" name="Fried Egg" />×2 |
 | <Item img="/items/cc/elder_guardian_roll.png" name="Elder Guardian Roll" /> | <Item img="/items/cc/elder_guardian_slice.png" name="Elder Guardian Slice" />×2 + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
+| <Item img="/items/cc/fig_pudding.png" name="Fig Pudding" /> | <Item img="/items/cc/fig_pudding_slice.png" name="Fig Pudding Slice" />×4 |
 | <Item img="/items/cc/fries_bowl.png" name="Fries Bowl" />×4 | <Item name="Paper" />×5 |
 | <Item img="/items/cc/fruit_salad.png" name="Fruit Salad" /> | <Item name="Apple" /> + <Item name="Melon Slice" />×2 + <Item name="Sweet Berries" />×2 + <Item img="/items/cc/pumpkin_slice.png" name="Pumpkin Slice" /> + <Item name="Bowl" /> |
 | <Item img="/items/cc/fugu_roll.png" name="Fugu Roll" /> | <Item img="/items/cc/fugu_slice.png" name="Fugu Slice" />×2 + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
@@ -804,26 +848,33 @@ Stations and some items are crafted at a workbench.
 | <Item img="/items/cc/hearty_salad.png" name="Hearty Salad" /> | <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item img="/items/cc/avocado.png" name="Avocado" /> + <Item img="/items/cc/corn.png" name="Corn" /> + <Item img="/items/cc/cucumber.png" name="Cucumber" /> + <Item name="Bowl" /> |
 | <Item img="/items/cc/honey_cookie.png" name="Honey Cookie" />×8 | <Item name="Wheat" />×2 + <Item img="/items/honey_bottle.png" name="Honey Bottle" /> |
 | <Item name="Honey Glazed Ham Stage0" /> | <Item name="Sweet Berries" />×4 + <Item img="/items/honey_bottle.png" name="Honey Bottle" /> + <Item img="/items/cc/smoked_ham.png" name="Smoked Ham" /> + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" />×2 + <Item name="Bowl" /> |
+| <Item img="/items/cc/honey_pancake.png" name="Honey Pancake" />×6 | <Item img="/items/cc/honey_pancakes.png" name="Honey Pancakes" /> |
+| <Item img="/items/cc/honey_pancakes.png" name="Honey Pancakes" /> | <Item img="/items/cc/honey_pancake.png" name="Honey Pancake" />×6 + <Item name="Bowl" /> |
 | <Item img="/items/cc/horse_feed.png" name="Horse Feed" /> | <Item name="Hay Block" /> + <Item name="Apple" />×2 + <Item name="Golden Carrot" /> |
 | <Item img="/items/cc/iron_pizza_peel.png" name="Iron Pizza Peel" /> | <Item img="/items/iron_ingot.png" name="Iron Ingot" /> + <Item name="Iron Nugget" /> + <Item name="Stick" /> |
 | <Item img="/items/cc/kelp_roll.png" name="Kelp Roll" /> | <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" />×2 + <Item img="/items/cc/cabbage.png" name="Cabbage" /> + <Item name="Dried Kelp" />×3 |
 | <Item img="/items/cc/leather_substitute.png" name="Leather Substitute" /> | <Item name="Brown Mushroom" /> + <Item img="/items/cc/straw.png" name="Straw" /> + <Item img="/items/cc/tree_bark.png" name="Tree Bark" /> |
-| <Item img="/items/cc/matcha_ice_cream.png" name="Matcha Ice Cream" /> | <Item name="Bowl" /> + <Item img="/items/cc/matcha.png" name="Matcha" /> + <Item name="Milk Bucket" /> + <Item name="Ice" /> + <Item img="/items/sugar.png" name="Sugar" /> |
-| <Item img="/items/cc/matcha_milkshake.png" name="Matcha Milkshake" />×3 | <Item name="Glass Bottle" />×3 + <Item img="/items/cc/matcha_ice_cream.png" name="Matcha Ice Cream" /> + <Item name="Milk Bucket" /> |
+| <Item img="/items/cc/matcha_ice_cream.png" name="Matcha Ice Cream" /> | <Item name="Bowl" /> + <Item img="/items/cc/matcha.png" name="Matcha" /> + <Item name="Milk Bucket" /> (or similar) + <Item name="Ice" /> + <Item img="/items/sugar.png" name="Sugar" /> |
+| <Item img="/items/cc/matcha_milkshake.png" name="Matcha Milkshake" />×3 | <Item name="Glass Bottle" />×3 + <Item img="/items/cc/matcha_ice_cream.png" name="Matcha Ice Cream" /> + <Item name="Milk Bucket" /> (or similar) |
 | <Item img="/items/cc/melon_juice.png" name="Melon Juice" /> | <Item name="Melon Slice" />×4 + <Item img="/items/sugar.png" name="Sugar" /> + <Item name="Glass Bottle" /> |
 | <Item img="/items/cc/melon_popsicle.png" name="Melon Popsicle" /> | <Item name="Melon Slice" />×4 + <Item name="Ice" />×2 + <Item name="Stick" /> |
-| <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" />×4 | <Item name="Milk Bucket" /> + <Item name="Glass Bottle" />×4 |
+| <Item img="/items/cc/milk_bottle.png" name="Milk Bottle" />×4 | <Item name="Milk Bucket" /> (or similar) + <Item name="Glass Bottle" />×4 |
 | <Item img="/items/cc/mixed_salad.png" name="Mixed Salad" /> | <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> + <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item name="Beetroot" /> + <Item name="Bowl" /> |
 | <Item img="/items/cc/mutton_wrap.png" name="Mutton Wrap" /> | <Item name="Bread" /> + <Item name="Cooked Mutton" /> + <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> + <Item img="/items/cc/onion.png" name="Onion" /> |
 | <Item img="/items/cc/nether_salad.png" name="Nether Salad" /> | <Item name="Crimson Fungus" /> + <Item name="Warped Fungus" /> + <Item name="Bowl" /> |
 | <Item img="/items/cc/onion.png" name="Onion" />×9 | <Item name="Onion Crate" /> |
+| <Item img="/items/cc/pancake.png" name="Pancake" />×6 | <Item img="/items/cc/pancakes.png" name="Pancakes" /> |
+| <Item img="/items/cc/pancakes.png" name="Pancakes" /> | <Item img="/items/cc/pancake.png" name="Pancake" />×6 + <Item name="Bowl" /> |
 | <Item name="Paper" /> | <Item img="/items/cc/corncob.png" name="Corncob" />×3 |
 | <Item img="/items/cc/pickle.png" name="Pickle" /> | <Item img="/items/cc/cucumber.png" name="Cucumber" /> + <Item img="/items/sugar.png" name="Sugar" /> |
-| <Item img="/items/cc/pie_crust.png" name="Pie Crust" /> | <Item name="Wheat" />×3 + <Item name="Milk Bucket" /> |
+| <Item img="/items/cc/pie_crust.png" name="Pie Crust" /> | <Item name="Wheat" />×3 + <Item name="Milk Bucket" /> (or similar) |
 | <Item name="Popcorn Box Stage0" /> | <Item img="/items/cc/caramel_popcorn.png" name="Caramel Popcorn" />×4 + <Item name="Paper" /> |
 | <Item name="Potato" />×9 | <Item name="Potato Crate" /> |
 | <Item name="Pumpkin" /> | <Item img="/items/cc/pumpkin_slice.png" name="Pumpkin Slice" />×4 |
+| <Item img="/items/cc/pumpkin_pancake.png" name="Pumpkin Pancake" />×6 | <Item img="/items/cc/pumpkin_pancakes.png" name="Pumpkin Pancakes" /> |
+| <Item img="/items/cc/pumpkin_pancakes.png" name="Pumpkin Pancakes" /> | <Item img="/items/cc/pumpkin_pancake.png" name="Pumpkin Pancake" />×6 + <Item name="Bowl" /> |
 | <Item name="Pumpkin Pie" /> | <Item img="/items/cc/pumpkin_pie_slice.png" name="Pumpkin Pie Slice" />×4 |
+| <Item img="/items/cc/quiche_lorraine.png" name="Quiche Lorraine" /> | <Item img="/items/cc/quiche_lorraine_slice.png" name="Quiche Lorraine Slice" />×4 |
 | <Item img="/items/cc/rice.png" name="Rice" />×9 | <Item name="Rice Bag" /> |
 | <Item name="Rice Bag" /> | <Item img="/items/cc/rice.png" name="Rice" />×9 |
 | <Item img="/items/cc/rice_panicle.png" name="Rice Panicle" />×9 | <Item name="Rice Bale" /> |
@@ -832,24 +883,29 @@ Stations and some items are crafted at a workbench.
 | <Item img="/items/cc/roasted_mutton_chops.png" name="Roasted Mutton Chops" /> | <Item img="/items/cc/cooked_mutton_chops.png" name="Cooked Mutton Chops" /> + <Item name="Beetroot" /> + <Item name="Bowl" /> + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> + <Item img="/items/cc/tomato.png" name="Tomato" /> |
 | <Item img="/items/cc/rotten_tomato.png" name="Rotten Tomato" /> | <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item name="Rotten Flesh" /> |
 | <Item img="/items/cc/salmon_roll.png" name="Salmon Roll" />×2 | <Item img="/items/cc/salmon_slice.png" name="Salmon Slice" />×2 + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
-| <Item img="/items/cc/salmonberry_ice_cream.png" name="Salmonberry Ice Cream" /> | <Item name="Bowl" /> + <Item img="/items/cc/salmonberries.png" name="Salmonberries" /> + <Item name="Milk Bucket" /> + <Item name="Ice" /> + <Item img="/items/sugar.png" name="Sugar" /> |
-| <Item img="/items/cc/salmonberry_milkshake.png" name="Salmonberry Milkshake" />×3 | <Item name="Glass Bottle" />×3 + <Item img="/items/cc/salmonberry_ice_cream.png" name="Salmonberry Ice Cream" /> + <Item name="Milk Bucket" /> |
+| <Item img="/items/cc/salmonberry_ice_cream.png" name="Salmonberry Ice Cream" /> | <Item name="Bowl" /> + <Item img="/items/cc/salmonberries.png" name="Salmonberries" /> + <Item name="Milk Bucket" /> (or similar) + <Item name="Ice" /> + <Item img="/items/sugar.png" name="Sugar" /> |
+| <Item img="/items/cc/salmonberry_milkshake.png" name="Salmonberry Milkshake" />×3 | <Item name="Glass Bottle" />×3 + <Item img="/items/cc/salmonberry_ice_cream.png" name="Salmonberry Ice Cream" /> + <Item name="Milk Bucket" /> (or similar) |
 | <Item img="/items/cc/salmonberry_pie.png" name="Salmonberry Pie" /> | <Item name="Wheat" />×3 + <Item img="/items/cc/salmonberries.png" name="Salmonberries" />×3 + <Item img="/items/sugar.png" name="Sugar" />×2 + <Item img="/items/cc/pie_crust.png" name="Pie Crust" /> |
 | <Item img="/items/cc/seagrass_salad.png" name="Seagrass Salad" /> | <Item name="Seagrass" /> + <Item name="Bowl" /> |
-| <Item name="Shepherds Pie Stage0" /> | <Item name="Baked Potato" />×2 + <Item name="Milk Bucket" /> + <Item name="Cooked Mutton" />×3 + <Item img="/items/cc/onion.png" name="Onion" />×2 + <Item name="Bowl" /> |
-| <Item img="/items/cc/smore.png" name="Smore" /> | <Item img="/items/cc/honey_cookie.png" name="Honey Cookie" />×2 + <Item name="Cocoa Beans" /> + <Item name="Milk Bucket" /> + <Item img="/items/sugar.png" name="Sugar" /> + <Item img="/items/cc/cooked_marshmallow_stick.png" name="Cooked Marshmallow Stick" /> |
+| <Item name="Shepherds Pie Stage0" /> | <Item name="Baked Potato" />×2 + <Item name="Milk Bucket" /> (or similar) + <Item name="Cooked Mutton" />×3 + <Item img="/items/cc/onion.png" name="Onion" />×2 + <Item name="Bowl" /> |
+| <Item img="/items/cc/smore.png" name="Smore" /> | <Item img="/items/cc/honey_cookie.png" name="Honey Cookie" />×2 + <Item name="Cocoa Beans" /> + <Item name="Milk Bucket" /> (or similar) + <Item img="/items/sugar.png" name="Sugar" /> + <Item img="/items/cc/cooked_marshmallow_stick.png" name="Cooked Marshmallow Stick" /> |
+| <Item img="/items/cc/stargazy_pie.png" name="Stargazy Pie" /> | <Item img="/items/cc/stargazy_pie_slice.png" name="Stargazy Pie Slice" />×4 |
 | <Item img="/items/cc/steak_and_potatoes.png" name="Steak And Potatoes" /> | <Item name="Baked Potato" /> + <Item name="Cooked Beef" /> + <Item name="Bowl" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item img="/items/cc/cooked_rice.png" name="Cooked Rice" /> |
 | <Item img="/items/cc/straw.png" name="Straw" />×9 | <Item name="Straw Bale" /> |
 | <Item name="String" /> | <Item img="/items/cc/cotton_boll.png" name="Cotton Boll" /> |
 | <Item img="/items/cc/stuffed_cod.png" name="Stuffed Cod" /> | <Item name="Kelp" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item img="/items/cc/tomato.png" name="Tomato" /> + <Item name="Brown Mushroom" /> + <Item name="Cod" /> + <Item name="String" /> |
-| <Item img="/items/cc/stuffed_potato.png" name="Stuffed Potato" /> | <Item name="Baked Potato" /> + <Item name="Cooked Beef" /> + <Item name="Milk Bucket" /> |
+| <Item img="/items/cc/stuffed_potato.png" name="Stuffed Potato" /> | <Item name="Baked Potato" /> + <Item name="Cooked Beef" /> + <Item name="Milk Bucket" /> (or similar) |
 | <Item img="/items/cc/sweet_berry_cheesecake.png" name="Sweet Berry Cheesecake" /> | <Item img="/items/cc/sweet_berry_cheesecake_slice.png" name="Sweet Berry Cheesecake Slice" />×4 |
 | <Item img="/items/cc/sweet_berry_cookie.png" name="Sweet Berry Cookie" />×8 | <Item name="Wheat" />×2 + <Item name="Sweet Berries" /> |
-| <Item img="/items/cc/taco.png" name="Taco" /> | <Item img="/items/cc/tortilla.png" name="Tortilla" /> + <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item name="Cooked Beef" /> |
+| <Item img="/items/cc/syrup_cheesecake.png" name="Syrup Cheesecake" /> | <Item img="/items/cc/syrup_cheesecake_slice.png" name="Syrup Cheesecake Slice" />×4 |
+| <Item img="/items/cc/taco.png" name="Taco" /> | <Item img="/items/cc/tortilla.png" name="Tortilla" /> + <Item img="/items/cc/cabbage_leaf.png" name="Cabbage Leaf" /> + <Item img="/items/cc/onion.png" name="Onion" /> + <Item name="Cooked Beef" /> (or similar) |
 | <Item img="/items/cc/tentacle_on_a_stick.png" name="Tentacle On A Stick" /> | <Item name="Stick" /> + <Item img="/items/cc/tentacles.png" name="Tentacles" /> |
 | <Item img="/items/cc/tomato.png" name="Tomato" />×9 | <Item name="Tomato Crate" /> |
 | <Item img="/items/cc/tomato_seeds.png" name="Tomato Seeds" />×2 | <Item img="/items/cc/tomato.png" name="Tomato" /> |
+| <Item name="Torch" />×8 | <Item img="/items/cc/animal_oil_bottle.png" name="Animal Oil Bottle" /> + <Item name="Stick" /> |
 | <Item img="/items/cc/tortilla_raw.png" name="Tortilla Raw" />×3 | <Item img="/items/cc/corn.png" name="Corn" />×3 + <Item name="Water Bucket" /> |
+| <Item img="/items/cc/vegetable_pancake.png" name="Vegetable Pancake" />×6 | <Item img="/items/cc/vegetable_pancakes.png" name="Vegetable Pancakes" /> |
+| <Item img="/items/cc/vegetable_pancakes.png" name="Vegetable Pancakes" /> | <Item img="/items/cc/vegetable_pancake.png" name="Vegetable Pancake" />×6 + <Item name="Bowl" /> |
 | <Item img="/items/cc/wheat_dough.png" name="Wheat Dough" />×3 | <Item name="Wheat" />×3 + <Item img="/items/egg.png" name="Egg" /> |
 | <Item img="/items/cc/wrapped_cantaloupe.png" name="Wrapped Cantaloupe" /> | <Item img="/items/cc/cantaloupe_slice.png" name="Cantaloupe Slice" /> + <Item img="/items/cc/cooked_bacon.png" name="Cooked Bacon" /> |
 
@@ -891,14 +947,46 @@ Some ingredients come from **foraging with a knife** or mob drops, not recipes.
 | <Item img="/items/cc/salmonberry_pips.png" name="Salmonberry Pips" /> | Break a sweet berry bush with a knife | 15% |
 | <Item img="/items/cc/cantaloupe_seeds.png" name="Cantaloupe Seeds" /> | Break a dead bush with a knife | 15% |
 
+### 🍃 Foraging leaves & grass
+
+Breaking **leaves or grass with a knife** drops ingredients depending on what you break
+(from `LeafHarvestTable`).
+
+| Block | Drops (chance) |
+|---|---|
+| Grass / tall grass | Grape Seeds 6% / Cotton Seeds 5% / Bell Pepper Seeds 4% / Soybean 3% / Pineapple Sapling 2% / Lantern Fruit Seeds 2% |
+| Oak leaves | Pear 12% / Hawberry 12% |
+| Birch leaves | Peach 10% / Persimmon 10% / Fig 10% |
+| Jungle leaves | Mango 7% / Lychee 7% / Mangosteen 7% / Kiwi 7% / Coffee Beans 5% / Durian 3% |
+| Acacia leaves | Orange 12% / Lemon 12% |
+| Spruce / dark oak leaves | Bayberry 10% |
+| Cherry leaves | Cherry Petal 15% |
+| Sweet berry bush | Blueberry 15% / Cranberry 15% |
+
+Farm crop seeds come **only** from grass, so cut grass with a knife.
+
 ### ⚔️ Mob drops
+
+Killing mobs **with a knife** yields extra ingredients (upstream "scavenging").
 
 | Item | Mob | Condition | Chance |
 |---|---|---|---|
 | <Item img="/items/cc/tentacles.png" name="Tentacles" /> | Squid | Kill with a knife | 100% |
 | <Item img="/items/cc/guardian.png" name="Guardian (ingredient)" /> | Guardian | none | 100% |
 | <Item img="/items/cc/elder_guardian_slab.png" name="Elder Guardian Slab" /> | Elder Guardian | Kill with a knife | 100% |
-| <Item img="/items/cc/animal_fat.png" name="Animal Fat" /> | Cows, pigs, sheep & other "fatty" animals | Kill with a knife | 70%, 1–3 (more with Looting) |
+| <Item img="/items/cc/animal_fat.png" name="Animal Fat" /> | Cows, pigs, sheep & other "fatty" animals | Kill with a knife | 70%, 1-3 (more with Looting) |
+| <Item img="/items/cc/raw_donkey_meat.png" name="Raw Donkey Meat" /> | Donkey / Mule | none | 100%, 1-3 |
+| Feather | Chicken | Kill with a knife | 100% |
+| Leather | Cow, Mooshroom, Horse, Donkey, Mule, Llama, Trader Llama | Kill with a knife | 100% |
+| Rabbit Hide | Rabbit | Kill with a knife | 100% |
+| Shulker Shell | Shulker | Kill with a knife | 100% |
+| String | Spider / Cave Spider | Kill with a knife | 100% |
+| <Item img="/items/cc/ham.png" name="Ham" /> | Pig (not burning) | Kill with a knife | 50% (+10%/Looting) |
+| <Item img="/items/cc/smoked_ham.png" name="Smoked Ham" /> | Pig (burning) | Kill with a knife | 50% (same) |
+| <Item img="/items/cc/ham.png" name="Ham" /> | Hoglin (not burning) | Kill with a knife | 100% |
+| <Item img="/items/cc/smoked_ham.png" name="Smoked Ham" /> | Hoglin (burning) | Kill with a knife | 100% |
+| <Item img="/items/cc/onion.png" name="Onion" /> | Zombie, Husk, Zombie Villager | Killed by a player | 2% (+1%/Looting) |
+| <Item img="/items/cc/onion.png" name="Onion" /> | Pillager, Evoker, Vindicator | Killed by a player | 2% (+1%/Looting) |
 
 ## 💧 Glass of Water — a drink that makes you hungry 🆕
 
@@ -932,6 +1020,9 @@ A vanilla **water bottle** (plain water from a brewing stand) works too, more ge
 ## 💡 Good to know
 
 <Callout type="info">
+- Pies, cakes, cheese wheels and pancake stacks can be **placed on the ground and shared**:
+  right-click with a **knife** to cut a slice off, or with an **empty hand** to take a bite.
+  Pancake stacks start at **6** and can be **stacked up to 12** by sneak-right-clicking with a matching pancake.
 - Hearty soups & feasts grant **Nourishment** (hunger doesn't drain). Drink a **Glass of Water** when you want to get hungry again.
 - **Feasts & popcorn boxes** are served one portion at a time; breaking a half-eaten one returns a "**(N servings left)**" item — place it again to continue (no duping).
 - Cakes and pies can be placed and **sliced with a knife**.
