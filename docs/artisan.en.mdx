@@ -56,19 +56,14 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 | Accepted items | spec | Cobblestone, stone, deepslate, dirt, sand, gravel, netherrack, logs, coal, iron, gold, copper, redstone, lapis, quartz, emerald, diamond, and more |
 | Rejected items | spec | Named, enchanted, or custom items are returned to you untouched |
 | Shulker boxes | spec | Contents are delivered; the box itself comes back |
-| Daily limit | spec | There is a daily cap on how much you can deliver. The remaining amount is shown in the hub |
-| Reset time | spec | 4:00 AM (JST) every day |
+| Prices | spec | Change automatically depending on deliveries. Check the price list for the current price |
 
-<Callout type="info" title="How prices are decided — each material has a quota">
-  Every material has a **daily quota that is bought at full price**.
+<Callout type="info" title="Prices change over time">
+  Point prices **go up and down automatically depending on how much the whole server is delivering**. When everyone delivers a lot, prices drop; when things calm down, they recover.
 
-  - While the quota lasts, you get the **full price**
-  - Once it runs out, you get **half price**
-  - Once that runs out too, that material is **done for the day** (it sells again tomorrow)
+  A very large delivery made all at once may pay a little less than the price list shows.
 
-  The quota **refills gradually over time**, so there is no morning rush to be first in line.
-
-  If everyone delivers the same material, its quota runs out early. Materials **nobody has been delivering** still have quota left, so those pay better. Check the current rate in the **price list** inside `/assyuku`.
+  Check the current prices in the **price list** inside `/assyuku`.
 </Callout>
 
 ***
@@ -233,7 +228,7 @@ When you compress the target materials to 5 stages, you can add text next to the
 
 <Accordions>
   <Accordion title="I delivered items but nothing happened">
-    The material may not be **accepted**, or you may have hit the **daily cap**. Rejected items are returned to you. Your remaining cap is shown in the `/assyuku` hub.
+    The material may not be **accepted**. Rejected items are returned to you. You can check which materials are accepted in the `/assyuku` price list.
   </Accordion>
   <Accordion title="Should I compress before delivering?">
     Yes. Anything you compressed by hand earns a bonus that grows with the tier (capped from tier 5). But **items dumped inside a shulker box get no bonus** — those are a flat 75%.
@@ -248,6 +243,6 @@ When you compress the target materials to 5 stages, you can add text next to the
     Land that falls outside after a Move, and land rebuilt by a Reset, **never comes back**. The resource world is for mining. Keep valuables on the main server.
   </Accordion>
   <Accordion title="The price changed since yesterday">
-    Each material has a daily quota that sells at full price; once it is gone the price halves, and once that is gone the material stops selling for the day. The quota refills over time. Check the price list for the current rate.
+    Prices change automatically depending on how much the whole server is delivering. Check the `/assyuku` price list for the current price.
   </Accordion>
 </Accordions>
