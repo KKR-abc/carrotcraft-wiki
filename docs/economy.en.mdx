@@ -37,18 +37,15 @@ CarrotMarket is the server-managed shop with dynamic pricing. Access it with `/m
 
 ### How Pricing Works
 
-```
-Price = Vault ÷ Stock
-```
-
-- **Selling** → Vault decreases, stock increases → **price drops**
-- **Buying** → Vault increases, stock decreases → **price rises**
-- **Daily** → Vault slowly recovers (money enters the economy)
+- **When sold** → the price goes down
+- **When bought** → the price goes up
+- The price is **the same for everyone**
 
 Items that are heavily sold become cheaper, while items in demand become more expensive. Read the market and trade wisely.
+If an item's price is so low that selling it would pay 0 CC, it cannot be sold.
 
 <Callout type="info" title="Check Price History">
-You can view item price trends on [CarrotMarket Web](https://market.carrotcraft.net/). Check the market before making trades.
+You can view item prices and how they move on the [Market page](https://carrotcraft.net/en/market). Check the market before making trades.
 </Callout>
 
 ### Handy Features
