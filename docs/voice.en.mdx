@@ -1,0 +1,91 @@
+---
+title: Web Voice
+description: Talk to nearby players from your browser, no mod needed, Bedrock included
+icon: mic
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Callout type="info" title="Quick summary">
+On **Bedrock or Java, without any mod**, you can talk to nearby players from your browser. The range is the same as the in-game voice chat (Simple Voice Chat), and you can talk with mod users too.
+</Callout>
+
+## 🎙 What is Web Voice?
+
+Open the voice page in a browser on your phone or PC, and talk to players who are near you in the game. Bedrock players (Switch, PlayStation, mobile, etc.) can use it too.
+
+- No mic? You can still join and **just listen**
+- Nobody's position is shown. Only people you actually hear are listed
+
+---
+
+## 🪜 How to use
+
+<Steps>
+<Step>
+### Type `/vc` in game
+
+A login **QR code or link** appears (on Bedrock, the QR is shown as a map in an item frame).
+</Step>
+<Step>
+### Open the QR or link and press "Log in"
+
+This logs you in to the website. Once you are logged in, you can skip this step for a while.
+</Step>
+<Step>
+### Press "Connect" on the voice page and allow the mic
+
+You can now talk to nearby players. If you don't allow the mic, you join as a listener.
+</Step>
+</Steps>
+
+**Next time**, just open the [voice page](https://carrotcraft.net/en/voice) while you are in the server and press "Connect".
+
+---
+
+## 🎛 The screen
+
+- **Mic**: tap to turn on / mute
+- **Speaker**: tap to listen / stop listening
+- **Hold to talk**: when on, your voice is sent only while you hold the button (Space key on PC)
+- **Speaking**: only people you hear are listed. You can change each person's volume or mute them
+- **Groups**: join the same groups as the in-game voice chat (some have a password)
+- **Settings**: mic / speaker device, AI noise suppression, stereo, buffer for choppy audio, and more
+
+## ⌨️ In-game commands
+
+| Command | What it does |
+|---|---|
+| `/vc` | Show the login QR / link |
+| `/vc mute` | Mute / unmute your Web mic |
+| Sneak + swap hands (F) | Mute / unmute your Web mic |
+| `/vc off` | Disconnect Web Voice |
+
+---
+
+## 📱 Phones and consoles
+
+- **Switch / PlayStation players**: open the voice page on a phone or PC
+- **Playing Minecraft on a phone**: on some phones (especially iPhone) the mic stops while Minecraft is in front. Using **a second device** works best
+- Supported browsers: Chrome, Edge, Firefox, Safari (iOS 14.5 or later on iPhone)
+
+## 🎧 Simple Voice Chat (mod) users
+
+<Callout type="info" title="Web Voice takes over while you are connected">
+If you have the mod and then connect to Web Voice, **your mod mic and ears pause while Web Voice is connected** (so you don't hear everything twice). Disconnect Web Voice and the mod works as before.
+Mod-only players are unaffected, and mod users and Web Voice users can talk to each other.
+</Callout>
+
+---
+
+## ❓ Troubleshooting
+
+| Problem | What to do |
+|---|---|
+| "You are not in the game" | Join the server first, then press "Connect" |
+| "Wrong or expired code" | Type `/vc` again and use the new QR / link |
+| Disconnected after changing servers | Press "Connect" again on the voice page |
+| Others can't hear you | Check that "Mic" is on and the right mic is selected in Settings. On phones, a second device is recommended |
+| Audio is choppy | In Settings, set "When choppy" to "More buffer" |
+| Someone is too loud / quiet | Change just that person's volume in the "Speaking" list |
