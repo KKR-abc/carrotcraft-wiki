@@ -101,14 +101,14 @@ import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide
 ガチャキーを引くことで、他のガチャキーを入手することができます。
 
 <Tabs items={['装飾ガチャキー','武器ガチャキー','レアアイテムガチャキー','スポナーガチャキー','半年記念ガチャキー'}]>
-  <Tab>
+  <Tab value="装飾ガチャキー">
     ネザライト強化用鍛冶型以外の装飾がすべて含まれます。
   </Tab>
-  <Tab>
+  <Tab value="武器ガチャキー">
     ネザライトやメイスなどの武器と防具が含まれます。
 
   </Tab>
-  <Tab>
+  <Tab value="レアアイテムガチャキー">
     レアリティの高いアイテムが含まれます。  
     - ビーコン
     - エンチャントされた金リンゴ
@@ -116,7 +116,7 @@ import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide
     - ゆゆさんのぬいぐるみ
     - ネザライトインゴット
   </Tab>
-  <Tab>
+  <Tab value="スポナーガチャキー">
     普段は入手できないものも含まれます。
     - ゾンビ
     - スケルトン
@@ -129,7 +129,7 @@ import { Vote, ExternalLink, Gift, Sparkles, Coins, AlertTriangle } from 'lucide
     - ピグリン
     - ウィッチ
   </Tab>
-  <Tab>
+  <Tab value="半年記念ガチャキー">
     レアアイテムガチャキーと装飾ガチャキーとスポナーガチャキーが含まれていました。現在新たに入手することは不可能です。
   </Tab>
 </Tabs>
